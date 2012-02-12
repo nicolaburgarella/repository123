@@ -1,0 +1,8 @@
+Sono spezzoni di programma(non c'è il main nella classe Listino) utili per interrogare il database tramite query come per esempio:
+
+SELECT Prodotti.codice, Prodotti.nome
+FROM Prodotti;
+
+SELECT Prodotti.codice, Prodotti.nome, Prodotti.prezzo
+FROM Prodotti;
+WHERE (((Prodotti.prezzo)>10000));
