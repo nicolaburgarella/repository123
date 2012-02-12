@@ -1,0 +1,106 @@
+Altre info necessarie sulle applet:
+-DEVONO ESSERE  PUBLI
+-NON DEVONO AVERE IL METODO MAIN
+-IL METODO BASE PER VISUALIZZARE L'OUTPUT DI UN' APPLET E'
+public void paint(Graphics G)
+-USO DI REPAINT
+
+//APPLET SEMPLICE
+
+import java.applet.*;
+public class Simple estends Applet{
+
+	public void init(){
+	System.out.println("initializing...");
+	}
+
+	public void start(){
+	System.out.println("starting...");
+	}
+
+	public void stop(){
+	System.out.println("stopping...");
+	}
+
+	public void destroy(){
+	System.out.println("unloading...");
+	}
+}
+
+//INTERFACCIA CON IL WEB
+
+1_<APPLET>..</APPLET>
+NEL TAG APPLET DEVONO ESSERCI  OBBLIGATORIAMENTE GLI ATTRIBUTI:
+-CODE ="classfile"
+-WIDTH =valore
+-HEIGHT =valore
+OPZIONALI SONO INVECE:
+CODEBASE ="stringa directory del classfile"
+NAME ="nome simbolico dell'applet"
+ALIGN ={left, right, top, bottom, middle,..}
+VSPACE =valore  i margini
+HSPACE =valore i margini
+I PARAMETRI VENGONO SPECIFICATI COSI,uno per ogni paramentro:
+<PARAM NAME=stringa VALUE=valore>
+
+ES.
+<applet code="MyClass.class" width=200 height=300 codebase="/user/sit/Classes" align=middle>
+<param name=label value=Home>
+</applet>
+
+
+
+2.METODI DELLA CLASSE APPLET USATI PER ACCEDERE ALLE INFO SULLA PAGINA WEB
+URL getDocumentBase() ritorna la url del documento che contiene l'applet,definita in java.net
+URL getCodebase() ritorna la url dell'applet
+String getParameter(String name) ritorna come stringa il valore del paramentro indicato,se non assegnato vale null
+
+
+ES.
+<html>
+...
+<body>
+Example Java Applet<br>
+<applet code="example.class" height=100 width=200>
+<param name="username" value="Fred">
+...
+</applet>
+</body>
+</html>
+
+
+import java.awt.*;
+public class example extends Applet{
+  String pname;
+
+  public void init(){
+    String nameParam=getParameter("username");
+    if(nameParam!=null){
+    pname=nameParam;
+    }
+    public void paint(Graphics screen){
+    System.out.println("Hello "+pname);
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
