@@ -1,0 +1,14 @@
+<REGISTRO>
+
+<STUDENTE Nome="Mario" Cognome="Rossi" Matricola="111">
+<ESAME Corso="Informatica" Voto="30" data="10-6-2010" />
+<ESAME Corso="Fisica I" Voto="28" data="15-06-2010" />
+<ESAME Corso="Chimica" Voto="29" data="7-09-2010" />
+</STUDENTE>
+
+<STUDENTE Nome="Carlo" Cognome="Bianchi" Matricola="222">
+<ESAME Corso="Informatica" Voto="25" data="02-06-2010" />
+<ESAME Corso="Matematica I" Voto="27" data="12-09-2010" />
+</STUDENTE>
+
+</REGISTRO>
