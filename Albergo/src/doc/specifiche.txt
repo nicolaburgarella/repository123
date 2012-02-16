@@ -1,0 +1,23 @@
+Gestione di un albergo:
+
+Si vuole implementare un software per la gestione delle prenotazioni delle
+camere di un albergo. Ogni camera è caratterizzata da un numero e da un
+certo insieme di possibili composizioni dei letti, ad esempio 1 (singola),
+1+1 (doppia), 2 (matrimoniale), ecc. L’albergo accetta prenotazioni SOLO
+di gruppi di clienti; questi vengono eventualmente divisi in più stanze
+(pensate ad esempio alla trasferta di una squadra di calcio o ad un
+viaggio organizzato dove persone diverse vengono messe nella stessa
+stanza).
+
+Ogni gruppo è caratterizzato da un nome, una data di arrivo, da una
+composizione per camere, dal valore dell'anticipo versato, ecc. All’atto
+dell’arrivo, il gruppo viene alloggiato nelle camere libere aventi la
+composizione richiesta. Il pagamento della pensione avviene per gruppi
+mentre quello degli extra (internet point, assistenza medica, consumazioni
+al bar o al ristorante, ecc..) avviene per stanza. A tale proposito è
+necessario registrare tutti gli extra di ogni stanza riportando data, il
+tipo e l’importo di ogni extra.
+
+Prevedere dei servizi per: sapere quali camere libere esistono con una
+data composizione, accettare (respingere) la prenotazione di un gruppo,
+gestire l’arrivo e la partenza di un gruppo.
