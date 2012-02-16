@@ -2,22 +2,28 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.IllegalFormatException;
 import java.util.Map;
 import java.util.TreeMap;
 
 
 public class Camera {
-
-	private int id=0;;
+	
+	private int id=0;
 	private String descrizione="";
-	Extra extra;
-	static boolean disponibile=true;
+	private int singola=0;
+	private int doppia=0;
+	private int matrimoniale=0;
+	private boolean disponibile=true;
 	private String flagDisp="";
-
+	Extra extra;
+	
 	public Camera(){
 
 	}
 
+//Costruttore che inizializza tutti i parametri di uso[tranne la composizione,che gestisco nella classe,ma separatamente]
+//per ora ho inserito anche l'oggetto extra nel costruttore per comodità,può darsi che sia utile in futuro
 	public Camera(int id,Extra extra,String descrizione,boolean disp){
 		this.id=id;
 		this.extra=extra;
@@ -25,21 +31,71 @@ public class Camera {
 		this.disponibile=disponibile;
 	}
 
+//Come sopra ma senza extra
 	public Camera(int id, String descrizione,boolean disp){
 		this.id=id;
 		this.descrizione=descrizione;
 		this.disponibile=disponibile;
 	}
-
+	
+/*
 	public Camera(RegistroExtra re){
 		RegistroExtra registroExtra=re;
 		}
+*/	
+	
+//Verifica sulla tipologia di camera
+	public boolean isSingola(){
+		if(this.singola != 0){
+			return true; 
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean isDoppia(){
+		if(this.doppia != 0){
+			return true; 
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean isMatrimoniale(){
+		if(this.matrimoniale != 0){
+			return true; 
+		}
+		else {
+			return false;
+		}
+	}
+	
+	//settaggio base sul tipo di camera
+	public void setSingola(){
+		this.singola=1;
+		this.doppia=0;
+		this.matrimoniale=0;
+	}
+	
+	public void setDoppia(){
+		this.singola=0;
+		this.doppia=1;
+		this.matrimoniale=0;
+	}
+	
+	public void setMatrimoniale(){
+		this.singola=0;
+		this.doppia=0;
+		this.matrimoniale=1;
+	}
 
+/*
 	public void setId(int id){
 		this.id=id;
 	}
-
-
+*/
 	public int getId(){
 		return this.id;
 	}
@@ -48,7 +104,7 @@ public class Camera {
 		this.id++;
 	}
 
-
+//setter e getter di extra,della descrizione della camera 
 	public void setExtra(Extra extra){
 		this.extra=extra;
 	}
@@ -57,6 +113,7 @@ public class Camera {
 		return this.extra;
 	}
 
+//utile per stampare al salvataggio in xml della camera se la camera ha già richiesto extra
 	public String isExtra(){
 		if(this.extra!=null){
 			return "SI";
@@ -76,6 +133,7 @@ public class Camera {
 	}
 
 
+//Verifica della disponibilità della camera
 	public void setDisponibile(boolean d){
 		this.disponibile=d;
 	}
@@ -85,6 +143,7 @@ public class Camera {
 	}
 
 
+//utile per stampare al salvataggio in xml della camera se la camera è disponibile
 	public String flagToDisp(){
 		if(disponibile=true){
 			flagDisp="SI";
@@ -95,11 +154,12 @@ public class Camera {
 		return flagDisp;
 	}
 
-
+//metodo comodo per stampare a video tutta la struttura dell'istanza camera 
 	public String toString(){
 		return "Codice Camera :"+this.id+"\n"+"Extra da addebitare: \t"+this.isExtra()+"\n"+"Descrizione stanza: \t"+this.descrizione+"\n"+"Disponibile ora: \t"+this.flagToDisp()+"\n";
 		}
 
+//chiamato dalla classe main,si interfaccia con l'operatore per l'inserimento dei dati della camera(no id,no extra,si a composizione, descrizione, disponibilità)
 	public void InserisciCamera(){
 		try{
             BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
@@ -107,12 +167,28 @@ public class Camera {
             extra=null;
             disponibile=true;
             while(continua){
-                    System.out.println("Inserisci l'id della camera:(END per terminare)");
+                    /*System.out.println("Inserisci l'id della camera:(END per terminare)");
                     this.id=Integer.parseInt(promptLine.readLine());
                     if(promptLine.readLine().equals("END")){
                             break;
-                    }
+                    }*/
 
+                    System.out.println("Specifica se è singola,doppia o matrimoniale: [0:singola][1:doppia][2:matrimoniale] ");
+                    int choice=Integer.parseInt(promptLine.readLine());
+                    try{
+                    	if(choice==0){
+                    		this.setSingola();
+                    	}
+                    	if(choice==1){
+                    		this.setDoppia();
+                    	}
+                    	if(choice==0){
+                    		this.setMatrimoniale();
+                    	}
+                    }catch(IllegalFormatException ife){
+                    	ife.printStackTrace();
+                    }
+                    
                     System.out.println("Inserisci una descrizione della stanza:(END per terminare)");
                     this.descrizione=promptLine.readLine();
                     if(descrizione.equals("END")){
@@ -121,14 +197,14 @@ public class Camera {
                     else {
                         System.out.println("descrizione inserita correttamente");
                     }
+                    
                     this.setDisponibile(true);
             }
-            //Camera camera = new Camera(id,descrizione,disponibile);
             }catch(IOException ioe){
                     ioe.printStackTrace();
             }
             finally{
-            	    System.out.println("Il gruppo è stato inserito correttamente.");
+            	    System.out.println("La camera è stata compilata correttamente.");//va ora istanziata nel main
             }
 	}
 

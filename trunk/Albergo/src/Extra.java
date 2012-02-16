@@ -12,11 +12,13 @@ public class Extra {
 	static int extraToTInseriti=0;
 	private int id=0;
 	RegistroCamere rc;
+	private boolean continua=true;
 
 	public Extra(){
 
 	}
 
+//Costruttore extra con id,tipo di extra,id della camera a cui riferirsi,costo e data consumo extra
 	public Extra(int id,String tipo,int idCamera,double costoExtra,String dataExtra){
 		this.id=id;
 		this.tipo=tipo;
@@ -26,6 +28,7 @@ public class Extra {
 
 	}
 
+//come sopra ma senza id
 	public Extra(String tipo,int idCamera,double costoExtra,String dataExtra){
 		this.tipo=tipo;
 		this.idCamera=idCamera;
@@ -34,15 +37,17 @@ public class Extra {
 
 	}
 
+//Incremento l'id
 	public void setIncrId(){
 		this.id++;
 	}
-
+/*
 	public void setId(int id){
 		this.id=id;
 	}
+*/
 
-
+//setter e getter vari
 	public int getId(){
 		return id;
 	}
@@ -68,43 +73,55 @@ public class Extra {
 	public double getCostoExtra(){
 		return this.costoExtra;
 	}
-
-	public String toString(){
-		return "Codice Extra :"+id+"\n"+"Tipo di extra: \t"+tipo+"\n"+"CodiceCamera: \t"+idCamera+"\n"+"Importo Singolo Extra:: \t"+costoExtra+"\n";
-	}
-
+	
 	public String getDataExtra(){
 		return this.dataExtra;
 	}
+	
+	public void setDataExtra(String dataExtra){
+		this.dataExtra=dataExtra;
+	}
+
+//toString dei dati dell'istanza extra
+	public String toString(){
+		return "Codice Extra :"+id+"\n"+"Tipo di extra: \t"+tipo+"\n"+"CodiceCamera: \t"+idCamera+"\n"+"Importo Singolo Extra:: \t"+costoExtra+"\n";
+	}
+	
+
+//Passo come parametro la lista delle camere
+	public Extra(RegistroCamere rc){
+		RegistroCamere registroCamera=rc;
+		}
 
 
+//Inserimento dell'extra,ovvero della data,numerocamera,tipo di extra(aumentare i controlli)
+//aumentare i controlli
+//occorre controllare che ci sia almeno una camera	
 	public void InserisciExtra(){
 		try{
             BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
-            boolean continua=true;
-            while(continua){
-
-            		System.out.println("Inserisci la data odierna (END per terminare):");//bisogna automatizzarla a qlla attuale gg:mm:aa: \t ora
+            do{
+            		System.out.println("Inserisci la data odierna (END per ripetere tutto l'inserimento):");//bisogna automatizzarla a qlla attuale gg:mm:aa: \t ora
             		this.dataExtra=promptLine.readLine();
             		if(dataExtra.equals("END")){
-                        break;
+                        continua=false;break;
             		}
 
-            		System.out.println("Inserisci il numero di stanza: (END per terminare) ");
+            		System.out.println("Inserisci il numero di camera: (END per terminare) ");
             		this.idCamera=Integer.parseInt(promptLine.readLine());
             		if (rc.cercaIdCamera(idCamera)>0){
-            			System.out.println("La camera inserita è stata riconosciuta");
+            			System.out.println("La camera "+idCamera +" inserita è stata riconosciuta");
             		}
             		else{
             			System.out.println("E' stata inserita un numero di camera errato");
-            			break;
+            			continua=false;break;
             		}
 
                     System.out.println("Inserisci la tipologia di costo extra giornaliero:[0:internet][1:assistenza medica][2:servizio bar][3:servizio ristorante][4:nessun extra](END per terminare)");
                     this.tipo=promptLine.readLine();
                     this.tipo.toUpperCase();
                     if(tipo.equals("END")){
-                            break;
+                    	continua=false;break;
                     }
                     else if(tipo.equals(0)) {
                         System.out.println("Il cliente ha utilizzato internet");
@@ -124,11 +141,10 @@ public class Extra {
                     }
                     else {
                     	System.out.println("E' stato inserito un valore non corretto,riprova.");
-                    	break;
+                    	continua=false;break;
                     }
 
-            }
-  //sono fuori dal while..che faccio..mi arrivano qui tutti gli errori,poi presi dal catch
+            }while(!continua);
        }
 		catch(IOException ioe){
 			ioe.printStackTrace();
@@ -137,8 +153,7 @@ public class Extra {
 			ife.printStackTrace();
 		}
 		finally{
-			//Extra extra=new Extra(..,..,..,...,..)
-			System.out.println("l'extra giornaliero è stato inserito correttamente da tastiera.");
+			System.out.println("l'extra giornaliero è stato compilato correttamente.");//va ora istanziato nel main
             }
 	}
 }

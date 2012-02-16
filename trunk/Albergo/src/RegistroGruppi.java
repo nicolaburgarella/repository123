@@ -4,12 +4,14 @@ import java.io.*;
 public class RegistroGruppi {
 	private ArrayList<Gruppo> registroGruppi=new ArrayList<Gruppo>();
 
+//Inizializza il registro gruppi rimuovendo tutti gli elementi della lista
 	public RegistroGruppi(){
 		//Removes all of the elements from this list.
 		registroGruppi.clear();
 
 	}
 
+//Controlla se il gruppo passato come parametro esiste nella lista,se c'è viene inserito nella lista	
 	public boolean inserisci(Gruppo gruppo){
 		for(int i=0;i<registroGruppi.size()-1;i++){
 			if((registroGruppi.get(i)).equals(gruppo)){
@@ -24,6 +26,7 @@ public class RegistroGruppi {
 	}
 
 
+//Controlla se l'id del gruppo passato come parametro esiste e ritorna l'indice della lista con quell'id
 	public int cerca(int idGruppo){
 		for(int i=0;i<registroGruppi.size();i++){
 			if((registroGruppi.get(i)).getId()==idGruppo){
@@ -34,12 +37,13 @@ public class RegistroGruppi {
 	}
 
 
+//Ritorna il gruppo in base all'indice della lista passato come parametro
 	public Gruppo getGruppo(int posizione){
 		return registroGruppi.get(posizione);
 	}
 
 
-
+//Salva nel file txt lo storico gruppi,ovvero il guestBook
 	public void aggiornaStoricoGruppi(){
 		try{
             File fileTesto =new File("storicoGruppi.txt");
