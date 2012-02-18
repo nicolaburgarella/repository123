@@ -4,6 +4,7 @@ import java.io.*;
 public class RegistroExtra {
 	private ArrayList<Extra> registroExtra=new ArrayList<Extra>();
 	RegistroCamere rc;
+	Double costoTot=0.0;
 
 	public RegistroExtra(){
 		//Removes all of the elements from this list.
@@ -39,6 +40,24 @@ public class RegistroExtra {
 		return registroExtra.get(posizione);
 	}
 
+
+	public void stampaExtraByIdCamera(int idCamera){
+		System.out.println("Ecco l'elenco degli extra che si riferiscono alla camera "+idCamera+": \n");
+		for(int i=0;i<registroExtra.size();i++){
+			if(registroExtra.get(i).getCodiceCamera()==idCamera){
+				System.out.println(registroExtra.get(i));
+			}
+		}
+	}
+
+	public void costoExtraTotByIdCamera(int idCamera){
+		System.out.println("Ecco la somma del costo degli extra che si riferiscono alla camera "+idCamera+": \n");
+		for(int i=0;i<registroExtra.size();i++){
+			if(registroExtra.get(i).getCodiceCamera()==idCamera){
+				costoTot+=registroExtra.get(i).getCostoExtra();
+			}
+		}
+	}
 
 
 
@@ -128,5 +147,3 @@ public class RegistroExtra {
 	}
 
 }
-
-/**/

@@ -10,6 +10,9 @@ public class RegistroCamere {
 	public final static int MaxSingole=30;
 	public final static int MaxDoppie=20;
 	public final static int MaxMatrimoniali=15;
+	int[] idSingoleDisp=null;
+	int[] idDoppieDisp=null;
+	int[] idMatrimonialiDisp=null;
 
 //Inizializza il registro camere rimuovendo tutti gli elementi della lista
 	public RegistroCamere(){
@@ -18,7 +21,11 @@ public class RegistroCamere {
 
 		}
 
-//Controlla se la camera passata come parametro esiste nella lista,se c'è viene inserita la camera nel registro (cioè aggiunta nella lista)	
+	public boolean isRegistroCamereVuoto(){
+		return registroCamere.isEmpty();
+	}
+
+//Controlla se la camera passata come parametro esiste nella lista,se c'è viene inserita la camera nel registro (cioè aggiunta nella lista)
 		public boolean inserisci(Camera camera){
 			for(int i=0;i<registroCamere.size()-1;i++){
 				if((registroCamere.get(i)).equals(camera)){
@@ -29,7 +36,7 @@ public class RegistroCamere {
 			camera.setIncrId();
 			return true;
 		}
-	
+
 //Ritorna la camera in base all'indice della lista passato come parametro
 		public Camera getCamera(int posizione){
 			return registroCamere.get(posizione);
@@ -48,7 +55,7 @@ public class RegistroCamere {
 			}
 		}
 
-//Ricerca se la richiesta del gruppo relativa al numero di camere da prenotare rispetta la capacità dell'albergo
+//da togliere: Ricerca se la richiesta del gruppo relativa al numero di camere da prenotare rispetta la capacità dell'albergo
 		public void cerca(Gruppo gruppo){
 			boolean flag=false;
 			int[] vComp=new int[3];
@@ -62,8 +69,35 @@ public class RegistroCamere {
 			}
 		}
 
+		public void stampaSingoleDisp() {
+			System.out.println("Ecco l'elenco delle  elenco di camere singole disponibili :");
+			for(int i=0;i<registroCamere.size();i++){
+				if(registroCamere.get(i).isSingola() && registroCamere.get(i).isDisponibile()){
+					System.out.println(registroCamere.get(i));
+				}
+			}
+		}
 
-//Ricerca tramite l'id della camera passato come parametro se la camera è presente nella lista e disponibile 
+		public void stampaDoppieDisp() {
+			System.out.println("Ecco l'elenco delle  elenco di camere doppie disponibili :");
+			for(int i=0;i<registroCamere.size();i++){
+				if(registroCamere.get(i).isDoppia() && registroCamere.get(i).isDisponibile()){
+					System.out.println(registroCamere.get(i));
+				}
+			}
+		}
+
+		public void stampaMatrimonialiDisp() {
+			System.out.println("Ecco l'elenco delle  elenco di camere matrimoniali disponibili :");
+			for(int i=0;i<registroCamere.size();i++){
+				if(registroCamere.get(i).isMatrimoniale() && registroCamere.get(i).isDisponibile()){
+					System.out.println(registroCamere.get(i));
+				}
+			}
+		}
+
+
+//Ricerca tramite l'id della camera passato come parametro se la camera è presente nella lista e disponibile
 		public int cercaIdCamera(int id){
 			for(int i=0;i<registroCamere.size();i++){
 				if(((registroCamere.get(i)).getId())==id && ((registroCamere.get(i)).isDisponibile()==true)){
@@ -90,13 +124,30 @@ public class RegistroCamere {
 		public int getTotDoppieDisp(){
 			return this.totDoppieDisp;
 		}
-		
+
 //Ritorna la somma delle camere matrimoniali disponibili
 		public int getTotMatrimonialiDisp(){
 			return this.totMatrimonialiDisp;
 		}
 
-//Incrementa il contatore aggiornato delle camere singole disponibili 
+
+		//Ritorna la somma delle camere singole disponibili
+		public void setDecrTotSingoleDisp(){
+			 this.totSingoleDisp--;
+		}
+
+//Ritorna la somma delle camere doppie disponibili
+		public void setDecrTotDoppieDisp(){
+			 this.totDoppieDisp--;
+		}
+
+//Ritorna la somma delle camere matrimoniali disponibili
+		public void setDecrTotMatrimonialiDisp(){
+			 this.totMatrimonialiDisp--;
+		}
+
+
+//Incrementa il contatore aggiornato delle camere singole disponibili
 		public void setIncrTotSingole(){
 			for(int i=0;i<registroCamere.size();i++){
 				if(registroCamere.get(i).isSingola() && registroCamere.get(i).isDisponibile()){
@@ -105,7 +156,7 @@ public class RegistroCamere {
 			}
 		}
 
-//Incrementa il contatore aggiornato delle camere doppie disponibili 		
+//Incrementa il contatore aggiornato delle camere doppie disponibili
 		public void setIncrTotDoppie(){
 			for(int i=0;i<registroCamere.size();i++){
 				if(registroCamere.get(i).isDoppia() && registroCamere.get(i).isDisponibile()){
@@ -114,7 +165,7 @@ public class RegistroCamere {
 			}
 		}
 
-//Incrementa il contatore aggiornato delle camere matrimoniali disponibili 
+//Incrementa il contatore aggiornato delle camere matrimoniali disponibili
 		public void setIncrTotMatrimoniali(){
 			for(int i=0;i<registroCamere.size();i++){
 				if(registroCamere.get(i).isMatrimoniale() && registroCamere.get(i).isDisponibile()){
@@ -122,8 +173,8 @@ public class RegistroCamere {
 				}
 			}
 		}
-		
-//Decrementa il contatore aggiornato delle camere singole disponibili 
+
+//Decrementa il contatore aggiornato delle camere singole disponibili
 		public void setDecrTotSingole(){
 			for(int i=0;i<registroCamere.size();i++){
 				if(registroCamere.get(i).isSingola() && registroCamere.get(i).isDisponibile()){
@@ -132,7 +183,7 @@ public class RegistroCamere {
 			}
 		}
 
-//Decrementa il contatore aggiornato delle camere doppie disponibili 		
+//Decrementa il contatore aggiornato delle camere doppie disponibili
 		public void setDecrTotDoppie(){
 			for(int i=0;i<registroCamere.size();i++){
 				if(registroCamere.get(i).isDoppia() && registroCamere.get(i).isDisponibile()){
@@ -141,7 +192,7 @@ public class RegistroCamere {
 			}
 		}
 
-//Decrementa il contatore aggiornato delle camere matrimoniali disponibili 
+//Decrementa il contatore aggiornato delle camere matrimoniali disponibili
 		public void setDecrTotMatrimoniali(){
 			for(int i=0;i<registroCamere.size();i++){
 				if(registroCamere.get(i).isMatrimoniale() && registroCamere.get(i).isDisponibile()){
@@ -149,9 +200,68 @@ public class RegistroCamere {
 				}
 			}
 		}
-		
-		
-		
-		
-		
+
+//Ritorna il vettore degli id delle camere singole disponibili
+		public int[] getIdCamereSingoleDisponibili(){
+			System.out.println("Ecco l'elenco degli id delle camere singole disponibili :");
+			for(int i=0;i<registroCamere.size();i++){
+				if(registroCamere.get(i).isSingola() && registroCamere.get(i).isDisponibile()){
+					for(int j=0;j<idSingoleDisp.length;j++){
+						idSingoleDisp[j]=registroCamere.get(i).getId();
+						System.out.println(".# "+idSingoleDisp[i]+", ");
+						return idSingoleDisp;
+					}
+				}
+				else{
+					System.out.println("non ho trovato id");
+					return null;
+				}
+
+			}
+			return idSingoleDisp;
+		}
+
+
+//Ritorna il vettore degli id delle camere singole disponibili
+		public int[] getIdCamereDoppieDisponibili(){
+			System.out.print("Ecco l'elenco degli id delle camere doppie disponibili :");
+			for(int i=0;i<registroCamere.size();i++){
+				if(registroCamere.get(i).isDoppia() && registroCamere.get(i).isDisponibile()){
+					for(int j=0;j<idDoppieDisp.length;j++){
+						idDoppieDisp[j]=registroCamere.get(i).getId();
+						System.out.println(".# "+idDoppieDisp[i]+", ");
+						return idDoppieDisp;
+					}
+				}
+				else{
+					System.out.println("non ho trovato id");
+					return null;
+				}
+
+			}
+			return idDoppieDisp;
+		}
+
+
+//Ritorna il vettore degli id delle camere singole disponibili
+		public int[] getIdCamereMatrimonialiDisponibili(){
+			System.out.println("Ecco l'elenco degli id delle camere matrimoniali disponibili :");
+			for(int i=0;i<registroCamere.size();i++){
+				if(registroCamere.get(i).isMatrimoniale() && registroCamere.get(i).isDisponibile()){
+					for(int j=0;j<idMatrimonialiDisp.length;j++){
+						idMatrimonialiDisp[j]=registroCamere.get(i).getId();
+						System.out.println(".# "+idMatrimonialiDisp[i]+", ");
+						return idMatrimonialiDisp;
+					}
+				}
+				else{
+					System.out.println("non ho trovato id");
+					return null;
+				}
+
+			}
+			return idMatrimonialiDisp;
+		}
+
+
 }

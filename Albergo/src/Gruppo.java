@@ -13,7 +13,7 @@ public class Gruppo {
 	public final static int MaxSingole=30;
 	public final static int MaxDoppie=20;
 	public final static int MaxMatrimoniali=15;
-	static int camerePrenotate;
+	private int numCamerePrenotate;
 	private boolean continua=false;
 	RegistroCamere rc=null;
 
@@ -22,7 +22,7 @@ public class Gruppo {
 
 	}
 
-//Costruttore completo con tutti i parametri id compreso(metodo inutile?? boh se uso l'id e voglio istanziarlo serve),per praticità ha pure il tot sinmgole doppie e matrimoniali richieste 
+//Costruttore completo con tutti i parametri id compreso(metodo inutile?? boh se uso l'id e voglio istanziarlo serve),per praticità ha pure il tot sinmgole doppie e matrimoniali richieste
 	public Gruppo(int id,String nome,String dataArrivo, double anticipoVersato, int singole, int doppie, int matrimoniali){
 		this.id=id;
 		this.nome=nome;
@@ -51,7 +51,7 @@ public class Gruppo {
 	}
 */
 
-//metodo che incrementa l'id e i vari getter setter del nomegruppo, dataarrivo(da modificare in Time??cmq vera data,magari qlla attuale),anticipo 
+//metodo che incrementa l'id e i vari getter setter del nomegruppo, dataarrivo(da modificare in Time??cmq vera data,magari qlla attuale),anticipo
 	public int getId(){
 		return id;
 	}
@@ -97,14 +97,18 @@ public class Gruppo {
 	public int getMatrimoniali(){
 		return this.matrimoniali;
 	}
-
-	public int getCamerePrenotate(){
-		return camerePrenotate;
+//Ritorna il numero di camere prenotate dall'istanza gruppo
+	public int getNumCamerePrenotate(){
+		numCamerePrenotate=singole+doppie+matrimoniali;
+		return numCamerePrenotate;
 	}
 
-	public void setCamerePrenotate(int camerePrenotate){
-		camerePrenotate=camerePrenotate;
+
+//metodo che setta il numero tot di camere prenotate dal gruppo,di fatto una volta pagato l'istanza gruppo può rimanere nel gc,ma non ci sono più camere prenotate da esso
+	public void setNumCamerePrenotate(int numeroCamerePrenotate){
+		numCamerePrenotate=numeroCamerePrenotate;
 	}
+
 
 //da togliere
 	public void setRichiestaComposizione(int s, int d, int m){
@@ -126,23 +130,25 @@ public class Gruppo {
 		return "Codice Gruppo :"+id+"\n"+"Nome Gruppo: \t"+nome+"\n"+"Data Arrivo: \t"+dataArrivo+"\n"+"Anticipo Versato: \t"+anticipoVersato+"\n"+"numero di camere singole prenotate: "+singole+"\n"+"numero di camere doppie prenotate: "+doppie+"numero di camere matrimoniali prenotate: "+matrimoniali+"";
 		}
 
+
+
 //abb completo,e corretto nei controlli
 	public void InserisciGruppo(){
 		try{
 			BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
 			//Inserisco nome del gruppo,datacheckin,anticipo,numero di camere singole-doppi-matrimoniali richieste(con controlli)
 			//l'id del gruppo prima di essere memorizzato è zero,viene incrementato in modo automatico ad ogni salvataggio nel registro
-			System.out.println("Inserisci il nome del gruppo: ");	
+			System.out.println("Inserisci il nome del gruppo: ");
 			this.nome=promptLine.readLine();
 			System.out.println("Inserisci la data di arrivo checkin");
 			this.dataArrivo=promptLine.readLine();
 			System.out.println("Inserisci l'importo dell'anticipo versato: ");
 			this.anticipoVersato=Double.parseDouble(promptLine.readLine());
-		
+
 			do{
 			System.out.println("Inserisci il numero di camere singole richieste: ");
 			this.singole=Integer.parseInt(promptLine.readLine());
-			
+
 			if(singole>=0 && singole>this.MaxSingole){
 				System.out.println("E' stato inserito un numero di camere singole oltre la capacità dell'albergo");
 				}
@@ -157,7 +163,7 @@ public class Gruppo {
 				continua=true;break;
 			}
 			}while(continua);
-			
+
 			do{
 			System.out.println("Inserisci il numero di camere doppie richieste: ");
 			this.doppie=Integer.parseInt(promptLine.readLine());
@@ -175,7 +181,7 @@ public class Gruppo {
 				continua=true;break;
 			}
 			}while(continua);
-			
+
 			do{
 			System.out.println("Inserisci il numero di camere matrimoniali richieste: ");
 			this.matrimoniali=Integer.parseInt(promptLine.readLine());
@@ -193,7 +199,7 @@ public class Gruppo {
 				continua=true;break;
 			}
 			}while(continua);
-		
+
 
 		}catch(IOException ioe){
 			ioe.printStackTrace();
