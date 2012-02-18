@@ -46,7 +46,7 @@ public class RegistroGruppi {
 //Salva nel file txt lo storico gruppi,ovvero il guestBook
 	public void aggiornaStoricoGruppi(){
 		try{
-            File fileTesto =new File("storicoGruppi.txt");
+            File fileTesto =new File("guestBook.txt");
             FileInputStream inStream= new FileInputStream(fileTesto);
             BufferedReader lineReader= new BufferedReader(new InputStreamReader(inStream));
 
@@ -59,7 +59,7 @@ public class RegistroGruppi {
             lineReader.close();
             String storicoSalvatoPrec=buffer.toString();
 
-            File fileModificato =new File("storicoGruppi.txt");
+            File fileModificato =new File("guestBook.txt");
             FileOutputStream outStream= new FileOutputStream(fileModificato);
             BufferedWriter lineWriter= new BufferedWriter(new OutputStreamWriter(outStream));
             lineWriter.newLine();
@@ -111,7 +111,7 @@ public class RegistroGruppi {
 
 	public void caricaDaXML(){
 		try{
-            File fileTesto =new File("registroGruppi.txt");
+            File fileTesto =new File("RegistroGruppi.txt");
             FileInputStream inStream= new FileInputStream(fileTesto);
             BufferedReader lineReader= new BufferedReader(new InputStreamReader(inStream));
             Gruppo gruppo;
