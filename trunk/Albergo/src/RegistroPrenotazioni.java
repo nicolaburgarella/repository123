@@ -24,8 +24,8 @@ public class RegistroPrenotazioni {
 
 	public void rimuoviPrenotazione(int posizione){
 		registroPrenotazioni.get(posizione).getCamera().setDisponibile(true);
-		int camerePrenotate=(registroPrenotazioni.get(posizione).getGruppo().getCamerePrenotate());
-		registroPrenotazioni.get(posizione).getGruppo().setCamerePrenotate(camerePrenotate-1);
+		int numCamerePrenotate=(registroPrenotazioni.get(posizione).getGruppo().getNumCamerePrenotate());
+		registroPrenotazioni.get(posizione).getGruppo().setNumCamerePrenotate(0);
 		//da rivedere!
 		registroPrenotazioni.remove(posizione);
 	}

@@ -93,7 +93,12 @@ public class Extra {
 		RegistroCamere registroCamera=rc;
 		}
 
-
+	/*
+	public cercaCamereConExtra(){
+		
+	}
+*/
+	
 //Inserimento dell'extra,ovvero della data,numerocamera,tipo di extra(aumentare i controlli)
 //aumentare i controlli
 //occorre controllare che ci sia almeno una camera	
