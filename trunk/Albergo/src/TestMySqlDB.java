@@ -3,8 +3,6 @@
 import java.io.IOException;
 import java.sql.SQLException;
 
-import basic.MySqlDB;
-
 /**
  * This class test the Mysql connection
  */
