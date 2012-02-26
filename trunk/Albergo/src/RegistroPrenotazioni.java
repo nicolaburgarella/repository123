@@ -2,18 +2,22 @@ import java.util.ArrayList;
 
 public class RegistroPrenotazioni {
 	private ArrayList<Prenotazione> registroPrenotazioni=new ArrayList<Prenotazione>();
+	RegistroCamere rc=null;
+	ArrayList<Camera> rcPrenotate=null;
 
 	public RegistroPrenotazioni(){
 		registroPrenotazioni.clear();
 	}
+
 
 	public boolean inserisci(Prenotazione p){
 		registroPrenotazioni.add(p);
 		return true;
 	}
 
-	public int cerca(int idCamera,Gruppo gruppo){
+	public int cerca(ArrayList<Camera> rcp,Gruppo gruppo){
 		for(int i=0;i<registroPrenotazioni.size();i++){
+			for(int j=0;j<rcp)
 			if((registroPrenotazioni.get(i).getCamera().getId()==idCamera)&&
 					(registroPrenotazioni.get(i).getGruppo().getId()==gruppo.getId())){
 				return i;
@@ -29,4 +33,11 @@ public class RegistroPrenotazioni {
 		//da rivedere!
 		registroPrenotazioni.remove(posizione);
 	}
+	
+	public ArrayList<Prenotazione> getCamerePrenotate(){
+		return registroPrenotazioni;
+	}
+
+	
+	
 }

@@ -113,6 +113,7 @@ public class Camera {
 		return this.extra;
 	}
 
+
 //utile per stampare al salvataggio in xml della camera se la camera ha già richiesto extra
 	public String isExtra(){
 		if(this.extra!=null){
