@@ -20,13 +20,16 @@ public class Albergo {
 		re.caricaDaXML();
 		rg.caricaDaXML();
 		RegistroCamere rc=new RegistroCamere();
-		RegistroPrenotazioni rp=new RegistroPrenotazioni();
+		RegistroCamere rcPrenotate=null;
+		Prenotazione p =null;
 		String sceltaOpzione="";
 		Gruppo gruppo;
 		String tipo="";
 		String dataCheckout = null;
 		int giorniPernottamento=0;
 		double costoGiornalieroBaseACamera=60.0;
+		RegistroPrenotazioni rp=null;
+		//int posizione=0;
 
 
 		do{
@@ -274,24 +277,84 @@ public class Albergo {
 
 			case 8:
 			{
-				System.out.println("Inserimento dati relativi alla camera da prenotare:\n+Inserisci il codice della camera: ");
-				int idCamera = 0;
-				try {
-					idCamera = Integer.parseInt(promptLine.readLine());
-				} catch (NumberFormatException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				int posizione=rc.cercaIdCamera(idCamera);
-				if(posizione>0){
-					Camera c=rc.getCamera(posizione);
-					System.out.println("Camera trovata: ");
-					System.out.println(c);
-					System.out.println("\n\n");
-					System.out.println("Inserimento dati relativi al gruppo da cercare: ");
+				//Prenotazione p=new Prenotazione();
+				int posizione=0;
+				do{
+					System.out.println("Inserimento dati relativi alle camere da prenotare:\n+Inserisci il codice della camera : ");
+					int idCamera = 0;
+					try {
+						idCamera = Integer.parseInt(promptLine.readLine());
+					} catch (NumberFormatException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					posizione=rc.cercaIdCamera(idCamera);
+					if(posizione>0){
+						if(rc.getCamera(posizione).isSingola()){
+							int idCSD[]=rc.getIdCamereSingoleDisponibili();
+							for(int i=0;i<idCSD.length;i++){
+								System.out.println(idCSD[i]);
+								if(idCSD[i]==idCamera){
+									System.out.println("id trovato e corrisponde!");
+								}
+							}
+						}
+
+						if(rc.getCamera(posizione).isDoppia()){
+							int idCDD[]=rc.getIdCamereDoppieDisponibili();
+							for(int i=0;i<idCDD.length;i++){
+								System.out.println(idCDD[i]);
+								if(idCDD[i]==idCamera){
+									System.out.println("id trovato e corrisponde!");
+								}
+							}
+						}
+						
+						if(rc.getCamera(posizione).isMatrimoniale()){
+							int idCMD[]=rc.getIdCamereMatrimonialiDisponibili();
+							for(int i=0;i<idCMD.length;i++){
+								System.out.println(idCMD[i]);
+								if(idCMD[i]==idCamera){
+									System.out.println("id trovato e corrisponde!");
+								}
+							}
+						}
+						
+						Camera c=rc.getCamera(posizione);
+						rcPrenotate.getCamerePrenotate().add(c);
+						System.out.println("Camera trovata: ");
+						System.out.println(c);
+						System.out.println("\n\n");
+						
+						do{
+							System.out.println("Premi QUIT per terminare l'inserimento delle camere");
+							try {
+								buf=promptLine.readLine();
+								buf.toUpperCase();
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							if(buf=="QUIT"){continua=true;}
+							else{//break;
+								
+							}
+						}while(!continua);
+						
+						if(posizione==-1){
+							System.out.println("Camera non disponibile perchè già prenotata");
+						}
+						if(posizione==-2){
+							System.out.println("Camera non trovata");
+						}
+					}
+	
+				}while(continua);
+					
+				System.out.println("Inserimento dati relativi al gruppo da cercare: ");
 					Gruppo g = null;
 					g.InserisciGruppo();
 					g=new Gruppo(g.getNome(), g.getDataArrivo(), g.getAnticipoVersato(), g.getSingole(), g.getDoppie(), g.getMatrimoniali());
@@ -300,11 +363,12 @@ public class Albergo {
 						Gruppo g1=null;
 						g1=rg.getGruppo(trovato);
 						if(g1.getNumCamerePrenotate()<=10-1){//max 10 camere prenotate
-						System.out.println("quanti giorni si vuol alloggiare? [0: 5giorni][1: 7giorni][][]");
+						System.out.println("quanti giorni si vuol alloggiare? [0: 5giorni][1: 7giorni][2: 14giorni][3: 21giorni] [4: 30giorni]");
 						giorniPernottamento=1;
 						//oppure basta che sia meno di un mese e ho la stringa(da far diventare time) poi da convertire nel giorno del checkout
 						dataCheckout="5";
-						Prenotazione p=new Prenotazione(c, g1, dataCheckout,g1.getNumCamerePrenotate());
+						int numeroCamerePrenotate=5;
+						p=new Prenotazione(rcPrenotate.getCamerePrenotate(), g1, dataCheckout,5);
 						rp.inserisci(p);
 						System.out.println("Prenotazione effettuata con successo");
 						}
@@ -316,16 +380,7 @@ public class Albergo {
 						System.out.println("gruppo non trovato");
 					}
 				}
-				if(posizione==-1){
-					System.out.println("Camera non disponibile perchè già prenotata");
-				}
-				if(posizione==-2){
-					System.out.println("Camera non trovata");
-				}
-				else{
-
-				}
-
+				
 					do{
 						System.out.println("Premi ENTER per continuare");
 						try {
@@ -337,7 +392,7 @@ public class Albergo {
 						if(buf=="\n"){continua=true;}
 					}while(!continua);
 					break;
-				}
+			//}
 			case 9:
 			{
 				System.out.println("Pagamento della prenotazione del gruppo e degli extra relativi alle singole camere");
@@ -351,6 +406,7 @@ public class Albergo {
 
 			case 10:
 			{
+				/*
 				System.out.println("Inserimento dati delle camere da rilassciare,eliminare la prenotazione");
 				System.out.println("Inserisci il codice di camera: ");
 				int idCamera = 0;
@@ -363,7 +419,8 @@ public class Albergo {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("Inserisci il codice del gruppo: ");
+				*/
+				System.out.println("Inserisci il codice del gruppo da eliminare con la prenotazione: ");
 				int idGruppo = 0;
 				try {
 					idGruppo = Integer.parseInt(promptLine.readLine());
@@ -373,6 +430,16 @@ public class Albergo {
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				}
+				for(int i=0;i<rp.getRegistroPrenotazioni().size();i++){
+					if(rp.getRegistroPrenotazioni().get(i).getGruppo().getId()==idGruppo){
+						rc.getRegistroPrenotazioni().get(i);
+						
+					}
+					else{
+						System.out.println("gruppo non trovato");
+				}
+					
 				}
 				int trovato=rp.cerca(idCamera,gruppo);//devo implementare un cerca che passandogli una camera e il gruppo torva tt le camere intestate al gruppo
 				if(trovato>=0){

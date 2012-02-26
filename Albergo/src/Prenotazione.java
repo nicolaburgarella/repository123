@@ -4,28 +4,32 @@ import java.util.TreeMap;
 
 
 public class Prenotazione {
+	RegistroPrenotazioni rp=null;
+	private int idPrenotazione=0;
 	private String dataCheckout;
-	private Map camereGruppo = new TreeMap();
-	public int[] camereP=null;
 	Gruppo gruppo;
 	int numeroCamerePrenotate=0;
-	RegistroCamere rc=null;
+	ArrayList<Camera> rcPrenotate=null;
 
-	public Prenotazione(){
+	public Prenotazione(ArrayList<Camera> rcp, Gruppo g, String dataCheckout,int numeroCamerePrenotate){
+		this.rcPrenotate=rcp;
+		this.gruppo=g;
+		this.dataCheckout=dataCheckout;
+		this.numeroCamerePrenotate=numeroCamerePrenotate;
+		//da rivedere come funziona il contatore delle camere prenotate 
+		int i=gruppo.getNumCamerePrenotate()+this.numeroCamerePrenotate;
+		gruppo.setNumCamerePrenotate(i);
+		idPrenotazione++;
 
 	}
 
-	public Prenotazione(int[] camereP,Gruppo gruppo, String dataCheckout,int numeroCamerePrenotate){
-		this.camereP=camereP;
-		this.gruppo=gruppo;
-		this.numeroCamerePrenotate=numeroCamerePrenotate;
-		this.dataCheckout=dataCheckout;
+/*
 		setCamerePrenotateNonDisp();
-		/*
 		int i=gruppo.getNumCamerePrenotate()+numeroCamerePrenotate;
 		gruppo.setNumCamerePrenotate(i);
-		*/
+
 	}
+*/
 
 /*
 	public void setCamerePrenotateNonDisp(){
@@ -39,47 +43,15 @@ public class Prenotazione {
 	}
 */
 
-	public void addInCamereP(int idCameraPrenotata){
-		for(int j=0;j<rc.getRegistroCamere().size();j++){
-			for(int i=0;i<camereP.length;i++){
-				if(rc.getRegistroCamere().get(j).getId()==idCameraPrenotata){
-					camereP[i]=idCameraPrenotata;
-				}
-			}
-		}
-	}
-
-	public void assegnaCamereAGruppo(Gruppo g){
-		//if(g.getSingole()){
-			camereGruppo.put("SINGOLA", XXX);
-			rc.setDecrTotSingoleDisp();//-->ci vorrebbe una cazzo di pila,arraylist abdrebbe bene
-
-
-		}
-
-		if(g.getDoppie()<=this.getTotDoppieDisp()){
-
-
-		}
-		if(g.getMatrimoniali()<=this.getTotMatrimonialiDisp()){
-
-
-		}
-
-
-	}
-
-
-
 
 
 	Gruppo getGruppo(){
 		return this.gruppo;
 	}
-
-    public int[] getCamereP(){
-        return this.camereP;
-    }
+	
+	public ArrayList<Camera> getRegistroPrenotazioni(){
+		return registroPrenotazioni;
+	}
 
 
 

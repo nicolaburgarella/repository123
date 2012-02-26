@@ -13,6 +13,7 @@ public class RegistroCamere {
 	int[] idSingoleDisp=null;
 	int[] idDoppieDisp=null;
 	int[] idMatrimonialiDisp=null;
+	private ArrayList<Camera> camerePrenotate=new ArrayList<Camera>();
 
 //Inizializza il registro camere rimuovendo tutti gli elementi della lista
 	public RegistroCamere(){
@@ -27,7 +28,7 @@ public class RegistroCamere {
 
 //Controlla se la camera passata come parametro esiste nella lista,se c'è viene inserita la camera nel registro (cioè aggiunta nella lista)
 		public boolean inserisci(Camera camera){
-			for(int i=0;i<registroCamere.size()-1;i++){
+			for(int i=0;i<registroCamere.size();i++){
 				if((registroCamere.get(i)).equals(camera)){
 					return false;
 				}
@@ -222,7 +223,7 @@ public class RegistroCamere {
 		}
 
 
-//Ritorna il vettore degli id delle camere singole disponibili
+//Ritorna il vettore degli id delle camere doppie disponibili
 		public int[] getIdCamereDoppieDisponibili(){
 			System.out.print("Ecco l'elenco degli id delle camere doppie disponibili :");
 			for(int i=0;i<registroCamere.size();i++){
@@ -243,7 +244,7 @@ public class RegistroCamere {
 		}
 
 
-//Ritorna il vettore degli id delle camere singole disponibili
+//Ritorna il vettore degli id delle camere matrimoniali disponibili
 		public int[] getIdCamereMatrimonialiDisponibili(){
 			System.out.println("Ecco l'elenco degli id delle camere matrimoniali disponibili :");
 			for(int i=0;i<registroCamere.size();i++){
@@ -261,6 +262,10 @@ public class RegistroCamere {
 
 			}
 			return idMatrimonialiDisp;
+		}
+		
+		public ArrayList<Camera> getCamerePrenotate(){
+			return camerePrenotate;
 		}
 
 
