@@ -25,7 +25,7 @@ public class RegistroGruppi {
 		return true;
 	}
 
-
+//da togliere ,non lo uso
 //Controlla se l'id del gruppo passato come parametro esiste e ritorna l'indice della lista con quell'id
 	public int cerca(int idGruppo){
 		for(int i=0;i<registroGruppi.size();i++){
@@ -35,7 +35,6 @@ public class RegistroGruppi {
 		}
 		return -1;
 	}
-
 
 //Ritorna il gruppo in base all'indice della lista passato come parametro
 	public Gruppo getGruppo(int posizione){

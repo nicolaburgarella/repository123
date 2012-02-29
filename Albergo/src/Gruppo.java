@@ -117,15 +117,6 @@ public class Gruppo {
 		this.matrimoniali=m;
 	}
 
-//da togliere
-	public int[] getRichiestaComposizione(){
-		int richiestaGruppo[]= new int[3];
-		this.singole=richiestaGruppo[0];
-		this.doppie=richiestaGruppo[1];
-		this.matrimoniali=richiestaGruppo[2];
-		return richiestaGruppo;
-	}
-
 	public String toString(){
 		return "Codice Gruppo :"+id+"\n"+"Nome Gruppo: \t"+nome+"\n"+"Data Arrivo: \t"+dataArrivo+"\n"+"Anticipo Versato: \t"+anticipoVersato+"\n"+"numero di camere singole prenotate: "+singole+"\n"+"numero di camere doppie prenotate: "+doppie+"numero di camere matrimoniali prenotate: "+matrimoniali+"";
 		}

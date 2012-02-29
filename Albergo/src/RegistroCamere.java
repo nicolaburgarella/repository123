@@ -1,3 +1,11 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 
@@ -52,20 +60,6 @@ public class RegistroCamere {
 			}
 			if(!flag){
 				System.out.println("Non è stato trovato alcuna camera con quell' extra");
-			}
-		}
-
-//da togliere: Ricerca se la richiesta del gruppo relativa al numero di camere da prenotare rispetta la capacità dell'albergo
-		public void cerca(Gruppo gruppo){
-			boolean flag=false;
-			int[] vComp=new int[3];
-			vComp=gruppo.getRichiestaComposizione();
-			if(vComp[0]<=Gruppo.MaxSingole && vComp[1]<=Gruppo.MaxDoppie && vComp[2]<=Gruppo.MaxMatrimoniali){
-				System.out.println("La richiesta delle camere soddisfa la capacità dell'albergo");
-				flag=true;
-			}
-			if(!flag){
-			System.out.println("La richiesta delle camere non rispetta i limiti di capacità dell'albergo");
 			}
 		}
 
@@ -262,5 +256,84 @@ public class RegistroCamere {
 			}
 			return idMatrimonialiDisp;
 		}
+		
+		
+		/*
+		 * salva va reso un file xml <GRUPPO id="" nome="" dataArrivo="" anticipo="" singole="" doppie="" matrimoniali="" />
+		 * */
+		public void salvaInXML(){
+			try{
+				File file =new File("RegistroCamere.txt");
+				FileOutputStream outStream= new FileOutputStream(file);
+		        BufferedWriter lineWriter= new BufferedWriter(new OutputStreamWriter(outStream));
+		        for(int i=0;i<registroCamere.size();i++){
+		            String LineaTesto;
+		            LineaTesto="<CAMERA id="+(registroCamere.get(i)).getId()+" descrizione="+(registroCamere.get(i)).getDescrizione()+" extra="+
+		            ((registroCamere.get(i)).isExtra())+" disponibile="+((registroCamere.get(i)).isDisponibile())+" />";
+		            lineWriter.write(LineaTesto);
+		        	//lineWriter.newLine();
+				}
+		        outStream.close();
+		        lineWriter.close();
+			}
+			catch(IOException ioe){
+				ioe.printStackTrace();
+			}
+		}
+
+
+
+
+		public void caricaDaXML(){
+			try{
+	            File fileTesto =new File("RegistroCamere.txt");
+	            FileInputStream inStream= new FileInputStream(fileTesto);
+	            BufferedReader lineReader= new BufferedReader(new InputStreamReader(inStream));
+	            Camera camera = null;
+	            String lineaTesto;
+	            int indexInit,indexEnd;
+	            boolean trovato=false;
+	            //legge il file riga per riga
+	            while((lineaTesto=lineReader.readLine())!=null){
+	                    if((indexInit=lineaTesto.indexOf("<CAMERA"))>-1){
+	                            //estrae i dati del gruppo
+	                            int id=Integer.parseInt(estrai("id",lineaTesto));
+	                            String descrizione=estrai("descrizione",lineaTesto);
+	                            String extra=estrai("extra",lineaTesto);
+	                            String disponibile=estrai("disponibile",lineaTesto);
+	                            //Appends the specified element to the end of this list.
+	                            registroCamere.add(camera);
+	                            trovato=true;
+	                    }
+	                    else if((indexInit=lineaTesto.indexOf(" />"))>-1){
+	                            System.out.println("Appena caricato il gruppo");
+	                    }
+	                    else{
+	                            continue;
+	                    }
+	            }
+	            //chiude il file di testo
+	            lineReader.close();
+	            inStream.close();
+	            }
+	            catch(IOException ioe){
+	                    ioe.printStackTrace();
+	            }
+		}
+
+		static String estrai(String chiave,String riga){
+			int indexInit,indexEnd;
+			indexInit=riga.indexOf(chiave)+chiave.length()+2;//pos chiave+2,ovvero ="
+			String valore=riga.substring(indexInit);
+			indexEnd=valore.indexOf('"');
+			valore=valore.substring(0,indexEnd); //il secondo parametro di substring è escluso
+			return valore;
+		}
+		
+		
+		
+		
+		
+		
 
 }
