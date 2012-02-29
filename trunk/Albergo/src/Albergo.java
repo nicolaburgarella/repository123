@@ -446,25 +446,12 @@ public class Albergo {
 						//controllo ogni camera della prenotazione e verifico se ha usufruito degli extra che stamperò singolarmente raggruppati per camera
 						System.out.println("Passiamo ora al pagamento degli extra da addebitare a chi ha usufruito della camera che lo ha richiesto");
 						for(int j=0;j<rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().size();j++){
-							//guardo se nell'arraylist delle camere prenotate in extra della camera c'è quell'extra dentro il registro totale degli extra
-							
-							//il problema è che una camera può avere molti extra,quindi serve un'arraylist degli extra dentro camera,non passargli l'istanza 
-							if(rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).getExtra()!=null){
-								int idCameraPrenotataConExtra=rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).getId();
-								int posizioneExtra=re.getExtra(idCameraPrenotataConExtra);
-								
-								for(int k=0;k<rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).getExtra()==re.getRegistroExtra())
-								System.out.println(rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).getExtra().toString());
-							}
-							else{
-								System.out.println("la camera non ha usufruito di extra");
-							}							
+							rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).stampaTotExtrasDellaCamera();
+							System.out.println("somma dei costi della camera da fare in extra o qui.");
+													
 						}
-						
-						
-						
-						
-						
+							
+						System.out.println("Ora posso eliminare la prenotazione");
 						rp.rimuoviPrenotazione(i);
 						System.out.println("Prenotazione rimossa con successo");	
 					}
