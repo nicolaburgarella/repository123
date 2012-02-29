@@ -36,7 +36,7 @@ public class Albergo {
 		String tipo="";
 		String dataCheckout = null;
 		int giorniPernottamento=0;
-		double costoGiornalieroBaseACamera=60.0;
+		double costoPernottamento;
 		//RegistroPrenotazioni rp=null;
 		//int posizione=0;
 
@@ -419,27 +419,7 @@ public class Albergo {
 
 			case 9:
 			{
-				/* PAGAMENTO E CANCELLAZIONE DELLA PRENOTAZIONE e quindi delle camere prenotate le quali camere vanno disponibili
-				System.out.println("Inserimento dati delle camere da rilassciare,eliminare la prenotazione");
-				System.out.println("Inserisci il codice di camera: ");
-				int idCamera = 0;
-				try {
-					idCamera = Integer.parseInt(promptLine.readLine());
-				} catch (NumberFormatException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				//
-				System.out.println("Pagamento della prenotazione del gruppo e degli extra relativi alle camere specifiche");
-				System.out.println("I giorni di pernottamento sono stati "+giorniPernottamento+" per un costo giornaliero a camera di "+costoGiornalieroBaseACamera+ "per un totale di euro: "+(costoGiornalieroBaseACamera*giorniPernottamento));
-				System.out.println("Ricercare tutte le camere del gruppo");
-				System.out.println("stampa tutti gli extra per quelle camere");
-				//in prenotazione non posso passargli un'istanza camera,va rifatto e ritestato...
-				*/
-				System.out.println("Inserisci il codice del gruppo per il pagamento e la successiva eliminazione della prenotazione: ");
+				System.out.println("Inserisci il codice del gruppo per il pagamento: ");
 				int idGruppo = 0;
 				try {
 					idGruppo = Integer.parseInt(promptLine.readLine());
@@ -450,11 +430,41 @@ public class Albergo {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				//in quanto biunivoca,trova dal gruppo la prenotazione 
+				
 				for(int i=0;i<rp.getRegistroPrenotazioni().size();i++){
 					if((rp.getRegistroPrenotazioni().get(i).getGruppo().getId()==idGruppo)&&!(rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().isEmpty())){
 						System.out.print("Gruppo trovato,ecco la sua prenotazione: ");
 						rp.getRegistroPrenotazioni().get(i).toString();
+						System.out.println("Pagamento camere usate nel pernottamento:");
+						int singole=rp.getRegistroPrenotazioni().get(i).getGruppo().getSingole();
+						int doppie=rp.getRegistroPrenotazioni().get(i).getGruppo().getDoppie();
+						int matrimoniali=rp.getRegistroPrenotazioni().get(i).getGruppo().getMatrimoniali();
+						System.out.println("Il gruppo deve pagare:\n Camere singole\t"+Camera.costoSingola*singole*giorniPernottamento+"euro \n"+"Camere doppie\t"+Camera.costoDoppia*doppie*giorniPernottamento+"euro \n"+"Camere matrimoniali\t"+Camera.costoMatrimoniale*matrimoniali*giorniPernottamento+"euro \n\n");
+						costoPernottamento=(Camera.costoSingola*singole+Camera.costoDoppia*doppie+Camera.costoMatrimoniale*matrimoniali)*giorniPernottamento;
+						System.out.println("Per un costo complessivo (extra esclusi) di "+costoPernottamento+" euro\n\n\n");
+						
+						//controllo ogni camera della prenotazione e verifico se ha usufruito degli extra che stamperò singolarmente raggruppati per camera
+						System.out.println("Passiamo ora al pagamento degli extra da addebitare a chi ha usufruito della camera che lo ha richiesto");
+						for(int j=0;j<rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().size();j++){
+							//guardo se nell'arraylist delle camere prenotate in extra della camera c'è quell'extra dentro il registro totale degli extra
+							
+							//il problema è che una camera può avere molti extra,quindi serve un'arraylist degli extra dentro camera,non passargli l'istanza 
+							if(rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).getExtra()!=null){
+								int idCameraPrenotataConExtra=rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).getId();
+								int posizioneExtra=re.getExtra(idCameraPrenotataConExtra);
+								
+								for(int k=0;k<rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).getExtra()==re.getRegistroExtra())
+								System.out.println(rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().get(j).getExtra().toString());
+							}
+							else{
+								System.out.println("la camera non ha usufruito di extra");
+							}							
+						}
+						
+						
+						
+						
+						
 						rp.rimuoviPrenotazione(i);
 						System.out.println("Prenotazione rimossa con successo");	
 					}

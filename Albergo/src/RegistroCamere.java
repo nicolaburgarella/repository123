@@ -51,10 +51,10 @@ public class RegistroCamere {
 		}
 
 //Ricerca se esiste l'extra passato come parametro alla funzione esiste nella classe camera,se c'è lo stampa
-		public void cerca(Extra extra){
+		public void cerca(Extra extra){ 						//ArrayList <Extra> extra
 			boolean flag=false;
 			for(int i=0;i<registroCamere.size();i++){
-				if((registroCamere.get(i).getExtra())==extra){
+				if((registroCamere.get(i).getExtra())==extra){  //getRegistroExtraDellacamera().
 					System.out.println(extra);
 				}
 			}
@@ -269,7 +269,7 @@ public class RegistroCamere {
 		        for(int i=0;i<registroCamere.size();i++){
 		            String LineaTesto;
 		            LineaTesto="<CAMERA id="+(registroCamere.get(i)).getId()+" descrizione="+(registroCamere.get(i)).getDescrizione()+" extra="+
-		            ((registroCamere.get(i)).isExtra())+" disponibile="+((registroCamere.get(i)).isDisponibile())+" />";
+		            ((registroCamere.get(i)).isExtras())+" disponibile="+((registroCamere.get(i)).isDisponibile())+" />";
 		            lineWriter.write(LineaTesto);
 		        	//lineWriter.newLine();
 				}
