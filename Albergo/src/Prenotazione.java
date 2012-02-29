@@ -10,10 +10,9 @@ public class Prenotazione {
 	Gruppo gruppo;
 	int numeroCamerePrenotate=0;
 	int giorniPernottamento=0;
-	ArrayList<Camera> rcPrenotate=null;
+	private ArrayList<Camera> registroCamerePrenotate=null;
 
-	public Prenotazione(ArrayList<Camera> rcp, Gruppo g, String dataCheckout,int giorniPernottamento){
-		this.rcPrenotate=rcp;
+	public Prenotazione(Gruppo g, String dataCheckout,int giorniPernottamento){
 		this.gruppo=g;
 		this.dataCheckout=dataCheckout;
 		this.giorniPernottamento=giorniPernottamento;
@@ -21,11 +20,24 @@ public class Prenotazione {
 		int i=gruppo.getNumCamerePrenotate()+this.numeroCamerePrenotate;
 		gruppo.setNumCamerePrenotate(i);
 		idPrenotazione++;
-
+	}
+	
+	public ArrayList <Camera> getRegistroCamerePrenotate(){
+		return this.registroCamerePrenotate;
+	}
+	
+	public void setRegistroCamerePrenotate(ArrayList<Camera> rcp){
+		this.registroCamerePrenotate=rcp;
+	}
+	
+	public void stampaCamerePrenotate(){
+		for(int i=0;i<registroCamerePrenotate.size();i++){
+			registroCamerePrenotate.get(i).toString();
+		}
 	}
 	
 	public String toString(){
-		return "Prenotazione relativa al gruppo "+gruppo+" per un numero totale di "+giorniPernottamento+" giorni.Viene indicata il "+dataCheckout+"come data checkout in cui devono liberare le camere.";
+		return "Prenotazione relativa al gruppo "+gruppo.getId()+" per un numero totale di "+this.giorniPernottamento+" giorni.Nella data di checkout "+this.dataCheckout+" le camere devono essere liberate";
 	}
 
 /*
@@ -49,15 +61,10 @@ public class Prenotazione {
 */
 
 
-
 	Gruppo getGruppo(){
 		return this.gruppo;
 	}
 	
-	public ArrayList<Camera> getRegistroPrenotazioni(){
-		return registroPrenotazioni;
-	}
-
 
 
 }

@@ -1,6 +1,9 @@
 import java.io.*;
 import java.io.ObjectInputStream.GetField;
 import java.util.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 
 public class Albergo {
 
@@ -9,6 +12,10 @@ public class Albergo {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		GregorianCalendar gc=new GregorianCalendar();
+		DateFormat df=new SimpleDateFormat("dd/MM/yyyy");
+		String oggi=df.format(gc.getTime());
+		
 		boolean end=false;
 		int scelta;
 		boolean sbagliato;
@@ -24,6 +31,7 @@ public class Albergo {
 		Prenotazione p =null;
 		String sceltaOpzione="";
 		Gruppo gruppo;
+		
 		String tipo="";
 		String dataCheckout = null;
 		int giorniPernottamento=0;
@@ -35,6 +43,10 @@ public class Albergo {
 		do{
 			do{
 				sbagliato=false;
+				
+				System.out.println("Data odierna:\t "+gc.get(Calendar.DAY_OF_WEEK)+", "+gc.get(Calendar.DATE)+" / "+(gc.get(Calendar.MONTH)+1)+" / "+gc.get(Calendar.YEAR));
+				System.out.println("Ora esatta:\t "+gc.get(Calendar.HOUR)+":"+gc.get(Calendar.MINUTE)+"\n\n");
+				
 				System.out.println("============GESTIONE ALBERGO============");
 				System.out.println("1 - INSERISCI IL GRUPPO");
 				System.out.println("2 - CERCA IL GRUPPO(per corrispondenza di id)");
@@ -43,9 +55,8 @@ public class Albergo {
 				System.out.println("5 - INSERISCI CAMERA");
 				System.out.println("6 - CERCA CAMERE PER TIPOLOGIA LETTI(stampa elenco camere della tipologia selezionata)");
 				System.out.println("7 - CERCA CAMERA PER EXTRA(stampa tutti gli extra della camera selezionata)");
-				System.out.println("8 - NUOVA PRENOTAZIONE");
-				System.out.println("9 - PAGAMENTO PRENOTAZIONE(per gruppo,e gli extra per camera)");
-				System.out.println("10 - ELIMINA PRENOTAZIONE");
+				System.out.println("8 - CHECKIN:NUOVA PRENOTAZIONE");
+				System.out.println("9 - CHECKOUT:PAGAMENTO PRENOTAZIONE(per gruppo,e gli extra per camera)ED ELIMINAZIONE DELLA PRENOTAZIONE");
 				System.out.println("0 - ESCI\n\n");
 				System.out.println("Inserire la scelta digitando l'apposito numero: ");
 				try{
@@ -277,7 +288,6 @@ public class Albergo {
 
 			case 8:
 			{
-				//Prenotazione p=new Prenotazione();
 				int posizione=0;
 				do{
 					System.out.println("Inserimento dati relativi alle camere da prenotare:\n+Inserisci il codice della camera : ");
@@ -324,7 +334,7 @@ public class Albergo {
 						}
 						
 						Camera c=rc.getCamera(posizione);
-						rcPrenotate.getCamerePrenotate().add(c);
+						p.getRegistroCamerePrenotate().add(c);
 						System.out.println("Camera trovata: ");
 						System.out.println(c);
 						System.out.println("\n\n");
@@ -363,16 +373,22 @@ public class Albergo {
 						Gruppo g1=null;
 						g1=rg.getGruppo(trovato);
 						if(g1.getNumCamerePrenotate()<=10-1){//max 10 camere prenotate
-						System.out.println("quanti giorni si vuol alloggiare? [0: 5giorni][1: 7giorni][2: 14giorni][3: 21giorni] [4: 30giorni]");
-						buf=promptLine.readLine();
+						System.out.println("quanti giorni si vuol alloggiare?");
+						try {
+							buf=promptLine.readLine();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						giorniPernottamento=Integer.parseInt(buf);
-						//oppure basta che sia meno di un mese e ho la stringa(da far diventare time) poi da convertire nel giorno del checkout
-						//calcolo da sommare per det la data checkout
-						dataCheckout="5";
-						int numeroCamerePrenotate=5;
-						p=new Prenotazione(rcPrenotate.getCamerePrenotate(), g1, dataCheckout,giorniPernottamento);
+						GregorianCalendar gc1=new GregorianCalendar();
+						gc1.add(GregorianCalendar.DATE,+giorniPernottamento);
+						dataCheckout=df.format(gc1);
+						p=new Prenotazione(g1, dataCheckout,giorniPernottamento);
 						rp.inserisci(p);
 						System.out.println("Prenotazione effettuata con successo");
+						System.out.println("Ecco l'elenco delle camere prenotate");
+						p.stampaCamerePrenotate();
 						}
 						else{
 							System.out.println("Il gruppo non può prenotare cs tante camere (può prenotarne al massimo 10)");
@@ -381,8 +397,7 @@ public class Albergo {
 					else{
 						System.out.println("gruppo non trovato");
 					}
-				}
-				
+					
 					do{
 						System.out.println("Premi ENTER per continuare");
 						try {
@@ -394,21 +409,11 @@ public class Albergo {
 						if(buf=="\n"){continua=true;}
 					}while(!continua);
 					break;
-			//}
-			case 9:
+				}
+
+			/*case 9:
 			{
-				System.out.println("Pagamento della prenotazione del gruppo e degli extra relativi alle camere specifiche");
-				System.out.println("I giorni di pernottamento sono stati "+giorniPernottamento+" per un costo giornaliero a camera di "+costoGiornalieroBaseACamera+ "per un totale di euro: "+(costoGiornalieroBaseACamera*giorniPernottamento));
-				System.out.println("Ricercare tutte le camere del gruppo");
-				System.out.println("stampa tutti gli extra per quelle camere");
-				//in prenotazione non posso passargli un'istanza camera,va rifatto e ritestato...
-
-
-			}
-
-			case 10:
-			{
-				/*
+				/* PAGAMENTO E CANCELLAZIONE DELLA PRENOTAZIONE e quindi delle camere prenotate le quali camere vanno disponibili
 				System.out.println("Inserimento dati delle camere da rilassciare,eliminare la prenotazione");
 				System.out.println("Inserisci il codice di camera: ");
 				int idCamera = 0;
@@ -421,8 +426,14 @@ public class Albergo {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				*/
-				System.out.println("Inserisci il codice del gruppo da eliminare con la prenotazione: ");
+				//
+				System.out.println("Pagamento della prenotazione del gruppo e degli extra relativi alle camere specifiche");
+				System.out.println("I giorni di pernottamento sono stati "+giorniPernottamento+" per un costo giornaliero a camera di "+costoGiornalieroBaseACamera+ "per un totale di euro: "+(costoGiornalieroBaseACamera*giorniPernottamento));
+				System.out.println("Ricercare tutte le camere del gruppo");
+				System.out.println("stampa tutti gli extra per quelle camere");
+				//in prenotazione non posso passargli un'istanza camera,va rifatto e ritestato...
+				/
+				System.out.println("Inserisci il codice del gruppo per il pagamento e la successiva eliminazione della prenotazione: ");
 				int idGruppo = 0;
 				try {
 					idGruppo = Integer.parseInt(promptLine.readLine());
@@ -433,8 +444,10 @@ public class Albergo {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				//in quanto biunivoca,trova dal gruppo la prenotazione 
 				for(int i=0;i<rp.getCamerePrenotate().size();i++){
 					if(rp.getCamerePrenotate().get(i).getGruppo().getId()==idGruppo){
+						System.out.println("Gruppo trovato,ecco la sua prenotazione");
 						rc.getCamerePrenotate().get(i).toString();
 						
 					}
@@ -443,7 +456,7 @@ public class Albergo {
 				}
 					
 				}
-				int trovato=rp.cerca(idCamera,gruppo);//devo implementare un cerca che passandogli una camera e il gruppo torva tt le camere intestate al gruppo
+				int trovato=rp.cerca(gruppo);
 				if(trovato>=0){
 					rp.rimuoviPrenotazione(trovato);
 					System.out.println("Prenotazione rimossa con successo");
@@ -462,7 +475,7 @@ public class Albergo {
 					if(buf=="\n"){continua=true;}
 				}while(!continua);
 				break;
-			}
+			}*/
 
 			case 0:
 			{

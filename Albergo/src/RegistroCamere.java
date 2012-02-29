@@ -13,7 +13,6 @@ public class RegistroCamere {
 	int[] idSingoleDisp=null;
 	int[] idDoppieDisp=null;
 	int[] idMatrimonialiDisp=null;
-	private ArrayList<Camera> camerePrenotate=new ArrayList<Camera>();
 
 //Inizializza il registro camere rimuovendo tutti gli elementi della lista
 	public RegistroCamere(){
@@ -263,10 +262,5 @@ public class RegistroCamere {
 			}
 			return idMatrimonialiDisp;
 		}
-		
-		public ArrayList<Camera> getCamerePrenotate(){
-			return camerePrenotate;
-		}
-
 
 }
