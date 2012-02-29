@@ -20,6 +20,7 @@ public class Camera {
 	private int matrimoniale=0;
 	private boolean disponibile=true;
 	private String flagDisp="";
+	Extra extra=null;
 	private ArrayList <Extra> registroExtraDellaCamera=null;
 	
 	public Camera(){
@@ -122,9 +123,29 @@ public class Camera {
 		return this.registroExtraDellaCamera;
 	}
 	
-	public void setRegistroExtraDellaCamera(ArrayList<Extra> rec){
-		this.registroExtraDellaCamera=rec;
+	//l'uso di questo arraylist in camera potrebbe sembrare inutile dato che fa la copia(da vedere come e dove nel programma)dell'arraylist registroextra
+	//tutavia è essenziale dato che non sarebbe possibile fare la ricerca semplice degli extra per camera direttamente dal registroExtra,in quanto
+	//una camera può avere +extra.
+	public void setRegistroExtraDellaCamera(ArrayList<Extra> re){
+		this.registroExtraDellaCamera=re;
 	}
+	
+	public boolean isExtrainRegistroExtraDellaCamera(Extra extra){
+		for(int i=0; i<registroExtraDellaCamera.size();i++){
+			if(registroExtraDellaCamera.get(i)==extra){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	//stampa tutti gli extra di ogni camera
+	public void stampaTotExtrasDellaCamera(){
+		for(int i=0;i<registroExtraDellaCamera.size();i++){
+			registroExtraDellaCamera.get(i).toString();
+		}
+	}
+
 	
 	public void stampaCamerePrenotate(){
 		for(int i=0;i<registroExtraDellaCamera.size();i++){

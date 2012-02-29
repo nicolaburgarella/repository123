@@ -132,19 +132,19 @@ public class Extra {
                     }
                     else if(tipo.equals(0)) {
                         System.out.println("Il cliente ha utilizzato internet");
-                        costoExtra=5.00;
+                        setCostoExtra(5.00);
                     }
                     else if(tipo.equals(1)) {
                         System.out.println("E' stata effettuata una chiamata medica di assistenza");
-                        costoExtra=70.00;
+                        setCostoExtra(70.00);
                     }
                     else if(tipo.equals(2)) {
                         System.out.println("Il cliente ha utilizzato il servizio bar");
-                        costoExtra=5.00;
+                        setCostoExtra(5.00);
                     }
                     else if(tipo.equals(3)) {
                         System.out.println("Il cliente ha utilizzato il servizio ristorante");
-                        costoExtra=40.00;
+                        setCostoExtra(40.00);
                     }
                     else {
                     	System.out.println("E' stato inserito un valore non corretto,riprova.");

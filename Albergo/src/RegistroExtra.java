@@ -23,6 +23,7 @@ public class RegistroExtra {
 			}
 		}
 		registroExtra.add(extra);
+		//setRegistroExtraDellaCamera(registroExtra);
 		extra.setIncrId();
 		Extra.extraToTInseriti++;
 		return true;

@@ -50,7 +50,8 @@ public class RegistroCamere {
 			return registroCamere.get(posizione);
 		}
 
-//Ricerca se esiste l'extra passato come parametro alla funzione esiste nella classe camera,se c'è lo stampa
+//E' concettualmente sbagliato,da togliere,anche perchè c'è già il cerca extra tra gli extra
+/*
 		public void cerca(Extra extra){ 						//ArrayList <Extra> extra
 			boolean flag=false;
 			for(int i=0;i<registroCamere.size();i++){
@@ -62,7 +63,8 @@ public class RegistroCamere {
 				System.out.println("Non è stato trovato alcuna camera con quell' extra");
 			}
 		}
-
+		
+*/
 		public void stampaSingoleDisp() {
 			System.out.println("Ecco l'elenco delle  elenco di camere singole disponibili :");
 			for(int i=0;i<registroCamere.size();i++){
