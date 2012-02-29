@@ -364,11 +364,13 @@ public class Albergo {
 						g1=rg.getGruppo(trovato);
 						if(g1.getNumCamerePrenotate()<=10-1){//max 10 camere prenotate
 						System.out.println("quanti giorni si vuol alloggiare? [0: 5giorni][1: 7giorni][2: 14giorni][3: 21giorni] [4: 30giorni]");
-						giorniPernottamento=1;
+						buf=promptLine.readLine();
+						giorniPernottamento=Integer.parseInt(buf);
 						//oppure basta che sia meno di un mese e ho la stringa(da far diventare time) poi da convertire nel giorno del checkout
+						//calcolo da sommare per det la data checkout
 						dataCheckout="5";
 						int numeroCamerePrenotate=5;
-						p=new Prenotazione(rcPrenotate.getCamerePrenotate(), g1, dataCheckout,5);
+						p=new Prenotazione(rcPrenotate.getCamerePrenotate(), g1, dataCheckout,giorniPernottamento);
 						rp.inserisci(p);
 						System.out.println("Prenotazione effettuata con successo");
 						}
@@ -395,7 +397,7 @@ public class Albergo {
 			//}
 			case 9:
 			{
-				System.out.println("Pagamento della prenotazione del gruppo e degli extra relativi alle singole camere");
+				System.out.println("Pagamento della prenotazione del gruppo e degli extra relativi alle camere specifiche");
 				System.out.println("I giorni di pernottamento sono stati "+giorniPernottamento+" per un costo giornaliero a camera di "+costoGiornalieroBaseACamera+ "per un totale di euro: "+(costoGiornalieroBaseACamera*giorniPernottamento));
 				System.out.println("Ricercare tutte le camere del gruppo");
 				System.out.println("stampa tutti gli extra per quelle camere");
@@ -431,9 +433,9 @@ public class Albergo {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				for(int i=0;i<rp.getRegistroPrenotazioni().size();i++){
-					if(rp.getRegistroPrenotazioni().get(i).getGruppo().getId()==idGruppo){
-						rc.getRegistroPrenotazioni().get(i);
+				for(int i=0;i<rp.getCamerePrenotate().size();i++){
+					if(rp.getCamerePrenotate().get(i).getGruppo().getId()==idGruppo){
+						rc.getCamerePrenotate().get(i).toString();
 						
 					}
 					else{

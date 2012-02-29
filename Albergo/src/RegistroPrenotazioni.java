@@ -17,16 +17,18 @@ public class RegistroPrenotazioni {
 
 	public int cerca(ArrayList<Camera> rcp,Gruppo gruppo){
 		for(int i=0;i<registroPrenotazioni.size();i++){
-			for(int j=0;j<rcp)
-			if((registroPrenotazioni.get(i).getCamera().getId()==idCamera)&&
+			for(int j=0;j<rcp.size();j++){
+			if((registroPrenotazioni.get(i).getCamera().getId()==rcp.get(i).getId())&&
 					(registroPrenotazioni.get(i).getGruppo().getId()==gruppo.getId())){
 				return i;
+				}
 			}
 		}
 		return -1;
 	}
 
 	public void rimuoviPrenotazione(int posizione){
+		//for(int)
 		registroPrenotazioni.get(posizione).getCamera().setDisponibile(true);
 		int numCamerePrenotate=(registroPrenotazioni.get(posizione).getGruppo().getNumCamerePrenotate());
 		registroPrenotazioni.get(posizione).getGruppo().setNumCamerePrenotate(0);

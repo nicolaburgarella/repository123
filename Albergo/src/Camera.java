@@ -37,7 +37,7 @@ public class Camera {
 		this.descrizione=descrizione;
 		this.disponibile=disponibile;
 	}
-	
+
 /*
 	public Camera(RegistroExtra re){
 		RegistroExtra registroExtra=re;
