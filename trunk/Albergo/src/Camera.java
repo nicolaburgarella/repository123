@@ -12,16 +12,20 @@ public class Camera {
 	private int id=0;
 	private String descrizione="";
 	private int singola=0;
+	static double costoSingola=40;
+	static double costoDoppia=70;
+	static double costoMatrimoniale=80;
+				
 	private int doppia=0;
 	private int matrimoniale=0;
 	private boolean disponibile=true;
 	private String flagDisp="";
-	Extra extra;
+	private ArrayList <Extra> registroExtraDellaCamera=null;
 	
 	public Camera(){
 
 	}
-
+//da togliere il costruttore non può avere un'istanza extra,potrebbe averne molte
 //Costruttore che inizializza tutti i parametri di uso[tranne la composizione,che gestisco nella classe,ma separatamente]
 //per ora ho inserito anche l'oggetto extra nel costruttore per comodità,può darsi che sia utile in futuro
 	public Camera(int id,Extra extra,String descrizione,boolean disp){
@@ -104,7 +108,7 @@ public class Camera {
 		this.id++;
 	}
 
-//setter e getter di extra,della descrizione della camera 
+/*da togliere la camera può avere piu extra setter e getter di extra,della descrizione della camera 
 	public void setExtra(Extra extra){
 		this.extra=extra;
 	}
@@ -112,11 +116,26 @@ public class Camera {
 	public Extra getExtra(){
 		return this.extra;
 	}
+*/
+	
+	public ArrayList<Extra> getRegistroExtraDellaCamera(){
+		return this.registroExtraDellaCamera;
+	}
+	
+	public void setRegistroExtraDellaCamera(ArrayList<Extra> rec){
+		this.registroExtraDellaCamera=rec;
+	}
+	
+	public void stampaCamerePrenotate(){
+		for(int i=0;i<registroExtraDellaCamera.size();i++){
+			registroExtraDellaCamera.get(i).toString();
+		}
+	}
 
 
 //utile per stampare al salvataggio in xml della camera se la camera ha già richiesto extra
-	public String isExtra(){
-		if(this.extra!=null){
+	public String isExtras(){
+		if(!registroExtraDellaCamera.isEmpty()){
 			return "SI";
 		}
 		else{
@@ -157,7 +176,7 @@ public class Camera {
 
 //metodo comodo per stampare a video tutta la struttura dell'istanza camera 
 	public String toString(){
-		return "Codice Camera :"+this.id+"\n"+"Extra da addebitare: \t"+this.isExtra()+"\n"+"Descrizione stanza: \t"+this.descrizione+"\n"+"Disponibile ora: \t"+this.flagToDisp()+"\n";
+		return "Codice Camera :"+this.id+"\n"+"Extra da addebitare: \t"+this.isExtras()+"\n"+"Descrizione stanza: \t"+this.descrizione+"\n"+"Disponibile ora: \t"+this.flagToDisp()+"\n";
 		}
 
 //chiamato dalla classe main,si interfaccia con l'operatore per l'inserimento dei dati della camera(no id,no extra,si a composizione, descrizione, disponibilità)

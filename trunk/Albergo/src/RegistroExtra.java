@@ -10,6 +10,10 @@ public class RegistroExtra {
 		//Removes all of the elements from this list.
 		registroExtra.clear();
 	}
+	
+	public ArrayList<Extra> getRegistroExtra(){
+		return this.registroExtra;
+	}
 
 
 	public boolean inserisci(Extra extra){

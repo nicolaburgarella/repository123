@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -84,7 +86,7 @@ public class Extra {
 
 //toString dei dati dell'istanza extra
 	public String toString(){
-		return "Codice Extra :"+id+"\n"+"Tipo di extra: \t"+tipo+"\n"+"CodiceCamera: \t"+idCamera+"\n"+"Importo Singolo Extra:: \t"+costoExtra+"\n";
+		return "Codice Extra :"+id+"\n"+"Tipo di extra: \t"+tipo+"\n"+"CodiceCamera: \t"+idCamera+"\n"+"Importo Singolo Extra: \t"+costoExtra+"data dell'extra "+dataExtra+"\n";
 	}
 	
 
@@ -104,18 +106,18 @@ public class Extra {
 //occorre controllare che ci sia almeno una camera	
 	public void InserisciExtra(){
 		try{
+			GregorianCalendar gc=new GregorianCalendar();
+			DateFormat df=new SimpleDateFormat("dd/MM/yyyy - HH:mm");
+			String oggi=df.format(gc.getTime());
             BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
             do{
-            		System.out.println("Inserisci la data odierna (END per ripetere tutto l'inserimento):");//bisogna automatizzarla a qlla attuale gg:mm:aa: \t ora
-            		this.dataExtra=promptLine.readLine();
-            		if(dataExtra.equals("END")){
-                        continua=false;break;
-            		}
+            		System.out.println("Imposto la data odierna per registrare l'extra: "+oggi);
+            		this.dataExtra=oggi;
 
-            		System.out.println("Inserisci il numero di camera: (END per terminare) ");
+            		System.out.println("Inserisci il numero di camera: ");
             		this.idCamera=Integer.parseInt(promptLine.readLine());
             		if (rc.cercaIdCamera(idCamera)>0){
-            			System.out.println("La camera "+idCamera +" inserita è stata riconosciuta");
+            			System.out.println("La camera "+this.idCamera +" inserita è stata riconosciuta");
             		}
             		else{
             			System.out.println("E' stata inserita un numero di camera errato");
@@ -138,11 +140,11 @@ public class Extra {
                     }
                     else if(tipo.equals(2)) {
                         System.out.println("Il cliente ha utilizzato il servizio bar");
-                        costoExtra=3.00;
+                        costoExtra=5.00;
                     }
                     else if(tipo.equals(3)) {
-                        System.out.println("Il cliente ha utilizzato il servizio ristorante(pranzo e cena a menù fisso)");
-                        costoExtra=60.00;
+                        System.out.println("Il cliente ha utilizzato il servizio ristorante");
+                        costoExtra=40.00;
                     }
                     else {
                     	System.out.println("E' stato inserito un valore non corretto,riprova.");

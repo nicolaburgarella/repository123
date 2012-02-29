@@ -1,4 +1,6 @@
 import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Gruppo {
@@ -110,13 +112,6 @@ public class Gruppo {
 	}
 
 
-//da togliere
-	public void setRichiestaComposizione(int s, int d, int m){
-		this.singole=s;
-		this.doppie=d;
-		this.matrimoniali=m;
-	}
-
 	public String toString(){
 		return "Codice Gruppo :"+id+"\n"+"Nome Gruppo: \t"+nome+"\n"+"Data Arrivo: \t"+dataArrivo+"\n"+"Anticipo Versato: \t"+anticipoVersato+"\n"+"numero di camere singole prenotate: "+singole+"\n"+"numero di camere doppie prenotate: "+doppie+"numero di camere matrimoniali prenotate: "+matrimoniali+"";
 		}
@@ -126,13 +121,16 @@ public class Gruppo {
 //abb completo,e corretto nei controlli
 	public void InserisciGruppo(){
 		try{
+			GregorianCalendar gc=new GregorianCalendar();
+			DateFormat df=new SimpleDateFormat("dd/MM/yyyy - HH:mm");
+			String oggi=df.format(gc.getTime());
 			BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
 			//Inserisco nome del gruppo,datacheckin,anticipo,numero di camere singole-doppi-matrimoniali richieste(con controlli)
 			//l'id del gruppo prima di essere memorizzato è zero,viene incrementato in modo automatico ad ogni salvataggio nel registro
 			System.out.println("Inserisci il nome del gruppo: ");
 			this.nome=promptLine.readLine();
-			System.out.println("Inserisci la data di arrivo checkin");
-			this.dataArrivo=promptLine.readLine();
+			System.out.println("data di arrivo checkin è quella odierna:"+oggi);
+			this.dataArrivo=oggi;
 			System.out.println("Inserisci l'importo dell'anticipo versato: ");
 			this.anticipoVersato=Double.parseDouble(promptLine.readLine());
 
