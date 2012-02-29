@@ -9,18 +9,23 @@ public class Prenotazione {
 	private String dataCheckout;
 	Gruppo gruppo;
 	int numeroCamerePrenotate=0;
+	int giorniPernottamento=0;
 	ArrayList<Camera> rcPrenotate=null;
 
-	public Prenotazione(ArrayList<Camera> rcp, Gruppo g, String dataCheckout,int numeroCamerePrenotate){
+	public Prenotazione(ArrayList<Camera> rcp, Gruppo g, String dataCheckout,int giorniPernottamento){
 		this.rcPrenotate=rcp;
 		this.gruppo=g;
 		this.dataCheckout=dataCheckout;
-		this.numeroCamerePrenotate=numeroCamerePrenotate;
+		this.giorniPernottamento=giorniPernottamento;
 		//da rivedere come funziona il contatore delle camere prenotate 
 		int i=gruppo.getNumCamerePrenotate()+this.numeroCamerePrenotate;
 		gruppo.setNumCamerePrenotate(i);
 		idPrenotazione++;
 
+	}
+	
+	public String toString(){
+		return "Prenotazione relativa al gruppo "+gruppo+" per un numero totale di "+giorniPernottamento+" giorni.Viene indicata il "+dataCheckout+"come data checkout in cui devono liberare le camere.";
 	}
 
 /*
