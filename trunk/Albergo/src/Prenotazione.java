@@ -5,6 +5,7 @@ import java.util.TreeMap;
 
 public class Prenotazione {
 	RegistroPrenotazioni rp=null;
+	RegistroCamere rc=null;
 	private int idPrenotazione=0;
 	private String dataCheckout;
 	Gruppo gruppo;
@@ -16,10 +17,10 @@ public class Prenotazione {
 		this.gruppo=g;
 		this.dataCheckout=dataCheckout;
 		this.giorniPernottamento=giorniPernottamento;
-		//da rivedere come funziona il contatore delle camere prenotate 
+		//da rivedere le due righe sotto per funziona il contatore delle camere prenotate e soprattuto se è davvero utile(penso di no visto che ho un controllo totale con un arraylist delle camere prenotate) 
 		int i=gruppo.getNumCamerePrenotate()+this.numeroCamerePrenotate;
 		gruppo.setNumCamerePrenotate(i);
-		idPrenotazione++;
+		this.idPrenotazione++;
 	}
 	
 	public ArrayList <Camera> getRegistroCamerePrenotate(){
@@ -39,30 +40,39 @@ public class Prenotazione {
 	public String toString(){
 		return "Prenotazione relativa al gruppo "+gruppo.getId()+" per un numero totale di "+this.giorniPernottamento+" giorni.Nella data di checkout "+this.dataCheckout+" le camere devono essere liberate";
 	}
-
-/*
-		setCamerePrenotateNonDisp();
-		int i=gruppo.getNumCamerePrenotate()+numeroCamerePrenotate;
-		gruppo.setNumCamerePrenotate(i);
-
-	}
-*/
-
-/*
+	
 	public void setCamerePrenotateNonDisp(){
-		for(int i=0;i<camereP.length;i++){
-			for(int j=0;j<rc.getRegistroCamere().size();i++){
-				if(camereP[i]==rc.getRegistroCamere().get(j).getId()){
-					rc.getCamera(i).setDisponibile(false);
+		for(int i=0;i<registroCamerePrenotate.size();i++){
+			registroCamerePrenotate.get(i).setDisponibile(false);
+			for(int j=0;j<rc.getRegistroCamere().size();j++){
+				if(registroCamerePrenotate.get(i)==rc.getRegistroCamere().get(j)){
+					rc.getRegistroCamere().get(j).setDisponibile(false);
 				}
 			}
 		}
 	}
-*/
-
-
-	Gruppo getGruppo(){
+	
+	public void setCamerePrenotateDisp(){
+		for(int i=0;i<registroCamerePrenotate.size();i++){
+			registroCamerePrenotate.get(i).setDisponibile(true);
+			for(int j=0;j<rc.getRegistroCamere().size();j++){
+				if(registroCamerePrenotate.get(i)==rc.getRegistroCamere().get(j)){
+					rc.getRegistroCamere().get(j).setDisponibile(true);
+				}
+			}
+		}
+	}
+	
+	public Gruppo getGruppo(){
 		return this.gruppo;
+	}
+	
+	public String getDataCheckout(){
+		return this.dataCheckout;
+	}
+	
+	public int getGiorniPernottamento(){
+		return this.giorniPernottamento;
 	}
 	
 

@@ -24,19 +24,20 @@ public class Albergo {
 		String buf = null;
 		RegistroGruppi rg=new RegistroGruppi();
 		RegistroExtra re=new RegistroExtra();
-		re.caricaDaXML();
-		rg.caricaDaXML();
 		RegistroCamere rc=new RegistroCamere();
-		RegistroCamere rcPrenotate=null;
+		RegistroPrenotazioni rp=new RegistroPrenotazioni();
+		re.caricaDaXML();
+		rp.caricaDaXML();
+		rc.caricaDaXML();
+		rg.caricaDaXML();
 		Prenotazione p =null;
 		String sceltaOpzione="";
 		Gruppo gruppo;
-		
 		String tipo="";
 		String dataCheckout = null;
 		int giorniPernottamento=0;
 		double costoGiornalieroBaseACamera=60.0;
-		RegistroPrenotazioni rp=null;
+		//RegistroPrenotazioni rp=null;
 		//int posizione=0;
 
 
@@ -82,6 +83,7 @@ public class Albergo {
 				e.printStackTrace();
 			}
 			switch(scelta){
+			
 			case 1:
 			{
 				System.out.println("Inserimento dati relativi al gruppo da inserire: \n");
@@ -89,6 +91,7 @@ public class Albergo {
 				g1.InserisciGruppo();
 				g1=new Gruppo(g1.getNome(), g1.getDataArrivo(), g1.getAnticipoVersato(), g1.getSingole(), g1.getDoppie(), g1.getMatrimoniali());
 				if(rg.inserisci(g1)){
+					rg.salvaInXML();
 					System.out.println("Gruppo inserito correttamente");
 				}
 				else{
@@ -147,6 +150,7 @@ public class Albergo {
 				e1.InserisciExtra();
 				e1=new Extra(e1.getTipo(), e1.getCodiceCamera(), e1.getCostoExtra(), e1.getDataExtra());
 				if(re.inserisci(e1)){
+					re.salvaInXML();
 					System.out.println("Extra inserito correttamente.");
 				}
 				else{
@@ -201,6 +205,7 @@ public class Albergo {
 				c1.InserisciCamera();
 				c1=new Camera(c1.getId(), c1.getDescrizione(), c1.isDisponibile());
 				if(rc.inserisci(c1)){
+					rc.salvaInXML();
 					System.out.println("Camera inserita correttamente\n");
 				}
 				else{
@@ -335,6 +340,7 @@ public class Albergo {
 						
 						Camera c=rc.getCamera(posizione);
 						p.getRegistroCamerePrenotate().add(c);
+						rp.salvaInXML();
 						System.out.println("Camera trovata: ");
 						System.out.println(c);
 						System.out.println("\n\n");
@@ -411,7 +417,7 @@ public class Albergo {
 					break;
 				}
 
-			/*case 9:
+			case 9:
 			{
 				/* PAGAMENTO E CANCELLAZIONE DELLA PRENOTAZIONE e quindi delle camere prenotate le quali camere vanno disponibili
 				System.out.println("Inserimento dati delle camere da rilassciare,eliminare la prenotazione");
@@ -432,7 +438,7 @@ public class Albergo {
 				System.out.println("Ricercare tutte le camere del gruppo");
 				System.out.println("stampa tutti gli extra per quelle camere");
 				//in prenotazione non posso passargli un'istanza camera,va rifatto e ritestato...
-				/
+				*/
 				System.out.println("Inserisci il codice del gruppo per il pagamento e la successiva eliminazione della prenotazione: ");
 				int idGruppo = 0;
 				try {
@@ -445,24 +451,17 @@ public class Albergo {
 					e.printStackTrace();
 				}
 				//in quanto biunivoca,trova dal gruppo la prenotazione 
-				for(int i=0;i<rp.getCamerePrenotate().size();i++){
-					if(rp.getCamerePrenotate().get(i).getGruppo().getId()==idGruppo){
-						System.out.println("Gruppo trovato,ecco la sua prenotazione");
-						rc.getCamerePrenotate().get(i).toString();
-						
+				for(int i=0;i<rp.getRegistroPrenotazioni().size();i++){
+					if((rp.getRegistroPrenotazioni().get(i).getGruppo().getId()==idGruppo)&&!(rp.getRegistroPrenotazioni().get(i).getRegistroCamerePrenotate().isEmpty())){
+						System.out.print("Gruppo trovato,ecco la sua prenotazione: ");
+						rp.getRegistroPrenotazioni().get(i).toString();
+						rp.rimuoviPrenotazione(i);
+						System.out.println("Prenotazione rimossa con successo");	
 					}
 					else{
-						System.out.println("gruppo non trovato");
+						System.out.println("Prenotazione non trovata");
 				}
 					
-				}
-				int trovato=rp.cerca(gruppo);
-				if(trovato>=0){
-					rp.rimuoviPrenotazione(trovato);
-					System.out.println("Prenotazione rimossa con successo");
-				}
-				else{
-					System.out.println("Prestito non trovato");
 				}
 				do{
 					System.out.println("Premi ENTER per continuare");
@@ -475,7 +474,7 @@ public class Albergo {
 					if(buf=="\n"){continua=true;}
 				}while(!continua);
 				break;
-			}*/
+			}
 
 			case 0:
 			{
@@ -483,10 +482,10 @@ public class Albergo {
 				//re.salvaInMYSQL();
 				rg.salvaInXML();
 				//rg.salvaInMYSQL();
-				//rc.salva??
-				//rp.salva??
+				rc.salvaInXML();
+				rp.salvaInXML();
 				end=true;
-				//un exit(0) in java; oppure ancora
+				//un exit(0) in java System.exit(0); oppure ancora
 				/*
 				 * do{
 					System.out.println("Premi ENTER per continuare");

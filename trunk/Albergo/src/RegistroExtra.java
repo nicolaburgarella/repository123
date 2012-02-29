@@ -13,7 +13,7 @@ public class RegistroExtra {
 
 
 	public boolean inserisci(Extra extra){
-		for(int i=0;i<registroExtra.size()-1;i++){
+		for(int i=0;i<registroExtra.size();i++){
 			if((registroExtra.get(i)).equals(extra)){
 				return false;
 			}
