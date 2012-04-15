@@ -87,7 +87,7 @@ public class Albergo {
 			case 1:
 			{
 				System.out.println("Inserimento dati relativi al gruppo da inserire: \n");
-				Gruppo g1 = null;
+				Gruppo g1 = new Gruppo();
 				g1.InserisciGruppo();
 				g1=new Gruppo(g1.getNome(), g1.getDataArrivo(), g1.getAnticipoVersato(), g1.getSingole(), g1.getDoppie(), g1.getMatrimoniali());
 				if(rg.inserisci(g1)){
@@ -146,7 +146,7 @@ public class Albergo {
 					System.out.println("Prima di inserire un extra è necessario che ci sia almeno una camera salvata");
 					exit=true;
 				}
-				Extra e1=null;
+				Extra e1=new Extra();
 				e1.InserisciExtra();
 				e1=new Extra(e1.getTipo(), e1.getCodiceCamera(), e1.getCostoExtra(), e1.getDataExtra());
 				if(re.inserisci(e1)){
@@ -173,7 +173,7 @@ public class Albergo {
 			case 4:
 			{
 				System.out.println("Inserimento dati relativi all'extra da cercare. \n");
-				Extra e2=null;
+				Extra e2=new Extra();
 				e2.InserisciExtra();
 				e2=new Extra(e2.getTipo(), e2.getCodiceCamera(), e2.getCostoExtra(), e2.getDataExtra());
 				int trovato=re.cerca(e2.getId());
@@ -201,7 +201,7 @@ public class Albergo {
 			case 5:
 			{
 				System.out.println("Inserimento dati relativi alla camera da inserire: \n");
-				Camera c1=null;
+				Camera c1=new Camera();
 				c1.InserisciCamera();
 				c1=new Camera(c1.getId(), c1.getDescrizione(), c1.isDisponibile());
 				if(rc.inserisci(c1)){
