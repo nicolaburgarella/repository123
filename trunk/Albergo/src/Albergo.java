@@ -89,7 +89,7 @@ public class Albergo {
 				System.out.println("Inserimento dati relativi al gruppo da inserire: \n");
 				Gruppo g1 = new Gruppo();
 				g1.InserisciGruppo();
-				g1=new Gruppo(g1.getNome(), g1.getDataArrivo(), g1.getAnticipoVersato(), g1.getSingole(), g1.getDoppie(), g1.getMatrimoniali());
+				//g1=new Gruppo(g1.getNome(), g1.getDataArrivo(), g1.getAnticipoVersato(), g1.getSingole(), g1.getDoppie(), g1.getMatrimoniali());
 				if(rg.inserisci(g1)){
 					rg.salvaInXML();
 					System.out.println("Gruppo inserito correttamente");
@@ -113,9 +113,9 @@ public class Albergo {
 			case 2:
 			{
 				System.out.println("Inserimento dati relativi al gruppo da cercare. \n");
-				Gruppo g2=null;
+				Gruppo g2=new Gruppo();
 				g2.InserisciGruppo();
-				g2=new Gruppo(g2.getNome(), g2.getDataArrivo(), g2.getAnticipoVersato(), g2.getSingole(), g2.getDoppie(), g2.getMatrimoniali());
+				//g2=new Gruppo(g2.getNome(), g2.getDataArrivo(), g2.getAnticipoVersato(), g2.getSingole(), g2.getDoppie(), g2.getMatrimoniali());
 				int trovato=rg.cerca(g2.getId());
 				if(trovato!=-1||trovato!=0){
 					System.out.println("Gruppo trovato");
@@ -148,7 +148,7 @@ public class Albergo {
 				}
 				Extra e1=new Extra();
 				e1.InserisciExtra();
-				e1=new Extra(e1.getTipo(), e1.getCodiceCamera(), e1.getCostoExtra(), e1.getDataExtra());
+				//e1=new Extra(e1.getTipo(), e1.getCodiceCamera(), e1.getCostoExtra(), e1.getDataExtra());
 				if(re.inserisci(e1)){
 					re.salvaInXML();
 					System.out.println("Extra inserito correttamente.");
@@ -175,7 +175,7 @@ public class Albergo {
 				System.out.println("Inserimento dati relativi all'extra da cercare. \n");
 				Extra e2=new Extra();
 				e2.InserisciExtra();
-				e2=new Extra(e2.getTipo(), e2.getCodiceCamera(), e2.getCostoExtra(), e2.getDataExtra());
+				//e2=new Extra(e2.getTipo(), e2.getCodiceCamera(), e2.getCostoExtra(), e2.getDataExtra());
 				int trovato=re.cerca(e2.getId());
 				if(trovato!=-1||trovato!=0){
 					System.out.println("Extra trovato");
@@ -203,7 +203,7 @@ public class Albergo {
 				System.out.println("Inserimento dati relativi alla camera da inserire: \n");
 				Camera c1=new Camera();
 				c1.InserisciCamera();
-				c1=new Camera(c1.getId(), c1.getDescrizione(), c1.isDisponibile());
+				//c1=new Camera(c1.getId(), c1.getDescrizione(), c1.isDisponibile());
 				if(rc.inserisci(c1)){
 					rc.salvaInXML();
 					System.out.println("Camera inserita correttamente\n");
@@ -371,9 +371,9 @@ public class Albergo {
 				}while(continua);
 					
 				System.out.println("Inserimento dati relativi al gruppo da cercare: ");
-					Gruppo g = null;
+					Gruppo g = new Gruppo();
 					g.InserisciGruppo();
-					g=new Gruppo(g.getNome(), g.getDataArrivo(), g.getAnticipoVersato(), g.getSingole(), g.getDoppie(), g.getMatrimoniali());
+					//g=new Gruppo(g.getNome(), g.getDataArrivo(), g.getAnticipoVersato(), g.getSingole(), g.getDoppie(), g.getMatrimoniali());
 					int trovato=rg.cerca(g.getId());
 					if(trovato!=-1){
 						Gruppo g1=null;
