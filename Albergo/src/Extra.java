@@ -152,6 +152,9 @@ public class Extra {
                     }
 
             }while(!continua);
+            
+            
+            
        }
 		catch(IOException ioe){
 			ioe.printStackTrace();
