@@ -45,7 +45,6 @@ public class RegistroPrenotazioni {
 	}
 	
 	
-	
 	public ArrayList<Prenotazione> getRegistroPrenotazioni(){
 		return registroPrenotazioni;
 	}
@@ -120,6 +119,6 @@ public class RegistroPrenotazioni {
 		valore=valore.substring(0,indexEnd); //il secondo parametro di substring è escluso
 		return valore;
 	}
-
+	
 		
 }
