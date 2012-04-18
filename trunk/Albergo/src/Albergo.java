@@ -64,7 +64,7 @@ public class Albergo {
 					BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
 					sceltaOpzione=promptLine.readLine();
 
-					if(!(sceltaOpzione.equals("0")||(sceltaOpzione.equals("1"))||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3"))||(sceltaOpzione.equals("4"))||(sceltaOpzione.equals("5"))||(sceltaOpzione.equals("6"))||(sceltaOpzione.equals("7"))||(sceltaOpzione.equals("8"))||(sceltaOpzione.equals("9")))){
+					if(!(sceltaOpzione.equals("0")||(sceltaOpzione.equals("1"))||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3"))||(sceltaOpzione.equals("4"))||(sceltaOpzione.equals("5"))||(sceltaOpzione.equals("6"))||(sceltaOpzione.equals("7"))||(sceltaOpzione.equals("8"))||(sceltaOpzione.equals("9")||(sceltaOpzione).equals("")))){
 						sbagliato=true;
 						System.out.println("E' stata scelta un'opzione non valida riprova");
 						break;
@@ -165,7 +165,7 @@ public class Albergo {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						if(buf=="\n"){continua=true;}
+						if(buf=="\n"){continua=false;}
 					}while(!continua);
 					break;
 			}
@@ -286,7 +286,7 @@ public class Albergo {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					if(buf=="\n"){continua=true;}
+					if(buf=="\n"){continua=false;}
 				}while(!continua);
 				break;
 			}
