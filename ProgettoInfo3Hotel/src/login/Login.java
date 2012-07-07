@@ -48,22 +48,22 @@ public class Login extends JFrame implements ActionListener
   
 
   MainGui main = new MainGui();
-/*
+
 	Toolkit mioTKit = Toolkit.getDefaultToolkit();
 	// Interrogo il SO (tramite il Toolkit) per conoscere le dimensioni dello schermo
 	Dimension dimensioniSchermo = mioTKit.getScreenSize();
 	main.setSize(dimensioniSchermo.width-20, dimensioniSchermo.height-40);
 	main.setVisible(true);
-  */
   
- 
+  
+ /*
   NextPage1 page1=new NextPage1();
   page1.setVisible(true);
   NextPage2 page2=new NextPage2();
   page2.setVisible(true);
   NextPage3 page3=new NextPage3();
   page3.setVisible(true);
-  
+  */
   
   }
   else{

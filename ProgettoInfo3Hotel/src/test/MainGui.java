@@ -501,16 +501,15 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	 * The main method.
 	 *
 	 * @param args the arguments
-	 */
+	 
 	public static void main(String[] args) {
 		
 		 Login frame=new Login();
 		  frame.setSize(300,100);
 		  frame.setVisible(true);
 		
-		
-		
 	}
+	*/
 
 	public void actionPerformed(ActionEvent e) {
 		
