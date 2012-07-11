@@ -8,10 +8,10 @@ import date.DaysBetweenDates;
 
 import room.Room;
 
-public class PayRooms {
+public class PayRoomsGui {
 
 	
-	public PayRooms(){
+	public PayRoomsGui(){
 	
 	}
 	

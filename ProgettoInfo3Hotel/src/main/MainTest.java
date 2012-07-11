@@ -1,4 +1,4 @@
-package test;
+package main;
 
 import group.*;
 import group.ExtractRequest;

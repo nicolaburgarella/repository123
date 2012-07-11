@@ -6,13 +6,13 @@ import room.JDOMExtractExtrasByRoom;
 import room.RoomList;
 import group.Group;
 
-public class PayExtraByRoomNr {
+public class PayExtraByRoomNrGui {
 
-	public PayExtraByRoomNr() {
+	public PayExtraByRoomNrGui() {
 
 	}
 
-	public PayExtraByRoomNr(Group g) {
+	public PayExtraByRoomNrGui(Group g) {
 
 		if (!(g.getRoomAssigned().isEmpty())) {
 			System.out
