@@ -1,0 +1,341 @@
+package login;
+
+import hotel.Hotel;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.GroupLayout;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle;
+import javax.swing.border.EmptyBorder;
+
+import room.AddExtraView;
+import room.Extra;
+import room.JDOMInsertExtraByRoomNr;
+
+
+/**
+* This code was edited or generated using CloudGarden's Jigloo
+* SWT/Swing GUI Builder, which is free for non-commercial
+* use. If Jigloo is being used commercially (ie, by a corporation,
+* company or business for any purpose whatever) then you
+* should purchase a license for each developer using Jigloo.
+* Please visit www.cloudgarden.com for details.
+* Use of Jigloo implies acceptance of these licensing terms.
+* A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
+* THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+*/
+public class InsertExtra extends JDialog implements ActionListener {
+
+	private final JPanel contentPanel = new JPanel();
+	private JCheckBox jCheckBox1;
+	private JCheckBox jCheckBox2;
+	private JComboBox jComboBox1;
+	private JTextField jTextField5;
+	private JLabel jLabel6;
+	private JLabel jLabel5;
+	private JTextField jTextField4;
+	private JTextField jTextField3;
+	private JTextField jTextField2;
+	private JTextField jTextField1;
+	private JLabel jLabel4;
+	private JLabel jLabel3;
+	private JLabel jLabel2;
+	private JLabel jLabel1;
+	
+	String date;
+	 String type;
+	 Float cost;
+	 int stanza;
+	 String nomegruppo;
+	 Hotel h;
+
+	/**
+	 * Create the dialog.
+	 * @param hotel 
+	 */
+	public InsertExtra(Hotel hotel) {
+		h=hotel;
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		GroupLayout contentPanelLayout = new GroupLayout((JComponent)contentPanel);
+		contentPanel.setLayout(contentPanelLayout);
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		{
+			jLabel1 = new JLabel();
+			jLabel1.setText("Inserisci extra");
+		}
+		{
+			jCheckBox1 = new JCheckBox();
+			jCheckBox1.setText("in base al nome del gruppo");
+		}
+		{
+			jCheckBox2 = new JCheckBox();
+			jCheckBox2.setText("o al numero di stanza");
+		}
+		{
+			jLabel2 = new JLabel();
+			jLabel2.setText("Data dell'extra");
+			
+		}
+		{
+			jLabel3 = new JLabel();
+			jLabel3.setText("Tipologia di extra");
+		}
+		{
+			jLabel4 = new JLabel();
+			jLabel4.setText("Costo");
+		}
+		{
+			jLabel5 = new JLabel();
+			jLabel5.setText("In quale stanza va addebitato");
+		}
+		{
+			try{
+			jTextField1 = new JTextField();
+			jTextField1.setText("data");
+			date =jTextField1.getText();
+			}catch(NumberFormatException nfe){
+				JOptionPane.showMessageDialog(null,"la data deve essere corretta");
+			}
+			
+		}
+		{
+			jTextField2 = new JTextField();
+			jTextField2.setText("tipologia");
+			type=jTextField2.getText();
+
+			
+		}
+		{
+			try{
+			jTextField3 = new JTextField();
+			jTextField3.setText("0");
+			cost=Float.parseFloat(jTextField3.getText());
+			}catch(NumberFormatException nfe){
+				JOptionPane.showMessageDialog(null,"Il costo dell'extra deve essere float");
+			}
+			
+		}
+		{
+			try{
+			jTextField4 = new JTextField();
+			jTextField4.setText("0");
+			stanza=Integer.parseInt(jTextField4.getText());
+			}catch(NumberFormatException nfe){
+				JOptionPane.showMessageDialog(null,"Il la stanza deve essere un numero intero");
+			}
+			
+			
+		}
+		{
+			jLabel6 = new JLabel();
+			jLabel6.setText("Inserisci il nome del gruppo");
+		}
+		{
+			jTextField5 = new JTextField();
+			jTextField5.setText("nome gruppo");
+			nomegruppo=jTextField5.getText();
+		}
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+		
+		ButtonGroup bg = new ButtonGroup();
+		 bg.add(jCheckBox1);
+		 bg.add(jCheckBox2);
+
+				contentPanelLayout.setVerticalGroup(contentPanelLayout.createParallelGroup()
+			.addGroup(contentPanelLayout.createSequentialGroup()
+			    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+			        .addComponent(jLabel6, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+			        .addComponent(jTextField5, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE))
+			    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 3, 3))
+			.addGroup(contentPanelLayout.createSequentialGroup()
+			    .addGap(10)
+			    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+			        .addComponent(jCheckBox1, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
+			        .addComponent(jLabel1, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
+			        .addComponent(jCheckBox2, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE))
+			    .addGap(16)
+			    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+			        .addComponent(jLabel2, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+			        .addComponent(jTextField1, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+			    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+			        .addComponent(jLabel3, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+			        .addComponent(jTextField2, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+			    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+			    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+			        .addComponent(jLabel4, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+			        .addComponent(jTextField3, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+			    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+			    .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+			        .addComponent(jComboBox1, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+			        .addComponent(jLabel5, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
+			        .addComponent(jTextField4, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE))
+			    .addContainerGap(41, 41)));
+				contentPanelLayout.setHorizontalGroup(contentPanelLayout.createSequentialGroup()
+					.addGroup(contentPanelLayout.createParallelGroup()
+					    .addGroup(contentPanelLayout.createParallelGroup()
+					        .addGroup(GroupLayout.Alignment.LEADING, contentPanelLayout.createSequentialGroup()
+					            .addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+					            .addGroup(contentPanelLayout.createParallelGroup()
+					                .addGroup(GroupLayout.Alignment.LEADING, contentPanelLayout.createSequentialGroup()
+					                    .addComponent(jLabel5, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
+					                    .addGap(7)
+					                    .addComponent(jTextField4, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE))
+					                .addGroup(contentPanelLayout.createSequentialGroup()
+					                    .addGroup(contentPanelLayout.createParallelGroup()
+					                        .addComponent(jLabel4, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
+					                        .addComponent(jLabel3, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
+					                        .addComponent(jLabel2, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE))
+					                    .addGroup(contentPanelLayout.createParallelGroup()
+					                        .addComponent(jTextField3, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
+					                        .addComponent(jTextField2, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
+					                        .addComponent(jTextField1, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE))
+					                    .addGap(67))))
+					        .addGroup(GroupLayout.Alignment.LEADING, contentPanelLayout.createSequentialGroup()
+					            .addComponent(jTextField5, GroupLayout.PREFERRED_SIZE, 10, GroupLayout.PREFERRED_SIZE)
+					            .addGap(271)))
+					    .addGroup(GroupLayout.Alignment.LEADING, contentPanelLayout.createSequentialGroup()
+					        .addPreferredGap(jLabel5, jLabel1, LayoutStyle.ComponentPlacement.INDENT)
+					        .addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
+					        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+					        .addComponent(jCheckBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
+					        .addGap(10)))
+					.addGap(16)
+					.addGroup(contentPanelLayout.createParallelGroup()
+					    .addGroup(GroupLayout.Alignment.LEADING, contentPanelLayout.createSequentialGroup()
+					        .addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
+					        .addGap(0, 28, Short.MAX_VALUE))
+					    .addGroup(GroupLayout.Alignment.LEADING, contentPanelLayout.createSequentialGroup()
+					        .addPreferredGap(jComboBox1, jCheckBox2, LayoutStyle.ComponentPlacement.INDENT)
+					        .addComponent(jCheckBox2, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE))));
+		 jCheckBox1.addActionListener(this);
+		 jCheckBox2.addActionListener(this);
+	}
+
+	
+	 public void actionPerformed(ActionEvent e){
+		 
+		 if(jCheckBox1.isSelected()){
+			 jLabel6.setVisible(true);
+			 jTextField5.setVisible(true);
+			 
+		 }
+		 
+		 if(jCheckBox2.isSelected()){
+			 jLabel6.setVisible(false);
+			 jTextField5.setVisible(false);
+		 }
+		 
+		 if(e.getActionCommand().equals("OK")){
+			 if(jCheckBox1.isSelected()){  //in base al nome del gruppo
+				 date =jTextField1.getText();
+				 type=jTextField2.getText();
+				 cost=Float.parseFloat(jTextField3.getText());
+				 stanza=Integer.parseInt(jTextField4.getText());
+				 nomegruppo=jTextField5.getText();
+				 
+				 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
+						if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(nomegruppo)||!(h.getGroupList().getGroupReg().get(i).getRoomAssigned()).isEmpty()){
+							Extra extra=new Extra(cost, date, type);
+							h.getExtraList().getExtraList().add(extra);
+							
+							//VA FATTA SOPRA COME finestrapopupdi scelta non COMBOBOX,IN MODO CHE ABBIA SELEZIONATO SUBITO LA SCELTA
+							String msg=new String();
+							
+							for(int j=0;j<h.getGroupList().getGroupReg().get(i).getRoomAssigned().size();j++){
+								msg+=h.getGroupList().getGroupReg().get(i).getRoomAssigned().get(j).getNumber();
+							}
+							 JOptionPane.showMessageDialog(null,"In quale stanza prenotata va inserito l'extra?Digita il nome della stanza a cui addebitare l'extra tra quelle prenotate dal gruppo\n"+"Stanze assegnate: "+msg);
+							/*BufferedReader pLine=new BufferedReader(new InputStreamReader(System.in));
+							try {
+								sceltaOpzione=pLine.readLine();
+							} catch (IOException ee) {
+								// TODO Auto-generated catch block
+								ee.printStackTrace();
+							}
+							int roomNumber=Integer.parseInt(sceltaOpzione);
+							*/
+							
+							for(int j=0;j<h.getGroupList().getGroupReg().get(i).getRoomAssigned().size();j++){
+								if(h.getGroupList().getGroupReg().get(i).getRoomAssigned().get(j).getNumber()==stanza){
+								JDOMInsertExtraByRoomNr jier =new JDOMInsertExtraByRoomNr(stanza, extra.getDate(), Float.toString(extra.getCost()), extra.getType());
+								}
+								else{
+									JOptionPane.showMessageDialog(null,"E' stato scritto un numero di stanza non valido");
+								}
+							}
+							
+						}
+ 
+			 }
+			 
+			 if (jCheckBox2.isSelected()){ //in base al numero di stanza
+				 
+				 date =jTextField1.getText();
+				 type=jTextField2.getText();
+				 cost=Float.parseFloat(jTextField3.getText());
+				 stanza=Integer.parseInt(jTextField4.getText());
+				 
+				 
+				 for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
+						if(stanza==h.getRoomList().getRoomReg().get(i).getNumber()){
+							 Extra extra = new Extra(cost, date, type);
+							 h.getExtraList().getExtraList().add(extra);
+								JDOMInsertExtraByRoomNr jier =new JDOMInsertExtraByRoomNr(stanza, extra.getDate(), Float.toString(extra.getCost()), extra.getType());
+								JOptionPane.showMessageDialog(null,"Fatto!");
+				 
+			 }
+			/*String date =jTextField1.getText();
+			 String type=jTextField2.getText();
+			 Float cost=Float.parseFloat(jTextField3.getText());
+			 int stanza=Integer.parseInt(jTextField4.getText());
+			 String nomegruppo=jTextField5.getText();
+			 Extra extra = new Extra(cost, date, type);
+	*/
+			 
+		 }
+		 
+	 }
+	 }
+}
+	 }
+}
+		 
+
+

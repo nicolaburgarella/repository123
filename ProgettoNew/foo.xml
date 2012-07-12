@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOM_LIST>
+  <ROOM number="1" fee="75" free="yes" description="no" composition="2">
+    <EXTRA cost="50">Ristorante</EXTRA>
+    <EXTRA cost="50">Bar</EXTRA>
+  </ROOM>
+  <ROOM number="2" fee="75" free="yes" description="no" composition="1+1">
+    <EXTRA cost="50">Internet</EXTRA>
+  </ROOM>
+  <ROOM number="3" fee="75" free="yes" description="no" composition="1">
+    <EXTRA cost="50">bar</EXTRA>
+    <EXTRA cost="50">assistenza medica</EXTRA>
+    <EXTRA cost="50">bar</EXTRA>
+  </ROOM>
+</ROOM_LIST>
+
