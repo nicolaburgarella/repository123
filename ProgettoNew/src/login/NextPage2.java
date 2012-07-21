@@ -141,18 +141,18 @@ public class NextPage2 extends JFrame implements ActionListener
 		" radio button.");
 		  
 		  if(e.getActionCommand().equals("button1")){
-			  InsertGroup ig = new InsertGroup(h);
+			  InsertGroup1 ig = new InsertGroup1(h);
 			  ig.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				ig.setVisible(true);
 			  
 		  }
 		  if(e.getActionCommand().equals("button3")){
-			  CancelGroup dialog = new CancelGroup(h);
+			  CancelGroup1 dialog = new CancelGroup1(h,"name");
 				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				dialog.setVisible(true);
 		  }
 		  if(e.getActionCommand().equals("button7")){
-			  CancelGroup dialog = new CancelGroup(h);
+			  CancelGroup1 dialog = new CancelGroup1(h,"id");
 				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				dialog.setVisible(true);
 		  }

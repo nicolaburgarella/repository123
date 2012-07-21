@@ -39,7 +39,7 @@ import main.AssignRooms;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class Checkin extends JDialog {
+public class Checkin1 extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JLabel jLabel2;
@@ -69,7 +69,7 @@ public class Checkin extends JDialog {
 	 * Create the dialog.
 	 * @param h 
 	 */
-	public Checkin(Hotel hotel) {
+	public Checkin1(Hotel hotel) {
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -135,24 +135,40 @@ public class Checkin extends JDialog {
 			        .addComponent(jLabel4, 0, 344, Short.MAX_VALUE)
 			        .addGap(53)))
 			.addContainerGap(27, 27));
-		{
+		
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
-			{
+			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
-			}
-			{
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e){
+						System.out.println("called");
+							
+							 if(e.getActionCommand().equals("OK")){
+								 if(!(h.getGroupList().isGroupListEmpty())){
+									 AssignRooms a=new AssignRooms(nome, h);
+									 JOptionPane.showMessageDialog(null,"Fatto!");
+										
+									}
+									else{
+										JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato sa cui associare la prenotazione");
+									}
+
+								 }
+					}
+				});
+			
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
-			}
-		}
-	}
+			
 	
+	
+	/*			
 	public void actionPerformed(ActionEvent e){
 		 
 		 if(e.getActionCommand().equals("OK")){
@@ -167,6 +183,8 @@ public class Checkin extends JDialog {
 
 			 }
 			 
-		 }
+		 }*/
+
+	}
 }
 			

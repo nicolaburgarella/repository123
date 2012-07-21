@@ -8,12 +8,16 @@ public class DaysBetweenDatesTest {
 
 	@Test
 	public void testDaysBetweenDates() {
-		fail("Not yet implemented");
+		DaysBetweenDates dbd=new DaysBetweenDates();
+		dbd.DaysBetweenDates(uno, due)
+		
+		assertEquals("31/12/2010", df.format(date));
 	}
 
 	@Test
 	public void testDaysBetweenDatesDateDate() {
-		fail("Not yet implemented");
+		
+		
 	}
 
 	@Test

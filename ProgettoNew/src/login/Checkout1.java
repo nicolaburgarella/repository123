@@ -7,6 +7,7 @@ import hotel.Hotel;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -42,7 +43,7 @@ import reservation.Reservation;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class Checkout extends JDialog {
+public class Checkout1 extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JCheckBox jCheckBox1;
@@ -63,9 +64,10 @@ public class Checkout extends JDialog {
 
 	/**
 	 * Create the dialog.
+	 * @param string 
 	 * @param h 
 	 */
-	public Checkout(Hotel hotel) {
+	public Checkout1(Hotel hotel, String string) {
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -73,24 +75,54 @@ public class Checkout extends JDialog {
 		contentPanel.setLayout(contentPanelLayout);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		
+		jCheckBox1=new JCheckBox();
+		jCheckBox2=new JCheckBox();
+		jLabel2 =new JLabel();
+		jLabel3=new JLabel();
+		jTextField1=new JTextField();
+		jTextField2=new JTextField();
+		
+		if(string.equals("name")){
+			//nomegruppo
+			jLabel2.setVisible(false);
+			jTextField1.setVisible(false);
+			jLabel3.setVisible(true);
+			jTextField2.setVisible(true);
+			
+		}
+		
+		if(string.equals("id")){
+			//id
+			jLabel2.setVisible(true);
+			jTextField1.setVisible(true);
+			jLabel3.setVisible(false);
+			jTextField2.setVisible(false);
+		}
+		
+		
+		
+		
+		
+		
 		{
 			jLabel1 = new JLabel();
 			jLabel1.setText("Checkout");
 		}
 		{
-			jCheckBox1 = new JCheckBox();
+			//jCheckBox1 = new JCheckBox();
 			jCheckBox1.setText("in base a id prenotazione");
 		}
 		{
-			jCheckBox2 = new JCheckBox();
+			//jCheckBox2 = new JCheckBox();
 			jCheckBox2.setText("in base a nome gruppo");
 		}
 		{
-			jLabel2 = new JLabel();
+			//jLabel2 = new JLabel();
 			jLabel2.setText("Inserisci id prenotazione");
 		}
 		{
-			jLabel3 = new JLabel();
+			//jLabel3 = new JLabel();
 			jLabel3.setText("Inserisci nome del gruppo");
 		}
 		{
@@ -103,7 +135,7 @@ public class Checkout extends JDialog {
 		}
 		{
 			try{
-			jTextField1 = new JTextField();
+			//jTextField1 = new JTextField();
 			jTextField1.setText("id");
 			id=Integer.parseInt(jTextField1.getText());
 			}catch(NumberFormatException nfe){
@@ -111,7 +143,7 @@ public class Checkout extends JDialog {
 			}
 		}
 		{
-			jTextField2 = new JTextField();
+			//jTextField2 = new JTextField();
 			jTextField2.setText("nome");
 			nome=jTextField2.getText();
 		}
@@ -163,12 +195,111 @@ public class Checkout extends JDialog {
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
-			{
+			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
-			}
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e){
+						System.out.println("called");
+						 
+						 
+						 if(e.getActionCommand().equals("OK")){
+				
+								if(jCheckBox1.isSelected()){
+									//id
+									if(!(h.getReservationList().isReservationListEmpty())){
+										Reservation res=new Reservation();
+										for(int i=0;i<h.getReservationList().getReservReg().size();i++){
+											if((h.getReservationList().getReservReg().get(i).getNumber())==id){
+												//prenotazione da eliminare
+												res=h.getReservationList().getReservReg().get(i);
+												JOptionPane.showMessageDialog(null,"Prenotazione da eliminare: "+res);
+												//gestione del pagamento checkout,da estrarre in base al numero del gruppo,da fare con istanze
+												JOptionPane.showMessageDialog(null,"Gestione del pagamento del fee e degli extra relativi al gruppo,a seguito del quale elimino il gruppo con la sua prenotazione.");
+												Group g =new Group();
+												
+												for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+													if(h.getGroupList().getGroupReg().get(i).getNumber()==id){
+														//DA RISOLVERE CON ALTRI DUE PANEL A COMPARSA
+														PayRooms p=new PayRooms();
+														float DiffTotFeeCost=p.PayRooms(g);
+														PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
+													}
+												}
+												
+												JOptionPane.showMessageDialog(null,"Elimino la prenotazione e il gruppo associato");
+												h.getReservationList().getReservReg().remove(i);
+												groupId=id;
+												JDOMRemoveChild2 jg = new JDOMRemoveChild2(groupId);
+												for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+													if((h.getGroupList().getGroupReg().get(j).getNumber())==groupId){
+														h.getGroupList().getGroupReg().remove(j);
+														JDOMRemoveChild gr =new JDOMRemoveChild(groupId);
+														JOptionPane.showMessageDialog(null,"Gruppo eliminato assieme alla sua prenotazione");
+													}
+												}
+											}
+											else{
+												JOptionPane.showMessageDialog(null,"Non trovo la prenotazione numero "+groupId);
+											}
+										}		
+										
+									}
+									else{
+										JOptionPane.showMessageDialog(null,"Non è ancora stata inserita alcuna prenotazione");
+									}
+										
+								}
+								
+								if(jCheckBox2.isSelected()){
+									if(!(h.getReservationList().isReservationListEmpty())){
+										Reservation res=new Reservation();
+										for(int i=0;i<h.getReservationList().getReservReg().size();i++){
+											if((h.getReservationList().getReservReg().get(i).getGroupName()).equalsIgnoreCase(nome)){
+												res=h.getReservationList().getReservReg().get(i);
+												JOptionPane.showMessageDialog(null,"Ecco la prenotazione da eliminare\n"+res.toString());
+												
+												JOptionPane.showMessageDialog(null,"Gestione del pagamento del fee e degli extra relativi al gruppo,a seguito del quale elimino il gruppo con la sua prenotazione.");
+												Group g =new Group();
+												
+												for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+													if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(nome)){
+														//DA RISOLVERE CON ALTRI DUE PANEL A COMPARSA
+														PayRooms p=new PayRooms();
+														float DiffTotFeeCost=p.PayRooms(g);
+														PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
+													}
+												}
+												
+												JOptionPane.showMessageDialog(null,"elimino la prenotazione ed il gruppo selezionato associato");
+												h.getReservationList().getReservReg().remove(i);
+												JDOMRemoveChild2 jg = new JDOMRemoveChild2(nome);
+												for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+													if((h.getGroupList().getGroupReg().get(j).getName()).equalsIgnoreCase(nome)){
+														h.getGroupList().getGroupReg().remove(j);
+														JDOMRemoveChild gr =new JDOMRemoveChild(nome);
+														JOptionPane.showMessageDialog(null,"Gruppo eliminato assieme alla sua prenotazione");
+													}
+												}
+												
+											}
+											else{
+												JOptionPane.showMessageDialog(null,"Non trovo la prenotazione avente nome gruppo "+nome);
+											}
+										}
+											
+									}
+									else{
+										JOptionPane.showMessageDialog(null,"Non è ancora stata inserita alcuna prenotazione");
+									}					
+							}
+						 }
+						 }
+				});
+	
+			
 			{
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.setActionCommand("Cancel");
@@ -176,7 +307,7 @@ public class Checkout extends JDialog {
 			}
 		}
 	}
-	
+	/*
 	public void actionPerformed(ActionEvent e){
 		 
 		if(e.getActionCommand().equals("OK")){
@@ -290,6 +421,6 @@ public class Checkout extends JDialog {
 		}
 		 
 		 
-		 }
+		 }*/
 	
 }

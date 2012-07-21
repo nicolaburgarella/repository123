@@ -169,7 +169,7 @@ public  NextPage1(Hotel hotel) {
 	" radio button.");
 	  
 	  if(e.getActionCommand().equals("button1")){
-		  InsertExtra ie = new InsertExtra(h);
+		  InsertExtra1 ie = new InsertExtra1(h,"name");
 			ie.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			ie.setVisible(true);
 		  
@@ -192,7 +192,7 @@ public  NextPage1(Hotel hotel) {
 			//stampo i dettagli della stanza per numeor di camera
 	  }
 	  if(e.getActionCommand().equals("button7")){
-		  InsertExtra ie = new InsertExtra(h);
+		  InsertExtra1 ie = new InsertExtra1(h,"number");
 			ie.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			ie.setVisible(true);
 	  }

@@ -67,7 +67,7 @@ public class InsertExtra extends JDialog implements ActionListener {
 	 Float cost;
 	 int stanza;
 	 String nomegruppo;
-	 Hotel h;
+	 Hotel h=new Hotel();
 
 	/**
 	 * Create the dialog.

@@ -8,7 +8,7 @@ public class DateToStringTest {
 
 	@Test
 	public void testDateToString() {
-		fail("Not yet implemented");
+		//Non so come testarlo
 	}
 
 	@Test

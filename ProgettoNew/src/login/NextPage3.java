@@ -150,17 +150,17 @@ public class NextPage3 extends JFrame implements ActionListener
 				//print reservation  
 			  }
 			  if(e.getActionCommand().equals("button5")){
-				  Checkout c=new Checkout(h);
+				  Checkout1 c=new Checkout1(h,"name");
 				  c.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				  c.setVisible(true);
 			  }
 			  if(e.getActionCommand().equals("button4")){
-				  Checkout c=new Checkout(h);
+				  Checkout1 c=new Checkout1(h,"id");
 				  c.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				  c.setVisible(true);
 			  }
 			  if(e.getActionCommand().equals("button3")){
-				  Checkin c=new Checkin(h);
+				  Checkin1 c=new Checkin1(h);
 				  c.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				  c.setVisible(true);
 			  }

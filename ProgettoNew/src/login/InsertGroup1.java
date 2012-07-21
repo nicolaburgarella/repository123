@@ -1,7 +1,5 @@
 package login;
 
-import group.AddGroupView;
-import group.AddRequestView;
 import group.Group;
 import group.JDOMAddChild;
 import group.Request;
@@ -10,22 +8,19 @@ import hotel.Hotel;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Date;
 
 import javax.swing.GroupLayout;
-
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 import date.DataCheckout;
 import date.DateToString;
@@ -42,7 +37,7 @@ import date.DateToString;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class InsertGroup extends JDialog {
+public class InsertGroup1 extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField jTextField1;
@@ -66,13 +61,13 @@ public class InsertGroup extends JDialog {
 	String nome;
 	float deposit;
 	String checkin,checkout;
-	Hotel h=new Hotel();;
+	Hotel h=new Hotel();
 
 	/**
 	 * Create the dialog.
 	 * @param h 
 	 */
-	public InsertGroup(Hotel hotel) {
+	public InsertGroup1(Hotel hotel) {
 		h=hotel;
 		setBounds(100, 100, 450, 500);
 		getContentPane().setLayout(new BorderLayout());
@@ -263,49 +258,81 @@ public class InsertGroup extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			getContentPane().add(contentPanel, BorderLayout.CENTER);
-			{
+			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
-			}
-			{
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e){
+						System.out.println("called");
+						 
+						 
+						 if(e.getActionCommand().equals("OK")){
+							 
+							 /*id=Integer.parseInt(jTextField1.getText());
+							 singole=Integer.parseInt(jTextField5.getText());
+							 doppie=Integer.parseInt(jTextField6.getText());
+							 matrimoniali=Integer.parseInt(jTextField7.getText());
+							 nome=jTextField2.getText();
+							 deposit=Float.parseFloat(jTextField3.getText());
+							 days=Integer.parseInt(jTextField4.getText());
+							 */
+							 DataCheckout d=new DataCheckout();
+								Date []dates=new Date[2];
+								dates=d.DataCheckout(days);
+								DateToString ds=new DateToString();
+								checkin=ds.DateToString(dates[0]);
+								checkout=ds.DateToString(dates[1]);
+								Group g = new Group(id, nome, checkin, checkout, deposit);
+								h.getGroupList().getGroupReg().add(g);
+								Request r=new Request(singole, doppie, matrimoniali, "eseguita");
+								h.getRequestList().getRequestReg().add(r);
+								JDOMAddChild j=new JDOMAddChild(g,r);
+								JOptionPane.showMessageDialog(null,"Fatto!");
+								
+						 }
+					}
+				});
+			
+			
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
-			}
+			
 		}
 	}
 	
 	
-	public void actionPerformed(ActionEvent e){
-		 
-		 
-		 if(e.getActionCommand().equals("OK")){
-			 
-			 /*id=Integer.parseInt(jTextField1.getText());
-			 singole=Integer.parseInt(jTextField5.getText());
-			 doppie=Integer.parseInt(jTextField6.getText());
-			 matrimoniali=Integer.parseInt(jTextField7.getText());
-			 nome=jTextField2.getText();
-			 deposit=Float.parseFloat(jTextField3.getText());
-			 days=Integer.parseInt(jTextField4.getText());
-			 */
-			 DataCheckout d=new DataCheckout();
-				Date []dates=new Date[2];
-				dates=d.DataCheckout(days);
-				DateToString ds=new DateToString();
-				checkin=ds.DateToString(dates[0]);
-				checkout=ds.DateToString(dates[1]);
-				Group g = new Group(id, nome, checkin, checkout, deposit);
-				h.getGroupList().getGroupReg().add(g);
-				Request r=new Request(singole, doppie, matrimoniali, "eseguita");
-				h.getRequestList().getRequestReg().add(r);
-				JDOMAddChild j=new JDOMAddChild(g,r);
-				JOptionPane.showMessageDialog(null,"Fatto!");
-				
-		 }
-	}
+//	public void actionPerformed(ActionEvent e){
+//		System.out.println("called");
+//		 
+//		 
+//		 if(e.getActionCommand().equals("OK")){
+//			 
+//			 /*id=Integer.parseInt(jTextField1.getText());
+//			 singole=Integer.parseInt(jTextField5.getText());
+//			 doppie=Integer.parseInt(jTextField6.getText());
+//			 matrimoniali=Integer.parseInt(jTextField7.getText());
+//			 nome=jTextField2.getText();
+//			 deposit=Float.parseFloat(jTextField3.getText());
+//			 days=Integer.parseInt(jTextField4.getText());
+//			 */
+//			 DataCheckout d=new DataCheckout();
+//				Date []dates=new Date[2];
+//				dates=d.DataCheckout(days);
+//				DateToString ds=new DateToString();
+//				checkin=ds.DateToString(dates[0]);
+//				checkout=ds.DateToString(dates[1]);
+//				Group g = new Group(id, nome, checkin, checkout, deposit);
+//				h.getGroupList().getGroupReg().add(g);
+//				Request r=new Request(singole, doppie, matrimoniali, "eseguita");
+//				h.getRequestList().getRequestReg().add(r);
+//				JDOMAddChild j=new JDOMAddChild(g,r);
+//				JOptionPane.showMessageDialog(null,"Fatto!");
+//				
+//		 }
+//	}
 	
 }
 		 
