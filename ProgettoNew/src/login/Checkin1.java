@@ -149,6 +149,7 @@ public class Checkin1 extends JDialog {
 						System.out.println("called");
 							
 							 if(e.getActionCommand().equals("OK")){
+								 nome=jTextField1.getText();
 								 if(!(h.getGroupList().isGroupListEmpty())){
 									 AssignRooms a=new AssignRooms(nome, h);
 									 JOptionPane.showMessageDialog(null,"Fatto!");

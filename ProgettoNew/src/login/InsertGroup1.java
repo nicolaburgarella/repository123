@@ -270,14 +270,14 @@ public class InsertGroup1 extends JDialog {
 						 
 						 if(e.getActionCommand().equals("OK")){
 							 
-							 /*id=Integer.parseInt(jTextField1.getText());
+							 id=Integer.parseInt(jTextField1.getText());
 							 singole=Integer.parseInt(jTextField5.getText());
 							 doppie=Integer.parseInt(jTextField6.getText());
 							 matrimoniali=Integer.parseInt(jTextField7.getText());
 							 nome=jTextField2.getText();
 							 deposit=Float.parseFloat(jTextField3.getText());
 							 days=Integer.parseInt(jTextField4.getText());
-							 */
+							 
 							 DataCheckout d=new DataCheckout();
 								Date []dates=new Date[2];
 								dates=d.DataCheckout(days);

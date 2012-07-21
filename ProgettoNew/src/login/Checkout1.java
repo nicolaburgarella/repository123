@@ -85,6 +85,11 @@ public class Checkout1 extends JDialog {
 		
 		if(string.equals("name")){
 			//nomegruppo
+			jCheckBox2.setEnabled(false);
+			jCheckBox2.setVisible(true);
+			jCheckBox2.setSelected(true);
+			jCheckBox1.setVisible(false);
+			
 			jLabel2.setVisible(false);
 			jTextField1.setVisible(false);
 			jLabel3.setVisible(true);
@@ -94,16 +99,18 @@ public class Checkout1 extends JDialog {
 		
 		if(string.equals("id")){
 			//id
+			jCheckBox1.setEnabled(false);
+			jCheckBox1.setVisible(true);
+			jCheckBox1.setSelected(true);
+			jCheckBox2.setVisible(false);
+			
 			jLabel2.setVisible(true);
 			jTextField1.setVisible(true);
 			jLabel3.setVisible(false);
 			jTextField2.setVisible(false);
 		}
 		
-		
-		
-		
-		
+
 		
 		{
 			jLabel1 = new JLabel();
@@ -209,6 +216,8 @@ public class Checkout1 extends JDialog {
 				
 								if(jCheckBox1.isSelected()){
 									//id
+									id=Integer.parseInt(jTextField1.getText());
+									
 									if(!(h.getReservationList().isReservationListEmpty())){
 										Reservation res=new Reservation();
 										for(int i=0;i<h.getReservationList().getReservReg().size();i++){
@@ -254,6 +263,8 @@ public class Checkout1 extends JDialog {
 								}
 								
 								if(jCheckBox2.isSelected()){
+									nome=jTextField2.getText();
+									
 									if(!(h.getReservationList().isReservationListEmpty())){
 										Reservation res=new Reservation();
 										for(int i=0;i<h.getReservationList().getReservReg().size();i++){

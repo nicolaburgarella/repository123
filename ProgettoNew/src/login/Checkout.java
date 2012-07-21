@@ -181,7 +181,10 @@ public class Checkout extends JDialog {
 		 
 		if(e.getActionCommand().equals("OK")){
 			
+			
 		if(jCheckBox1.isSelected()){
+			id=Integer.parseInt(jTextField1.getText());
+			
 			//id
 			if(!(h.getReservationList().isReservationListEmpty())){
 				Reservation res=new Reservation();
@@ -228,6 +231,8 @@ public class Checkout extends JDialog {
 		}
 		
 		if(jCheckBox2.isSelected()){
+			
+			nome=jTextField2.getText();
 			if(!(h.getReservationList().isReservationListEmpty())){
 				Reservation res=new Reservation();
 				for(int i=0;i<h.getReservationList().getReservReg().size();i++){

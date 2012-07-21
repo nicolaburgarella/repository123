@@ -12,14 +12,14 @@
   <ROOM number="4" fee="75" free="no" description="no" composition="1">
     <EXTRA cost="5.0" date="25/6/2012">internet</EXTRA>
   </ROOM>
-  <ROOM number="5" fee="75" free="yes" description="no" composition="1+1" />
-  <ROOM number="6" fee="75" free="yes" description="no" composition="2" />
+  <ROOM number="5" fee="75" free="no" description="no" composition="1+1" />
+  <ROOM number="6" fee="75" free="no" description="no" composition="2" />
   <ROOM number="7" fee="75" free="no" description="no" composition="1">
     <EXTRA cost="2.0" date="14/4/2012">internet</EXTRA>
   </ROOM>
   <ROOM number="8" fee="75" free="yes" description="no" composition="1+1" />
   <ROOM number="9" fee="75" free="yes" description="no" composition="2" />
-  <ROOM number="10" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="10" fee="75" free="no" description="no" composition="1" />
   <ROOM number="11" fee="75" free="yes" description="no" composition="1+1" />
   <ROOM number="12" fee="75" free="yes" description="no" composition="2" />
   <ROOM number="13" fee="75" free="yes" description="no" composition="1" />

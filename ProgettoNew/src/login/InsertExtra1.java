@@ -219,11 +219,11 @@ public class InsertExtra1 extends JDialog {
 						 
 						 if(e.getActionCommand().equals("OK")){
 							 if(jCheckBox1.isSelected()){  //in base al nome del gruppo
-								/* date =jTextField1.getText();
+								date =jTextField1.getText();
 								 type=jTextField2.getText();
 								 cost=Float.parseFloat(jTextField3.getText());
 								 stanza=Integer.parseInt(jTextField4.getText());
-								 nomegruppo=jTextField5.getText();*/
+								 nomegruppo=jTextField6.getText();
 								 
 								 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 										if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(nomegruppo)||!(h.getGroupList().getGroupReg().get(i).getRoomAssigned()).isEmpty()){
@@ -254,11 +254,11 @@ public class InsertExtra1 extends JDialog {
 							 
 							 if (jCheckBox2.isSelected()){ //in base al numero di stanza
 								 
-								 /*date =jTextField1.getText();
+								 date =jTextField1.getText();
 								 type=jTextField2.getText();
 								 cost=Float.parseFloat(jTextField3.getText());
 								 stanza=Integer.parseInt(jTextField4.getText());
-								 */
+								 
 								 
 								 for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 										if(stanza==h.getRoomList().getRoomReg().get(i).getNumber()){
@@ -268,13 +268,6 @@ public class InsertExtra1 extends JDialog {
 												JOptionPane.showMessageDialog(null,"Fatto!");
 								 
 							 }
-							/*String date =jTextField1.getText();
-							 String type=jTextField2.getText();
-							 Float cost=Float.parseFloat(jTextField3.getText());
-							 int stanza=Integer.parseInt(jTextField4.getText());
-							 String nomegruppo=jTextField5.getText();
-							 Extra extra = new Extra(cost, date, type);
-					*/
 							 
 						 }
 						 

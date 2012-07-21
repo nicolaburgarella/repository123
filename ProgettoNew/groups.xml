@@ -9,5 +9,8 @@
   <GROUP number="0" name="nome" checkin="21/07/2012" checkout="21/07/2012" deposit="0.0">
     <RICHIESTA singole="0" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
   </GROUP>
+  <GROUP number="11111" name="nome1" checkin="21/07/2012" checkout="22/07/2012" deposit="11.0">
+    <RICHIESTA singole="1" doppie="1" matrimoniali="1">non eseguita</RICHIESTA>
+  </GROUP>
 </GROUP_LIST>
 

@@ -192,6 +192,7 @@ public class CancelGroup1 extends JDialog {
 								 
 								 
 								 if(jCheckBox1.isSelected()){
+									 id=Integer.parseInt(jTextField1.getText());
 									 
 								 if(!(h.getGroupList().isGroupListEmpty())){
 									 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
@@ -209,6 +210,7 @@ public class CancelGroup1 extends JDialog {
 								 
 								 
 								 if(jCheckBox2.isSelected()){
+									 nome=jTextField2.getText();
 									 
 									 if(!(h.getGroupList().isGroupListEmpty())){
 										 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
