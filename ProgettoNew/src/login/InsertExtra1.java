@@ -222,6 +222,8 @@ public class InsertExtra1 extends JDialog {
 								date =jTextField1.getText();
 								 type=jTextField2.getText();
 								 cost=Float.parseFloat(jTextField3.getText());
+								 
+								//inserire controlli su correttezza data
 								 stanza=Integer.parseInt(jTextField4.getText());
 								 nomegruppo=jTextField6.getText();
 								 

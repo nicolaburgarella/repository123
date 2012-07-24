@@ -65,7 +65,7 @@ public GroupView(Hotel h){
 			System.out.println("INSERISCO UN GRUPPO CON LA SUA RICHIESTA:");
 					AddGroupView agv=new AddGroupView();
 					Group g= new Group();
-					g=agv.AddGroupView();
+					g=agv.AddGroupView(h);
 					System.out.println(g.toString());
 					h.getGroupList().getGroupReg().add(g);
 					AddRequestView arv=new AddRequestView();

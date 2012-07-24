@@ -62,6 +62,7 @@ public class InsertGroup1 extends JDialog {
 	float deposit;
 	String checkin,checkout;
 	Hotel h=new Hotel();
+	private int c=0;
 
 	/**
 	 * Create the dialog.
@@ -81,9 +82,19 @@ public class InsertGroup1 extends JDialog {
 		}
 		{
 			try{
+			do{
 			jTextField1 = new JTextField();
 			jTextField1.setText("id");
 			id=Integer.parseInt(jTextField1.getText());
+			for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
+				if((h.getGroupList().getGroupReg().get(i).getNumber()==id)){
+					 c=1;
+					 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
+				 }
+			}
+			}while(c==1);	
+			c=0;
+			
 			}catch(NumberFormatException nfe){
 				JOptionPane.showMessageDialog(null,"L'id del gruppo deve essere un intero");
 			}
@@ -148,9 +159,19 @@ public class InsertGroup1 extends JDialog {
 			}
 		}
 		{
-			jTextField2 = new JTextField();
-			jTextField2.setText("nome");
-			nome=jTextField2.getText();
+			do{
+				jTextField2 = new JTextField();
+				jTextField2.setText("nome_gruppo");
+				nome=jTextField2.getText();
+				for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
+					if((h.getGroupList().getGroupReg().get(i).getName().equals(nome))){
+						 c=1;
+						 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
+					 }
+				}
+				}while(c==1);	
+				c=0;
+			
 		}
 		{
 			try{
@@ -266,15 +287,28 @@ public class InsertGroup1 extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e){
 						System.out.println("called");
-						 
+					
 						 
 						 if(e.getActionCommand().equals("OK")){
-							 
+							 //inserire controlli su unicità di nome e id
 							 id=Integer.parseInt(jTextField1.getText());
+							 nome=jTextField2.getText();
+							/* do{
+									id=Integer.parseInt(jTextField1.getText());
+									nome=jTextField2.getText();
+									for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
+										if((h.getGroupList().getGroupReg().get(i).getNumber()==id)||(h.getGroupList().getGroupReg().get(i).getName().equals(nome))){
+											 c=1;
+											 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
+										 }
+									}
+									}while(c==1);	
+									c=0;
+							 */
+							 
 							 singole=Integer.parseInt(jTextField5.getText());
 							 doppie=Integer.parseInt(jTextField6.getText());
-							 matrimoniali=Integer.parseInt(jTextField7.getText());
-							 nome=jTextField2.getText();
+							 matrimoniali=Integer.parseInt(jTextField7.getText()); 
 							 deposit=Float.parseFloat(jTextField3.getText());
 							 days=Integer.parseInt(jTextField4.getText());
 							 
