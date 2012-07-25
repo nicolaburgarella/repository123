@@ -9,6 +9,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 
+import room.CheckFreeRooms;
+import room.JDOMReader;
+
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -159,8 +162,6 @@ public  NextPage1(Hotel hotel) {
  
   }
 
-//public class MyAction implements ActionListener{
-
 	
 	  public void actionPerformed(ActionEvent e){
 	JLabel label=new JLabel();
@@ -175,13 +176,28 @@ public  NextPage1(Hotel hotel) {
 		  
 	  }
 	  if(e.getActionCommand().equals("button2")){
-		//print all free rooms 
+		//print all free rooms  anch'esso da bufferizzare e mettere in pdf o jtextarea
+		  CheckFreeRooms cfr =new CheckFreeRooms(); 
+		  
+		  
 	  }
 	  if(e.getActionCommand().equals("button3")){
-		 //stampo l'extra per numero di camera
+		 //stampo l'extra per numero di camera,da mettere in pdf o in una jtextarea l'output del metodo
+		  PrintExtraByRoomNr pebnr=new PrintExtraByRoomNr(h, "number");
+		  pebnr.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			pebnr.setVisible(true);
 	  }
 	  if(e.getActionCommand().equals("button4")){
-		 //stampo tutti gli extra ordinati per numero di camera
+		 //stampo tutti gli extra ordinati per numero di camera,anch'esso da bufferizzare e mettere in pdf o jtextarea in un jdialog
+		  if(!(h.getExtraList().isExtraListEmpty())){
+				JDOMReader jdre=new JDOMReader();
+			}
+			else{
+				JOptionPane.showMessageDialog(null,"Non sono ancora stati inseriti gli extra in alcuna stanza");
+			}
+		  
+		  
+		  
 	  }
 	  if((e.getActionCommand().equals("button5"))){
 		  CancelExtra ce = new CancelExtra(h);
@@ -189,7 +205,11 @@ public  NextPage1(Hotel hotel) {
 			ce.setVisible(true);
 	  }
 	  if(e.getActionCommand().equals("button6")){
-			//stampo i dettagli della stanza per numeor di camera
+			//stampo i dettagli della stanza per numeor di camera damettere in pdf o in jtextarea l'output el metodo
+		  PrintRoomDetailsByRoomNr p=new PrintRoomDetailsByRoomNr(h, "number");
+			p.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			p.setVisible(true);
+		  
 	  }
 	  if(e.getActionCommand().equals("button7")){
 		  InsertExtra1 ie = new InsertExtra1(h,"number");
@@ -199,7 +219,6 @@ public  NextPage1(Hotel hotel) {
 	  
 	  
 	  }
-	//  }
 
 
 

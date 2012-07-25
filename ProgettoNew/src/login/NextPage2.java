@@ -158,9 +158,18 @@ public class NextPage2 extends JFrame implements ActionListener
 		  }
 		  if(e.getActionCommand().equals("button5")){
 			//stampo tutti idettagli del gruppo e della richiesta in base al suo nome
+			  PrintGroupsAndRequests pg=new PrintGroupsAndRequests(h, "name");
+			  pg.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				pg.setVisible(true);
 		  }
 		  if(e.getActionCommand().equals("button4")){
-				//print all groups and the state of request
+				//print all groups and the state of request,anch'esso da bufferizzare e mettere in pdf o dentro una jtextarea
+			  if(!(h.getGroupList().isGroupListEmpty())){
+					group.JDOMReader jdgr = new group.JDOMReader();
+				}
+				else{
+					JOptionPane.showMessageDialog(null,"Non è ancora stato inserito alcun gruppo");
+				}
 		  }
 		  
 		 	  

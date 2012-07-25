@@ -28,6 +28,7 @@ public class NextPage3 extends JFrame implements ActionListener
 	private JRadioButton jRadioButton5;
 	private JRadioButton jRadioButton7;
 	private JLabel jLabel2;
+	private JRadioButton jRadioButton1;
 	private JLabel jLabel1;
 	Hotel h;
 	
@@ -69,6 +70,12 @@ public class NextPage3 extends JFrame implements ActionListener
 	 jLabel2.setText("Seleziona una delle seguenti opzioni per eseguire la procedura richiesta");
  }
  {
+	 jRadioButton1 = new JRadioButton();
+	 jRadioButton1.setText("Stampo tutte le prenotazioni");
+	 jRadioButton1.setActionCommand("button1");
+	 jRadioButton1.addActionListener(this);
+ }
+ {
 	 jRadioButton7 = new JRadioButton();
 	 jRadioButton7.setText("Stampo la prenotazione del gruppo in base al nome del gruppo");
 	 jRadioButton7.setActionCommand("button7");
@@ -78,59 +85,58 @@ public class NextPage3 extends JFrame implements ActionListener
  	.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
  	.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
  	.addComponent(jRadioButton2, GroupLayout.PREFERRED_SIZE, 0, GroupLayout.PREFERRED_SIZE)
- 	.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+ 	.addGap(0, 30, Short.MAX_VALUE)
+ 	.addComponent(jRadioButton1, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+ 	.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED, 1, GroupLayout.PREFERRED_SIZE)
  	.addComponent(jRadioButton7, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
  	.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
  	.addComponent(jRadioButton3, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
- 	.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+ 	.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
  	.addComponent(jRadioButton4, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
  	.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
  	.addComponent(jRadioButton5, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
- 	.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
- 	.addComponent(jRadioButton2, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
- 	.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 0, Short.MAX_VALUE)
+ 	.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
  	.addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
- 	.addContainerGap(136, 136));
+ 	.addContainerGap(94, 94));
  thisLayout.setHorizontalGroup(thisLayout.createSequentialGroup()
  	.addContainerGap()
  	.addGroup(thisLayout.createParallelGroup()
- 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
- 	        .addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 471, GroupLayout.PREFERRED_SIZE)
- 	        .addGap(0, 139, Short.MAX_VALUE))
- 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
- 	        .addComponent(jRadioButton5, GroupLayout.PREFERRED_SIZE, 401, GroupLayout.PREFERRED_SIZE)
- 	        .addGap(0, 209, Short.MAX_VALUE))
- 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
- 	        .addComponent(jRadioButton4, GroupLayout.PREFERRED_SIZE, 342, GroupLayout.PREFERRED_SIZE)
- 	        .addGap(0, 268, Short.MAX_VALUE))
- 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
- 	        .addComponent(jRadioButton3, GroupLayout.PREFERRED_SIZE, 241, GroupLayout.PREFERRED_SIZE)
- 	        .addGap(0, 369, Short.MAX_VALUE))
- 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
- 	        .addComponent(jRadioButton7, 0, 458, Short.MAX_VALUE)
- 	        .addGap(152))
- 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
- 	        .addComponent(jRadioButton2, GroupLayout.PREFERRED_SIZE, 401, GroupLayout.PREFERRED_SIZE)
- 	        .addGap(0, 209, Short.MAX_VALUE))
  	    .addGroup(thisLayout.createSequentialGroup()
  	        .addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 610, GroupLayout.PREFERRED_SIZE)
  	        .addGap(0, 0, Short.MAX_VALUE))
  	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
- 	        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
  	        .addComponent(jRadioButton2, GroupLayout.PREFERRED_SIZE, 401, GroupLayout.PREFERRED_SIZE)
- 	        .addGap(0, 203, Short.MAX_VALUE)))
+ 	        .addGap(0, 209, Short.MAX_VALUE))
+ 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
+ 	        .addComponent(jRadioButton7, 0, 458, Short.MAX_VALUE)
+ 	        .addGap(152))
+ 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
+ 	        .addComponent(jRadioButton3, GroupLayout.PREFERRED_SIZE, 241, GroupLayout.PREFERRED_SIZE)
+ 	        .addGap(0, 369, Short.MAX_VALUE))
+ 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
+ 	        .addComponent(jRadioButton4, GroupLayout.PREFERRED_SIZE, 342, GroupLayout.PREFERRED_SIZE)
+ 	        .addGap(0, 268, Short.MAX_VALUE))
+ 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
+ 	        .addComponent(jRadioButton5, GroupLayout.PREFERRED_SIZE, 401, GroupLayout.PREFERRED_SIZE)
+ 	        .addGap(0, 209, Short.MAX_VALUE))
+ 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
+ 	        .addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 471, GroupLayout.PREFERRED_SIZE)
+ 	        .addGap(0, 139, Short.MAX_VALUE))
+ 	    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
+ 	        .addComponent(jRadioButton1, GroupLayout.PREFERRED_SIZE, 458, GroupLayout.PREFERRED_SIZE)
+ 	        .addGap(0, 152, Short.MAX_VALUE)))
  	.addContainerGap(56, 56));
  this.setSize(694, 475);
  
  
  ButtonGroup bg = new ButtonGroup();
- bg.add(jRadioButton2);
+ bg.add(jRadioButton1);
  bg.add(jRadioButton3);
  bg.add(jRadioButton4);
  bg.add(jRadioButton5);
  bg.add(jRadioButton7);
  
- jRadioButton2.addActionListener(this);
+ jRadioButton1.addActionListener(this);
  jRadioButton3.addActionListener(this);
  jRadioButton4.addActionListener(this);
  jRadioButton5.addActionListener(this);
@@ -142,12 +148,16 @@ public class NextPage3 extends JFrame implements ActionListener
 		  label.setText(e.getActionCommand());
 		  JOptionPane.showMessageDialog(null,"This is the " + e.getActionCommand() + 
 		" radio button.");
-			 if(e.getActionCommand().equals("button2")){
+			 if(e.getActionCommand().equals("button1")){
 				  //print reservation
+				 reservation.JDOMReader jdrr=new reservation.JDOMReader();
 				  
 			  }
 			  if(e.getActionCommand().equals("button7")){
-				//print reservation  
+				//print reservation 
+				  PrintReservationByGroupName pg=new PrintReservationByGroupName(h, "name");
+				  pg.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				  pg.setVisible(true);
 			  }
 			  if(e.getActionCommand().equals("button5")){
 				  Checkout1 c=new Checkout1(h,"name");
