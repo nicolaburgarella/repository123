@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOM_LIST>
+  <ROOM number="0" fee="75" free="yes" description="La camera 0 e' una prova" composition="2">
+  </ROOM>
+  <ROOM number="1" fee="75" free="yes" description="no" composition="2" />
+  <ROOM number="2" fee="75" free="yes" description="no" composition="1+1" />
+  <ROOM number="3" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="4" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="5" fee="75" free="yes" description="no" composition="1+1" />
+  <ROOM number="6" fee="75" free="yes" description="no" composition="2" />
+  <ROOM number="7" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="8" fee="75" free="yes" description="no" composition="1+1" />
+  <ROOM number="9" fee="75" free="yes" description="no" composition="2" />
+  <ROOM number="10" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="11" fee="75" free="yes" description="no" composition="1+1" />
+  <ROOM number="12" fee="75" free="yes" description="no" composition="2" />
+  <ROOM number="13" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="14" fee="75" free="yes" description="no" composition="1+1" />
+  <ROOM number="15" fee="75" free="yes" description="no" composition="2" />
+  <ROOM number="16" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="17" fee="75" free="yes" description="no" composition="1+1" />
+  <ROOM number="18" fee="75" free="yes" description="no" composition="2" />
+</ROOM_LIST>
+
