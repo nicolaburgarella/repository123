@@ -16,6 +16,7 @@ import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingWorker;
 
@@ -27,7 +28,7 @@ public class PrintGroupsAndRequestsC {
 	Hotel h = new Hotel();
 	String nomegruppo;
 	
-	public static JTextArea console(final InputStream out, final PrintWriter in) {
+	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
 	    // handle "System.out"
@@ -57,8 +58,10 @@ public class PrintGroupsAndRequestsC {
 	            }
 	        }
 	    });*/
+	    
+	    JScrollPane sp=new JScrollPane(area);
 
-	    return area;
+	    return sp;
 	}
 
 	
@@ -79,9 +82,9 @@ public class PrintGroupsAndRequestsC {
 
 	    // 3. create the gui 
 	    JFrame frame = new JFrame("\"Console\"");
-	    frame.add(console(outPipe, inWriter));
+	    frame.getContentPane().add(console(outPipe, inWriter));
 	    frame.setSize(400, 300);
-	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	   // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.setVisible(true);
 
 	    // 4. write some output (to JTextArea)

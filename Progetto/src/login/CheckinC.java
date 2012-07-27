@@ -1,6 +1,4 @@
 package login;
-import group.ExtractRequest;
-import group.Request;
 import hotel.Hotel;
 
 import java.awt.event.KeyAdapter;
@@ -20,11 +18,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingWorker;
 
-import room.CheckFreeRooms;
+import main.AssignRooms;
+
 import room.JDOMExtractExtrasByRoom;
 
 
-public class CheckFreeRoomsGuiC {
+public class CheckinC {
+	
+	Hotel h = new Hotel();
+	String nomegruppo;
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -64,8 +66,10 @@ public class CheckFreeRoomsGuiC {
 
 	
 	
-	public CheckFreeRoomsGuiC() throws IOException {
+	public CheckinC(Hotel hotel,String nome) throws IOException {
 		
+		h=hotel;
+		nomegruppo=nome;
 	    // 1. create the pipes
 	    PipedInputStream inPipe = new PipedInputStream();
 	    PipedInputStream outPipe = new PipedInputStream();
@@ -84,7 +88,17 @@ public class CheckFreeRoomsGuiC {
 	    frame.setVisible(true);
 
 	    // 4. write some output (to JTextArea)
-	    CheckFreeRooms c=new CheckFreeRooms();
+	    if(!(h.getGroupList().isGroupListEmpty())){
+			 AssignRooms a=new AssignRooms(nomegruppo, h);
+			 JOptionPane.showMessageDialog(null,"Fatto!");
+				
+			}
+			else{
+				JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato sa cui associare la prenotazione");
+			}
+	    
+	    
+	    
 
 	    /* 5. get some input (from JTextArea)
 	    Scanner s = new Scanner(System.in);

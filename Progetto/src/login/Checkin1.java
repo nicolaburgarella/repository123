@@ -150,14 +150,23 @@ public class Checkin1 extends JDialog {
 							
 							 if(e.getActionCommand().equals("OK")){
 								 nome=jTextField1.getText();
-								 if(!(h.getGroupList().isGroupListEmpty())){
-									 AssignRooms a=new AssignRooms(nome, h);
-									 JOptionPane.showMessageDialog(null,"Fatto!");
-										
-									}
-									else{
-										JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato sa cui associare la prenotazione");
-									}
+								  if(!(h.getGroupList().isGroupListEmpty())){
+										 AssignRooms a=new AssignRooms(nome, h);
+										 JOptionPane.showMessageDialog(null,"Fatto!");
+											
+										}
+										else{
+											JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato sa cui associare la prenotazione");
+										}
+								 
+								 
+								/* try {
+									 nome=jTextField1.getText();
+									CheckinC c=new CheckinC(h, nome);
+								} catch (IOException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}*/
 
 								 }
 					}
@@ -166,25 +175,6 @@ public class Checkin1 extends JDialog {
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
-			
-	
-	
-	/*			
-	public void actionPerformed(ActionEvent e){
-		 
-		 if(e.getActionCommand().equals("OK")){
-			 if(!(h.getGroupList().isGroupListEmpty())){
-				 AssignRooms a=new AssignRooms(nome, h);
-				 JOptionPane.showMessageDialog(null,"Fatto!");
-					
-				}
-				else{
-					JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato sa cui associare la prenotazione");
-				}
-
-			 }
-			 
-		 }*/
 
 	}
 }

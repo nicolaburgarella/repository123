@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
  
 
 /**
@@ -164,12 +165,12 @@ public class NextPage2 extends JFrame implements ActionListener
 		  }
 		  if(e.getActionCommand().equals("button4")){
 				//print all groups and the state of request,anch'esso da bufferizzare e mettere in pdf o dentro una jtextarea
-			  if(!(h.getGroupList().isGroupListEmpty())){
-					group.JDOMReader jdgr = new group.JDOMReader();
-				}
-				else{
-					JOptionPane.showMessageDialog(null,"Non è ancora stato inserito alcun gruppo");
-				}
+			  try {
+				PrintAllGroupsAndRequestsC p=new PrintAllGroupsAndRequestsC(h);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		  }
 		  
 		 	  

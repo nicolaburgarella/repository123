@@ -24,7 +24,9 @@ import room.CheckFreeRooms;
 import room.JDOMExtractExtrasByRoom;
 
 
-public class CheckFreeRoomsGuiC {
+public class PrintAllGroupsAndRequestsC {
+	
+	Hotel h=new Hotel();
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -57,14 +59,15 @@ public class CheckFreeRoomsGuiC {
 	        }
 	    });*/
 	    
-	    JScrollPane sp = new JScrollPane(area);
+	    JScrollPane sp=new JScrollPane(area);
 
 	    return sp;
 	}
 
 	
 	
-	public CheckFreeRoomsGuiC() throws IOException {
+	public PrintAllGroupsAndRequestsC(Hotel hotel) throws IOException {
+		h=hotel;
 		
 	    // 1. create the pipes
 	    PipedInputStream inPipe = new PipedInputStream();
@@ -84,7 +87,12 @@ public class CheckFreeRoomsGuiC {
 	    frame.setVisible(true);
 
 	    // 4. write some output (to JTextArea)
-	    CheckFreeRooms c=new CheckFreeRooms();
+	    if(!(h.getGroupList().isGroupListEmpty())){
+			  group.JDOMReader jdgr = new group.JDOMReader();
+			}
+			else{
+				JOptionPane.showMessageDialog(null,"Non è ancora stato inserito alcun gruppo");
+			}
 
 	    /* 5. get some input (from JTextArea)
 	    Scanner s = new Scanner(System.in);

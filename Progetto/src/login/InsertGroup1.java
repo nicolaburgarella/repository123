@@ -80,9 +80,11 @@ public class InsertGroup1 extends JDialog {
 			jLabel1 = new JLabel();
 			jLabel1.setText("Inserisci il gruppo");
 		}
+		
+		
 		{
 			try{
-			do{
+			
 			jTextField1 = new JTextField();
 			jTextField1.setText("id");
 			id=Integer.parseInt(jTextField1.getText());
@@ -92,8 +94,6 @@ public class InsertGroup1 extends JDialog {
 					 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
 				 }
 			}
-			}while(c==1);	
-			c=0;
 			
 			}catch(NumberFormatException nfe){
 				JOptionPane.showMessageDialog(null,"L'id del gruppo deve essere un intero");
@@ -159,18 +159,16 @@ public class InsertGroup1 extends JDialog {
 			}
 		}
 		{
-			do{
+			
 				jTextField2 = new JTextField();
 				jTextField2.setText("nome_gruppo");
 				nome=jTextField2.getText();
 				for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
-					if((h.getGroupList().getGroupReg().get(i).getName().equals(nome))){
+					if((h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nome))){
 						 c=1;
 						 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
 					 }
 				}
-				}while(c==1);	
-				c=0;
 			
 		}
 		{
@@ -185,12 +183,15 @@ public class InsertGroup1 extends JDialog {
 		{
 			try{
 			jTextField4 = new JTextField();
-			jTextField4.setText("0");
+			jTextField4.setText("1");
 			days=Integer.parseInt(jTextField4.getText());
 			}catch(NumberFormatException nfe){
 				JOptionPane.showMessageDialog(null,"Il numero di giorni deve essere intero");
 			}
 		}
+		
+		
+		
 				contentPanelLayout.setVerticalGroup(contentPanelLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -273,7 +274,8 @@ public class InsertGroup1 extends JDialog {
 					            .addGroup(contentPanelLayout.createSequentialGroup()
 					                .addComponent(jTextField7, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)))
 					        .addGap(0, 15, Short.MAX_VALUE)))
-					.addContainerGap(63, 63));
+					.addContainerGap(63, 63));	
+				
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -290,9 +292,17 @@ public class InsertGroup1 extends JDialog {
 					
 						 
 						 if(e.getActionCommand().equals("OK")){
-							 //inserire controlli su unicità di nome e id
 							 id=Integer.parseInt(jTextField1.getText());
 							 nome=jTextField2.getText();
+							/* for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
+									if(h.getGroupList().getGroupReg().get(i).getNumber()==id||h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nome)){
+										JOptionPane.showMessageDialog(null,"Gruppo già esistente,non lo inserisco nuovamente");
+									}
+									else{*/
+									
+							 //inserire controlli su unicità di nome e id
+							 
+							 				 
 							/* do{
 									id=Integer.parseInt(jTextField1.getText());
 									nome=jTextField2.getText();
@@ -307,24 +317,27 @@ public class InsertGroup1 extends JDialog {
 							 */
 							 
 							 singole=Integer.parseInt(jTextField5.getText());
-							 doppie=Integer.parseInt(jTextField6.getText());
-							 matrimoniali=Integer.parseInt(jTextField7.getText()); 
-							 deposit=Float.parseFloat(jTextField3.getText());
-							 days=Integer.parseInt(jTextField4.getText());
-							 
-							 DataCheckout d=new DataCheckout();
-								Date []dates=new Date[2];
-								dates=d.DataCheckout(days);
-								DateToString ds=new DateToString();
-								checkin=ds.DateToString(dates[0]);
-								checkout=ds.DateToString(dates[1]);
-								Group g = new Group(id, nome, checkin, checkout, deposit);
-								h.getGroupList().getGroupReg().add(g);
-								Request r=new Request(singole, doppie, matrimoniali, "eseguita");
-								h.getRequestList().getRequestReg().add(r);
-								JDOMAddChild j=new JDOMAddChild(g,r);
-								JOptionPane.showMessageDialog(null,"Fatto!");
-								
+                             doppie=Integer.parseInt(jTextField6.getText());
+                             matrimoniali=Integer.parseInt(jTextField7.getText()); 
+                             deposit=Float.parseFloat(jTextField3.getText());
+                             days=Integer.parseInt(jTextField4.getText());
+                             
+                             DataCheckout d=new DataCheckout();
+                                    Date []dates=new Date[2];
+                                    dates=d.DataCheckout(days);
+                                    DateToString ds=new DateToString();
+                                    checkin=ds.DateToString(dates[0]);
+                                    checkout=ds.DateToString(dates[1]);
+                                    Group g = new Group(id, nome, checkin, checkout, deposit);
+                                    h.getGroupList().getGroupReg().add(g);
+                                    Request r=new Request(singole, doppie, matrimoniali, "eseguita");
+                                    h.getRequestList().getRequestReg().add(r);
+                                    JDOMAddChild j=new JDOMAddChild(g,r);
+                                    JOptionPane.showMessageDialog(null,"Fatto!");
+                                	
+								//	}
+							//	}
+
 						 }
 					}
 				});

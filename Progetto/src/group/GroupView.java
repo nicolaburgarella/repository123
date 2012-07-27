@@ -66,13 +66,20 @@ public GroupView(Hotel h){
 					AddGroupView agv=new AddGroupView();
 					Group g= new Group();
 					g=agv.AddGroupView(h);
+					if(g==null){
+						System.out.println("gruppo non inserito");
+					}
+					else{
 					System.out.println(g.toString());
 					h.getGroupList().getGroupReg().add(g);
 					AddRequestView arv=new AddRequestView();
 					Request r=new Request();
 					r=arv.AddRequestView();
 					h.getRequestList().getRequestReg().add(r);
+					System.out.println(g.toString()+"\n and "+r.toString());
 					JDOMAddChild j=new JDOMAddChild(g,r);
+					}
+					
 			
 			break;
 		}

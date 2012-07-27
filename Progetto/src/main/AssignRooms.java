@@ -25,7 +25,7 @@ public class AssignRooms {
 	 * @param args
 	 */
 	public AssignRooms(String groupName, Hotel h) {
-		Group g=null;
+		Group g=new Group();
 		/**
 		 * Devo estrarre l'istanza relativa al gruppo passato come paramentro groupname
 		 * Estrarre l'istanza relativa alla prenotazione tramite il nomegruppo groupname no la stampo alla fine
@@ -60,6 +60,7 @@ public class AssignRooms {
 		System.out.println("Carico la richiesta del gruppo come istanza e la visualizzo\nSetto la richesta del gruppo come eseguita sul file xml groups,me lo fa sull'ultimo gruppo nel file xml,non va bene");
 		ExtractRequest er=new ExtractRequest();
 		Request r=er.ExtractRequestbyGroupName(groupName);
+		
 		for(int i=0;i<h.getRequestList().getRequestReg().size();i++){
 			if((h.getRequestList().getRequestReg().get(i)).equals(r)){
 				h.getRequestList().getRequestReg().get(i).setFlag("eseguita");
@@ -93,6 +94,13 @@ public class AssignRooms {
 					room.setFree("no");
 					SetRoomNotFree srnf=new SetRoomNotFree(singlearray[i]);
 					g.addRoomAssigned(room);
+					for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+						if(h.getGroupList().getGroupReg().get(j).getNumber()==g.getNumber()){
+						h.getGroupList().getGroupReg().get(j).addRoomAssigned(room);	
+						//System.out.println("PROVAAAAAA ISTANZIA la stanza assegnata???"+g.getRoomAssigned().toString()+"\n"+h.getGroupList().getGroupReg().get(j).getRoomAssigned().toString());
+						}
+					}
+
 					}
 					else{
 						System.out.println("non ho estratto niente,room null");
@@ -146,7 +154,7 @@ public class AssignRooms {
 				System.out.println("Stampo tutto il gruppo:dati e anche la lista delle camere assegnate al gruppo:\n"+g.toString()+"\n\n");		
 			}	
 			
-			JDOMWriteAssignment  jdwa =new JDOMWriteAssignment(g,"gruppo1");
+			JDOMWriteAssignment  jdwa =new JDOMWriteAssignment(g,g.getName());
 			
 			//Creo la prenotazione
 			PayRooms p=new PayRooms();

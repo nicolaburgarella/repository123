@@ -10,12 +10,14 @@ import room.Room;
 
 public class PayRooms {
 
+	Group g = new Group();
 	
 	public PayRooms(){
 	
 	}
 	
-	public float PayRooms(Group g){
+	public float PayRooms(Group gruppo){
+		g=gruppo;
 		float totCostRooms=0;
 		float diffCost=0;
 		

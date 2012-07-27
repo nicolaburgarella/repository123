@@ -17,6 +17,9 @@ public class AddGroupView {
 	static float deposit;
 	static int number,days;
 	Hotel h = new Hotel();
+	String na;
+	int nr;
+	//Group g;
 	private int c=0;
 
 
@@ -25,7 +28,7 @@ public class AddGroupView {
 	}
 
 	public Group AddGroupView(Hotel hotel) {
-
+	//	g=new Group();
 		h=hotel;
 		name = "";
 		number=0;
@@ -36,8 +39,10 @@ public class AddGroupView {
 		kb = new Scanner(System.in);
 		System.out.print("\nInserisci numero id del gruppo: ");
 		number = Integer.parseInt((kb.nextLine()));
+		nr=number;
 		System.out.print("Inserisci il nome del gruppo: ");
-		name = kb.nextLine();	
+		name = kb.nextLine();
+		na=name;
 
 		System.out.print("Inserisci l'importo dell'acconto: ");
 		deposit = Float.parseFloat(kb.nextLine());
@@ -49,13 +54,15 @@ public class AddGroupView {
 		DateToString ds=new DateToString();
 		checkin=ds.DateToString(dates[0]);
 		checkout=ds.DateToString(dates[1]);
+		for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
+			if(h.getGroupList().getGroupReg().get(i).getNumber()==nr||h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(na)){
+				System.out.println("Gruppo già esistente,non lo inserisco nuovamente");
+				return null;
+			}
+		}
 		
-		
-		
-		Group g = new Group(number, name, checkin, checkout, deposit);
-		
-		return g;
-
+				Group g = new Group(number, name, checkin, checkout, deposit);
+				return g;
 	}
 
 
