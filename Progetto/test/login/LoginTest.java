@@ -1,19 +1,19 @@
 package login;
 
-import static org.junit.Assert.*;
+import java.awt.event.ActionEvent;
 
-import org.junit.Test;
-
-public class LoginTest {
-
-	@Test
-	public void testLogin() {
-		fail("Not yet implemented");
+public class LoginTest extends junit.framework.TestCase
+{
+	public void testActionPerformed()
+	{
+		Login obj=new login.Login();
+		String problemMsg="Problem with: actionPerformed";
+		ActionEvent ae=null;
+		obj.actionPerformed(ae);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testActionPerformed() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(LoginTest.class));
 	}
-
 }

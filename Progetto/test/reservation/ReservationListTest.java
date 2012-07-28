@@ -1,49 +1,54 @@
 package reservation;
 
-import static org.junit.Assert.*;
+import java.lang.String;
+import java.util.ArrayList;
 
-import org.junit.Test;
-
-public class ReservationListTest {
-
-	@Test
-	public void testGetReservReg() {
-		fail("Not yet implemented");
+public class ReservationListTest extends junit.framework.TestCase
+{
+	public void testGetReservReg()
+	{
+		ReservationList obj=new reservation.ReservationList(null);
+		String problemMsg="Problem with: getReservReg";
+		assertEquals(problemMsg, null, obj.getReservReg());
 	}
-
-	@Test
-	public void testSetReservReg() {
-		fail("Not yet implemented");
+	public void testSetReservReg()
+	{
+		ReservationList obj=new reservation.ReservationList(null);
+		String problemMsg="Problem with: setReservReg";
+		ArrayList reservReg=null;
+		obj.setReservReg(reservReg);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testReservationListArrayListOfReservation() {
-		fail("Not yet implemented");
+	public void testIsReservationListEmpty()
+	{
+		ReservationList obj=new reservation.ReservationList(null);
+		String problemMsg="Problem with: isReservationListEmpty";
+		assertTrue(problemMsg, obj.isReservationListEmpty());
+//		assertFalse(problemMsg, obj.isReservationListEmpty());
 	}
-
-	@Test
-	public void testReservationList() {
-		fail("Not yet implemented");
+	public void testAddReservation()
+	{
+		ReservationList obj=new reservation.ReservationList(null);
+		String problemMsg="Problem with: addReservation";
+		Reservation res=null;
+		obj.addReservation(res);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testIsReservationListEmpty() {
-		fail("Not yet implemented");
+	public void testGetReservByPos()
+	{
+		ReservationList obj=new reservation.ReservationList(null);
+		String problemMsg="Problem with: getReservByPos";
+		int posizione=0;
+		assertEquals(problemMsg, null, obj.getReservByPos(posizione));
 	}
-
-	@Test
-	public void testAddReservation() {
-		fail("Not yet implemented");
+	public void testToString()
+	{
+		ReservationList obj=new reservation.ReservationList(null);
+		String problemMsg="Problem with: toString";
+		assertEquals(problemMsg, null, obj.toString());
 	}
-
-	@Test
-	public void testGetReservByPos() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(ReservationListTest.class));
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
 }

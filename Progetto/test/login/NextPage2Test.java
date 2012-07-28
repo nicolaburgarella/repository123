@@ -1,19 +1,19 @@
 package login;
 
-import static org.junit.Assert.*;
+import java.awt.event.ActionEvent;
 
-import org.junit.Test;
-
-public class NextPage2Test {
-
-	@Test
-	public void testNextPage2() {
-		fail("Not yet implemented");
+public class NextPage2Test extends junit.framework.TestCase
+{
+	public void testActionPerformed()
+	{
+		NextPage2 obj=new login.NextPage2(null);
+		String problemMsg="Problem with: actionPerformed";
+		ActionEvent e=null;
+		obj.actionPerformed(e);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testActionPerformed() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(NextPage2Test.class));
 	}
-
 }

@@ -1,24 +1,32 @@
 package login;
 
-import static org.junit.Assert.*;
+import hotel.Hotel;
 
-import org.junit.Test;
+import java.awt.event.ActionEvent;
 
-public class CancelExtraTest {
+import room.ExtraList;
 
-	@Test
-	public void testCancelExtra() {
-		fail("Not yet implemented");
+public class CancelExtraTest extends junit.framework.TestCase
+{
+	public void testActionPerformed()
+	{
+		CancelExtra obj=new login.CancelExtra(null);
+		String problemMsg="Problem with: actionPerformed";
+		ActionEvent e=null;
+		obj.actionPerformed(e);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testActionPerformed() {
-		fail("Not yet implemented");
+	public void testCancelExtras()
+	{
+		CancelExtra obj=new login.CancelExtra(null);
+		String problemMsg="Problem with: cancelExtras";
+		Hotel h=null;
+		ExtraList el=null;
+		obj.cancelExtras(h, el);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testCancelExtras() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(CancelExtraTest.class));
 	}
-
 }

@@ -1,19 +1,10 @@
 package reservation;
 
-import static org.junit.Assert.*;
 
-import org.junit.Test;
-
-public class ReservationViewTest {
-
-	@Test
-	public void testReservationView() {
-		fail("Not yet implemented");
+public class ReservationViewTest extends junit.framework.TestCase
+{
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(ReservationViewTest.class));
 	}
-
-	@Test
-	public void testReservationViewHotel() {
-		fail("Not yet implemented");
-	}
-
 }

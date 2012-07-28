@@ -1,14 +1,10 @@
 package room;
 
-import static org.junit.Assert.*;
 
-import org.junit.Test;
-
-public class CheckFreeRoomsTest {
-
-	@Test
-	public void testCheckFreeRooms() {
-		fail("Not yet implemented");
+public class CheckFreeRoomsTest extends junit.framework.TestCase
+{
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(CheckFreeRoomsTest.class));
 	}
-
 }

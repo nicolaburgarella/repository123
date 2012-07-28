@@ -1,19 +1,10 @@
 package payment;
 
-import static org.junit.Assert.*;
 
-import org.junit.Test;
-
-public class PayExtraByRoomNrTest {
-
-	@Test
-	public void testPayExtraByRoomNr() {
-		fail("Not yet implemented");
+public class PayExtraByRoomNrTest extends junit.framework.TestCase
+{
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(PayExtraByRoomNrTest.class));
 	}
-
-	@Test
-	public void testPayExtraByRoomNrGroup() {
-		fail("Not yet implemented");
-	}
-
 }

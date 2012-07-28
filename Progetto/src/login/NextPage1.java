@@ -167,8 +167,8 @@ public  NextPage1(Hotel hotel) {
 	  public void actionPerformed(ActionEvent e){
 	JLabel label=new JLabel();
 	  label.setText(e.getActionCommand());
-	  JOptionPane.showMessageDialog(null,"This is the " + e.getActionCommand() + 
-	" radio button.");
+	  JOptionPane.showMessageDialog(null,"Hai scelto l'opzione " + e.getActionCommand() + 
+	" .");
 	  
 	  if(e.getActionCommand().equals("button1")){
 		  InsertExtra1 ie = new InsertExtra1(h,"name");

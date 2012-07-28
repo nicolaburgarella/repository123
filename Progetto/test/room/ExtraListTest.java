@@ -1,49 +1,60 @@
 package room;
 
-import static org.junit.Assert.*;
+import java.lang.String;
+import java.util.ArrayList;
 
-import org.junit.Test;
-
-public class ExtraListTest {
-
-	@Test
-	public void testGetExtraReg() {
-		fail("Not yet implemented");
+public class ExtraListTest extends junit.framework.TestCase
+{
+	public void testGetExtraReg()
+	{
+		ExtraList obj=new room.ExtraList();
+		String problemMsg="Problem with: getExtraReg";
+		assertEquals(problemMsg, null, obj.getExtraReg());
 	}
-
-	@Test
-	public void testSetExtraReg() {
-		fail("Not yet implemented");
+	public void testSetExtraReg()
+	{
+		ExtraList obj=new room.ExtraList();
+		String problemMsg="Problem with: setExtraReg";
+		ArrayList extraReg=null;
+		obj.setExtraReg(extraReg);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testExtraList() {
-		fail("Not yet implemented");
+	public void testGetExtraList()
+	{
+		ExtraList obj=new room.ExtraList();
+		String problemMsg="Problem with: getExtraList";
+		assertEquals(problemMsg, null, obj.getExtraList());
 	}
-
-	@Test
-	public void testGetExtraList() {
-		fail("Not yet implemented");
+	public void testAddExtra()
+	{
+		ExtraList obj=new room.ExtraList();
+		String problemMsg="Problem with: addExtra";
+		Extra extra=null;
+		obj.addExtra(extra);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testAddExtra() {
-		fail("Not yet implemented");
+	public void testGetExtraByPos()
+	{
+		ExtraList obj=new room.ExtraList();
+		String problemMsg="Problem with: getExtraByPos";
+		int posizione=0;
+		assertEquals(problemMsg, null, obj.getExtraByPos(posizione));
 	}
-
-	@Test
-	public void testGetExtraByPos() {
-		fail("Not yet implemented");
+	public void testIsExtraListEmpty()
+	{
+		ExtraList obj=new room.ExtraList();
+		String problemMsg="Problem with: isExtraListEmpty";
+		assertTrue(problemMsg, obj.isExtraListEmpty());
+//		assertFalse(problemMsg, obj.isExtraListEmpty());
 	}
-
-	@Test
-	public void testIsExtraListEmpty() {
-		fail("Not yet implemented");
+	public void testToString()
+	{
+		ExtraList obj=new room.ExtraList();
+		String problemMsg="Problem with: toString";
+		assertEquals(problemMsg, null, obj.toString());
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(ExtraListTest.class));
 	}
-
 }

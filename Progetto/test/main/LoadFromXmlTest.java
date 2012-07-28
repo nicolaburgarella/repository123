@@ -1,19 +1,16 @@
 package main;
 
-import static org.junit.Assert.*;
 
-import org.junit.Test;
-
-public class LoadFromXmlTest {
-
-	@Test
-	public void testLoadFromXml() {
-		fail("Not yet implemented");
+public class LoadFromXmlTest extends junit.framework.TestCase
+{
+	public void testLoadFromXml()
+	{
+		LoadFromXml obj=new main.LoadFromXml();
+		String problemMsg="Problem with: LoadFromXml";
+		assertEquals(problemMsg, null, obj.LoadFromXml());
 	}
-
-	@Test
-	public void testLoadFromXml1() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(LoadFromXmlTest.class));
 	}
-
 }

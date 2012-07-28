@@ -1,19 +1,20 @@
 package payment;
 
-import static org.junit.Assert.*;
+import group.Group;
 
-import org.junit.Test;
 
-public class PayRoomsTest {
-
-	@Test
-	public void testPayRooms() {
-		fail("Not yet implemented");
+public class PayRoomsTest extends junit.framework.TestCase
+{
+	public void testPayRooms()
+	{
+		PayRooms obj=new payment.PayRooms();
+		String problemMsg="Problem with: PayRooms";
+		Group gruppo=null;
+		assertEquals(problemMsg, 0F, obj.PayRooms(gruppo), 0.1F);
+//NOTE: Final parameter is the tolerance for the comparison
 	}
-
-	@Test
-	public void testPayRoomsGroup() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(PayRoomsTest.class));
 	}
-
 }

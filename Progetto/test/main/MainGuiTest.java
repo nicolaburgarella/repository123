@@ -1,84 +1,127 @@
 package main;
 
-import static org.junit.Assert.*;
+import java.awt.dnd.DropTargetDragEvent;
+import java.awt.dnd.DropTargetDropEvent;
+import java.awt.dnd.DropTargetEvent;
+import java.awt.event.ActionEvent;
+import java.io.File;
+import java.lang.String;
+import javax.swing.JLabel;
+import javax.swing.event.CaretEvent;
 
-import org.junit.Test;
-
-public class MainGuiTest {
-
-	@Test
-	public void testMainGui() {
-		fail("Not yet implemented");
+public class MainGuiTest extends junit.framework.TestCase
+{
+	public void testActionPerformed()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: actionPerformed";
+		ActionEvent e=null;
+		obj.actionPerformed(e);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testActionPerformed() {
-		fail("Not yet implemented");
+	public void testIsFileAllowExt()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: isFileAllowExt";
+		File file=null;
+		assertTrue(problemMsg, obj.isFileAllowExt(file));
+//		assertFalse(problemMsg, obj.isFileAllowExt(file));
 	}
-
-	@Test
-	public void testIsFileAllowExt() {
-		fail("Not yet implemented");
+	public void testIsFileOk()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: isFileOk";
+		File file=null;
+		assertTrue(problemMsg, obj.isFileOk(file));
+//		assertFalse(problemMsg, obj.isFileOk(file));
 	}
-
-	@Test
-	public void testIsFileOk() {
-		fail("Not yet implemented");
+	public void testCaricaFile()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: caricaFile";
+		File file=null;
+		assertTrue(problemMsg, obj.caricaFile(file));
+//		assertFalse(problemMsg, obj.caricaFile(file));
 	}
-
-	@Test
-	public void testCaricaFile() {
-		fail("Not yet implemented");
+	public void testDrop()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: drop";
+		DropTargetDropEvent dtde=null;
+		obj.drop(dtde);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testDrop() {
-		fail("Not yet implemented");
+	public void testSalvaFile()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: salvaFile";
+		File path=null;
+		assertTrue(problemMsg, obj.salvaFile(path));
+//		assertFalse(problemMsg, obj.salvaFile(path));
 	}
-
-	@Test
-	public void testSalvaFile() {
-		fail("Not yet implemented");
+	public void testCreaMessaggio()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: creaMessaggio";
+		String messaggio=null;
+		assertEquals(problemMsg, null, obj.creaMessaggio(messaggio));
 	}
-
-	@Test
-	public void testCreaMessaggio() {
-		fail("Not yet implemented");
+	public void testCreaMsgSintError()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: creaMsgSintError";
+		String messaggio=null;
+		assertEquals(problemMsg, null, obj.creaMsgSintError(messaggio));
 	}
-
-	@Test
-	public void testCreaMsgSintError() {
-		fail("Not yet implemented");
+	public void testCreaMsgSemError()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: creaMsgSemError";
+		String messaggio=null;
+		assertEquals(problemMsg, null, obj.creaMsgSemError(messaggio));
 	}
-
-	@Test
-	public void testCreaMsgSemError() {
-		fail("Not yet implemented");
+	public void testDragEnter()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: dragEnter";
+		DropTargetDragEvent arg0=null;
+		obj.dragEnter(arg0);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testDragEnter() {
-		fail("Not yet implemented");
+	public void testDragExit()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: dragExit";
+		DropTargetEvent arg0=null;
+		obj.dragExit(arg0);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testDragExit() {
-		fail("Not yet implemented");
+	public void testDragOver()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: dragOver";
+		DropTargetDragEvent arg0=null;
+		obj.dragOver(arg0);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testDragOver() {
-		fail("Not yet implemented");
+	public void testDropActionChanged()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: dropActionChanged";
+		DropTargetDragEvent arg0=null;
+		obj.dropActionChanged(arg0);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testDropActionChanged() {
-		fail("Not yet implemented");
+	public void testCaretUpdate()
+	{
+		MainGui obj=new main.MainGui();
+		String problemMsg="Problem with: caretUpdate";
+		CaretEvent arg0=null;
+		obj.caretUpdate(arg0);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testCaretUpdate() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(MainGuiTest.class));
 	}
-
 }

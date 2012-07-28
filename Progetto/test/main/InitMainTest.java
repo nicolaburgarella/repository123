@@ -1,14 +1,18 @@
 package main;
 
-import static org.junit.Assert.*;
+import java.lang.String;
 
-import org.junit.Test;
-
-public class InitMainTest {
-
-	@Test
-	public void testMain() {
-		fail("Not yet implemented");
+public class InitMainTest extends junit.framework.TestCase
+{
+	public void testMain()
+	{
+		String problemMsg="Problem with: main";
+		String[] args=null;
+		InitMain.main(args);
+		//Examine the object and assert something appropriate here
 	}
-
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(InitMainTest.class));
+	}
 }

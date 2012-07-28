@@ -1,49 +1,53 @@
 package group;
 
-import static org.junit.Assert.*;
+import java.lang.String;
+import java.util.ArrayList;
 
-import org.junit.Test;
-
-public class RequestListTest {
-
-	@Test
-	public void testGetRequestReg() {
-		fail("Not yet implemented");
+public class RequestListTest extends junit.framework.TestCase
+{
+	public void testGetRequestReg()
+	{
+		RequestList obj=new group.RequestList(null);
+		String problemMsg="Problem with: getRequestReg";
+		assertEquals(problemMsg, null, obj.getRequestReg());
 	}
-
-	@Test
-	public void testSetRequestReg() {
-		fail("Not yet implemented");
+	public void testSetRequestReg()
+	{
+		RequestList obj=new group.RequestList(null);
+		String problemMsg="Problem with: setRequestReg";
+		ArrayList requestReg=null;
+		obj.setRequestReg(requestReg);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testRequestListArrayListOfRequest() {
-		fail("Not yet implemented");
+	public void testGetExtraList()
+	{
+		RequestList obj=new group.RequestList(null);
+		String problemMsg="Problem with: getExtraList";
+		assertEquals(problemMsg, null, obj.getExtraList());
 	}
-
-	@Test
-	public void testRequestList() {
-		fail("Not yet implemented");
+	public void testAddRequest()
+	{
+		RequestList obj=new group.RequestList(null);
+		String problemMsg="Problem with: addRequest";
+		Request request=null;
+		obj.addRequest(request);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetExtraList() {
-		fail("Not yet implemented");
+	public void testGetRequestByPos()
+	{
+		RequestList obj=new group.RequestList(null);
+		String problemMsg="Problem with: getRequestByPos";
+		int posizione=0;
+		assertEquals(problemMsg, null, obj.getRequestByPos(posizione));
 	}
-
-	@Test
-	public void testAddRequest() {
-		fail("Not yet implemented");
+	public void testToString()
+	{
+		RequestList obj=new group.RequestList(null);
+		String problemMsg="Problem with: toString";
+		assertEquals(problemMsg, null, obj.toString());
 	}
-
-	@Test
-	public void testGetRequestByPos() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(RequestListTest.class));
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
 }

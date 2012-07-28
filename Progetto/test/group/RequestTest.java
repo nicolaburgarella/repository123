@@ -1,64 +1,73 @@
 package group;
 
-import static org.junit.Assert.*;
+import java.lang.String;
 
-import org.junit.Test;
-
-public class RequestTest {
-
-	@Test
-	public void testRequest() {
-		fail("Not yet implemented");
+public class RequestTest extends junit.framework.TestCase
+{
+	public void testGetSingole()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: getSingole";
+		assertEquals(problemMsg, 0, obj.getSingole());
 	}
-
-	@Test
-	public void testRequestIntIntIntString() {
-		fail("Not yet implemented");
+	public void testSetSingole()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: setSingole";
+		int singole=0;
+		obj.setSingole(singole);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetSingole() {
-		fail("Not yet implemented");
+	public void testGetDoppie()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: getDoppie";
+		assertEquals(problemMsg, 0, obj.getDoppie());
 	}
-
-	@Test
-	public void testSetSingole() {
-		fail("Not yet implemented");
+	public void testSetDoppie()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: setDoppie";
+		int doppie=0;
+		obj.setDoppie(doppie);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetDoppie() {
-		fail("Not yet implemented");
+	public void testGetMatrimoniali()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: getMatrimoniali";
+		assertEquals(problemMsg, 0, obj.getMatrimoniali());
 	}
-
-	@Test
-	public void testSetDoppie() {
-		fail("Not yet implemented");
+	public void testSetMatrimoniali()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: setMatrimoniali";
+		int matrimoniali=0;
+		obj.setMatrimoniali(matrimoniali);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetMatrimoniali() {
-		fail("Not yet implemented");
+	public void testGetFlag()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: getFlag";
+		assertEquals(problemMsg, null, obj.getFlag());
 	}
-
-	@Test
-	public void testSetMatrimoniali() {
-		fail("Not yet implemented");
+	public void testSetFlag()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: setFlag";
+		String flag=null;
+		obj.setFlag(flag);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetFlag() {
-		fail("Not yet implemented");
+	public void testToString()
+	{
+		Request obj=new group.Request();
+		String problemMsg="Problem with: toString";
+		assertEquals(problemMsg, null, obj.toString());
 	}
-
-	@Test
-	public void testSetFlag() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(RequestTest.class));
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
 }

@@ -1,69 +1,88 @@
 package room;
 
-import static org.junit.Assert.*;
+import java.lang.String;
 
-import org.junit.Test;
-
-public class RoomTest {
-
-	@Test
-	public void testRoom() {
-		fail("Not yet implemented");
+public class RoomTest extends junit.framework.TestCase
+{
+	public void testGetNumber()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: getNumber";
+		assertEquals(problemMsg, 0, obj.getNumber());
 	}
-
-	@Test
-	public void testGetNumber() {
-		fail("Not yet implemented");
+	public void testSetNumber()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: setNumber";
+		int number=0;
+		obj.setNumber(number);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testSetNumber() {
-		fail("Not yet implemented");
+	public void testGetFee()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: getFee";
+		assertEquals(problemMsg, 0F, obj.getFee(), 0.1F);
+//NOTE: Final parameter is the tolerance for the comparison
 	}
-
-	@Test
-	public void testGetFee() {
-		fail("Not yet implemented");
+	public void testSetFee()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: setFee";
+		float f=0F;
+		obj.setFee(f);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testSetFee() {
-		fail("Not yet implemented");
+	public void testGetFree()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: getFree";
+		assertEquals(problemMsg, null, obj.getFree());
 	}
-
-	@Test
-	public void testGetFree() {
-		fail("Not yet implemented");
+	public void testSetFree()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: setFree";
+		String free=null;
+		obj.setFree(free);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testSetFree() {
-		fail("Not yet implemented");
+	public void testGetComposition()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: getComposition";
+		assertEquals(problemMsg, null, obj.getComposition());
 	}
-
-	@Test
-	public void testGetComposition() {
-		fail("Not yet implemented");
+	public void testSetComposition()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: setComposition";
+		String composition=null;
+		obj.setComposition(composition);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testSetComposition() {
-		fail("Not yet implemented");
+	public void testGetDescription()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: getDescription";
+		assertEquals(problemMsg, null, obj.getDescription());
 	}
-
-	@Test
-	public void testGetDescription() {
-		fail("Not yet implemented");
+	public void testSetDescription()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: setDescription";
+		String description=null;
+		obj.setDescription(description);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testSetDescription() {
-		fail("Not yet implemented");
+	public void testToString()
+	{
+		Room obj=new room.Room(0, 0F, null, null, null);
+		String problemMsg="Problem with: toString";
+		assertEquals(problemMsg, null, obj.toString());
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(RoomTest.class));
 	}
-
 }

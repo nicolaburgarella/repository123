@@ -1,14 +1,10 @@
 package main;
 
-import static org.junit.Assert.*;
 
-import org.junit.Test;
-
-public class AssignRoomsTest {
-
-	@Test
-	public void testAssignRooms() {
-		fail("Not yet implemented");
+public class AssignRoomsTest extends junit.framework.TestCase
+{
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(AssignRoomsTest.class));
 	}
-
 }

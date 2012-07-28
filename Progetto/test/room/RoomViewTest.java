@@ -1,24 +1,21 @@
 package room;
 
-import static org.junit.Assert.*;
+import hotel.Hotel;
 
-import org.junit.Test;
 
-public class RoomViewTest {
-
-	@Test
-	public void testRoomView() {
-		fail("Not yet implemented");
+public class RoomViewTest extends junit.framework.TestCase
+{
+	public void testCancelExtras()
+	{
+		RoomView obj=new room.RoomView();
+		String problemMsg="Problem with: cancelExtras";
+		Hotel h=null;
+		ExtraList el=null;
+		obj.cancelExtras(h, el);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testRoomViewHotel() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(RoomViewTest.class));
 	}
-
-	@Test
-	public void testCancelExtras() {
-		fail("Not yet implemented");
-	}
-
 }

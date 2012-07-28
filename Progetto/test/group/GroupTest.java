@@ -1,88 +1,127 @@
 package group;
 
-import static org.junit.Assert.*;
+import java.lang.String;
+import java.util.ArrayList;
 
-import org.junit.Test;
+import room.Room;
 
-public class GroupTest {
-
-
-	@Test
-	public void testIsRoomsAssignedListEmpty() {
-		Group g =new Group();
-		assertFalse(g.isRoomsAssignedListEmpty());
-//		fail("Not yet implemented");
+public class GroupTest extends junit.framework.TestCase
+{
+	public void testGetRoomAssigned()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: getRoomAssigned";
+		assertEquals(problemMsg, null, obj.getRoomAssigned());
 	}
-
-	/*@Test
-	public void testAddRoomAssigned() {
-		fail("Not yet implemented");
-	}*/
-
-
-	@Test
-	public void testGroup() {
-		fail("Not yet implemented");
+	public void testSetRoomAssigned()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: setRoomAssigned";
+		ArrayList roomAssigned=null;
+		obj.setRoomAssigned(roomAssigned);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGroupIntStringStringStringFloat() {
-		fail("Not yet implemented");
+	public void testIsRoomsAssignedListEmpty()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: isRoomsAssignedListEmpty";
+		assertTrue(problemMsg, obj.isRoomsAssignedListEmpty());
+//		assertFalse(problemMsg, obj.isRoomsAssignedListEmpty());
 	}
-
-	@Test
-	public void testGetNumber() {
-		fail("Not yet implemented");
+	public void testAddRoomAssigned()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: addRoomAssigned";
+		Room room=null;
+		assertTrue(problemMsg, obj.addRoomAssigned(room));
+//		assertFalse(problemMsg, obj.addRoomAssigned(room));
 	}
-
-	@Test
-	public void testSetNumber() {
-		fail("Not yet implemented");
+	public void testGetRoomAssignedByPos()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: getRoomAssignedByPos";
+		int posizione=0;
+		assertEquals(problemMsg, null, obj.getRoomAssignedByPos(posizione));
 	}
-
-	@Test
-	public void testGetName() {
-		fail("Not yet implemented");
+	public void testGetNumber()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: getNumber";
+		assertEquals(problemMsg, 0, obj.getNumber());
 	}
-
-	@Test
-	public void testSetName() {
-		fail("Not yet implemented");
+	public void testSetNumber()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: setNumber";
+		int number=0;
+		obj.setNumber(number);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetCheckin() {
-		fail("Not yet implemented");
+	public void testGetName()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: getName";
+		assertEquals(problemMsg, null, obj.getName());
 	}
-
-	@Test
-	public void testSetCheckin() {
-		fail("Not yet implemented");
+	public void testSetName()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: setName";
+		String name=null;
+		obj.setName(name);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetCheckout() {
-		fail("Not yet implemented");
+	public void testGetCheckin()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: getCheckin";
+		assertEquals(problemMsg, null, obj.getCheckin());
 	}
-
-	@Test
-	public void testSetCheckout() {
-		fail("Not yet implemented");
+	public void testSetCheckin()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: setCheckin";
+		String checkin=null;
+		obj.setCheckin(checkin);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetDeposit() {
-		fail("Not yet implemented");
+	public void testGetCheckout()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: getCheckout";
+		assertEquals(problemMsg, null, obj.getCheckout());
 	}
-
-	@Test
-	public void testSetDeposit() {
-		fail("Not yet implemented");
+	public void testSetCheckout()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: setCheckout";
+		String checkout=null;
+		obj.setCheckout(checkout);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+	public void testGetDeposit()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: getDeposit";
+		assertEquals(problemMsg, 0F, obj.getDeposit(), 0.1F);
+//NOTE: Final parameter is the tolerance for the comparison
 	}
-
+	public void testSetDeposit()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: setDeposit";
+		float deposit=0F;
+		obj.setDeposit(deposit);
+		//Examine the object and assert something appropriate here
+	}
+	public void testToString()
+	{
+		Group obj=new group.Group();
+		String problemMsg="Problem with: toString";
+		assertEquals(problemMsg, null, obj.toString());
+	}
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(GroupTest.class));
+	}
 }

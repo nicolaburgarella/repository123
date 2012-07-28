@@ -1,19 +1,16 @@
 package room;
 
-import static org.junit.Assert.*;
 
-import org.junit.Test;
-
-public class AddExtraViewTest {
-
-	@Test
-	public void testAddExtraView() {
-		fail("Not yet implemented");
+public class AddExtraViewTest extends junit.framework.TestCase
+{
+	public void testAddExtraView()
+	{
+		AddExtraView obj=new room.AddExtraView();
+		String problemMsg="Problem with: AddExtraView";
+		assertEquals(problemMsg, null, obj.AddExtraView());
 	}
-
-	@Test
-	public void testAddExtraView1() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(AddExtraViewTest.class));
 	}
-
 }

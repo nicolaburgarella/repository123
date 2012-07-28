@@ -1,54 +1,60 @@
 package room;
 
-import static org.junit.Assert.*;
+import java.lang.String;
 
-import org.junit.Test;
-
-public class ExtraTest {
-
-	@Test
-	public void testExtra() {
-		fail("Not yet implemented");
+public class ExtraTest extends junit.framework.TestCase
+{
+	public void testGetCost()
+	{
+		Extra obj=new room.Extra();
+		String problemMsg="Problem with: getCost";
+		assertEquals(problemMsg, 0F, obj.getCost(), 0.1F);
+//NOTE: Final parameter is the tolerance for the comparison
 	}
-
-	@Test
-	public void testExtraFloatStringString() {
-		fail("Not yet implemented");
+	public void testSetCost()
+	{
+		Extra obj=new room.Extra();
+		String problemMsg="Problem with: setCost";
+		float cost=0F;
+		obj.setCost(cost);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetCost() {
-		fail("Not yet implemented");
+	public void testGetDate()
+	{
+		Extra obj=new room.Extra();
+		String problemMsg="Problem with: getDate";
+		assertEquals(problemMsg, null, obj.getDate());
 	}
-
-	@Test
-	public void testSetCost() {
-		fail("Not yet implemented");
+	public void testSetDate()
+	{
+		Extra obj=new room.Extra();
+		String problemMsg="Problem with: setDate";
+		String date=null;
+		obj.setDate(date);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetDate() {
-		fail("Not yet implemented");
+	public void testGetType()
+	{
+		Extra obj=new room.Extra();
+		String problemMsg="Problem with: getType";
+		assertEquals(problemMsg, null, obj.getType());
 	}
-
-	@Test
-	public void testSetDate() {
-		fail("Not yet implemented");
+	public void testSetType()
+	{
+		Extra obj=new room.Extra();
+		String problemMsg="Problem with: setType";
+		String type=null;
+		obj.setType(type);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGetType() {
-		fail("Not yet implemented");
+	public void testToString()
+	{
+		Extra obj=new room.Extra();
+		String problemMsg="Problem with: toString";
+		assertEquals(problemMsg, null, obj.toString());
 	}
-
-	@Test
-	public void testSetType() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(ExtraTest.class));
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
 }

@@ -1,24 +1,21 @@
 package group;
 
-import static org.junit.Assert.*;
+import hotel.Hotel;
 
-import org.junit.Test;
 
-public class GroupViewTest {
-
-	@Test
-	public void testGroupView() {
-		fail("Not yet implemented");
+public class GroupViewTest extends junit.framework.TestCase
+{
+	public void testCancelRequest()
+	{
+		GroupView obj=new group.GroupView();
+		String problemMsg="Problem with: cancelRequest";
+		Hotel h=null;
+		Request r=null;
+		obj.cancelRequest(h, r);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testGroupViewHotel() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(GroupViewTest.class));
 	}
-
-	@Test
-	public void testCancelRequest() {
-		fail("Not yet implemented");
-	}
-
 }

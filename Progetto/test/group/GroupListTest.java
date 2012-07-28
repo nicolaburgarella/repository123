@@ -1,49 +1,61 @@
 package group;
 
-import static org.junit.Assert.*;
+import java.lang.String;
+import java.util.ArrayList;
 
-import org.junit.Test;
-
-public class GroupListTest {
-
-	@Test
-	public void testGetGroupReg() {
-		fail("Not yet implemented");
+public class GroupListTest extends junit.framework.TestCase
+{
+	public void testGetGroupReg()
+	{
+		GroupList obj=new group.GroupList();
+		String problemMsg="Problem with: getGroupReg";
+		assertEquals(problemMsg, null, obj.getGroupReg());
 	}
-
-	@Test
-	public void testSetGroupReg() {
-		fail("Not yet implemented");
+	public void testSetGroupReg()
+	{
+		GroupList obj=new group.GroupList();
+		String problemMsg="Problem with: setGroupReg";
+		ArrayList groupReg=null;
+		obj.setGroupReg(groupReg);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+	public void testToString()
+	{
+		GroupList obj=new group.GroupList();
+		String problemMsg="Problem with: toString";
+		assertEquals(problemMsg, null, obj.toString());
 	}
-
-	@Test
-	public void testGroupList() {
-		fail("Not yet implemented");
+	public void testIsGroupListEmpty()
+	{
+		GroupList obj=new group.GroupList();
+		String problemMsg="Problem with: isGroupListEmpty";
+		assertTrue(problemMsg, obj.isGroupListEmpty());
+//		assertFalse(problemMsg, obj.isGroupListEmpty());
 	}
-
-	@Test
-	public void testIsGroupListEmpty() {
-		fail("Not yet implemented");
+	public void testAddGroup()
+	{
+		GroupList obj=new group.GroupList();
+		String problemMsg="Problem with: addGroup";
+		Group group=null;
+		obj.addGroup(group);
+		//Examine the object and assert something appropriate here
 	}
-
-	@Test
-	public void testAddGroup() {
-		fail("Not yet implemented");
+	public void testGetGroupByPos()
+	{
+		GroupList obj=new group.GroupList();
+		String problemMsg="Problem with: getGroupByPos";
+		int posizione=0;
+		assertEquals(problemMsg, null, obj.getGroupByPos(posizione));
 	}
-
-	@Test
-	public void testGetGroupByPos() {
-		fail("Not yet implemented");
+	public void testSearchGroupPosById()
+	{
+		GroupList obj=new group.GroupList();
+		String problemMsg="Problem with: searchGroupPosById";
+		int number=0;
+		assertEquals(problemMsg, 0, obj.searchGroupPosById(number));
 	}
-
-	@Test
-	public void testSearchGroupPosById() {
-		fail("Not yet implemented");
+	public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(GroupListTest.class));
 	}
-
 }
