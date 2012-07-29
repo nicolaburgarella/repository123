@@ -20,6 +20,8 @@ import hotel.Hotel;
 public class ReservationView {
 
 
+private int number;
+
 public ReservationView(){
        
 }
@@ -36,7 +38,7 @@ public ReservationView(Hotel h){
        
         System.out.println("BENVENUTO NELLA SEZIONE DELLE PRENOTAZIONI, SCEGLI UNA OPZIONE TRA LE SEGUENTI,PREMI 0 PER USCIRE: ");
        
-        //do{
+        do{
                 do{
                         sbagliato=false;
                         System.out.println("1 - STAMPO TUTTE LE PRENOTAZIONI E I DETTAGLI DEI GRUPPI RELATIVI");
@@ -82,6 +84,10 @@ public ReservationView(Hotel h){
                 case 2:
                 {      
                         System.out.println("STAMPO LA PRENOTAZIONE RELATIVA AL GRUPPO CON NOME GRUPPO SELEZIONATO: \n");
+                        if(h.getGroupList().getGroupReg().isEmpty()){
+                        	System.out.println("Non ci sono gruppi memorizzati");
+                        	sbagliato=true;
+                        }
                         if(!(h.getReservationList().isReservationListEmpty())){
                                 System.out.println("Inserisci il nome del gruppo: ");
                                 BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
@@ -92,38 +98,15 @@ public ReservationView(Hotel h){
                                         e.printStackTrace();
                                 }
                                 String groupName=sceltaOpzione;
-                                System.out.println("metodo1:");
                                 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
                                         if(groupName.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
                                                 JDOMExtractReservation jder =new JDOMExtractReservation(groupName);
                                         }
                                 }
-                                /*System.out.println("metodo2:");
-                                for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
-                                        if(groupName.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
-                                                for(int j=0;j<h.getReservationList().getReservReg().size();j++){
-                                                        if((h.getReservationList().getReservReg().get(j).getGroupName()).equalsIgnoreCase(groupName)){
-                                                                System.out.println("Ecco i dettagli della prenotazione relativa al gruppo "+groupName);
-                                                                System.out.println(h.getReservationList().getReservReg().get(j).toString());
-                                                                int number=h.getReservationList().getReservReg().get(j).getNumber();
-                                                                String checkin=h.getReservationList().getReservReg().get(j).getCheckin();
-                                                                String checkout=h.getReservationList().getReservReg().get(j).getCheckout();
-                                                                float deposit=h.getReservationList().getReservReg().get(j).getDeposit();
-                                                                float totcost=h.getReservationList().getReservReg().get(j).getTotcost();
-                                                                System.out.println("*Numero:\t"+number);
-                                                                System.out.println("*Nome:\t"+groupName);
-                                                                System.out.println("*Checkin:\t"+checkin);
-                                                                System.out.println("*Checkout:\t"+checkout);
-                                                                System.out.println("*Acconto:\t"+deposit);
-                                                                System.out.println("*Costo pernottamento totale(non considero acconto già pagato):\t"+totcost);
-                                                        }
-                                                }
-                                        }
-                                }*/
 
                         }
                         else{
-                                System.out.println("Non è ancora stato inserito il gruppo con id selezionato");
+                                System.out.println("Non ci sono prenotazioni memorizzate");
                         }
                        
                         break;
@@ -143,11 +126,21 @@ public ReservationView(Hotel h){
                                 }
                                 String groupName=sceltaOpzione;
                                 //assegno camere al gruppo e creo la prenotazione(lista di istanze e salvataggio in xml)
-                                AssignRooms a=new AssignRooms(groupName, h);
+                                if(groupName==null||groupName==""||h==null){
+                                	System.out.println("Non posso assegnare stanze per valori nulli di input");
+                                	sbagliato=true;
+                                }
+                                for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+                                	if(h.getGroupList().getGroupReg().get(j).getName().equals(groupName)){
+                                		System.out.println("Il nome del gruppo inserito è valido ed stato riconosciuto tra quelli inseriti");
+                                		AssignRooms a=new AssignRooms(groupName, h);
+                                	}
+                                }
+                                
                        
                         }
                         else{
-                                System.out.println("Non è ancora stato inserito il gruppo con id selezionato sa cui associare la prenotazione");
+                                System.out.println("Non è stato inserito alcun gruppo, non posso procedere nel checkin");
                         }
                         break;
                        
@@ -156,6 +149,10 @@ public ReservationView(Hotel h){
                 case 4:
                 {
                         System.out.println("RIMUOVO UNA PRENOTAZIONE IN BASE AL SUO ID");
+                        if(h.getGroupList().getGroupReg().isEmpty()){
+                        	System.out.println("Non ci sono gruppi memorizzati");
+                        	sbagliato=true;
+                        }
                         if(!(h.getReservationList().isReservationListEmpty())){
                                 System.out.println("Inserisci il numero di prenotazione da eliminare: ");
                                 BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
@@ -165,7 +162,16 @@ public ReservationView(Hotel h){
                                         // TODO Auto-generated catch block
                                         e.printStackTrace();
                                 }
-                                int number=Integer.parseInt(sceltaOpzione);
+                                try{
+                                number=Integer.parseInt(sceltaOpzione);
+                                if(number==0){
+                                	System.out.println("il numero di prenotazione non può essere nullo,ma intero positivo");
+                                	sbagliato=true;
+                                }
+                                }catch(NumberFormatException nfe){
+                                	System.out.println("Il numero di prenotazione deve essere intero positivo");
+                                	sbagliato=true;
+                                }
                                
                                 Reservation res=new Reservation();
                                 System.out.println(h.getReservationList().getReservReg().toString());
@@ -181,7 +187,7 @@ public ReservationView(Hotel h){
                                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                                         if(h.getGroupList().getGroupReg().get(i).getNumber()==number){
                                                         	g=h.getGroupList().getGroupReg().get(i);
-                                                        	System.out.println(g.toString());
+                                                        	System.out.println("Ecco il gruppo a cui la prenotazione si riferisce: "+g.toString());
                                                                 PayRooms p=new PayRooms();
                                                                 float DiffTotFeeCost=p.PayRooms(g);
                                                                 if(DiffTotFeeCost==999999999){
@@ -203,7 +209,7 @@ public ReservationView(Hotel h){
                                                 //elimino la prenotazione
                                                 h.getReservationList().getReservReg().remove(i);
                                                 JDOMRemoveChild2 jg = new JDOMRemoveChild2(number);
-                                                System.out.println("Elimino il gruppo numero "+ number);
+                                                System.out.println("Elimino il gruppo associato alla prenotazione, numero "+ number);
                                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                                         if((h.getGroupList().getGroupReg().get(j).getNumber())==number){
                                                                 h.getGroupList().getGroupReg().remove(j);
@@ -213,12 +219,10 @@ public ReservationView(Hotel h){
                                                 }
                                         }
                                         else{
-                                                System.out.println("Non trovo la prenotazione numero "+number);
+                                                System.out.println("Il numero di prenotazione inserito non è stato trovato tra le prenotazioni memorizzate");
                                         }
                                 }
-                               
-                               
-                               
+      
                         }
                         else{
                                 System.out.println("Non è ancora stata inserita alcuna prenotazione");
@@ -229,6 +233,10 @@ public ReservationView(Hotel h){
                 case 5:
                 {
                         System.out.println("RIMUOVO UNA PRENOTAZIONE IN BASE AL NOME DEL GRUPPO INSERITO");
+                        if(h.getGroupList().getGroupReg().isEmpty()){
+                        	System.out.println("Non ci sono gruppi memorizzati");
+                        	sbagliato=true;
+                        }
                         if(!(h.getReservationList().isReservationListEmpty())){
                                 System.out.println("Inserisci il nome del gruppo per eliminare la sua prenotazione e il gruppo stesso: ");
                                 BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
@@ -254,7 +262,7 @@ public ReservationView(Hotel h){
                                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                                         if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(groupName)){
                                                         	g=h.getGroupList().getGroupReg().get(i);
-                                                        	System.out.println(g.toString());
+                                                        	System.out.println("Ecco il gruppo a cui la prenotazione si riferisce:"+g.toString());
                                                                 PayRooms p=new PayRooms();
                                                                 float DiffTotFeeCost=p.PayRooms(g);
                                                                 PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
@@ -267,7 +275,7 @@ public ReservationView(Hotel h){
                                                 //elimino la prenotazione
                                                 h.getReservationList().getReservReg().remove(i);
                                                 JDOMRemoveChild2 jg = new JDOMRemoveChild2(groupName);
-                                                System.out.println("Elimino il gruppo"+ groupName);
+                                                System.out.println("Elimino il gruppo associato alla prenotazione, nome"+ groupName);
                                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                                         if((h.getGroupList().getGroupReg().get(j).getName()).equalsIgnoreCase(groupName)){
                                                                 h.getGroupList().getGroupReg().remove(j);
@@ -278,7 +286,7 @@ public ReservationView(Hotel h){
                                                
                                         }
                                         else{
-                                                System.out.println("Non trovo la prenotazione avente nome gruppo "+groupName);
+                                            System.out.println("Il nome gruppo inserito non è associato ad alcuna prenotazione memorizzata");
                                         }
                                 }
                                
@@ -297,16 +305,9 @@ public ReservationView(Hotel h){
                 }
                
         }
-        //}while(!exit);
+        }while(!exit);
                
 }
 
-/*public void cancelRequest(Hotel h, Request r){
-        for(int i=0;i<h.getRequestList().getRequestReg().size();i++){
-                        if(h.getRequestList().getRequestReg().get(i).equals(r)){
-                                h.getRequestList().getRequestReg().remove(i);
-                        }
-                }
-        }*/
 
 }

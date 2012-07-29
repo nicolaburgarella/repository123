@@ -48,12 +48,12 @@ public class ExtractRequest {
              String flag=((Element) richiesta.get(i)).getText();
              r=new Request(singole, doppie, matrimoniali, flag);
 		     
-        	System.out.println(r.toString()+"\n");
+        	//System.out.println(r.toString()+"\n");
          }
          return r;
          }
          else{
-        	 System.out.println("Non ho trovato nella struttura dati il "+groupname);
+        	 //System.out.println("Non ho trovato nella struttura dati il "+groupname);
          }
          
          }

@@ -7,6 +7,7 @@ import room.Room;
 
 public class GroupTest extends junit.framework.TestCase
 {
+	
 	public void testGetRoomAssigned()
 	{
 		Group obj=new group.Group();

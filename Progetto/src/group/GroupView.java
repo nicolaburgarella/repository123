@@ -85,6 +85,7 @@ public GroupView(Hotel h){
 						sbagliato=true;
 					}
 					else{
+					//g.setRequest(r);
 					h.getRequestList().getRequestReg().add(r);
 					System.out.println(g.toString()+"\n and "+r.toString());
 					JDOMAddChild j=new JDOMAddChild(g,r);

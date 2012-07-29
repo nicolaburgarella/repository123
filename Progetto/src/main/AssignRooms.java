@@ -21,6 +21,8 @@ import room.SetRoomNotFree;
 
 public class AssignRooms {
 
+	private boolean fatto=false;
+
 	/**
 	 * @param args
 	 */
@@ -35,30 +37,28 @@ public class AssignRooms {
 		 * Se si,assegno alla roomlist del gruppo le camere assegnate(e sarebbe doveroso che esso venisse salvato automaticamente in un file xml apposito)
 		 * 
 		 */
-		//Estraggo il gruppo passato come parametro
-		System.out.println("Estraggo il gruppo passato come parametro");
 		
-		System.out.println("metodo1");
+		System.out.print("•Estraggo il gruppo passato come parametro.");
 		for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 			if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(groupName)){
 				g=h.getGroupList().getGroupReg().get(i);
 			}
 		}
-		System.out.println("Ho istanziato il gruppo che mi serve "+g.toString());
-		/*
-		System.out.println("metodo2: prende dati da xml, è esattamente equivalente");
-		ExtractGroupByName e=new ExtractGroupByName();
-		g=e.extractGroupByName(groupName);
-		System.out.println(g.toString());
-		*/
-		
-		
-		//estraggo la prenotazione in base al nome del gruppo (non ha senso,semmai lo lancio deopo alla fine per vederla)
-		//JDOMExtractReservation jder = new JDOMExtractReservation(groupName);
+		System.out.println("Dettagli del gruppo a cui fare il checkin: \n"+g.toString());
 		
 		//Setto la richiesta come eseguita
-		System.out.println("Carico la richiesta del gruppo come istanza e la visualizzo\nSetto la richesta del gruppo come eseguita sul file xml groups,me lo fa sull'ultimo gruppo nel file xml,non va bene");
+		System.out.println("•Passo base:la richiesta del gruppo deve esserci, la setto come eseguita");
 		ExtractRequest er=new ExtractRequest();
+		
+		/*for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+			for(int q=0;q<h.getGroupList().getGroupReg().size();q++){
+			if(h.getGroupList().getGroupReg().get(j).getRequest()==h.getRequestList().getRequestReg().get(q)){
+				System.out.println("Riconosco la richiesta del gruppo dentro l'istanza group come una richiesta presente dentro l'arraylist delle richieste");
+			}
+		}
+		}*/
+		
+		
 		if(er.ExtractRequestbyGroupName(groupName)!=null){
 			
 		Request r=er.ExtractRequestbyGroupName(groupName);
@@ -74,8 +74,7 @@ public class AssignRooms {
 			int doublenum=r.getDoppie();
 			int weddingnum=r.getMatrimoniali();
 			
-			System.out.println("La richiesta del gruppo "+groupName+" riguarda l'assegnamento di\n camere singole "+r.getSingole()+"\t doppie "+doublenum+"\t matrimoniali "+weddingnum+"\n\n");
-			System.out.println("Carico e visualizzo l'istanza con tutte le camere roomlist:\n");
+			System.out.println("•Il gruppo "+groupName+" richiede l'assegnamento di:\ncamere singole "+r.getSingole()+"\t doppie "+doublenum+"\t matrimoniali "+weddingnum);
 			
 			int[] singlearray=new int[100];
 			int[] doublearray=new int[100];
@@ -83,13 +82,14 @@ public class AssignRooms {
 
 			if(r.getSingole()<=h.getRoomList().getFreeRoomsCountByComp("singole")){
 				singlearray=h.getRoomList().getFreeSingleRooms();
+				System.out.print("CAMERE SINGOLE LIBERE DISPONIBILI:\t");
 				for(int n=0;n<singlearray.length;n++){
-					System.out.print(singlearray[n]+", ");
+					System.out.print(+singlearray[n]+", ");
 				}
 				System.out.println();
 				
 				for(int i=0;i<r.getSingole();i++){
-					System.out.println("--Questa è la "+(i+1)+"a stanza singola da assegnare, numero "+singlearray[i]);
+					System.out.print("•"+(i+1)+"A STANZA SINGOLA ASSEGNATA, numero "+singlearray[i]+"\t\tDettagli stanza :");
 					ExtractRoomByNumber ern=new ExtractRoomByNumber();
 					Room room=ern.ExtractRoom(singlearray[i]);
 					if(room !=null){
@@ -100,55 +100,75 @@ public class AssignRooms {
 						if(h.getGroupList().getGroupReg().get(j).getNumber()==g.getNumber()){
 						h.getGroupList().getGroupReg().get(j).addRoomAssigned(room);	
 						//System.out.println("PROVAAAAAA ISTANZIA la stanza assegnata???"+g.getRoomAssigned().toString()+"\n"+h.getGroupList().getGroupReg().get(j).getRoomAssigned().toString());
+						System.out.println();
+						fatto=true;
 						}
 					}
 
 					}
-					else{
-						System.out.println("non ho estratto niente,room null");
+					if(fatto==false){
+						System.out.println("non ho estratto niente,stanza con valore nullo");
 					}	
 				}
 			
 			
 			if(doublenum<=h.getRoomList().getFreeRoomsCountByComp("doppie")){
 				doublearray=h.getRoomList().getFreeDoubleRooms();
+				System.out.print("CAMERE DOPPIE LIBERE DISPONIBILI:\t");
 				for(int n=0;n<doublearray.length;n++){
 					System.out.print(doublearray[n]+", ");
 				}
 				System.out.println();
-				for(int i=0;i<doublenum;i++){
-					System.out.println("-- Questa è la "+(i+1)+"a stanza doppia da assegnare, la numero "+doublearray[i]);
+				for(int i=0;i<r.getDoppie();i++){
+					System.out.print("•"+(i+1)+"A STANZA DOPPIA ASSEGNATA, numero "+doublearray[i]+"\t\tDettagli stanza :");
 					ExtractRoomByNumber ern=new ExtractRoomByNumber();
 					Room room=ern.ExtractRoom(doublearray[i]);
 					if(room !=null){
 					room.setFree("no");
 					SetRoomNotFree srnf=new SetRoomNotFree(doublearray[i]);
 					g.addRoomAssigned(room);
-					}
-					else{
-						System.out.println("non ho estratto niente,room null");
+					for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+						if(h.getGroupList().getGroupReg().get(j).getNumber()==g.getNumber()){
+						h.getGroupList().getGroupReg().get(j).addRoomAssigned(room);	
+						//System.out.println("PROVAAAAAA ISTANZIA la stanza assegnata???"+g.getRoomAssigned().toString()+"\n"+h.getGroupList().getGroupReg().get(j).getRoomAssigned().toString());
+						System.out.println();
+						fatto=true;
+						}
 					}
 					
-				}
-				//System.out.println(g.toString()+"\n\n");		
+					}
+					if(fatto==false){
+						System.out.println("non ho estratto niente,stanza con valore nullo");
+					}	
+				}	
 			}
 			
 			if(weddingnum<=h.getRoomList().getFreeRoomsCountByComp("matrimoniali")){
 				weddingarray=h.getRoomList().getFreeWeddingRooms();
+				System.out.print("CAMERE MATRIMONIALI LIBERE DISPONIBILI:\t");
 				for(int n=0;n<weddingarray.length;n++){
 					System.out.print(weddingarray[n]+", ");
 				}
 				System.out.println();
-				for(int i=0;i<weddingnum;i++){
-					System.out.println("-- Questa è la "+(i+1)+"a stanza matrimoniale da assegnare, numero "+weddingarray[i]);
+				for(int i=0;i<r.getMatrimoniali();i++){
+					System.out.print("•"+(i+1)+"A STANZA MATRIMONIALE ASSEGNATA, numero "+weddingarray[i]+"\t\tDettagli stanza :");
 					ExtractRoomByNumber ern=new ExtractRoomByNumber();
 					Room room=ern.ExtractRoom(weddingarray[i]);
 					if(room !=null){
 					room.setFree("no");
 					SetRoomNotFree srnf=new SetRoomNotFree(weddingarray[i]);
 					g.addRoomAssigned(room);
+					for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+						if(h.getGroupList().getGroupReg().get(j).getNumber()==g.getNumber()){
+						h.getGroupList().getGroupReg().get(j).addRoomAssigned(room);	
+						//System.out.println("PROVAAAAAA ISTANZIA la stanza assegnata???"+g.getRoomAssigned().toString()+"\n"+h.getGroupList().getGroupReg().get(j).getRoomAssigned().toString());
+						System.out.println();
+						fatto=true;
+						}
 					}
-					else{
+					
+					}
+					if(fatto==false){
 						System.out.println("non ho estratto niente,room null");
 					}
 					

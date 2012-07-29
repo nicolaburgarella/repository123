@@ -94,7 +94,7 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 
 
 			public int [] getFreeSingleRooms() {
-				System.out.print("Ora salvo in array l'elenco del numero di camera di quelle singole disponibili :\t");
+				//System.out.print("Ora salvo in array l'elenco del numero di camera di quelle singole disponibili :\t");
 				int count = 0;
 				int [] singleArray=new int[roomReg.size()];
 				for(int i=0;i<roomReg.size();i++){
@@ -111,7 +111,7 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 			}
 
 			public int [] getFreeDoubleRooms() {
-				System.out.print("Ora salvo in array l'elenco del numero di camera di quelle doppie disponibili :\t");
+				//System.out.print("Ora salvo in array l'elenco del numero di camera di quelle doppie disponibili :\t");
 				int count=0;
 				int [] doubleArray=new int[roomReg.size()];
 				for(int i=0;i<roomReg.size();i++){
@@ -126,7 +126,7 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 			}
 
 			public int [] getFreeWeddingRooms() {
-				System.out.print("Ora salvo in array l'elenco del numero di camera di quelle matrimoniali disponibili :\t");
+				//System.out.print("Ora salvo in array l'elenco del numero di camera di quelle matrimoniali disponibili :\t");
 				int count=0;
 				int [] weddingArray=new int[roomReg.size()];
 				for(int i=0;i<roomReg.size();i++){

@@ -23,6 +23,7 @@ public class PayRooms {
 			return 999999990;
 		}
 		g=gruppo;
+		
 		float totCostRooms=0;
 		float diffCost=0;
 		if(g.getRoomAssigned().isEmpty()){

@@ -11,8 +11,16 @@ public class Group {
 	private String checkin;
 	private String checkout;
 	private float deposit;
+	/*private Request request=new Request();
 	
+	public Request getRequest() {
+		return this.request;
+	}
 	
+	public void setRequest(Request r){
+		this.request=r;
+	}
+	*/
 	private ArrayList <Room> roomsAssigned =new ArrayList<Room>();
 	
 	public ArrayList<Room> getRoomAssigned() {
@@ -39,12 +47,12 @@ public class Group {
 		}
 		for(int i=0;i<roomsAssigned.size();i++){
 			if((roomsAssigned.get(i)).equals(room)){
-				System.out.println("Stanza già assegnata,quindi non inserita");
+				//System.out.println("Stanza già assegnata,quindi non inserita");
 				return false;
 			}
 		}
 		roomsAssigned.add(room);
-		System.out.println("Stanza inserita nella lista delle stanze assegnate al gruppo:\n"+roomsAssigned.toString());
+		System.out.println(">>>>Stanza inserita.Ecco la lista delle stanze assegnate finora al gruppo:\n"+roomsAssigned.toString());
 		return true;
 	}
 	
@@ -101,5 +109,18 @@ public class Group {
 				+ checkin + ", checkout=" + checkout + ", deposit=" + deposit
 				+ ", roomsAssigned=" + roomsAssigned + "]";
 	}
+
+	/*public Group(int number, String name, String checkin, String checkout,
+			float deposit, Request request) {
+		super();
+		this.number = number;
+		this.name = name;
+		this.checkin = checkin;
+		this.checkout = checkout;
+		this.deposit = deposit;
+		this.request = request;
+	}*/
+	
+	
 
 }
