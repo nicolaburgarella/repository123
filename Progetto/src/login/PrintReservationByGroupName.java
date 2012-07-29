@@ -60,6 +60,7 @@ public class PrintReservationByGroupName extends JDialog {
 	
 	 String nomegruppo;
 	 Hotel h=new Hotel();
+	private boolean repeatOk;
 
 	/**
 	 * Create the dialog.
@@ -67,6 +68,13 @@ public class PrintReservationByGroupName extends JDialog {
 	 * @param string 
 	 */
 	public PrintReservationByGroupName(Hotel hotel, String string) {
+		
+		if(hotel==null||string.equals(null)){
+			JOptionPane.showMessageDialog(null,"L'istanza dell'hotel è nulla");
+			repeatOk=true;
+		}
+		
+		else{
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -188,6 +196,6 @@ public class PrintReservationByGroupName extends JDialog {
 	}
 
 }
-		 
+}	 
 
 

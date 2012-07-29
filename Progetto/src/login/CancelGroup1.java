@@ -49,6 +49,7 @@ public class CancelGroup1 extends JDialog {
 	
 	int id;
 	String nome;
+	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
@@ -56,6 +57,13 @@ public class CancelGroup1 extends JDialog {
 	 * @param string 
 	 */
 	public CancelGroup1(Hotel hotel, String string) {
+		
+		if(hotel==null|| string==null){
+			JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+			repeatOk=true;
+		}
+		else{
+		
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -119,21 +127,25 @@ public class CancelGroup1 extends JDialog {
 			jLabel3.setText("Inserisci il nome del gruppo da cancellare");
 		
 		
+			jTextField1.setText("1");
 			try{
-			//jTextField1 = new JTextField();
-			jTextField1.setText("id");
 			id=Integer.parseInt(jTextField1.getText());
+			if(id==0){
+				JOptionPane.showMessageDialog(null,"L'id del gruppo non deve valere 0,ma un numero intero positivo");
+				repeatOk=true;
+			}
 			}catch(NumberFormatException nfe){
 				JOptionPane.showMessageDialog(null,"l'id del gruppo deve essere un intero");
+				repeatOk=true;
+			}
 
-		
-		
-			try{
-			//jTextField2 = new JTextField();
 			jTextField2.setText("nomegruppo");
+			try{
 			nome=jTextField2.getText();
-			}catch(NumberFormatException nfe2){
-				JOptionPane.showMessageDialog(null,"Non sono ancora stati inseriti gli extra");
+			}catch(NullPointerException npe){
+				JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
+				npe.printStackTrace();
+				repeatOk=true;
 
 			}
 		
@@ -175,133 +187,108 @@ public class CancelGroup1 extends JDialog {
 			        .addGroup(contentPanelLayout.createSequentialGroup()
 			            .addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)))
 			    .addContainerGap(78, Short.MAX_VALUE)));
-		{
+		
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			
+
+			JButton cancelButton = new JButton("Cancel");
+			cancelButton.setActionCommand("Cancel");
+			buttonPane.add(cancelButton);
 			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 				okButton.addActionListener(new ActionListener() {
+					private boolean fatto=false;
+
 					public void actionPerformed(ActionEvent e){
 						System.out.println("called");
 							 
 							 if(e.getActionCommand().equals("OK")){
 								 
+								 try{
+										id=Integer.parseInt(jTextField1.getText());
+										if(id==0){
+											JOptionPane.showMessageDialog(null,"L'id del gruppo non deve valere 0,ma un numero intero positivo");
+											repeatOk=true;
+										}
+										}catch(NumberFormatException nfe){
+											JOptionPane.showMessageDialog(null,"l'id del gruppo deve essere un intero");
+											repeatOk=true;
+										}
+
+										try{
+										nome=jTextField2.getText();
+										}catch(NullPointerException npe){
+											JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
+											npe.printStackTrace();
+											repeatOk=true;
+
+										}
+									
 								 
 								 if(jCheckBox1.isSelected()){
-									 id=Integer.parseInt(jTextField1.getText());
 									 
 								 if(!(h.getGroupList().isGroupListEmpty())){
 									 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 											if(id==h.getGroupList().getGroupReg().get(i).getNumber()){
 												h.getGroupList().getGroupReg().remove(i);
 												JDOMRemoveChild jdrc=new JDOMRemoveChild(id);
+												fatto=true;
+												JOptionPane.showMessageDialog(null,"Fatto!");
 											}
 										}
+									 if(fatto==false){
+										 JOptionPane.showMessageDialog(null,"E' stato inserito un identificativo del gruppo non memorizzato");
+										 repeatOk=true;
 								 }
-								 
+								 	 
+							 }
 								 else{
 									 JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato");
-									}	 
-							 }
+									 repeatOk=true;
+									}
 								 
-								 
+								 } 
 								 if(jCheckBox2.isSelected()){
-									 nome=jTextField2.getText();
 									 
 									 if(!(h.getGroupList().isGroupListEmpty())){
 										 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
-												if(nome.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
+												if(h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nome)){
 													h.getGroupList().getGroupReg().remove(i);
-													ExtractRequest er=new ExtractRequest();
-													if(er.ExtractRequestbyGroupName(nome)!=null){
-													Request r =er.ExtractRequestbyGroupName(nome);
+													ExtractRequest ee=new ExtractRequest();
+													if(ee.ExtractRequestbyGroupName(nome)!=null){
+													Request r =ee.ExtractRequestbyGroupName(nome);
 													cancelRequest(h, r);
 													JDOMRemoveChild jdrc=new JDOMRemoveChild(nome);
 													JOptionPane.showMessageDialog(null,"Fatto!");
+													fatto=true;
+													}else{
+													JOptionPane.showMessageDialog(null,"Inserito un nome del gruppo con valore nullo");
+													repeatOk=true;
 													}
-													else{
-														System.out.println("E' stato inserito un nome nullo");
-													}
-												}
 											}
 										}
-									 
-										else{
-											JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato");
+											if(fatto==false){
+												JOptionPane.showMessageDialog(null,"Non ho trovato quel nome gruppo necessario per rimuovere il gruppo");
+												repeatOk=true;
+											}
 										}
-										
+										else{
+											JOptionPane.showMessageDialog(null,"Non è ancora stato inserito alcun gruppo");
+											repeatOk=true;
+										}
 									 }	 
-								 
-								 }
 									 
 							}
-					});
-				
-			
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
-			
+					}
+					});	
 		}
-		}
+			
 	}
-
-	public void actionPerformed(ActionEvent e){
-		 
-		 if(e.getActionCommand().equals("OK")){
-			 
-			 
-			 if(jCheckBox1.isSelected()){
-				 
-			 if(!(h.getGroupList().isGroupListEmpty())){
-				 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
-						if(id==h.getGroupList().getGroupReg().get(i).getNumber()){
-							h.getGroupList().getGroupReg().remove(i);
-							JDOMRemoveChild jdrc=new JDOMRemoveChild(id);
-						}
-					}
-			 }
-			 
-			 else{
-				 JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato");
-				}	 
-		 }
-			 
-			 
-			 if(jCheckBox2.isSelected()){
-				 
-				 if(!(h.getGroupList().isGroupListEmpty())){
-					 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
-							if(nome.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
-								h.getGroupList().getGroupReg().remove(i);
-								ExtractRequest er=new ExtractRequest();
-								if(er.ExtractRequestbyGroupName(nome)!=null){
-								Request r =er.ExtractRequestbyGroupName(nome);
-								cancelRequest(h, r);
-								JDOMRemoveChild jdrc=new JDOMRemoveChild(nome);
-								JOptionPane.showMessageDialog(null,"Fatto!");
-								}
-								else{
-									System.out.println("E' stato inserito un nome nullo");
-								}
-							}
-						}
-					}
-				 
-					else{
-						JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato");
-					}
-					
-				 }	 
-			 
-			 }
-				 
-		}
-	
 	public void cancelRequest(Hotel h, Request r){
 		if(h==null||r==null){
 			System.out.println("Dati di ingresso nulli");

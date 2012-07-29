@@ -27,6 +27,7 @@ public class CheckinC {
 	
 	Hotel h = new Hotel();
 	String nomegruppo;
+	private boolean repeatOk=false;
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -68,6 +69,16 @@ public class CheckinC {
 	
 	public CheckinC(Hotel hotel,String nome) throws IOException {
 		
+		if(hotel==null){
+		JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+		repeatOk=true;
+		}
+		if(nome==null){
+			JOptionPane.showMessageDialog(null,"il nome del gruppo è nullo");
+			repeatOk=true;
+			}
+		else{
+		
 		h=hotel;
 		nomegruppo=nome;
 	    // 1. create the pipes
@@ -103,6 +114,7 @@ public class CheckinC {
 	    /* 5. get some input (from JTextArea)
 	    Scanner s = new Scanner(System.in);
 	    System.out.printf("got from input: \"%s\"%n", s.nextLine());*/
+	}
 	}
 
 

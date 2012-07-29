@@ -62,7 +62,7 @@ public class InsertGroup1 extends JDialog {
 	float deposit;
 	String checkin,checkout;
 	Hotel h=new Hotel();
-	private int c=0;
+	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
@@ -71,9 +71,10 @@ public class InsertGroup1 extends JDialog {
 	public InsertGroup1(Hotel hotel) {
 		
 		if(hotel==null){
-			System.out.println("E' stata caricata un'istanza nulla della classe Hotel");
-			//exitonclose??
+			JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+			repeatOk=true;
 		}
+		else{
 		h=hotel;
 		setBounds(100, 100, 450, 500);
 		getContentPane().setLayout(new BorderLayout());
@@ -95,11 +96,10 @@ public class InsertGroup1 extends JDialog {
 			id=Integer.parseInt(jTextField1.getText());
 			for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
 				if((h.getGroupList().getGroupReg().get(i).getNumber()==id)){
-					 c=1;
+					 repeatOk=true;
 					 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
 				 }
 			}
-			
 			}catch(NumberFormatException nfe){
 				JOptionPane.showMessageDialog(null,"L'id del gruppo deve essere un intero");
 			}
@@ -167,12 +167,18 @@ public class InsertGroup1 extends JDialog {
 			
 				jTextField2 = new JTextField();
 				jTextField2.setText("nome_gruppo");
+				try{
 				nome=jTextField2.getText();
 				for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
 					if((h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nome))){
-						 c=1;
-						 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
+						 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova");
+						 repeatOk=true;
 					 }
+				}
+				}catch(NullPointerException npe){
+					JOptionPane.showMessageDialog(null,"E' stato inserito un valore nullo");
+					repeatOk=true;
+					npe.printStackTrace();
 				}
 			
 		}
@@ -290,6 +296,10 @@ public class InsertGroup1 extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			getContentPane().add(contentPanel, BorderLayout.CENTER);
 			
+			JButton cancelButton = new JButton("Cancel");
+			cancelButton.setActionCommand("Cancel");
+			buttonPane.add(cancelButton);
+			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
@@ -300,46 +310,75 @@ public class InsertGroup1 extends JDialog {
 					
 						 
 						 if(e.getActionCommand().equals("OK")){
+							 try{
 							 id=Integer.parseInt(jTextField1.getText());
-							 nome=jTextField2.getText();
-							/* for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
-									if(h.getGroupList().getGroupReg().get(i).getNumber()==id||h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nome)){
-										JOptionPane.showMessageDialog(null,"Gruppo già esistente,non lo inserisco nuovamente");
+								for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
+									if((h.getGroupList().getGroupReg().get(i).getNumber()==id)){
+										 repeatOk=true;
+										 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
+									 }
+								}
+								}catch(NumberFormatException nfe){
+									JOptionPane.showMessageDialog(null,"L'id del gruppo deve essere un intero");
+								}
+								
+								try{
+									singole=Integer.parseInt(jTextField5.getText());
+									}catch(NumberFormatException nfe){
+										JOptionPane.showMessageDialog(null,"Il numero di singole devono essere valori interi");
 									}
-									else{*/
 									
-							 //inserire controlli su unicità di nome e id
-							 
-							 				 
-							/* do{
-									id=Integer.parseInt(jTextField1.getText());
-									nome=jTextField2.getText();
-									for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
-										if((h.getGroupList().getGroupReg().get(i).getNumber()==id)||(h.getGroupList().getGroupReg().get(i).getName().equals(nome))){
-											 c=1;
-											 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova"); 
-										 }
-									}
-									}while(c==1);	
-									c=0;
-							 */
-							 
-							 singole=Integer.parseInt(jTextField5.getText());
-                             doppie=Integer.parseInt(jTextField6.getText());
-                             matrimoniali=Integer.parseInt(jTextField7.getText()); 
-                             
-                             if(singole==0&&doppie==0&&matrimoniali==0){
-                     			System.out.println("Nell'albergo occorre la prenotazione di almeno una camera");
-                             }
-                             deposit=Float.parseFloat(jTextField3.getText());
-                             days=Integer.parseInt(jTextField4.getText());
+									try{
+										doppie=Integer.parseInt(jTextField6.getText());
+										}catch(NumberFormatException nfe){
+											JOptionPane.showMessageDialog(null,"Il numero di doppie devono essere valori interi");
+										}
+										try{
+											matrimoniali=Integer.parseInt(jTextField7.getText());
+											}catch(NumberFormatException nfe){
+												JOptionPane.showMessageDialog(null,"Il numero di matrimoniali devono essere valori interi");
+											}
+											
+											try{
+												nome=jTextField2.getText();
+												for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
+													if((h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nome))){
+														 JOptionPane.showMessageDialog(null,"Valore già inserito!riprova");
+														 repeatOk=true;
+													 }
+												}
+												}catch(NullPointerException npe){
+													JOptionPane.showMessageDialog(null,"E' stato inserito un valore nullo");
+													repeatOk=true;
+													npe.printStackTrace();
+												}
+												
+												try{
+													deposit=Float.parseFloat(jTextField3.getText());
+													}catch(NumberFormatException nfe){
+														JOptionPane.showMessageDialog(null,"l'acconto deve assumere un valore float in euro");
+													}
+													try{
+													days=Integer.parseInt(jTextField4.getText());
+													if(days==0){
+														JOptionPane.showMessageDialog(null,"Il numero di giorni deve esseremaggiore di zero");
+													}
+													}catch(NumberFormatException nfe){
+														JOptionPane.showMessageDialog(null,"Il numero di giorni deve essere intero");
+													}
+													
+													if(singole==0&&doppie==0&&matrimoniali==0){
+														JOptionPane.showMessageDialog(null,"Nell'albergo occorre la prenotazione di almeno una camera");
+														repeatOk=true;
+						                             }
                              
                              DataCheckout d=new DataCheckout();
                                     Date []dates=new Date[2];
                                     dates=d.DataCheckout(days);
                                     DateToString ds=new DateToString();
                                 	if(ds.DateToString(dates[0])==null||ds.DateToString(dates[1])==null){
-                            			System.out.println("Checkin e checkout non possono assumere valori nulli");
+                                		JOptionPane.showMessageDialog(null,"Checkin e checkout non possono assumere valori nulli");
+                            			repeatOk=true;
                             		}
                                     checkin=ds.DateToString(dates[0]);
                                     checkout=ds.DateToString(dates[1]);
@@ -349,52 +388,14 @@ public class InsertGroup1 extends JDialog {
                                     h.getRequestList().getRequestReg().add(r);
                                     JDOMAddChild j=new JDOMAddChild(g,r);
                                     JOptionPane.showMessageDialog(null,"Fatto!");
-                                	
-								//	}
-							//	}
-
 						 }
 					}
 				});
 			
 			
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
-			
+		}
 		}
 	}
-	
-	
-//	public void actionPerformed(ActionEvent e){
-//		System.out.println("called");
-//		 
-//		 
-//		 if(e.getActionCommand().equals("OK")){
-//			 
-//			 /*id=Integer.parseInt(jTextField1.getText());
-//			 singole=Integer.parseInt(jTextField5.getText());
-//			 doppie=Integer.parseInt(jTextField6.getText());
-//			 matrimoniali=Integer.parseInt(jTextField7.getText());
-//			 nome=jTextField2.getText();
-//			 deposit=Float.parseFloat(jTextField3.getText());
-//			 days=Integer.parseInt(jTextField4.getText());
-//			 */
-//			 DataCheckout d=new DataCheckout();
-//				Date []dates=new Date[2];
-//				dates=d.DataCheckout(days);
-//				DateToString ds=new DateToString();
-//				checkin=ds.DateToString(dates[0]);
-//				checkout=ds.DateToString(dates[1]);
-//				Group g = new Group(id, nome, checkin, checkout, deposit);
-//				h.getGroupList().getGroupReg().add(g);
-//				Request r=new Request(singole, doppie, matrimoniali, "eseguita");
-//				h.getRequestList().getRequestReg().add(r);
-//				JDOMAddChild j=new JDOMAddChild(g,r);
-//				JOptionPane.showMessageDialog(null,"Fatto!");
-//				
-//		 }
-//	}
 	
 }
 		 

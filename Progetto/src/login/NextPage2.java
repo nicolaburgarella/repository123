@@ -164,7 +164,7 @@ public class NextPage2 extends JFrame implements ActionListener
 				pg.setVisible(true);
 		  }
 		  if(e.getActionCommand().equals("button4")){
-				//print all groups and the state of request,anch'esso da bufferizzare e mettere in pdf o dentro una jtextarea
+				//print all groups and the state of request
 			  try {
 				PrintAllGroupsAndRequestsC p=new PrintAllGroupsAndRequestsC(h);
 			} catch (IOException e1) {

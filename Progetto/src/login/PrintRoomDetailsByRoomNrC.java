@@ -30,6 +30,7 @@ public class PrintRoomDetailsByRoomNrC {
 	Hotel h = new Hotel();
 	int stanza;
 	private boolean fatto=false;
+	private boolean repeatOk=false;
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -69,6 +70,17 @@ public class PrintRoomDetailsByRoomNrC {
 	
 	
 	public PrintRoomDetailsByRoomNrC(Hotel hotel,int s) throws IOException {
+		
+		if(hotel==null){
+			JOptionPane.showMessageDialog(null,"L'istanza dell'hotel è nulla");
+			repeatOk=true;
+		}
+		if(s==0){
+			JOptionPane.showMessageDialog(null,"L'id della stanza è 0 e deve essere un numero intero positivo");
+			repeatOk=true;
+		}
+		
+		else{
 		
 		h=hotel;
 		stanza=s;
@@ -120,5 +132,5 @@ public class PrintRoomDetailsByRoomNrC {
 	    System.out.printf("got from input: \"%s\"%n", s.nextLine());*/
 	}
 
-
+	}
 }

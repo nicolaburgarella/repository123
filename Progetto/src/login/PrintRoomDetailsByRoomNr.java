@@ -66,6 +66,13 @@ public class PrintRoomDetailsByRoomNr extends JDialog {
 	 * @param string 
 	 */
 	public PrintRoomDetailsByRoomNr(Hotel hotel, String string) {
+		
+		if(hotel==null||string.equals(null)){
+			JOptionPane.showMessageDialog(null,"L'istanza dell'hotel è nulla");
+			repeatOk=true;
+		}
+		
+		else{
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -204,6 +211,6 @@ public class PrintRoomDetailsByRoomNr extends JDialog {
 	}
 
 }
-		 
+}	 
 
 

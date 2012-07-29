@@ -50,6 +50,7 @@ public class Checkin1 extends JDialog {
 	private JTextArea jTextArea1;
 	String nome;
 	Hotel h=new Hotel();
+	private boolean repeatOk=false;
 
 	/**
 	 * Launch the application.
@@ -70,6 +71,12 @@ public class Checkin1 extends JDialog {
 	 * @param h 
 	 */
 	public Checkin1(Hotel hotel) {
+		
+		if(hotel==null){
+		JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+		repeatOk=true;
+		}
+		
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());

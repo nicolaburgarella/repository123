@@ -28,6 +28,7 @@ public class PrintReservationByGroupNameC {
 	
 	Hotel h = new Hotel();
 	String nomegruppo;
+	private boolean repeatOk=false;
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -68,6 +69,17 @@ public class PrintReservationByGroupNameC {
 	
 	
 	public PrintReservationByGroupNameC(Hotel hotel,String nome) throws IOException {
+		
+		if(hotel==null){
+			JOptionPane.showMessageDialog(null,"L'istanza dell'hotel è nulla");
+			repeatOk=true;
+		}
+		if(nome.equals(null)){
+			JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
+			repeatOk=true;
+		}
+		
+		else{
 		
 		h=hotel;
 		nomegruppo=nome;
@@ -110,5 +122,5 @@ public class PrintReservationByGroupNameC {
 	    System.out.printf("got from input: \"%s\"%n", s.nextLine());*/
 	}
 
-
+	}
 }

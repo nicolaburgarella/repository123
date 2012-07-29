@@ -36,6 +36,7 @@ public class CheckoutId {
 	
 	Hotel h = new Hotel();
 	Group g=new Group();
+	private boolean repeatOk;
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -76,6 +77,20 @@ public class CheckoutId {
 	
 	
 	public CheckoutId(Hotel hotel,Group group,int id) throws IOException {
+		
+		if(hotel==null){
+			JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+			repeatOk=true;
+			}
+			if(id==0){
+				JOptionPane.showMessageDialog(null,"l'id della prenotazione deve essere un numero intero positivo maggiore di zero");
+				repeatOk=true;
+				}
+			if(group==null){
+				JOptionPane.showMessageDialog(null,"L'istanza del gruppo è nulla");
+				repeatOk=true;
+			}
+			else{
 		
 		g=group;
 		h=hotel;
@@ -161,6 +176,7 @@ public class CheckoutId {
 	    /* 5. get some input (from JTextArea)
 	    Scanner s = new Scanner(System.in);
 	    System.out.printf("got from input: \"%s\"%n", s.nextLine());*/
+	}
 	}
 
 

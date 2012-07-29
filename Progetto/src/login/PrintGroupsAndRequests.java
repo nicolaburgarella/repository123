@@ -59,6 +59,7 @@ public class PrintGroupsAndRequests extends JDialog {
 	
 	 String nomegruppo;
 	 Hotel h=new Hotel();
+	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
@@ -66,6 +67,12 @@ public class PrintGroupsAndRequests extends JDialog {
 	 * @param string 
 	 */
 	public PrintGroupsAndRequests(Hotel hotel, String string) {
+		if(hotel==null||string.equals(null)){
+			JOptionPane.showMessageDialog(null,"L'istanza dell'hotel è nulla");
+			repeatOk=true;
+		}
+		
+		else{
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -97,13 +104,16 @@ public class PrintGroupsAndRequests extends JDialog {
 		}
 		
 		{
-			//try{
+			
 			jTextField4 = new JTextField();
 			jTextField4.setText("nome");
+			try{
 			nomegruppo=jTextField4.getText();
-			/*}catch(IOException nfe){
-				JOptionPane.showMessageDialog(null,"errore ");
-			}*/
+			}catch(NullPointerException npe){
+				JOptionPane.showMessageDialog(null,"Inserito un valore nullo ");
+				repeatOk=true;
+				npe.printStackTrace();
+			}
 			
 			
 		}
@@ -112,6 +122,10 @@ public class PrintGroupsAndRequests extends JDialog {
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			
+			JButton cancelButton = new JButton("Cancel");
+			cancelButton.setActionCommand("Cancel");
+			buttonPane.add(cancelButton);
 			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
@@ -123,28 +137,31 @@ public class PrintGroupsAndRequests extends JDialog {
 						 
 						 
 						 if(e.getActionCommand().equals("OK")){
+							 
+							 try{
+									nomegruppo=jTextField4.getText();
+									}catch(NullPointerException npe){
+										JOptionPane.showMessageDialog(null,"Inserito un valore nullo ");
+										repeatOk=true;
+										npe.printStackTrace();
+									}
 							 			 
 							 if (jCheckBox2.isSelected()){ //in base al nome del gruppo
 
 								 try {
-									 nomegruppo=jTextField4.getText();
 									PrintGroupsAndRequestsC p=new PrintGroupsAndRequestsC(h, nomegruppo);
 								} catch (IOException e1) {
-									// TODO Auto-generated catch block
+									JOptionPane.showMessageDialog(null,"Errore di i/o");
 									e1.printStackTrace();
 								}		
-						 
 					 }
+	 
 					 }
 					}
 					});
 							 	
 			
-			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
-			}
+
 		}
 		
 
@@ -185,7 +202,7 @@ public class PrintGroupsAndRequests extends JDialog {
 					    .addComponent(jTextArea1, GroupLayout.Alignment.LEADING, 0, 476, Short.MAX_VALUE)));
 
 	}
-
+	}
 }
 		 
 

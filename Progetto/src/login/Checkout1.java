@@ -62,6 +62,7 @@ public class Checkout1 extends JDialog {
         int groupId;
        
         Hotel h=new Hotel();
+		private boolean repeatOk=false;
 
         /**
          * Create the dialog.
@@ -69,6 +70,16 @@ public class Checkout1 extends JDialog {
          * @param h
          */
         public Checkout1(Hotel hotel, String string) {
+        	
+        	if(hotel==null){
+        		JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+        		repeatOk=true;
+        		}
+        		if(nome==null){
+        			JOptionPane.showMessageDialog(null,"il nome del gruppo è nullo");
+        			repeatOk=true;
+        			}
+        		else{
         	
                 h=hotel;
                 setBounds(100, 100, 450, 300);
@@ -253,121 +264,8 @@ public class Checkout1 extends JDialog {
                         }
                 }
         }
-        /*
-        public void actionPerformed(ActionEvent e){
-                 
-                if(e.getActionCommand().equals("OK")){
-                       
-                if(jCheckBox1.isSelected()){
-                        //id
-                        if(!(h.getReservationList().isReservationListEmpty())){
-                                Reservation res=new Reservation();
-                                for(int i=0;i<h.getReservationList().getReservReg().size();i++){
-                                        if((h.getReservationList().getReservReg().get(i).getNumber())==id){
-                                                //prenotazione da eliminare
-                                                res=h.getReservationList().getReservReg().get(i);
-                                                JOptionPane.showMessageDialog(null,"Prenotazione da eliminare: "+res);
-                                                //gestione del pagamento checkout,da estrarre in base al numero del gruppo,da fare con istanze
-                                                JOptionPane.showMessageDialog(null,"Gestione del pagamento del fee e degli extra relativi al gruppo,a seguito del quale elimino il gruppo con la sua prenotazione.");
-                                                Group g =new Group();
-                                               
-                                                for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
-                                                        if(h.getGroupList().getGroupReg().get(i).getNumber()==id){
-                                                                //DA RISOLVERE CON ALTRI DUE PANEL A COMPARSA
-                                                                PayRooms p=new PayRooms();
-                                                                float DiffTotFeeCost=p.PayRooms(g);
-                                                                PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
-                                                        }
-                                                }
-                                               
-                                                JOptionPane.showMessageDialog(null,"Elimino la prenotazione e il gruppo associato");
-                                                h.getReservationList().getReservReg().remove(i);
-                                                groupId=id;
-                                                JDOMRemoveChild2 jg = new JDOMRemoveChild2(groupId);
-                                                for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
-                                                        if((h.getGroupList().getGroupReg().get(j).getNumber())==groupId){
-                                                                h.getGroupList().getGroupReg().remove(j);
-                                                                JDOMRemoveChild gr =new JDOMRemoveChild(groupId);
-                                                                JOptionPane.showMessageDialog(null,"Gruppo eliminato assieme alla sua prenotazione");
-                                                        }
-                                                }
-                                        }
-                                        else{
-                                                JOptionPane.showMessageDialog(null,"Non trovo la prenotazione numero "+groupId);
-                                        }
-                                }              
-                               
-                        }
-                        else{
-                                JOptionPane.showMessageDialog(null,"Non è ancora stata inserita alcuna prenotazione");
-                        }
-                               
-                }
-               
-                if(jCheckBox2.isSelected()){
-                        if(!(h.getReservationList().isReservationListEmpty())){
-                                Reservation res=new Reservation();
-                                for(int i=0;i<h.getReservationList().getReservReg().size();i++){
-                                        if((h.getReservationList().getReservReg().get(i).getGroupName()).equalsIgnoreCase(nome)){
-                                                res=h.getReservationList().getReservReg().get(i);
-                                                JOptionPane.showMessageDialog(null,"Ecco la prenotazione da eliminare\n"+res.toString());
-                                               
-                                                JOptionPane.showMessageDialog(null,"Gestione del pagamento del fee e degli extra relativi al gruppo,a seguito del quale elimino il gruppo con la sua prenotazione.");
-                                                Group g =new Group();
-                                               
-                                                for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
-                                                        if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(nome)){
-                                                                //DA RISOLVERE CON ALTRI DUE PANEL A COMPARSA
-                                                                PayRooms p=new PayRooms();
-                                                                float DiffTotFeeCost=p.PayRooms(g);
-                                                                PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
-                                                        }
-                                                }
-                                               
-                                                JOptionPane.showMessageDialog(null,"elimino la prenotazione ed il gruppo selezionato associato");
-                                                h.getReservationList().getReservReg().remove(i);
-                                                JDOMRemoveChild2 jg = new JDOMRemoveChild2(nome);
-                                                for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
-                                                        if((h.getGroupList().getGroupReg().get(j).getName()).equalsIgnoreCase(nome)){
-                                                                h.getGroupList().getGroupReg().remove(j);
-                                                                JDOMRemoveChild gr =new JDOMRemoveChild(nome);
-                                                                JOptionPane.showMessageDialog(null,"Gruppo eliminato assieme alla sua prenotazione");
-                                                        }
-                                                }
-                                               
-                                        }
-                                        else{
-                                                JOptionPane.showMessageDialog(null,"Non trovo la prenotazione avente nome gruppo "+nome);
-                                        }
-                                }
-                                       
-                        }
-                        else{
-                                JOptionPane.showMessageDialog(null,"Non è ancora stata inserita alcuna prenotazione");
-                        }                                      
         }
-               
-}
-               
-                if(jCheckBox2.isSelected()){
-                        //nomegruppo
-                        jLabel2.setVisible(false);
-                        jTextField1.setVisible(false);
-                        jLabel3.setVisible(true);
-                        jTextField2.setVisible(true);
-                       
-                }
-               
-                if(jCheckBox1.isSelected()){
-                        //id
-                        jLabel2.setVisible(true);
-                        jTextField1.setVisible(true);
-                        jLabel3.setVisible(false);
-                        jTextField2.setVisible(false);
-                }
-                 
-                 
-                 }*/
+
        
 }
 

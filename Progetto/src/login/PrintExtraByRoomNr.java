@@ -58,6 +58,7 @@ public class PrintExtraByRoomNr extends JDialog {
 	 int stanza;
 	 String nomegruppo;
 	 Hotel h=new Hotel();
+	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
@@ -65,6 +66,13 @@ public class PrintExtraByRoomNr extends JDialog {
 	 * @param string 
 	 */
 	public PrintExtraByRoomNr(Hotel hotel, String string) {
+		
+		if(hotel==null||string==null){
+			JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+			repeatOk=true;
+			}
+			
+			else{
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -198,6 +206,7 @@ public class PrintExtraByRoomNr extends JDialog {
 					    .addComponent(jTextArea1, GroupLayout.Alignment.LEADING, 0, 400, Short.MAX_VALUE))
 					.addContainerGap());
 
+	}
 	}
 
 }

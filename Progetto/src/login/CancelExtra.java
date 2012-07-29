@@ -49,12 +49,19 @@ public class CancelExtra extends JDialog {
 	Hotel hotel1=new Hotel();
 	Hotel h;
 	int id;
+	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
 	 * @param hotel 
 	 */
 	public CancelExtra(Hotel hotel) {
+		
+		if(hotel==null){
+			JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+			repeatOk=true;
+		}
+		
 		h=hotel;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
