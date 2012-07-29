@@ -1,6 +1,7 @@
 package group;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import room.Room;
 
@@ -11,17 +12,10 @@ public class Group {
 	private String checkin;
 	private String checkout;
 	private float deposit;
-	/*private Request request=new Request();
 	
-	public Request getRequest() {
-		return this.request;
-	}
-	
-	public void setRequest(Request r){
-		this.request=r;
-	}
-	*/
 	private ArrayList <Room> roomsAssigned =new ArrayList<Room>();
+	
+	
 	
 	public ArrayList<Room> getRoomAssigned() {
 		if(roomsAssigned==null){
@@ -30,9 +24,9 @@ public class Group {
 		}
 		return roomsAssigned;
 	}
+	
 
-	public void setRoomAssigned(ArrayList<Room> roomAssigned) {
-		
+	public void setRoomAssigned(ArrayList<Room> roomAssigned) {	
 		this.roomsAssigned = roomAssigned;
 	}
 
@@ -110,16 +104,6 @@ public class Group {
 				+ ", roomsAssigned=" + roomsAssigned + "]";
 	}
 
-	/*public Group(int number, String name, String checkin, String checkout,
-			float deposit, Request request) {
-		super();
-		this.number = number;
-		this.name = name;
-		this.checkin = checkin;
-		this.checkout = checkout;
-		this.deposit = deposit;
-		this.request = request;
-	}*/
 	
 	
 

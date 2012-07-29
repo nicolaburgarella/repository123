@@ -32,7 +32,7 @@ public class PayRooms {
 		}
 		g=gruppo;
 
-		if(g.getRoomAssigned().isEmpty()){
+		if(g.getRoomAssigned().isEmpty()||g.getRoomAssigned()==null){
 			System.out.println("Non ci sono stanze assegnate al gruppo,impossibile procedere nel checkout con il pagamento");
 			return 999999999;
 		}

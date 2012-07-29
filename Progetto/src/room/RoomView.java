@@ -3,8 +3,8 @@ package room;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Calendar;
 
+import group.Group;
 import hotel.Hotel;
 
 public class RoomView {
@@ -66,6 +66,13 @@ public RoomView(Hotel h){
 		case 1:
 		{
 			System.out.println("INSERISCO GLI EXTRA IN BASE AL NUMERO DI CAMERA:\ndigita il numero di camera\n");
+			
+			if(h.getGroupList().getGroupReg().isEmpty()||h.getReservationList().getReservReg().isEmpty()){
+				System.out.println("Non sono presenti gruppi o prenotazioni");
+				sbagliato=true;
+			}
+			else{
+				
 			BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 			try {
 				sceltaOpzione=prLine.readLine();
@@ -76,17 +83,16 @@ public RoomView(Hotel h){
 			
 			try{
 			roomNumber=Integer.parseInt(sceltaOpzione);
+			if(roomNumber==0){
+				System.out.println("La stanza deve avere un valore positivo diverso da 0");
+				sbagliato=true;
+			}
 			}catch(NumberFormatException nfe){
 				System.out.println("La camera edeve assumere un valore intero");
 				nfe.getMessage();
+				sbagliato=true;
 			}
-	
-			
-			if(h.getExtraList().isExtraListEmpty()){
-				System.out.println("Non sono presenti extra");
-			}
-			
-			else{
+
 				for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 					if(roomNumber==h.getRoomList().getRoomReg().get(i).getNumber()){
 						AddExtraView a=new AddExtraView();
@@ -94,6 +100,7 @@ public RoomView(Hotel h){
 						e=a.AddExtraView();
 						if(e==null){
 						System.out.println("Extra non inserito");	
+						sbagliato=true;
 						}
 						else{
 						h.getExtraList().getExtraList().add(e);
@@ -101,7 +108,7 @@ public RoomView(Hotel h){
 						}
 					}
 				}
-				System.out.println("Hai inserito un numero di camera errato");
+				//System.out.println("Hai inserito un numero di camera errato");
 				
 			}
 			
@@ -112,6 +119,13 @@ public RoomView(Hotel h){
 		case 2:
 		{
 			System.out.println("INSERISCO GLI EXTRA IN BASE AL NOME DEL GRUPPO:\ndigita il nome del gruppo\n");
+			if(h.getGroupList().getGroupReg().isEmpty()||h.getReservationList().getReservReg().isEmpty()){
+				System.out.println("Non sono presenti gruppi o prenotazioni");
+				sbagliato=true;
+			}
+			else{
+				
+			
 			BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 			try {
 				sceltaOpzione=prLine.readLine();
@@ -126,6 +140,9 @@ public RoomView(Hotel h){
 			}
 			for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 				if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(groupName)||!(h.getGroupList().getGroupReg().get(i).getRoomAssigned()).isEmpty()){
+					Group group=new Group();
+					group=h.getGroupList().getGroupReg().get(i);
+					System.out.println(group.getName()+": elenco delle camere assegnate\n"+"numero tot "+group.getRoomAssigned().size()+"dettagli:\n"+group.getRoomAssigned().toString());
 					AddExtraView a=new AddExtraView();
 					Extra e= new Extra();
 					e=a.AddExtraView();
@@ -160,6 +177,7 @@ public RoomView(Hotel h){
 				else{
 					System.out.println("E' stato inserito un gruppo non valido,oppure non è stato ancora fatto il checkin");
 				}
+			}
 			}
 			
 			break;

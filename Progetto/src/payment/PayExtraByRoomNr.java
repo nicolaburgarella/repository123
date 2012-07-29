@@ -15,6 +15,7 @@ public class PayExtraByRoomNr {
 	}
 
 	public PayExtraByRoomNr(Group gruppo) {
+		//Il gruppo esiste e non ha valore nullo
 		g=gruppo;
 
 		if (!(g.getRoomAssigned().isEmpty())) {

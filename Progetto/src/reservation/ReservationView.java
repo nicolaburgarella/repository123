@@ -4,12 +4,14 @@ package reservation;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import main.AssignRooms;
 
 import payment.PayExtraByRoomNr;
 import payment.PayRooms;
+import room.Room;
 
 
 import group.ExtractGroupByName;
@@ -195,17 +197,26 @@ public ReservationView(Hotel h){
                                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                                         if(h.getGroupList().getGroupReg().get(i).getNumber()==number){
                                                         	g=h.getGroupList().getGroupReg().get(i);
+                                                        	String name=g.getName();
+                                                        	//inserire il valore della mappa interrogandola con la chiave groupname da cui estrapolare l'id
+                                                        	ArrayList<Room>r =new ArrayList<Room>();
+                                                        	r=h.getGroupList().getRoomAssignedFromMap(name);
+                                                        	g.setRoomAssigned(r);
+                                                        	
                                                         	System.out.println("Ecco il gruppo a cui la prenotazione si riferisce: "+g.toString());
                                                                 PayRooms p=new PayRooms();
                                                                 float DiffTotFeeCost=p.PayRooms(g);
                                                                 if(DiffTotFeeCost==999999999){
                                                     				System.out.println("checkout non eseguito, perchè non ci sono stanze assegnate al gruppo");
+                                                    				sbagliato=true;
                                                     			}
                                                                 if(DiffTotFeeCost==999999990){
                                                 					System.out.println("Prenotazione non eseguita, perchè è stato passato come parametro un gruppo nullo");
+                                                					sbagliato=true;
                                                 			}
                                                 			if(DiffTotFeeCost==999999909){
                                                 				System.out.println("Prenotazione non eseguita, perchè sono state inserite date con valori nulli o errati");
+                                                				sbagliato=true;
                                                 			}
                                                                 else{
                                                                 PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
@@ -269,7 +280,12 @@ public ReservationView(Hotel h){
                                                
                                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                                         if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(groupName)){
+                                                        	//inserire il valore della mappa interrogandola con la chiave groupname
                                                         	g=h.getGroupList().getGroupReg().get(i);
+                                                        	ArrayList<Room>r =new ArrayList<Room>();
+                                                        	r=h.getGroupList().getRoomAssignedFromMap(groupName);
+                                                        	g.setRoomAssigned(r);	
+                                                        	
                                                         	System.out.println("Ecco il gruppo a cui la prenotazione si riferisce:"+g.toString());
                                                                 PayRooms p=new PayRooms();
                                                                 float DiffTotFeeCost=p.PayRooms(g);

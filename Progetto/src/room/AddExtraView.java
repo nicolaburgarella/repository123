@@ -35,6 +35,7 @@ import date.StringToDate;
 	}catch(NumberFormatException nfe){
 		System.out.println("Il valore del costo deve assumere un valore float");
 		nfe.getMessage();
+		return null;
 	}
 	
 	if(cost==0||type==""||date==""){

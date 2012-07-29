@@ -1,5 +1,9 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+
 import payment.PayRooms;
 import group.ExtractGroupByName;
 import group.ExtractRequest;
@@ -22,6 +26,7 @@ import room.SetRoomNotFree;
 public class AssignRooms {
 
 	private boolean fatto=false;
+	private HashMap<String, Collection<Room>> m;
 
 	/**
 	 * @param args
@@ -95,7 +100,8 @@ public class AssignRooms {
 					if(room !=null){
 					room.setFree("no");
 					SetRoomNotFree srnf=new SetRoomNotFree(singlearray[i]);
-					g.addRoomAssigned(room);
+					g.addRoomAssigned(room); 
+						//	h.getGroupList().setRoomAssignedIntoMap(g.getName(), g.getRoomAssigned());		
 					for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
 						if(h.getGroupList().getGroupReg().get(j).getNumber()==g.getNumber()){
 						h.getGroupList().getGroupReg().get(j).addRoomAssigned(room);	
@@ -184,6 +190,14 @@ public class AssignRooms {
 				System.out.println("La richiesta di camere doppie eccede le disponibilità attuali dell'hotel");
 			}
 		System.out.println("Stampo tutto il gruppo:dati e anche la lista delle camere assegnate al gruppo:\n"+g.toString()+"\n\n");	
+		System.out.println("Memorizzo i valori nella mappa");
+		//DA RIVEDEREEEE G.GETROOMASSIGNED è CARICA,MA NON PASSA NIENTE ALLA MAPPA,SOLO IL NOMEDELGRUPPO SENZA VALORE
+		//Collection<Room> c=g.getRoomAssigned();
+		h.getGroupList().setRoomAssignedIntoMap(g.getName(), g.getRoomAssigned());
+		System.out.println("mappa caricata nell'istanza grouplist:\n"+h.getGroupList().toString());
+		m=h.getGroupList().getMapRoomAssigned();
+		System.out.println(m.toString());
+	
 			
 			JDOMWriteAssignment  jdwa =new JDOMWriteAssignment(g,g.getName());
 			

@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RESERVATION_LIST />
+<RESERVATION_LIST>
+  <RESERVATION number="1" groupname="gruppo1" checkin="29/07/2012" checkout="30/07/2012" deposit="11.0" totcost="214.0" />
+  <RESERVATION number="22" groupname="gruppo22" checkin="29/07/2012" checkout="30/07/2012" deposit="11.0" totcost="139.0" />
+  <RESERVATION number="12" groupname="gruppo12" checkin="29/07/2012" checkout="02/08/2012" deposit="11.0" totcost="889.0" />
+</RESERVATION_LIST>
 
