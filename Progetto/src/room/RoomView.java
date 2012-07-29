@@ -10,6 +10,8 @@ import hotel.Hotel;
 public class RoomView {
 
 
+private int roomNumber;
+
 public RoomView(){
 	
 }
@@ -71,20 +73,35 @@ public RoomView(Hotel h){
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			int roomNumber=Integer.parseInt(sceltaOpzione);
+			
+			try{
+			roomNumber=Integer.parseInt(sceltaOpzione);
+			}catch(NumberFormatException nfe){
+				System.out.println("La camera edeve assumere un valore intero");
+				nfe.getMessage();
+			}
+	
+			
 			if(h.getExtraList().isExtraListEmpty()){
 				System.out.println("Non sono presenti extra");
 			}
+			
 			else{
 				for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 					if(roomNumber==h.getRoomList().getRoomReg().get(i).getNumber()){
 						AddExtraView a=new AddExtraView();
 						Extra e= new Extra();
 						e=a.AddExtraView();
+						if(e==null){
+						System.out.println("Extra non inserito");	
+						}
+						else{
 						h.getExtraList().getExtraList().add(e);
 						JDOMInsertExtraByRoomNr jier =new JDOMInsertExtraByRoomNr(roomNumber, e.getDate(), Float.toString(e.getCost()), e.getType());
+						}
 					}
 				}
+				System.out.println("Hai inserito un numero di camera errato");
 				
 			}
 			
@@ -103,6 +120,10 @@ public RoomView(Hotel h){
 				e.printStackTrace();
 			}
 			String groupName=sceltaOpzione;
+			if(h.getGroupList().getGroupReg().isEmpty()){
+				System.out.println("Non ci sono gruppi memorizzati");
+				sbagliato=true;
+			}
 			for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 				if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(groupName)||!(h.getGroupList().getGroupReg().get(i).getRoomAssigned()).isEmpty()){
 					AddExtraView a=new AddExtraView();
@@ -120,18 +141,24 @@ public RoomView(Hotel h){
 						// TODO Auto-generated catch block
 						ee.printStackTrace();
 					}
-					int roomNumber=Integer.parseInt(sceltaOpzione);
+					try{
+						roomNumber=Integer.parseInt(sceltaOpzione);
+						}catch(NumberFormatException nfe){
+							System.out.println("La camera edeve assumere un valore intero");
+							nfe.getMessage();
+						}
 					
 					
 					for(int j=0;j<h.getGroupList().getGroupReg().get(i).getRoomAssigned().size();j++){
 						if(h.getGroupList().getGroupReg().get(i).getRoomAssigned().get(j).getNumber()==roomNumber){
 						JDOMInsertExtraByRoomNr jier =new JDOMInsertExtraByRoomNr(roomNumber, e.getDate(), Float.toString(e.getCost()), e.getType());
 						}
-						else{
-							System.out.println("E' stato scritto un numero di stanza non valido");
-						}
 					}
+					System.out.println("E' stato scritto un numero di stanza non valido");
 					
+				}
+				else{
+					System.out.println("E' stato inserito un gruppo non valido,oppure non è stato ancora fatto il checkin");
 				}
 			}
 			
@@ -141,6 +168,10 @@ public RoomView(Hotel h){
 		case 3:
 		{	
 			System.out.println("STAMPO GLI EXTRA IN BASE AL NUMERO DI CAMERA: \n");
+			if(h.getGroupList().getGroupReg().isEmpty()){
+				System.out.println("Non ci sono gruppi memorizzati");
+				sbagliato=true;
+			}
 			if(!(h.getExtraList().isExtraListEmpty())){
 				System.out.println("Inserisci il numero di camera: ");
 				BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
@@ -150,7 +181,12 @@ public RoomView(Hotel h){
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				int roomNumber=Integer.parseInt(sceltaOpzione);
+				try{
+					roomNumber=Integer.parseInt(sceltaOpzione);
+					}catch(NumberFormatException nfe){
+						System.out.println("La camera edeve assumere un valore intero.\tVedi stanza d'esempio room 0:");
+						nfe.getMessage();
+					}
 				for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 					if(roomNumber==h.getRoomList().getRoomReg().get(i).getNumber()){
 						JDOMExtractExtrasByRoom e=new JDOMExtractExtrasByRoom(roomNumber);
@@ -169,6 +205,10 @@ public RoomView(Hotel h){
 		case 4:
 		{
 			System.out.println("STAMPO TUTTI GLI EXTRA CON IL LORO COSTO TOTALE DIVISI PER NUMERO DI CAMERA: \n");
+			if(h.getGroupList().getGroupReg().isEmpty()){
+				System.out.println("Non ci sono gruppi memorizzati");
+				sbagliato=true;
+			}
 			if(!(h.getExtraList().isExtraListEmpty())){
 				JDOMReader jdre=new JDOMReader();
 			}
@@ -182,6 +222,10 @@ public RoomView(Hotel h){
 		case 5:
 		{
 			System.out.println("ELIMINO GLI EXTRA IN BASE AL NUMERO DI CAMERA: digita il numero di camera");
+			if(h.getGroupList().getGroupReg().isEmpty()){
+				System.out.println("Non ci sono gruppi memorizzati");
+				sbagliato=true;
+			}
 			if(!(h.getExtraList().isExtraListEmpty())){
 				ExtraList el=new ExtraList();
 				BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
@@ -191,7 +235,12 @@ public RoomView(Hotel h){
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				int roomNumber=Integer.parseInt(sceltaOpzione);
+				try{
+					roomNumber=Integer.parseInt(sceltaOpzione);
+					}catch(NumberFormatException nfe){
+						System.out.println("La camera edeve assumere un valore intero");
+						nfe.getMessage();
+					}
 				if(roomNumber==0){
 					System.out.println("Non esiste la camera 0");
 				}
@@ -205,6 +254,7 @@ public RoomView(Hotel h){
 						room.JDOMRemoveExtraByRoomNr jdree =new room.JDOMRemoveExtraByRoomNr(roomNumber);
 					}
 				}
+				System.out.println("Non ci sono stanze con quel valore");
 				}
 			}
 			else{
@@ -215,7 +265,7 @@ public RoomView(Hotel h){
 		
 		case 6:
 		{
-			System.out.println("STAMPO I DETTAGLI DELLA STANZA IN BASE LA NUMERO DI STANZA");
+			System.out.println("STAMPO I DETTAGLI DELLA STANZA IN BASE AL NUMERO DI STANZA");
 			System.out.println("Inserisci il numero di camera: ");
 			BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 			try {
@@ -224,7 +274,12 @@ public RoomView(Hotel h){
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			int roomNumber=Integer.parseInt(sceltaOpzione);
+			try{
+				roomNumber=Integer.parseInt(sceltaOpzione);
+				}catch(NumberFormatException nfe){
+					System.out.println("La camera edeve assumere un valore intero");
+					nfe.getMessage();
+				}
 			for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 				if(roomNumber==h.getRoomList().getRoomReg().get(i).getNumber()){
 					System.out.println("Ecco i dettagli della stanza numero "+roomNumber);
@@ -254,7 +309,7 @@ public RoomView(Hotel h){
 		
 		case 0:
 		{
-			exit=true; 
+			//exit=true; 
 			break;
 		}
 		

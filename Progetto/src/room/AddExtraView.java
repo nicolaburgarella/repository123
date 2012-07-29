@@ -2,6 +2,8 @@ package room;
 
 import java.util.Scanner;
 
+import date.StringToDate;
+
 	public class AddExtraView {
 	Scanner kb;
 	static String type,date;
@@ -19,10 +21,27 @@ import java.util.Scanner;
 	kb = new Scanner (System.in);
 	System.out.print ("\nInserisci la data dell'extra: ");
 	date = (kb.nextLine());
+	StringToDate sd=new StringToDate();
+	if(!sd.StringToDateCheck(date)){
+		System.out.println("Hai inserito una data errata,va scritta dd/MM/yyyy");
+		return null;
+	}
 	System.out.print ("Inserisci la tipologia di extra: ");
 	type = kb.nextLine();
 	System.out.print ("Inserisci il costo dell'extra: ");
+	
+	try{
 	cost = Float.parseFloat(kb.nextLine());
+	}catch(NumberFormatException nfe){
+		System.out.println("Il valore del costo deve assumere un valore float");
+		nfe.getMessage();
+	}
+	
+	if(cost==0||type==""||date==""){
+		System.out.println("Hai inserito dei valori nulli");
+		return null;
+	}
+	
 	Extra e = new Extra(cost, date, type);
 	return e;
 	

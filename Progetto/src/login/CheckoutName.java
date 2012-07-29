@@ -116,7 +116,19 @@ public class CheckoutName {
                                         	System.out.println(g.toString());
                                                 PayRooms p=new PayRooms();
                                                 float DiffTotFeeCost=p.PayRooms(g);
+                                                
+                                                if(DiffTotFeeCost==999999999){
+                                    				System.out.println("checkout non eseguito, perchè non ci sono stanze assegnate al gruppo");
+                                    			}
+                                                if(DiffTotFeeCost==999999990){
+                                					System.out.println("Prenotazione non eseguita, perchè è stato passato come parametro un gruppo nullo");
+                                			}
+                                			if(DiffTotFeeCost==999999909){
+                                				System.out.println("Prenotazione non eseguita, perchè sono state inserite date con valori nulli o errati");
+                                			}
+                                                else{
                                                 PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
+                                                }
                                         }
                                 }
 

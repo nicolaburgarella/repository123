@@ -33,6 +33,14 @@ public class PayRooms {
 		for(int i=0;i<g.getRoomAssigned().size();i++){
 			DaysBetweenDates d=new DaysBetweenDates();
 			long days=d.daysInHotel(g.getCheckin(), g.getCheckout());
+			if(days==6000){
+				System.out.println("Le date non sono parsabili");
+				return 999999909;
+			}
+			if(days==5000){
+				System.out.println("Le date hanno valori nulli");
+				return 999999909;
+			}
 			float totCostByRoom=(g.getRoomAssigned().get(i).getFee())*days;
 			System.out.println("* camera numero "+g.getRoomAssigned().get(i).getNumber()+"\tal costo giornaliero di "+g.getRoomAssigned().get(i).getFee()+" per "+days+ "giorni, al costo totale di "+totCostByRoom);
 			totCostRooms+=totCostByRoom;

@@ -32,14 +32,14 @@ public class Main {
 		String oggi=df.format(gc.getTime());
 		System.out.println(oggi);
 		System.out.println("Completo nel main!\n"+h);
-		boolean sbagliato=true;
+		boolean sbagliato=false;
 		String sceltaOpzione="";
 		int scelta;
-		boolean continua=false;
+		boolean continua=true;
 		
 		do{
 			do{
-				sbagliato=false;
+				//sbagliato=false;
 				
 				System.out.print("Data odierna:\t "+gc.get(Calendar.DATE)+" / "+(gc.get(Calendar.MONTH)+1)+" / "+gc.get(Calendar.YEAR)+" ");
 				System.out.println("Ora esatta:\t "+gc.get(Calendar.HOUR)+":"+gc.get(Calendar.MINUTE)+"\n\n");
@@ -58,7 +58,6 @@ public class Main {
 					if(!(sceltaOpzione.equals("0")||(sceltaOpzione.equals("1"))||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3")))){
 						sbagliato=true;
 						System.out.println("E' stata scelta un'opzione non valida riprova");
-						break;
 					}
 				}
 				catch(IOException ioe){
@@ -79,7 +78,6 @@ public class Main {
 			{
 				System.out.println("GESTIONE STANZE ED EXTRA: \n");
 				RoomView rv=new RoomView(h);
-				//Alcuni controlli:occorre un id univoco di stanza
 				break;
 			}
 
@@ -103,9 +101,15 @@ public class Main {
 			{
 				
 					System.out.println("Premi ENTER per continuare");
-					continua=true;
+					continua=false;
 				
 				break;
+			}
+			
+			default:
+			{
+				System.out.println("hai messo un valore non corretto,riprova");
+				continua=false;
 			}
 		}
 	}while(!continua);

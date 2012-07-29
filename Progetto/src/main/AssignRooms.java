@@ -165,6 +165,9 @@ public class AssignRooms {
 			if(DiffTotFeeCost==999999990){
 					System.out.println("Prenotazione non eseguita, perchè è stato passato come parametro un gruppo nullo");
 			}
+			if(DiffTotFeeCost==999999909){
+				System.out.println("Prenotazione non eseguita, perchè sono state inserite date con valori nulli o errati");
+			}
 			else{
 			int number=g.getNumber();
 			String groupname=g.getName();

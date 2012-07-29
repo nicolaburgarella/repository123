@@ -37,6 +37,10 @@ public class DaysBetweenDates {
 	        	return 5000;
 	        }
 		StringToDate d =new StringToDate();
+		if(!(d.StringToDateCheck(checkin)||d.StringToDateCheck(checkout))){
+			System.out.println("le date non sono parsabili, devono essere scritte come dd/MM/yyyy");
+			return 6000;
+		}
 		Date d1=d.StringToDate(checkin);
 		Date d2=d.StringToDate(checkout);
 		DaysBetweenDates b=new DaysBetweenDates();

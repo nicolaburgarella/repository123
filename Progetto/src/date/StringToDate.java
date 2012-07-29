@@ -31,4 +31,28 @@ public class StringToDate {
         }
 		return date;
     }
+    
+    public boolean StringToDateCheck(String s) {
+    	//s="";
+    	//s="20/12/2005";
+    	
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = null;
+        
+        if(s==null){
+        	System.out.println("E' stata inserita una stringa nulla da convertire in data");
+        	return false;
+        }
+ 
+        try {
+            date = df.parse(s);
+            String d = df.format(date);
+            //System.out.println("Data = " + df.format(date));
+        } catch (ParseException e) {
+            System.out.println("La stringa inserita non è parsabile correttamente");
+            return false;
+        }
+		return true;
+    }
+    
 }
