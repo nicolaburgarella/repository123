@@ -29,7 +29,7 @@ public class DaysBetweenDates {
 	
 	public long daysInHotel(String checkin, String checkout) {
 		// TODO Auto-generated method stub
-		System.out.println("Date in stringa in ingresso:checkin "+checkin+"e checkout "+checkout);
+		System.out.println("•checkin "+checkin+" e checkout "+checkout);
 		//String checkin="02/06/2012";
 		//String checkout="17/07/2012";
 		 if(checkin==null&&checkout==null){

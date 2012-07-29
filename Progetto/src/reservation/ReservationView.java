@@ -133,7 +133,15 @@ public ReservationView(Hotel h){
                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                 	if(h.getGroupList().getGroupReg().get(j).getName().equals(groupName)){
                                 		System.out.println("Il nome del gruppo inserito è valido ed stato riconosciuto tra quelli inseriti");
+                                		for(int n=0;n<h.getReservationList().getReservReg().size();n++){
+                                			if(h.getReservationList().getReservReg().get(n).getGroupName().equalsIgnoreCase((groupName))){
+                                				System.out.println("Esiste già una prenotazione con quel nome gruppo,non posso procedere nel checkin");
+                                				//come faccio ad uscire dal menu??sbagliato=true non va..
+                                			}
+                                		}
+                                		
                                 		AssignRooms a=new AssignRooms(groupName, h);
+                                		
                                 	}
                                 }
                                 

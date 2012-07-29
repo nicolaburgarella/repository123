@@ -110,6 +110,9 @@ public class AssignRooms {
 						System.out.println("non ho estratto niente,stanza con valore nullo");
 					}	
 				}
+			}else{
+					System.out.println("La richiesta di camere singole eccede le disponibilità attuali dell'hotel");
+				}
 			
 			
 			if(doublenum<=h.getRoomList().getFreeRoomsCountByComp("doppie")){
@@ -142,6 +145,9 @@ public class AssignRooms {
 					}	
 				}	
 			}
+			else{
+				System.out.println("La richiesta di camere doppie eccede le disponibilità attuali dell'hotel");
+			}
 			
 			if(weddingnum<=h.getRoomList().getFreeRoomsCountByComp("matrimoniali")){
 				weddingarray=h.getRoomList().getFreeWeddingRooms();
@@ -172,9 +178,12 @@ public class AssignRooms {
 						System.out.println("non ho estratto niente,room null");
 					}
 					
-				}
-				System.out.println("Stampo tutto il gruppo:dati e anche la lista delle camere assegnate al gruppo:\n"+g.toString()+"\n\n");		
+				}	
 			}	
+			else{
+				System.out.println("La richiesta di camere doppie eccede le disponibilità attuali dell'hotel");
+			}
+		System.out.println("Stampo tutto il gruppo:dati e anche la lista delle camere assegnate al gruppo:\n"+g.toString()+"\n\n");	
 			
 			JDOMWriteAssignment  jdwa =new JDOMWriteAssignment(g,g.getName());
 			
@@ -191,6 +200,8 @@ public class AssignRooms {
 				System.out.println("Prenotazione non eseguita, perchè sono state inserite date con valori nulli o errati");
 			}
 			else{
+				
+				System.out.println("Vai a vedere il file pdf creato nella cartella pdfHotel!");
 			int number=g.getNumber();
 			String groupname=g.getName();
 			String checkin=g.getCheckin();
@@ -200,12 +211,10 @@ public class AssignRooms {
 			h.getReservationList().getReservReg().add(reservation);
 			JDOMAddChild j=new JDOMAddChild(reservation);
 			}
-			}
-
-	}
-	else{
+			}else{
 		System.out.println("E' stato inserito un nome nullo");
 	}
+}
 
 }
-}
+
