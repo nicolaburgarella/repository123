@@ -16,7 +16,7 @@ public class ReservationTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setNumber";
 		int number=0;
 		obj.setNumber(number);
-		//Examine the object and assert something appropriate here
+		assertTrue(number==obj.getNumber());
 	}
 	public void testGetGroupName()
 	{
@@ -28,9 +28,9 @@ public class ReservationTest extends junit.framework.TestCase
 	{
 		Reservation obj=new reservation.Reservation();
 		String problemMsg="Problem with: setGroupname";
-		String groupname=null;
+		String groupname="gruppo1";
 		obj.setGroupname(groupname);
-		//Examine the object and assert something appropriate here
+		assertTrue(obj.getGroupName().equals(groupname));
 	}
 	public void testGetCheckin()
 	{
@@ -42,9 +42,9 @@ public class ReservationTest extends junit.framework.TestCase
 	{
 		Reservation obj=new reservation.Reservation();
 		String problemMsg="Problem with: setCheckin";
-		String checkin=null;
+		String checkin="15/06/2012";
 		obj.setCheckin(checkin);
-		//Examine the object and assert something appropriate here
+		assertTrue(obj.getCheckin().equals(checkin));
 	}
 	public void testGetCheckout()
 	{
@@ -56,9 +56,9 @@ public class ReservationTest extends junit.framework.TestCase
 	{
 		Reservation obj=new reservation.Reservation();
 		String problemMsg="Problem with: setCheckout";
-		String checkout=null;
+		String checkout="16/06/2012";
 		obj.setCheckout(checkout);
-		//Examine the object and assert something appropriate here
+		assertTrue(obj.getCheckout().equals(checkout));
 	}
 	public void testGetDeposit()
 	{
@@ -73,7 +73,7 @@ public class ReservationTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setDeposit";
 		float deposit=0F;
 		obj.setDeposit(deposit);
-		//Examine the object and assert something appropriate here
+		assertTrue(deposit==obj.getDeposit());
 	}
 	public void testGetTotcost()
 	{
@@ -88,16 +88,6 @@ public class ReservationTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setTotcost";
 		float totcost=0F;
 		obj.setTotcost(totcost);
-		//Examine the object and assert something appropriate here
-	}
-	public void testToString()
-	{
-		Reservation obj=new reservation.Reservation();
-		String problemMsg="Problem with: toString";
-		assertEquals(problemMsg, null, obj.toString());
-	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(ReservationTest.class));
+		assertTrue(totcost==obj.getTotcost());
 	}
 }

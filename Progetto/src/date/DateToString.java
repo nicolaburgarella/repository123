@@ -17,6 +17,11 @@ public class DateToString
         // the string representation of date (month/day/year)
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
          
+        if(d==null){
+        	System.out.println("la data non può avere valore nullo");
+        	return null;
+        }
+        else{
         // Get the date today using Calendar object.
         //   Date today = Calendar.getInstance().getTime();       
         // Using DateFormat format method we can create a string
@@ -26,5 +31,6 @@ public class DateToString
         // Print what date is today!
         //System.out.println("Report Date: " + reportDate);
 		return reportDate;
+        }
     }
 }

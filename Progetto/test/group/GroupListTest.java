@@ -8,23 +8,21 @@ public class GroupListTest extends junit.framework.TestCase
 	public void testGetGroupReg()
 	{
 		GroupList obj=new group.GroupList();
-		String problemMsg="Problem with: getGroupReg";
-		assertEquals(problemMsg, null, obj.getGroupReg());
+		ArrayList groupReg=new ArrayList<Group>();
+		obj.setGroupReg(groupReg);
+		assertTrue(groupReg==obj.getGroupReg());
+		
 	}
+	
 	public void testSetGroupReg()
 	{
 		GroupList obj=new group.GroupList();
-		String problemMsg="Problem with: setGroupReg";
-		ArrayList groupReg=null;
+		ArrayList groupReg=new ArrayList<Group>();
 		obj.setGroupReg(groupReg);
-		//Examine the object and assert something appropriate here
+		assertTrue(groupReg==obj.getGroupReg());
 	}
-	public void testToString()
-	{
-		GroupList obj=new group.GroupList();
-		String problemMsg="Problem with: toString";
-		assertEquals(problemMsg, null, obj.toString());
-	}
+	
+	
 	public void testIsGroupListEmpty()
 	{
 		GroupList obj=new group.GroupList();
@@ -35,27 +33,11 @@ public class GroupListTest extends junit.framework.TestCase
 	public void testAddGroup()
 	{
 		GroupList obj=new group.GroupList();
-		String problemMsg="Problem with: addGroup";
-		Group group=null;
+		int n1=obj.getGroupReg().size();
+		Group group=new Group();
 		obj.addGroup(group);
-		//Examine the object and assert something appropriate here
+		int n2=obj.getGroupReg().size();
+		assert n1>n2;
 	}
-	public void testGetGroupByPos()
-	{
-		GroupList obj=new group.GroupList();
-		String problemMsg="Problem with: getGroupByPos";
-		int posizione=0;
-		assertEquals(problemMsg, null, obj.getGroupByPos(posizione));
-	}
-	public void testSearchGroupPosById()
-	{
-		GroupList obj=new group.GroupList();
-		String problemMsg="Problem with: searchGroupPosById";
-		int number=0;
-		assertEquals(problemMsg, 0, obj.searchGroupPosById(number));
-	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(GroupListTest.class));
-	}
+	
 }

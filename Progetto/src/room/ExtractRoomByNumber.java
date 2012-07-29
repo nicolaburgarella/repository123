@@ -20,7 +20,11 @@ public class ExtractRoomByNumber {
 	}
 	
 	public Room ExtractRoom(int number) { 
-		  //Room r =null;
+		
+		if(number==0||number==500){
+			System.out.println("Non esiste la stanza con quel numero");
+			return null;
+		}
 	    try { 
 	    	
 	      //Creo un SAXBuilder e con esco costruisco un document 

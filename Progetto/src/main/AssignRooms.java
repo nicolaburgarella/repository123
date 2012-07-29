@@ -159,6 +159,13 @@ public class AssignRooms {
 			//Creo la prenotazione
 			PayRooms p=new PayRooms();
 			float DiffTotFeeCost=p.PayRooms(g);
+			if(DiffTotFeeCost==999999999){
+				System.out.println("Prenotazione non eseguita, perchè non ci sono stanze assegnate al gruppo");
+			}
+			if(DiffTotFeeCost==999999990){
+					System.out.println("Prenotazione non eseguita, perchè è stato passato come parametro un gruppo nullo");
+			}
+			else{
 			int number=g.getNumber();
 			String groupname=g.getName();
 			String checkin=g.getCheckin();
@@ -167,6 +174,7 @@ public class AssignRooms {
 			Reservation reservation =new Reservation(number, groupname, checkin, checkout, deposit, DiffTotFeeCost);
 			h.getReservationList().getReservReg().add(reservation);
 			JDOMAddChild j=new JDOMAddChild(reservation);
+			}
 
 	}
 

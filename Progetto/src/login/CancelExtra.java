@@ -118,7 +118,7 @@ public class CancelExtra extends JDialog {
 		 
 		 if(e.getActionCommand().equals("OK")){
 			 id=Integer.parseInt(jTextField1.getText());
-			 if(!(h.getExtraList().isExtraListEmpty())){
+			 if(!(h.getExtraList().isExtraListEmpty())&&id!=0){
 					ExtraList el=new ExtraList();
 					
 					for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
@@ -132,7 +132,7 @@ public class CancelExtra extends JDialog {
 					}
 				}
 				else{
-					JOptionPane.showMessageDialog(null,"Non sono ancora stati inseriti gli extra");
+					JOptionPane.showMessageDialog(null,"Non sono ancora stati inseriti gli extra o hai inserito un numero di camera errato");
 				}
 					
 			 

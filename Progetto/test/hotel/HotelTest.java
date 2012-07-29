@@ -1,35 +1,35 @@
 package hotel;
 
+import group.Group;
 import group.GroupList;
 import group.RequestList;
 
 import java.lang.String;
+import java.util.ArrayList;
 
+import reservation.Reservation;
 import reservation.ReservationList;
 import room.ExtraList;
 import room.RoomList;
 
 public class HotelTest extends junit.framework.TestCase
 {
-	public void testToString()
-	{
-		Hotel obj=new hotel.Hotel(null, null, null, null);
-		String problemMsg="Problem with: toString";
-		assertEquals(problemMsg, null, obj.toString());
-	}
 	public void testGetReservationList()
 	{
 		Hotel obj=new hotel.Hotel(null, null, null, null);
 		String problemMsg="Problem with: getReservationList";
+		ArrayList<Reservation> reservreg=new ArrayList<Reservation>();
+		ReservationList rl=null;
+		obj.setReservationList(rl);
 		assertEquals(problemMsg, null, obj.getReservationList());
 	}
 	public void testSetReservationList()
 	{
 		Hotel obj=new hotel.Hotel(null, null, null, null);
 		String problemMsg="Problem with: setReservationList";
-		ReservationList reservationList=null;
+		ReservationList reservationList=null ;
 		obj.setReservationList(reservationList);
-		//Examine the object and assert something appropriate here
+		assertTrue(reservationList==obj.getReservationList());
 	}
 	public void testGetRequestList()
 	{
@@ -43,7 +43,7 @@ public class HotelTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setRequestList";
 		RequestList requestList=null;
 		obj.setRequestList(requestList);
-		//Examine the object and assert something appropriate here
+		assertTrue(requestList==obj.getRequestList());
 	}
 	public void testGetGroupList()
 	{
@@ -57,7 +57,7 @@ public class HotelTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setGroupList";
 		GroupList groupList=null;
 		obj.setGroupList(groupList);
-		//Examine the object and assert something appropriate here
+		assertTrue(groupList==obj.getGroupList());
 	}
 	public void testGetRoomList()
 	{
@@ -71,7 +71,7 @@ public class HotelTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setRoomList";
 		RoomList roomList=null;
 		obj.setRoomList(roomList);
-		//Examine the object and assert something appropriate here
+		assertTrue(roomList==obj.getRoomList());
 	}
 	public void testGetExtraList()
 	{
@@ -85,10 +85,6 @@ public class HotelTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setExtraList";
 		ExtraList extraList=null;
 		obj.setExtraList(extraList);
-		//Examine the object and assert something appropriate here
-	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(HotelTest.class));
+		assertTrue(extraList==obj.getExtraList());
 	}
 }

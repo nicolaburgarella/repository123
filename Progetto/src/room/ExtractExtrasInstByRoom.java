@@ -14,6 +14,10 @@ public class ExtractExtrasInstByRoom {
 
 
 	  public ExtraList ExtractExtrasInstByRoom(int number) { 
+		  if(number==0){
+			  System.out.println("Non ci sono stanze con quel numero");
+			  return null;
+		  }
 		  ExtraList el=new ExtraList();
 	    try { 
 	      //Creo un SAXBuilder e con esco costruisco un document 

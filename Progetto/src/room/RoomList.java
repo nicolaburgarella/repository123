@@ -141,22 +141,6 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 			}
 			
 
-
-	//Ricerca tramite l'id della camera passato come parametro se la camera è presente nella lista e disponibile
-			public int searchRoomById(int number){
-				for(int i=0;i<roomReg.size();i++){
-					if(((roomReg.get(i)).getNumber())==number && ((roomReg.get(i).getFree()).equalsIgnoreCase("yes"))){
-						return i;
-					}
-					if(((roomReg.get(i)).getNumber())==number && ((roomReg.get(i).getFree()).equalsIgnoreCase("no"))){
-					return -1;
-					}
-				}
-				return -2;
-			}
-
-
-
 			public int[] removeZerosFromIntArray(int[] arr) {
 				// TODO Auto-generated method stub
 				
@@ -180,89 +164,6 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 					return nonZeroArr;
 				}
 
-
-
-
-	
-	
-			/*
-			 * salva va reso un file xml <GRUPPO id="" nome="" dataArrivo="" anticipo="" singole="" doppie="" matrimoniali="" />
-			 * */
-			/*
-			public void salvaInXML(){
-				try{
-					File file =new File("RegistroCamere.txt");
-					FileOutputStream outStream= new FileOutputStream(file);
-			        BufferedWriter lineWriter= new BufferedWriter(new OutputStreamWriter(outStream));
-			        for(int i=0;i<roomReg.size();i++){
-			            String LineaTesto;
-			            LineaTesto="<CAMERA id="+(roomReg.get(i)).getId()+" descrizione="+(roomReg.get(i)).getDescrizione()+" extra="+
-			            ((roomReg.get(i)).isExtras())+" disponibile="+((roomReg.get(i)).isDisponibile())+" />";
-			            lineWriter.write(LineaTesto);
-			        	//lineWriter.newLine();
-					}
-			        outStream.close();
-			        lineWriter.close();
-				}
-				catch(IOException ioe){
-					ioe.printStackTrace();
-				}
-			}
-
-
-
-
-			public void caricaDaXML(){
-				try{
-		            File fileTesto =new File("RegistroCamere.txt");
-		            FileInputStream inStream= new FileInputStream(fileTesto);
-		            BufferedReader lineReader= new BufferedReader(new InputStreamReader(inStream));
-		            Camera camera = null;
-		            String lineaTesto;
-		            int indexInit,indexEnd;
-		            boolean trovato=false;
-		            //legge il file riga per riga
-		            while((lineaTesto=lineReader.readLine())!=null){
-		                    if((indexInit=lineaTesto.indexOf("<CAMERA"))>-1){
-		                            //estrae i dati del gruppo
-		                            int id=Integer.parseInt(estrai("id",lineaTesto));
-		                            String descrizione=estrai("descrizione",lineaTesto);
-		                            String extra=estrai("extra",lineaTesto);
-		                            String disponibile=estrai("disponibile",lineaTesto);
-		                            //Appends the specified element to the end of this list.
-		                            roomReg.add(camera);
-		                            trovato=true;
-		                    }
-		                    else if((indexInit=lineaTesto.indexOf(" />"))>-1){
-		                            System.out.println("Appena caricato il gruppo");
-		                    }
-		                    else{
-		                            continue;
-		                    }
-		            }
-		            //chiude il file di testo
-		            lineReader.close();
-		            inStream.close();
-		            }
-		            catch(IOException ioe){
-		                    ioe.printStackTrace();
-		            }
-			}
-
-			static String estrai(String chiave,String riga){
-				int indexInit,indexEnd;
-				indexInit=riga.indexOf(chiave)+chiave.length()+2;//pos chiave+2,ovvero ="
-				String valore=riga.substring(indexInit);
-				indexEnd=valore.indexOf('"');
-				valore=valore.substring(0,indexEnd); //il secondo parametro di substring è escluso
-				return valore;
-			}
-			
-		*/	
-			
-			
-			
-			
 
 	}
 

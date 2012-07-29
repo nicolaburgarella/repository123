@@ -13,8 +13,5 @@ public class CheckFreeRoomsGuiCTest extends junit.framework.TestCase
 		PrintWriter in=null;
 		assertEquals(problemMsg, null, CheckFreeRoomsGuiC.console(out, in));
 	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(CheckFreeRoomsGuiCTest.class));
-	}
+
 }

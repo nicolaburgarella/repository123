@@ -43,24 +43,7 @@ public class ReservationList {
 			System.out.println("La prenotazione è stata inserita nella lista delle richieste");
 		}
 
-
-/*
-		public int searchExtraById(int number){
-			for(int i=0;i<extraReg.size();i++){
-				if((extraReg.get(i)).getNumber()==number){
-					return i;
-				}
-			}
-			return -1;
-		}
-		*/
-
-
-		public Reservation getReservByPos(int posizione){
-			return reservReg.get(posizione);
-		}
 		
-
 		@Override
 		public String toString() {
 			return "ReservationList [reservReg=" + reservReg + "]";

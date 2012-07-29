@@ -32,7 +32,10 @@ public class AddRequestView {
 		doppie = Integer.parseInt(kb.nextLine());
 		System.out.print("Inserisci il numero di stanze matrimoniali richieste: 0 se non richieste");
 		matrimoniali = Integer.parseInt(kb.nextLine());
-		
+		if(singole==0&&doppie==0&&matrimoniali==0){
+			System.out.println("Nell'albergo occorre la prenotazione di almeno una camera");
+			return null;
+		}
 		Request r=new Request(singole, doppie, matrimoniali, flag);
 		
 		return r;

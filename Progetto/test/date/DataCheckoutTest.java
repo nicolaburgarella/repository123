@@ -11,8 +11,4 @@ public class DataCheckoutTest extends junit.framework.TestCase
 		int days=0;
 		assertEquals(problemMsg, null, obj.DataCheckout(days));
 	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(DataCheckoutTest.class));
-	}
 }

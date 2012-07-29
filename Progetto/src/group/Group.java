@@ -16,10 +16,15 @@ public class Group {
 	private ArrayList <Room> roomsAssigned =new ArrayList<Room>();
 	
 	public ArrayList<Room> getRoomAssigned() {
+		if(roomsAssigned==null){
+			System.out.println("Non ci son stanze assegnate per il gruppo");
+			return null;
+		}
 		return roomsAssigned;
 	}
 
 	public void setRoomAssigned(ArrayList<Room> roomAssigned) {
+		
 		this.roomsAssigned = roomAssigned;
 	}
 
@@ -28,6 +33,10 @@ public class Group {
 	}
 
 	public boolean addRoomAssigned(Room room){
+		if(room==null){
+			System.out.println("Non è possibile aggiungere una stanza con valore nullo");
+			return false;
+		}
 		for(int i=0;i<roomsAssigned.size();i++){
 			if((roomsAssigned.get(i)).equals(room)){
 				System.out.println("Stanza già assegnata,quindi non inserita");
@@ -38,14 +47,7 @@ public class Group {
 		System.out.println("Stanza inserita nella lista delle stanze assegnate al gruppo:\n"+roomsAssigned.toString());
 		return true;
 	}
-
-//Ritorna la camera in base all'indice della lista passato come parametro
-	public Room getRoomAssignedByPos(int posizione){
-		return roomsAssigned.get(posizione);
-	}
 	
-	
-
 	public Group(){
 		this.roomsAssigned.clear();
 	}

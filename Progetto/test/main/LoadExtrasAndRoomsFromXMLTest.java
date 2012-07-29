@@ -9,8 +9,4 @@ public class LoadExtrasAndRoomsFromXMLTest extends junit.framework.TestCase
 		String problemMsg="Problem with: LoadExtrasAndRoomsFromXML";
 		assertEquals(problemMsg, null, obj.LoadExtrasAndRoomsFromXML());
 	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(LoadExtrasAndRoomsFromXMLTest.class));
-	}
 }

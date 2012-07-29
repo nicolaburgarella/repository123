@@ -8,11 +8,12 @@ import room.ExtraList;
 
 public class CancelExtraTest extends junit.framework.TestCase
 {
+	
 	public void testActionPerformed()
 	{
 		CancelExtra obj=new login.CancelExtra(null);
 		String problemMsg="Problem with: actionPerformed";
-		ActionEvent e=null;
+		ActionEvent e = null;
 		obj.actionPerformed(e);
 		//Examine the object and assert something appropriate here
 	}
@@ -24,9 +25,5 @@ public class CancelExtraTest extends junit.framework.TestCase
 		ExtraList el=null;
 		obj.cancelExtras(h, el);
 		//Examine the object and assert something appropriate here
-	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(CancelExtraTest.class));
 	}
 }

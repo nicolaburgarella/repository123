@@ -9,8 +9,4 @@ public class LoadFromXmlTest extends junit.framework.TestCase
 		String problemMsg="Problem with: LoadFromXml";
 		assertEquals(problemMsg, null, obj.LoadFromXml());
 	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(LoadFromXmlTest.class));
-	}
 }

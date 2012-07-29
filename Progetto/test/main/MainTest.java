@@ -11,8 +11,5 @@ public class MainTest extends junit.framework.TestCase
 		Main.main(args);
 		//Examine the object and assert something appropriate here
 	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(MainTest.class));
-	}
+
 }

@@ -11,7 +11,7 @@ public class DaysBetweenDatesTest extends junit.framework.TestCase
 		String problemMsg="Problem with: DaysBetweenDates";
 		Date uno=null;
 		Date due=null;
-		assertEquals(problemMsg, 0L, obj.DaysBetweenDates(uno, due));
+		assertEquals(problemMsg, 5000, obj.DaysBetweenDates(uno, due));
 	}
 	public void testDaysInHotel()
 	{
@@ -19,10 +19,6 @@ public class DaysBetweenDatesTest extends junit.framework.TestCase
 		String problemMsg="Problem with: daysInHotel";
 		String checkin=null;
 		String checkout=null;
-		assertEquals(problemMsg, 0L, obj.daysInHotel(checkin, checkout));
-	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(DaysBetweenDatesTest.class));
+		assertEquals(problemMsg, 5000, obj.daysInHotel(checkin, checkout));
 	}
 }

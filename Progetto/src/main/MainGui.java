@@ -604,7 +604,7 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 				}
 				return true;
 			}
-			else {JOptionPane.showMessageDialog(this, "L'estensione del file selezionato non è corretta (.er).","Errore di caricamento",
+			else {JOptionPane.showMessageDialog(this, "L'estensione del file selezionato non è corretta (.xml).","Errore di caricamento",
 					JOptionPane.ERROR_MESSAGE);
 			return false;
 			}

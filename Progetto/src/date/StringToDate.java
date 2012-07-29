@@ -16,6 +16,11 @@ public class StringToDate {
     	
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         Date date = null;
+        
+        if(s==null){
+        	System.out.println("E' stata inserita una stringa nulla da convertire in data");
+        	return null;
+        }
  
         try {
             date = df.parse(s);

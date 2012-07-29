@@ -30,6 +30,11 @@ public class DataCheckout {
 	        //
 	        // Format a date, the time value is included
 	        //
+	        if(days==0){
+	        	System.out.println("Il cliente deve alloggiare almeno una notte");
+	        	return null;
+	        }
+	        
 	        String message = MessageFormat.format("Today is {0} and the checkout is {1}", dates);
 	        System.out.println(message);
 			return dates;

@@ -184,7 +184,12 @@ public ReservationView(Hotel h){
                                                         	System.out.println(g.toString());
                                                                 PayRooms p=new PayRooms();
                                                                 float DiffTotFeeCost=p.PayRooms(g);
+                                                                if(DiffTotFeeCost==999999999){
+                                                    				System.out.println("Prenotazione non eseguita, perchè non ci sono stanze assegnate al gruppo");
+                                                    			}
+                                                                else{
                                                                 PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
+                                                                }
                                                         }
                                                 }
                                                

@@ -69,6 +69,11 @@ public class InsertGroup1 extends JDialog {
 	 * @param h 
 	 */
 	public InsertGroup1(Hotel hotel) {
+		
+		if(hotel==null){
+			System.out.println("E' stata caricata un'istanza nulla della classe Hotel");
+			//exitonclose??
+		}
 		h=hotel;
 		setBounds(100, 100, 450, 500);
 		getContentPane().setLayout(new BorderLayout());
@@ -185,6 +190,9 @@ public class InsertGroup1 extends JDialog {
 			jTextField4 = new JTextField();
 			jTextField4.setText("1");
 			days=Integer.parseInt(jTextField4.getText());
+			if(days==0){
+				JOptionPane.showMessageDialog(null,"Il numero di giorni deve esseremaggiore di zero");
+			}
 			}catch(NumberFormatException nfe){
 				JOptionPane.showMessageDialog(null,"Il numero di giorni deve essere intero");
 			}
@@ -319,6 +327,10 @@ public class InsertGroup1 extends JDialog {
 							 singole=Integer.parseInt(jTextField5.getText());
                              doppie=Integer.parseInt(jTextField6.getText());
                              matrimoniali=Integer.parseInt(jTextField7.getText()); 
+                             
+                             if(singole==0&&doppie==0&&matrimoniali==0){
+                     			System.out.println("Nell'albergo occorre la prenotazione di almeno una camera");
+                             }
                              deposit=Float.parseFloat(jTextField3.getText());
                              days=Integer.parseInt(jTextField4.getText());
                              
@@ -326,6 +338,9 @@ public class InsertGroup1 extends JDialog {
                                     Date []dates=new Date[2];
                                     dates=d.DataCheckout(days);
                                     DateToString ds=new DateToString();
+                                	if(ds.DateToString(dates[0])==null||ds.DateToString(dates[1])==null){
+                            			System.out.println("Checkin e checkout non possono assumere valori nulli");
+                            		}
                                     checkin=ds.DateToString(dates[0]);
                                     checkout=ds.DateToString(dates[1]);
                                     Group g = new Group(id, nome, checkin, checkout, deposit);

@@ -116,7 +116,12 @@ public class CheckoutId {
                                     	System.out.println(g.toString());
                                             PayRooms p=new PayRooms();
                                             float DiffTotFeeCost=p.PayRooms(g);
+                                            if(DiffTotFeeCost==999999999){
+                                				System.out.println("checkout non eseguito, perchè non ci sono stanze assegnate al gruppo");
+                                			}
+                                            else{
                                             PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
+                                            }
                                     }
                             }
                            

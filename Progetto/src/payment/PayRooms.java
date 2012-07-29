@@ -17,10 +17,18 @@ public class PayRooms {
 	}
 	
 	public float PayRooms(Group gruppo){
+		
+		if(gruppo==null){
+			System.out.println("E' stato passato un gruppo nullo come parametro");
+			return 999999990;
+		}
 		g=gruppo;
 		float totCostRooms=0;
 		float diffCost=0;
-		
+		if(g.getRoomAssigned().isEmpty()){
+			System.out.println("Non ci sono stanze assegnate al gruppo,impossibile procedere nel checkout con il pagamento");
+			return 999999999;
+		}
 		System.out.println("Ecco i dettagli e il costo totale del gruppo "+g.getName()+"\nHai utilizzato:");
 		for(int i=0;i<g.getRoomAssigned().size();i++){
 			DaysBetweenDates d=new DaysBetweenDates();

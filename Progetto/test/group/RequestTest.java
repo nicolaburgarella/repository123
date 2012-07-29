@@ -1,6 +1,7 @@
 package group;
 
 import java.lang.String;
+import java.util.ArrayList;
 
 public class RequestTest extends junit.framework.TestCase
 {
@@ -16,7 +17,7 @@ public class RequestTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setSingole";
 		int singole=0;
 		obj.setSingole(singole);
-		//Examine the object and assert something appropriate here
+		assertTrue(singole==obj.getSingole());
 	}
 	public void testGetDoppie()
 	{
@@ -30,7 +31,7 @@ public class RequestTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setDoppie";
 		int doppie=0;
 		obj.setDoppie(doppie);
-		//Examine the object and assert something appropriate here
+		assertTrue(doppie==obj.getDoppie());
 	}
 	public void testGetMatrimoniali()
 	{
@@ -44,12 +45,13 @@ public class RequestTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setMatrimoniali";
 		int matrimoniali=0;
 		obj.setMatrimoniali(matrimoniali);
-		//Examine the object and assert something appropriate here
+		assertTrue(matrimoniali==obj.getMatrimoniali());
 	}
 	public void testGetFlag()
 	{
 		Request obj=new group.Request();
 		String problemMsg="Problem with: getFlag";
+		obj.setFlag(null);
 		assertEquals(problemMsg, null, obj.getFlag());
 	}
 	public void testSetFlag()
@@ -57,17 +59,8 @@ public class RequestTest extends junit.framework.TestCase
 		Request obj=new group.Request();
 		String problemMsg="Problem with: setFlag";
 		String flag=null;
-		obj.setFlag(flag);
-		//Examine the object and assert something appropriate here
-	}
-	public void testToString()
-	{
-		Request obj=new group.Request();
-		String problemMsg="Problem with: toString";
-		assertEquals(problemMsg, null, obj.toString());
-	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(RequestTest.class));
+		String flag1=obj.getFlag();
+		obj.setFlag("eseguita");
+		assertFalse(flag1.equals(flag));
 	}
 }

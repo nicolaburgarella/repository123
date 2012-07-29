@@ -17,7 +17,7 @@ public class ExtraTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setCost";
 		float cost=0F;
 		obj.setCost(cost);
-		//Examine the object and assert something appropriate here
+		assertTrue(cost==obj.getCost());
 	}
 	public void testGetDate()
 	{
@@ -28,10 +28,9 @@ public class ExtraTest extends junit.framework.TestCase
 	public void testSetDate()
 	{
 		Extra obj=new room.Extra();
-		String problemMsg="Problem with: setDate";
-		String date=null;
+		String date="16/7/2012";
 		obj.setDate(date);
-		//Examine the object and assert something appropriate here
+		assertTrue(obj.getDate().equals(date));
 	}
 	public void testGetType()
 	{
@@ -42,19 +41,8 @@ public class ExtraTest extends junit.framework.TestCase
 	public void testSetType()
 	{
 		Extra obj=new room.Extra();
-		String problemMsg="Problem with: setType";
-		String type=null;
+		String type="internet";
 		obj.setType(type);
-		//Examine the object and assert something appropriate here
-	}
-	public void testToString()
-	{
-		Extra obj=new room.Extra();
-		String problemMsg="Problem with: toString";
-		assertEquals(problemMsg, null, obj.toString());
-	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(ExtraTest.class));
+		assertTrue(type==obj.getType());
 	}
 }

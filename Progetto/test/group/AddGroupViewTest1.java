@@ -12,8 +12,4 @@ public class AddGroupViewTest1 extends junit.framework.TestCase
 		Hotel hotel=null;
 		assertEquals(problemMsg, null, obj.AddGroupView(hotel));
 	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(AddGroupViewTest1.class));
-	}
 }

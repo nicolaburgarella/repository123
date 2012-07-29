@@ -192,6 +192,11 @@ public RoomView(Hotel h){
 					e.printStackTrace();
 				}
 				int roomNumber=Integer.parseInt(sceltaOpzione);
+				if(roomNumber==0){
+					System.out.println("Non esiste la camera 0");
+				}
+				else{
+					
 				for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 					if(roomNumber==h.getRoomList().getRoomReg().get(i).getNumber()){
 						ExtractExtrasInstByRoom e=new ExtractExtrasInstByRoom();
@@ -199,6 +204,7 @@ public RoomView(Hotel h){
 						cancelExtras(hotel, el);
 						room.JDOMRemoveExtraByRoomNr jdree =new room.JDOMRemoveExtraByRoomNr(roomNumber);
 					}
+				}
 				}
 			}
 			else{

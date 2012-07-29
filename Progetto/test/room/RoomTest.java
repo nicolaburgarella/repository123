@@ -13,10 +13,9 @@ public class RoomTest extends junit.framework.TestCase
 	public void testSetNumber()
 	{
 		Room obj=new room.Room(0, 0F, null, null, null);
-		String problemMsg="Problem with: setNumber";
 		int number=0;
 		obj.setNumber(number);
-		//Examine the object and assert something appropriate here
+		assertTrue(number==obj.getNumber());
 	}
 	public void testGetFee()
 	{
@@ -31,7 +30,7 @@ public class RoomTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setFee";
 		float f=0F;
 		obj.setFee(f);
-		//Examine the object and assert something appropriate here
+		assertTrue(f==obj.getFee());
 	}
 	public void testGetFree()
 	{
@@ -45,7 +44,7 @@ public class RoomTest extends junit.framework.TestCase
 		String problemMsg="Problem with: setFree";
 		String free=null;
 		obj.setFree(free);
-		//Examine the object and assert something appropriate here
+		assertTrue(free==obj.getFree());
 	}
 	public void testGetComposition()
 	{
@@ -57,9 +56,9 @@ public class RoomTest extends junit.framework.TestCase
 	{
 		Room obj=new room.Room(0, 0F, null, null, null);
 		String problemMsg="Problem with: setComposition";
-		String composition=null;
+		String composition="1+1";
 		obj.setComposition(composition);
-		//Examine the object and assert something appropriate here
+		assertTrue(obj.getComposition().equals(composition));
 	}
 	public void testGetDescription()
 	{
@@ -69,20 +68,10 @@ public class RoomTest extends junit.framework.TestCase
 	}
 	public void testSetDescription()
 	{
-		Room obj=new room.Room(0, 0F, null, null, null);
+		Room obj=new room.Room(0, 0F, null, null, "stanza con vista molto bella");
 		String problemMsg="Problem with: setDescription";
-		String description=null;
+		String description="stanza con vista molto bella";
 		obj.setDescription(description);
-		//Examine the object and assert something appropriate here
-	}
-	public void testToString()
-	{
-		Room obj=new room.Room(0, 0F, null, null, null);
-		String problemMsg="Problem with: toString";
-		assertEquals(problemMsg, null, obj.toString());
-	}
-	public static void main(String[] args)
-	{
-		junit.textui.TestRunner.run(new junit.framework.TestSuite(RoomTest.class));
+		assertTrue(obj.getDescription().equals(description));
 	}
 }

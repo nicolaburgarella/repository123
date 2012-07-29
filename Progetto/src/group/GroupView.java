@@ -11,6 +11,8 @@ import hotel.Hotel;
 public class GroupView {
 
 
+private int c;
+
 public GroupView(){
 	
 }
@@ -62,25 +64,37 @@ public GroupView(Hotel h){
 		
 		case 1:
 		{
+			do{
 			System.out.println("INSERISCO UN GRUPPO CON LA SUA RICHIESTA:");
 					AddGroupView agv=new AddGroupView();
 					Group g= new Group();
 					g=agv.AddGroupView(h);
 					if(g==null){
 						System.out.println("gruppo non inserito");
+						c=1;
 					}
 					else{
+						c=0;
 					System.out.println(g.toString());
 					h.getGroupList().getGroupReg().add(g);
+					
 					AddRequestView arv=new AddRequestView();
 					Request r=new Request();
 					r=arv.AddRequestView();
+					if(r==null){
+						System.out.println("richiesta e gruppo non inseriti");
+						h.getGroupList().getGroupReg().remove(g);
+						c=1;
+					}
+					else{
+						c=0;
 					h.getRequestList().getRequestReg().add(r);
 					System.out.println(g.toString()+"\n and "+r.toString());
 					JDOMAddChild j=new JDOMAddChild(g,r);
 					}
+					}
 					
-			
+			}while(c==1);
 			break;
 		}
 		
