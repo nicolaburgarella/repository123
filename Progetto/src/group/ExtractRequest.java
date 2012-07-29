@@ -13,6 +13,12 @@ public class ExtractRequest {
 
   public Request ExtractRequestbyGroupName(String groupname) { 
 	  Request r=null;
+	  
+	  if(groupname.equals(null)){
+		  System.out.println("E' stato inserito un valore nullo");
+		  return null;
+	  }
+	  
     try { 
       //Creo un SAXBuilder e con esco costruisco un document 
       SAXBuilder builder = new SAXBuilder(); 
@@ -45,6 +51,9 @@ public class ExtractRequest {
         	System.out.println(r.toString()+"\n");
          }
          return r;
+         }
+         else{
+        	 System.out.println("Non ho trovato nella struttura dati il "+groupname);
          }
          
          }

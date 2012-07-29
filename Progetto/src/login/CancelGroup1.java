@@ -217,10 +217,15 @@ public class CancelGroup1 extends JDialog {
 												if(nome.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
 													h.getGroupList().getGroupReg().remove(i);
 													ExtractRequest er=new ExtractRequest();
+													if(er.ExtractRequestbyGroupName(nome)!=null){
 													Request r =er.ExtractRequestbyGroupName(nome);
 													cancelRequest(h, r);
 													JDOMRemoveChild jdrc=new JDOMRemoveChild(nome);
 													JOptionPane.showMessageDialog(null,"Fatto!");
+													}
+													else{
+														System.out.println("E' stato inserito un nome nullo");
+													}
 												}
 											}
 										}
@@ -274,10 +279,15 @@ public class CancelGroup1 extends JDialog {
 							if(nome.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
 								h.getGroupList().getGroupReg().remove(i);
 								ExtractRequest er=new ExtractRequest();
+								if(er.ExtractRequestbyGroupName(nome)!=null){
 								Request r =er.ExtractRequestbyGroupName(nome);
 								cancelRequest(h, r);
 								JDOMRemoveChild jdrc=new JDOMRemoveChild(nome);
 								JOptionPane.showMessageDialog(null,"Fatto!");
+								}
+								else{
+									System.out.println("E' stato inserito un nome nullo");
+								}
 							}
 						}
 					}
@@ -293,6 +303,9 @@ public class CancelGroup1 extends JDialog {
 		}
 	
 	public void cancelRequest(Hotel h, Request r){
+		if(h==null||r==null){
+			System.out.println("Dati di ingresso nulli");
+		}
 		for(int i=0;i<h.getRequestList().getRequestReg().size();i++){
 				if(h.getRequestList().getRequestReg().get(i).equals(r)){
 					h.getRequestList().getRequestReg().remove(i);

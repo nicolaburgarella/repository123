@@ -17,10 +17,6 @@ public class AddGroupView {
 	static float deposit;
 	static int number,days;
 	Hotel h = new Hotel();
-	String na;
-	int nr;
-	//Group g;
-	private int c=0;
 
 
 	public AddGroupView() {
@@ -42,16 +38,38 @@ public class AddGroupView {
 		days=0;
 		kb = new Scanner(System.in);
 		System.out.print("\nInserisci numero id del gruppo: ");
+		try{
 		number = Integer.parseInt((kb.nextLine()));
-		nr=number;
+		//nr=number;
+		}catch(NumberFormatException nfe){
+			System.out.println("L'id deve essere intero positivo");
+			nfe.getMessage();
+			return null;
+		}
 		System.out.print("Inserisci il nome del gruppo: ");
 		name = kb.nextLine();
-		na=name;
+		//na=name;
 
 		System.out.print("Inserisci l'importo dell'acconto: ");
+		try{
 		deposit = Float.parseFloat(kb.nextLine());
+		}catch(NumberFormatException nfe){
+			System.out.println("L'acconto deve avere valore float");
+			nfe.getMessage();
+			return null;
+		}
 		System.out.println("Inserisci i giorni richiesti di pernottamento");
+		
+		try{
 		days=Integer.parseInt(kb.nextLine());
+		if(days==0){
+			System.out.println("I giorni di pernottamento non possono essere 0,ma almeno 1");
+			return null;
+		}
+		}catch(NumberFormatException nfe){
+			System.out.println("I giorni di pernottamento devono essere interi positivi");
+		}
+		
 		DataCheckout d=new DataCheckout();
 		Date []dates=new Date[2];
 		
@@ -71,7 +89,7 @@ public class AddGroupView {
 		checkin=ds.DateToString(dates[0]);
 		checkout=ds.DateToString(dates[1]);
 		for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
-			if(h.getGroupList().getGroupReg().get(i).getNumber()==nr||h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(na)){
+			if(h.getGroupList().getGroupReg().get(i).getNumber()==number||h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(name)){
 				System.out.println("Gruppo già esistente,non lo inserisco nuovamente");
 				return null;
 			}

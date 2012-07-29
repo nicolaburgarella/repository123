@@ -10,8 +10,8 @@ import hotel.Hotel;
 
 public class GroupView {
 
-
-private int c;
+private int groupId;
+private boolean trovato=false;
 
 public GroupView(){
 	
@@ -64,17 +64,15 @@ public GroupView(Hotel h){
 		
 		case 1:
 		{
-			do{
 			System.out.println("INSERISCO UN GRUPPO CON LA SUA RICHIESTA:");
 					AddGroupView agv=new AddGroupView();
 					Group g= new Group();
 					g=agv.AddGroupView(h);
 					if(g==null){
 						System.out.println("gruppo non inserito");
-						c=1;
+						sbagliato=true;
 					}
 					else{
-						c=0;
 					System.out.println(g.toString());
 					h.getGroupList().getGroupReg().add(g);
 					
@@ -84,17 +82,14 @@ public GroupView(Hotel h){
 					if(r==null){
 						System.out.println("richiesta e gruppo non inseriti");
 						h.getGroupList().getGroupReg().remove(g);
-						c=1;
+						sbagliato=true;
 					}
 					else{
-						c=0;
 					h.getRequestList().getRequestReg().add(r);
 					System.out.println(g.toString()+"\n and "+r.toString());
 					JDOMAddChild j=new JDOMAddChild(g,r);
 					}
 					}
-					
-			}while(c==1);
 			break;
 		}
 		
@@ -111,7 +106,18 @@ public GroupView(Hotel h){
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				int groupId=Integer.parseInt(sceltaOpzione);
+				try{
+				groupId=Integer.parseInt(sceltaOpzione);
+				if(groupId==0){
+					System.out.println("Il gruppo deve avere un id intero maggiore di zero");
+					sbagliato=true;
+				}
+				}catch(NumberFormatException nfe){
+					System.out.println("Il gruppo deve avere un id intero positivo");
+					nfe.getMessage();
+					sbagliato=true;
+				}
+				
 				for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 					if(groupId==h.getGroupList().getGroupReg().get(i).getNumber()){
 						h.getGroupList().getGroupReg().remove(i);
@@ -121,7 +127,7 @@ public GroupView(Hotel h){
 
 			}
 			else{
-				System.out.println("Non è ancora stato inserito il gruppo con id selezionato");
+				System.out.println("Non è ancora stato inserito un gruppo");
 			}
 			
 			break;
@@ -144,15 +150,23 @@ public GroupView(Hotel h){
 					if(groupName.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
 						h.getGroupList().getGroupReg().remove(i);
 						ExtractRequest e=new ExtractRequest();
+						if(e.ExtractRequestbyGroupName(groupName)!=null){
 						Request r =e.ExtractRequestbyGroupName(groupName);
 						cancelRequest(h, r);
 						JDOMRemoveChild jdrc=new JDOMRemoveChild(groupName);
+						trovato=true;
+					}else{
+						System.out.println("Inserito un valore nullo");
 					}
 				}
 
 			}
+				if(trovato==false){
+					System.out.println("Non ho trovato quel nome gruppo necessario per rimuovere il gruppo");
+				}
+			}
 			else{
-				System.out.println("Non è ancora stato inserito il gruppo con id selezionato");
+				System.out.println("Non è ancora stato inserito il gruppo con il nome selezionato");
 			}
 			break;
 			
@@ -200,7 +214,11 @@ public GroupView(Hotel h){
 					ExtractRequest er=new ExtractRequest();
 					r=er.ExtractRequestbyGroupName(groupName);
 					System.out.println("Ha richiesto:\n"+r.getSingole()+"\tcamere singole,\n"+r.getDoppie()+"\tcamere doppie,\n"+r.getMatrimoniali()+"\tcamere matrimoniali.\n");
+					trovato=true;
 		
+				}
+				if(trovato==false){
+					System.out.println("Non ho trovato il nome del gruppo da cui estrapolare i risultati");
 				}
 			}
 			break;

@@ -309,7 +309,7 @@ public RoomView(Hotel h){
 		
 		case 0:
 		{
-			//exit=true; 
+			exit=true; 
 			break;
 		}
 		

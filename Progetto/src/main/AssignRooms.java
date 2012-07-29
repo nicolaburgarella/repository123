@@ -59,6 +59,8 @@ public class AssignRooms {
 		//Setto la richiesta come eseguita
 		System.out.println("Carico la richiesta del gruppo come istanza e la visualizzo\nSetto la richesta del gruppo come eseguita sul file xml groups,me lo fa sull'ultimo gruppo nel file xml,non va bene");
 		ExtractRequest er=new ExtractRequest();
+		if(er.ExtractRequestbyGroupName(groupName)!=null){
+			
 		Request r=er.ExtractRequestbyGroupName(groupName);
 		
 		for(int i=0;i<h.getRequestList().getRequestReg().size();i++){
@@ -178,7 +180,11 @@ public class AssignRooms {
 			h.getReservationList().getReservReg().add(reservation);
 			JDOMAddChild j=new JDOMAddChild(reservation);
 			}
+			}
 
+	}
+	else{
+		System.out.println("E' stato inserito un nome nullo");
 	}
 
 }
