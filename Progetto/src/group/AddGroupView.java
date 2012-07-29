@@ -40,7 +40,12 @@ public class AddGroupView {
 		System.out.print("\nInserisci numero id del gruppo: ");
 		try{
 		number = Integer.parseInt((kb.nextLine()));
-		//nr=number;
+		for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+			if(h.getGroupList().getGroupReg().get(j).getNumber()==number){
+				System.out.println("Id del gruppo già inserito,bisogna metterne un altro valido");
+				return null;
+			}
+		}
 		}catch(NumberFormatException nfe){
 			System.out.println("L'id deve essere intero positivo");
 			nfe.getMessage();
@@ -48,7 +53,12 @@ public class AddGroupView {
 		}
 		System.out.print("Inserisci il nome del gruppo: ");
 		name = kb.nextLine();
-		//na=name;
+		for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+			if(h.getGroupList().getGroupReg().get(j).getName().equalsIgnoreCase(name)){
+				System.out.println("Nome del gruppo già inserito,bisogna metterne un altro valido");
+				return null;
+			}
+		}
 
 		System.out.print("Inserisci l'importo dell'acconto: ");
 		try{

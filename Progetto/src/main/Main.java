@@ -85,7 +85,6 @@ public class Main {
 			{	
 				System.out.println("GESTIONE GRUPPI E RICHIESTE: \n");
 				GroupView gv=new GroupView(h);
-				//Alcuni controlli:occorre un id univoco(meglio se progressivo)ritornato da classe statica e un nome univoco di ogni gruppo
 				break;
 			}
 
