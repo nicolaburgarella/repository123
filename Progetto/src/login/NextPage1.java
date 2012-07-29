@@ -188,15 +188,20 @@ public  NextPage1(Hotel hotel) {
 		  
 	  }
 	  if(e.getActionCommand().equals("button3")){
-		 //stampo l'extra per numero di camera,da mettere in pdf o in una jtextarea l'output del metodo
+		 //stampo l'extra per numero di camera
 		  PrintExtraByRoomNr pebnr=new PrintExtraByRoomNr(h, "number");
-		  pebnr.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		  //pebnr.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			pebnr.setVisible(true);
 	  }
 	  if(e.getActionCommand().equals("button4")){
 		 //stampo tutti gli extra ordinati per numero di camera,anch'esso da bufferizzare e mettere in pdf o jtextarea in un jdialog
 		  if(!(h.getExtraList().isExtraListEmpty())){
-				JDOMReader jdre=new JDOMReader();
+				try {
+					PrintAllExtrasC pc=new PrintAllExtrasC();
+				} catch (IOException e1) {
+					JOptionPane.showMessageDialog(null,"Errore di i/o");
+					e1.printStackTrace();
+				}
 			}
 			else{
 				JOptionPane.showMessageDialog(null,"Non sono ancora stati inseriti gli extra in alcuna stanza");
@@ -211,7 +216,7 @@ public  NextPage1(Hotel hotel) {
 			ce.setVisible(true);
 	  }
 	  if(e.getActionCommand().equals("button6")){
-			//stampo i dettagli della stanza per numeor di camera damettere in pdf o in jtextarea l'output el metodo
+			//stampo i dettagli della stanza per numeor di camera
 		  PrintRoomDetailsByRoomNr p=new PrintRoomDetailsByRoomNr(h, "number");
 			p.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			p.setVisible(true);

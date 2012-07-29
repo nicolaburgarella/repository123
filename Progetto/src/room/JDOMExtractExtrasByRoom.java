@@ -9,7 +9,9 @@ import org.jdom.input.*;
 public class JDOMExtractExtrasByRoom {
 
 
-	  public JDOMExtractExtrasByRoom(int number) { 
+	  private boolean fatto=false;
+
+	public JDOMExtractExtrasByRoom(int number) { 
 	    try { 
 	      //Creo un SAXBuilder e con esco costruisco un document 
 	      SAXBuilder builder = new SAXBuilder(); 
@@ -46,12 +48,14 @@ public class JDOMExtractExtrasByRoom {
 	         System.out.println("\tCosto: " + item.getAttributeValue("fee") + " giornaliero");
 	         System.out.println("\tLibera: " + item.getAttributeValue("free")+"\n");
 	         costo=0;
-	         break;
+	         fatto=true;
 	         }
-	         else{
+	         if(fatto==false){
 	        	 System.out.println("non ho trovato nessun extra relativo alla room numero "+ number);
+	        	 break;
 	         }
 	      }
+	      
 
 	    }  
 	    catch (Exception e) { 

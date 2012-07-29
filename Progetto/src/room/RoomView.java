@@ -11,6 +11,7 @@ public class RoomView {
 
 
 private int roomNumber;
+private boolean fatto=false;;
 
 public RoomView(){
 	
@@ -161,7 +162,7 @@ public RoomView(Hotel h){
 					try{
 						roomNumber=Integer.parseInt(sceltaOpzione);
 						}catch(NumberFormatException nfe){
-							System.out.println("La camera edeve assumere un valore intero");
+							System.out.println("La camera deve assumere un valore intero");
 							nfe.getMessage();
 						}
 					
@@ -208,8 +209,11 @@ public RoomView(Hotel h){
 				for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 					if(roomNumber==h.getRoomList().getRoomReg().get(i).getNumber()){
 						JDOMExtractExtrasByRoom e=new JDOMExtractExtrasByRoom(roomNumber);
-						
+						fatto=true;
 					}
+				}
+				if(fatto==false){
+					System.out.println("Non è stato trovato il numero di stanza inserito");
 				}
 
 			}
@@ -312,8 +316,12 @@ public RoomView(Hotel h){
 					System.out.println("*Costo giornaliero:\t"+fee+" euro");
 					System.out.println("*Libera:\t"+free);
 					System.out.println("*Descrizione:\t"+description);
+					fatto=true;
 		
 				}
+			}
+			if(fatto==false){
+				System.out.println("La stanza inserita non esiste nel registro delle stanze ");
 			}
 			break;
 		}

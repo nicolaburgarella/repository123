@@ -19,6 +19,8 @@ import room.RoomList;
 
 public class JDOMRemoveExtraByRoomNr {
 
+	private boolean fatto=false;
+
 	/**
 	 * @param args
 	 */
@@ -53,36 +55,15 @@ public class JDOMRemoveExtraByRoomNr {
 			     			List extra = item.getChildren("EXTRA");
 			     			while(extra.size()>1){
 			                    extra.clear();
+			                    fatto=true;
 	
 			     		}
 			     		}
 			     		}
-			    /*
-			         List extra = item.getChildren("EXTRA"); 
-			         float costo=0;
-			         ExtraList el=new ExtraList();
-			         for(int i=0;i<(extra.size());i++){
-			        	 costo+=Float.parseFloat(((Element) extra.get(i)).getAttributeValue("cost"));
-			        	 Extra e = new Extra(Float.parseFloat(((Element) extra.get(i)).getAttributeValue("cost")), ((Element) extra.get(i)).getAttributeValue("date"), ((Element) extra.get(i)).getText());
-			        	 System.out.println(e.toString());
-			        	 el.addExtra(e);
-			        	 System.out.println(el.toString());
-			        	 
 			         }
-			         //System.out.println("Costi totali: "+costo);
-			         System.out.println("Room details:");
-	
-			         Room r =new Room(Integer.parseInt(item.getAttributeValue("number")), Float.parseFloat(item.getAttributeValue("fee")), item.getAttributeValue("free"), item.getAttributeValue("composizione"), item.getAttributeValue("descrizione"));
-			         System.out.println(r.toString());
-			         rl.addRoom(r);
-			         System.out.println(rl.toString());
-			         
-			         //costo=0;
-			         //break;*/
-			         }
-			         /*else{
+			        if(fatto==false){
 			        	 System.out.println("non ho trovato nessun extra relativo alla room numero "+ number);
-			         }*/
+			         }
 			      }
 			      
 			      XMLOutputter xmlOutput = new XMLOutputter();

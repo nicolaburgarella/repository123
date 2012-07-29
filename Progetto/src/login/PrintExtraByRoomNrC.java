@@ -25,6 +25,7 @@ public class PrintExtraByRoomNrC {
 	
 	Hotel h = new Hotel();
 	int stanza;
+	private boolean fatto;
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -91,8 +92,12 @@ public class PrintExtraByRoomNrC {
 				if(stanza==h.getRoomList().getRoomReg().get(i).getNumber()){
 					//prendere gli output e metterli in stringa,o cambiare metodo e lavorare sulle istanze
 					JDOMExtractExtrasByRoom ee=new JDOMExtractExtrasByRoom(stanza);
-					
+					fatto=true;
 				}
+			}
+			if(fatto==false){
+				System.out.println("Non è stato trovato il numero di stanza inserito");
+
 			}
 
 		}

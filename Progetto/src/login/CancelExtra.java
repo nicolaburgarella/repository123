@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -99,53 +100,70 @@ public class CancelExtra extends JDialog {
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
-			{
+			
+			JButton cancelButton = new JButton("Cancel");
+			cancelButton.setActionCommand("Cancel");
+			buttonPane.add(cancelButton);
+			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
-			}
-			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
-			}
-		}
-	}
-	
-	public void actionPerformed(ActionEvent e){
-		 
-		 
-		 if(e.getActionCommand().equals("OK")){
-			 id=Integer.parseInt(jTextField1.getText());
-			 if(!(h.getExtraList().isExtraListEmpty())&&id!=0){
-					ExtraList el=new ExtraList();
-					
-					for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
-						if(id==h.getRoomList().getRoomReg().get(i).getNumber()){
-							ExtractExtrasInstByRoom ee=new ExtractExtrasInstByRoom();
-							el=ee.ExtractExtrasInstByRoom(id);
-							cancelExtras(hotel1, el);
-							room.JDOMRemoveExtraByRoomNr jdree =new room.JDOMRemoveExtraByRoomNr(id);
-							JOptionPane.showMessageDialog(null,"Fatto!");
-						}
-					}
-				}
-				else{
-					JOptionPane.showMessageDialog(null,"Non sono ancora stati inseriti gli extra o hai inserito un numero di camera errato");
-				}
-					
-			 
-			 
-		 }
-		 
-		 if(e.getActionCommand().equals("Cancel")){
-			 //.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-			 dispose();
+				
+				okButton.addActionListener(new ActionListener() {
+					private boolean repeatOk=false;
+					private boolean fatto=false;
 
-			 
-		 }
-		 
+					public void actionPerformed(ActionEvent e){
+						System.out.println("called");
+						if(h.getGroupList().getGroupReg().isEmpty()){
+							System.out.println("Non ci sono gruppi memorizzati");
+							repeatOk=true;
+						}
+							 
+							 if(e.getActionCommand().equals("OK")){
+								 
+								 try{
+								 id=Integer.parseInt(jTextField1.getText());
+								 if(id==0){
+									 JOptionPane.showMessageDialog(null,"Il numero di stanza non può essere 0,deve essere un valore intero positivo");
+									 repeatOk=true;
+								 }
+								 }catch(NumberFormatException nfe){
+									 JOptionPane.showMessageDialog(null,"Il numero id stanza deve essere un intero positivo");
+								 }
+								 if(!(h.getExtraList().isExtraListEmpty())&&id!=0){
+										ExtraList el=new ExtraList();
+										
+										for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
+											if(id==h.getRoomList().getRoomReg().get(i).getNumber()){
+												ExtractExtrasInstByRoom ee=new ExtractExtrasInstByRoom();
+												el=ee.ExtractExtrasInstByRoom(id);
+												cancelExtras(hotel1, el);
+												room.JDOMRemoveExtraByRoomNr jdree =new room.JDOMRemoveExtraByRoomNr(id);
+												JOptionPane.showMessageDialog(null,"Fatto!");
+												fatto=true;
+											}
+										}
+										if(fatto==false){
+											JOptionPane.showMessageDialog(null,"E' stato inserito un id della camera non valido");
+											repeatOk=true;
+										}
+									}
+									else{
+										JOptionPane.showMessageDialog(null,"Non sono ancora stati inseriti gli extra o hai inserito un numero di camera errato");
+									}
+
+							 }
+							 
+							 if(e.getActionCommand().equals("Cancel")){
+								//.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+								 dispose();
+							 }
+							 }
+							 });
+			
+		}
 	}
 	
 	public void cancelExtras(Hotel h, ExtraList el){

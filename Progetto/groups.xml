@@ -3,6 +3,7 @@
   <GROUP number="1" name="gruppo1" checkin="29/07/2012" checkout="30/07/2012" deposit="11.0">
     <RICHIESTA singole="1" doppie="0" matrimoniali="2">non eseguita</RICHIESTA>
     <ASSIGN rooms="3 1 6 ">assegnate</ASSIGN>
+    <ASSIGN rooms="13 15 18 ">assegnate</ASSIGN>
   </GROUP>
   <GROUP number="22" name="gruppo22" checkin="29/07/2012" checkout="30/07/2012" deposit="11.0">
     <RICHIESTA singole="1" doppie="0" matrimoniali="1">non eseguita</RICHIESTA>
@@ -11,6 +12,10 @@
   <GROUP number="12" name="gruppo12" checkin="29/07/2012" checkout="02/08/2012" deposit="11.0">
     <RICHIESTA singole="1" doppie="1" matrimoniali="1">non eseguita</RICHIESTA>
     <ASSIGN rooms="7 2 12 ">assegnate</ASSIGN>
+  </GROUP>
+  <GROUP number="3" name="gruppo3" checkin="29/07/2012" checkout="30/07/2012" deposit="11.0">
+    <RICHIESTA singole="1" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
+    <ASSIGN rooms="10 ">assegnate</ASSIGN>
   </GROUP>
 </GROUP_LIST>
 

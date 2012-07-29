@@ -21,15 +21,11 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingWorker;
 
-import reservation.JDOMExtractReservation;
 import room.JDOMExtractExtrasByRoom;
+import room.JDOMReader;
 
 
-public class PrintRoomDetailsByRoomNrC {
-	
-	Hotel h = new Hotel();
-	int stanza;
-	private boolean fatto=false;
+public class PrintAllExtrasC {
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -61,17 +57,16 @@ public class PrintRoomDetailsByRoomNrC {
 	            }
 	        }
 	    });*/
-	    JScrollPane sp = new JScrollPane(area);  
+	    
+	    JScrollPane sp=new JScrollPane(area);
 
 	    return sp;
 	}
 
 	
 	
-	public PrintRoomDetailsByRoomNrC(Hotel hotel,int s) throws IOException {
-		
-		h=hotel;
-		stanza=s;
+	public PrintAllExtrasC() throws IOException {
+
 	    // 1. create the pipes
 	    PipedInputStream inPipe = new PipedInputStream();
 	    PipedInputStream outPipe = new PipedInputStream();
@@ -89,29 +84,9 @@ public class PrintRoomDetailsByRoomNrC {
 	    //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.setVisible(true);
 
+
 	    // 4. write some output (to JTextArea)
-	    for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
-			if(stanza==h.getRoomList().getRoomReg().get(i).getNumber()){
-				System.out.println("Ecco i dettagli della stanza numero "+stanza);
-				System.out.println(h.getRoomList().getRoomReg().get(i).toString());
-				int number=h.getRoomList().getRoomReg().get(i).getNumber();
-				String composition=h.getRoomList().getRoomReg().get(i).getComposition();
-				float fee=h.getRoomList().getRoomReg().get(i).getFee();
-				String free=h.getRoomList().getRoomReg().get(i).getFree();
-				String description=h.getRoomList().getRoomReg().get(i).getDescription();
-				System.out.println("*Numero:\t"+number);
-				System.out.println("*Composizione:\t"+composition);
-				System.out.println("*Costo giornaliero:\t"+fee+" euro");
-				System.out.println("*Libera:\t"+free);
-				System.out.println("*Descrizione:\t"+description);
-				fatto=true;
-				
-			}
-		}
-		if(fatto==false){
-			System.out.println("La stanza inserita non esiste nel registro delle stanze ");
-		}
-	
+	    JDOMReader jdre=new JDOMReader();
 	    
 	    
 

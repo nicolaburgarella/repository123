@@ -58,6 +58,7 @@ public class PrintRoomDetailsByRoomNr extends JDialog {
 	 int stanza;
 	 String nomegruppo;
 	 Hotel h=new Hotel();
+	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
@@ -98,10 +99,16 @@ public class PrintRoomDetailsByRoomNr extends JDialog {
 		{
 			try{
 			jTextField4 = new JTextField();
-			jTextField4.setText("0");
+			jTextField4.setText("1");
 			stanza=Integer.parseInt(jTextField4.getText());
+			if(stanza==0){
+				JOptionPane.showMessageDialog(null,"Il numero di stanza non deve essere zero,ma intero positivo");
+				repeatOk=true;
+			}
 			}catch(NumberFormatException nfe){
 				JOptionPane.showMessageDialog(null,"Il la stanza deve essere un numero intero");
+				nfe.getMessage();
+				repeatOk=true;
 			}
 			
 			
@@ -120,17 +127,28 @@ public class PrintRoomDetailsByRoomNr extends JDialog {
 					public void actionPerformed(ActionEvent e){
 						System.out.println("called");
 						 
-						 
 						 if(e.getActionCommand().equals("OK")){
+							 
+							 try{
+							 stanza=Integer.parseInt(jTextField4.getText());
+								if(stanza==0){
+									JOptionPane.showMessageDialog(null,"Il numero di stanza non deve essere zero,ma intero positivo");
+									repeatOk=true;
+								}
+								}catch(NumberFormatException nfe){
+									JOptionPane.showMessageDialog(null,"Il la stanza deve essere un numero intero");
+									nfe.getMessage();
+									repeatOk=true;
+								}
 							 			 
 							 if (jCheckBox2.isSelected()){ //in base al numero di stanza
 				 
-								 try {
-									 stanza=Integer.parseInt(jTextField4.getText());
+								 try { 
 									PrintRoomDetailsByRoomNrC p=new PrintRoomDetailsByRoomNrC(h, stanza);
 								} catch (IOException e1) {
-									// TODO Auto-generated catch block
+									JOptionPane.showMessageDialog(null,"Errore di i/o");
 									e1.printStackTrace();
+									repeatOk=true;
 								}			
 						 
 					 }

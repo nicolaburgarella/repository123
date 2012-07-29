@@ -117,21 +117,36 @@ public class PrintExtraByRoomNr extends JDialog {
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 				okButton.addActionListener(new ActionListener() {
+					private boolean repeatOk;
+
 					public void actionPerformed(ActionEvent e){
 						System.out.println("called");
 						 
 						 
 						 if(e.getActionCommand().equals("OK")){
+							 if(h.getGroupList().getGroupReg().isEmpty()){
+								 JOptionPane.showMessageDialog(null,"Non ci sono gruppi memorizzati");
+									repeatOk=true;
+								}
+							 
+							 try {
+								 stanza=Integer.parseInt(jTextField4.getText());
+								 if(stanza==0){
+									 JOptionPane.showMessageDialog(null,"Non esiste la stanza zero come scelta");
+									 repeatOk=true;
+								 }
+							 } catch (NumberFormatException nfe) {
+									JOptionPane.showMessageDialog(null,"La stanza deve essere un numero intero positivo");
+									repeatOk=true;
+								}	
 							 			 
 							 if (jCheckBox2.isSelected()){ //in base al numero di stanza
-
-								 try {
-									 stanza=Integer.parseInt(jTextField4.getText());
-									PrintExtraByRoomNrC p=new PrintExtraByRoomNrC(h, stanza);
-								} catch (IOException e1) {
-									// TODO Auto-generated catch block
-									e1.printStackTrace();
-								}								 									
+								 
+									try {
+										PrintExtraByRoomNrC p=new PrintExtraByRoomNrC(h, stanza);
+									} catch (IOException e1) {
+										JOptionPane.showMessageDialog(null,"Errore di i/o");
+									}										 									
 						 
 					 }
 					 }
