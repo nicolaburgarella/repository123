@@ -75,7 +75,7 @@ public class Checkout1 extends JDialog {
         		JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
         		repeatOk=true;
         		}
-        		if(nome==null){
+        		if(string==null){
         			JOptionPane.showMessageDialog(null,"il nome del gruppo è nullo");
         			repeatOk=true;
         			}
@@ -154,18 +154,28 @@ public class Checkout1 extends JDialog {
                         jLabel5.setText("sia la prenotazione sia il gruppo relativo dal programma e dalle strutture dati");
                 }
                 {
-                        try{
+                        
                         //jTextField1 = new JTextField();
                         jTextField1.setText("id");
+                        try{
                         id=Integer.parseInt(jTextField1.getText());
+                        if(id==0){
+                        	JOptionPane.showMessageDialog(null,"L'id della prenotazione non può essere 0");
+                        }
                         }catch(NumberFormatException nfe){
-                                JOptionPane.showMessageDialog(null,"L'id della prenotazione deve essere un intero");
+                                JOptionPane.showMessageDialog(null,"L'id della prenotazione deve essere un intero positivo");
                         }
                 }
                 {
                         //jTextField2 = new JTextField();
                         jTextField2.setText("nome");
+                        try{
                         nome=jTextField2.getText();
+                        }catch(NullPointerException npe){
+                        	JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
+                        	npe.printStackTrace();
+                        	repeatOk=true;
+                        }
                 }
                 contentPanelLayout.setVerticalGroup(contentPanelLayout.createSequentialGroup()
                         .addContainerGap()
@@ -215,6 +225,10 @@ public class Checkout1 extends JDialog {
                         JPanel buttonPane = new JPanel();
                         buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
                         getContentPane().add(buttonPane, BorderLayout.SOUTH);
+                        
+                        JButton cancelButton = new JButton("Cancel");
+                        cancelButton.setActionCommand("Cancel");
+                        buttonPane.add(cancelButton);
                        
                                 JButton okButton = new JButton("OK");
                                 okButton.setActionCommand("OK");
@@ -226,42 +240,49 @@ public class Checkout1 extends JDialog {
                                                  
                                                  
                                                  if(e.getActionCommand().equals("OK")){
+                                                	 
+                                                	 try{
+                                                         id=Integer.parseInt(jTextField1.getText());
+                                                         if(id==0){
+                                                         	JOptionPane.showMessageDialog(null,"L'id della prenotazione non può essere 0");
+                                                         }
+                                                         }catch(NumberFormatException nfe){
+                                                                 JOptionPane.showMessageDialog(null,"L'id della prenotazione deve essere un intero positivo");
+                                                         }
+                                                         
+                                                         try{
+                                                             nome=jTextField2.getText();
+                                                             }catch(NullPointerException npe){
+                                                             	JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
+                                                             	npe.printStackTrace();
+                                                             	repeatOk=true;
+                                                             }
+                                                         
                                
                                                                 if(jCheckBox1.isSelected()){
                                                                         //id
-                                                                        id=Integer.parseInt(jTextField1.getText());
                                                                         try {
 																			CheckoutId c = new CheckoutId(h, g, id);
 																		} catch (IOException e1) {
-																			// TODO Auto-generated catch block
+																			JOptionPane.showMessageDialog(null,"Errore di i/o");
 																			e1.printStackTrace();
 																		}
-                                                                       
-                                                                        
-                                                                               
+                  
                                                                 }
                                                                
                                                                 if(jCheckBox2.isSelected()){
-                                                                        nome=jTextField2.getText();
                                                                         try {
 																			CheckoutName c = new CheckoutName(h, g, nome);
 																		} catch (IOException e1) {
-																			// TODO Auto-generated catch block
+																			JOptionPane.showMessageDialog(null,"Errore di i/o");
 																			e1.printStackTrace();
 																		}
-                                                                       
-                                                                                                       
+                                                                                                             
                                                         }
                                                  }
                                                  }
                                 });
-       
-                       
-                        {
-                                JButton cancelButton = new JButton("Cancel");
-                                cancelButton.setActionCommand("Cancel");
-                                buttonPane.add(cancelButton);
-                        }
+                        
                 }
         }
         }

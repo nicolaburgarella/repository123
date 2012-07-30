@@ -147,8 +147,7 @@ public class NextPage3 extends JFrame implements ActionListener
 		  public void actionPerformed(ActionEvent e){
 			  JLabel label=new JLabel();
 		  label.setText(e.getActionCommand());
-		  JOptionPane.showMessageDialog(null,"This is the " + e.getActionCommand() + 
-		" radio button.");
+		//  JOptionPane.showMessageDialog(null,"This is the " + e.getActionCommand() + " radio button.");
 			 if(e.getActionCommand().equals("button1")){
 				  //print reservation
 				 try {
@@ -162,24 +161,57 @@ public class NextPage3 extends JFrame implements ActionListener
 			  }
 			  if(e.getActionCommand().equals("button7")){
 				//print reservation 
+			         if(h.getGroupList().getGroupReg().isEmpty()){
+			        	 JOptionPane.showMessageDialog(null,"Non ci sono gruppi memorizzati,impossibile visualizzare le prenotazioni");
+                     }
+			         if(h.getReservationList().isReservationListEmpty()){
+			        	 JOptionPane.showMessageDialog(null,"Non ci sono prenotazioni memorizzate da visualizzare");
+			         }
+			         else{
 				  PrintReservationByGroupName pg=new PrintReservationByGroupName(h, "name");
 				  pg.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				  pg.setVisible(true);
 			  }
+			  }
 			  if(e.getActionCommand().equals("button5")){
+				  if(h.getGroupList().getGroupReg().isEmpty()){
+			        	 JOptionPane.showMessageDialog(null,"Non ci sono gruppi memorizzati,impossibile procedere nel checkout");
+                  }
+			       if(h.getReservationList().isReservationListEmpty()){
+			        	 JOptionPane.showMessageDialog(null,"Non ci sono prenotazioni memorizzate,impossibile procedere nel checkout");
+			         }
+			         else{
 				  Checkout1 c=new Checkout1(h,"name");
 				  c.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				  c.setVisible(true);
+			         }
 			  }
 			  if(e.getActionCommand().equals("button4")){
+				  if(h.getGroupList().getGroupReg().isEmpty()){
+			        	 JOptionPane.showMessageDialog(null,"Non ci sono gruppi memorizzati,impossibile procedere nel checkout");
+                  }
+			         if(h.getReservationList().isReservationListEmpty()){
+			        	 JOptionPane.showMessageDialog(null,"Non ci sono prenotazioni memorizzate da visualizzare,impossibile procedere nel checkout");
+			         }
+			         else{
 				  Checkout1 c=new Checkout1(h,"id");
 				  c.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				  c.setVisible(true);
+			         }
 			  }
 			  if(e.getActionCommand().equals("button3")){
+				  
+				  if(h.getGroupList().getGroupReg().isEmpty()){
+			        	 JOptionPane.showMessageDialog(null,"Non ci sono gruppi memorizzati,impossibile procedere nel checkin");
+                  }
+			         if(h.getReservationList().isReservationListEmpty()){
+			        	 JOptionPane.showMessageDialog(null,"Non ci sono prenotazioni memorizzate,impossibile procedere nel checkin");
+			         }
+			         else{
 				  Checkin1 c=new Checkin1(h);
 				  c.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				  c.setVisible(true);
+			         }
 			  }
 			  
 			  

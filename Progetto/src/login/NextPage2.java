@@ -138,8 +138,7 @@ public class NextPage2 extends JFrame implements ActionListener
 		  public void actionPerformed(ActionEvent e){
 			  JLabel label=new JLabel();
 		  label.setText(e.getActionCommand());
-		  JOptionPane.showMessageDialog(null,"This is the " + e.getActionCommand() + 
-		" radio button.");
+		//  JOptionPane.showMessageDialog(null,"This is the " + e.getActionCommand() + " radio button.");
 		  
 		  if(e.getActionCommand().equals("button1")){
 			  InsertGroup1 ig = new InsertGroup1(h);
@@ -148,29 +147,55 @@ public class NextPage2 extends JFrame implements ActionListener
 			  
 		  }
 		  if(e.getActionCommand().equals("button3")){
+			  if(h.getGroupList().getGroupReg().isEmpty()){
+				  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nel cancellare il gruppo");
+			  }
+			  else {
 			  CancelGroup1 dialog = new CancelGroup1(h,"name");
 				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				dialog.setVisible(true);
+			  }
 		  }
 		  if(e.getActionCommand().equals("button7")){
+			  if(h.getGroupList().getGroupReg().isEmpty()){
+				  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nel cancellare il gruppo");
+			  }
+			  else {
 			  CancelGroup1 dialog = new CancelGroup1(h,"id");
 				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				dialog.setVisible(true);
+			  }
 		  }
 		  if(e.getActionCommand().equals("button5")){
 			//stampo tutti idettagli del gruppo e della richiesta in base al suo nome
+			  if(h.getGroupList().getGroupReg().isEmpty()){
+				  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nello stampare i dettagli del gruppo");
+			  }
+			  if(h.getRequestList().getRequestReg().isEmpty()){
+				  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcuna richiesta associata al gruppo,non è possibile procedere nello stampare i dettagli del gruppo");
+			  }
+			  else{
 			  PrintGroupsAndRequests pg=new PrintGroupsAndRequests(h, "name");
 			  pg.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				pg.setVisible(true);
+			  }
 		  }
 		  if(e.getActionCommand().equals("button4")){
 				//print all groups and the state of request
+			  if(h.getGroupList().getGroupReg().isEmpty()){
+				  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nello stampare i dettagli del gruppo");
+			  }
+			  if(h.getRequestList().getRequestReg().isEmpty()){
+				  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcuna richiesta associata al gruppo,non è possibile procedere nello stampare i dettagli del gruppo");
+			  }
+			  else{
 			  try {
 				PrintAllGroupsAndRequestsC p=new PrintAllGroupsAndRequestsC(h);
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+			  }
 		  }
 		  
 		 	  

@@ -13,6 +13,7 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,13 +31,15 @@ import main.AssignRooms;
 import reservation.JDOMRemoveChild2;
 import reservation.Reservation;
 import room.JDOMExtractExtrasByRoom;
+import room.Room;
 
 
 public class CheckoutId {
 	
 	Hotel h = new Hotel();
 	Group g=new Group();
-	private boolean repeatOk;
+	private boolean repeatOk=false;
+	private boolean trovato=false;
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -112,70 +115,73 @@ public class CheckoutId {
 	    frame.setVisible(true);
 
 	    // 4. write some output (to JTextArea)
+	    System.out.println("RIMUOVO UNA PRENOTAZIONE IN BASE AL SUO ID");
 	    if(!(h.getReservationList().isReservationListEmpty())){
            
             Reservation res=new Reservation();
-            System.out.println(h.getReservationList().getReservReg().toString());
+            //System.out.println(h.getReservationList().getReservReg().toString());
             for(int i=0;i<h.getReservationList().getReservReg().size();i++){
                     if((h.getReservationList().getReservReg().get(i).getNumber())==id){
                             res=h.getReservationList().getReservReg().get(i);
-                            System.out.println("Ecco la prenotazione da eliminare\n"+res.toString());
+                            JOptionPane.showMessageDialog(null,"Prenotazione da eliminare:\n"+res.toString()+"\n"+
                            
                             //gestione del pagamento checkout,da estrarre in base al numero del gruppo,da fare con istanze
-                            System.out.println("Gestione del pagamento del fee e degli extra relativi al gruppo,a seguito del quale elimino il gruppo con la sua prenotazione.");
+                            "Gestione del pagamento del fee e degli extra relativi al gruppo,a seguito del quale elimino il gruppo con la sua prenotazione.");
                             
                            
                             for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                     if(h.getGroupList().getGroupReg().get(i).getNumber()==id){
+                                    	trovato=true;
                                     	g=h.getGroupList().getGroupReg().get(i);
-                                    	System.out.println(g.toString());
+                                    	String name=g.getName();
+                                    	//inserire il valore della mappa interrogandola con la chiave groupname da cui estrapolare l'id
+                                    	ArrayList<Room>r =new ArrayList<Room>();
+                                    	r=h.getGroupList().getRoomAssignedFromMap(name);
+                                    	g.setRoomAssigned(r);
+                                    	
+                                    	JOptionPane.showMessageDialog(null,"Ecco il gruppo a cui la prenotazione si riferisce:\n"+g.toString());
                                             PayRooms p=new PayRooms();
                                             float DiffTotFeeCost=p.PayRooms(g);
                                             if(DiffTotFeeCost==999999999){
-                                				System.out.println("checkout non eseguito, perchè non ci sono stanze assegnate al gruppo");
+                                            	JOptionPane.showMessageDialog(null,"checkout non eseguito, perchè non ci sono stanze assegnate al gruppo");
                                 			}
                                             if(DiffTotFeeCost==999999990){
-                            					System.out.println("Prenotazione non eseguita, perchè è stato passato come parametro un gruppo nullo");
+                                            	JOptionPane.showMessageDialog(null,"Prenotazione non eseguita, perchè è stato passato come parametro un gruppo nullo");
                             			}
                             			if(DiffTotFeeCost==999999909){
-                            				System.out.println("Prenotazione non eseguita, perchè sono state inserite date con valori nulli o errati");
+                            				JOptionPane.showMessageDialog(null,"Prenotazione non eseguita, perchè sono state inserite date con valori nulli o errati");
                             			}
                                             else{
                                             PayExtraByRoomNr pe=new PayExtraByRoomNr(g);
                                             }
                                     }
                             }
+                            if(trovato==false){
+                            	JOptionPane.showMessageDialog(null,"L'id inserito non è stato trovato");
+                            }
                            
                            
                             //elimino la prenotazione
                             h.getReservationList().getReservReg().remove(i);
                             JDOMRemoveChild2 jg = new JDOMRemoveChild2(id);
-                            System.out.println("Elimino il gruppo numero "+ id);
+                            JOptionPane.showMessageDialog(null,"Elimino il gruppo associato alla prenotazione, numero "+ id);
                             for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                     if((h.getGroupList().getGroupReg().get(j).getNumber())==id){
                                             h.getGroupList().getGroupReg().remove(j);
                                             JDOMRemoveChild gr =new JDOMRemoveChild(id);
-                                            System.out.println("Gruppo eliminato assieme alla sua prenotazione");
+                                            JOptionPane.showMessageDialog(null,"Fatto! Gruppo eliminato assieme alla sua prenotazione");
                                     }
                             }
                     }
                     else{
-                            System.out.println("Non trovo la prenotazione numero "+id);
+                    	JOptionPane.showMessageDialog(null,"Non trovo la prenotazione numero "+id);
                     }
-            }
-           
-           
-           
+            }  
     }
     else{
-            System.out.println("Non è ancora stata inserita alcuna prenotazione");
+    	JOptionPane.showMessageDialog(null,"Non è ancora stata inserita alcuna prenotazione");
     }
 	    
-	    
-
-	    /* 5. get some input (from JTextArea)
-	    Scanner s = new Scanner(System.in);
-	    System.out.printf("got from input: \"%s\"%n", s.nextLine());*/
 	}
 	}
 

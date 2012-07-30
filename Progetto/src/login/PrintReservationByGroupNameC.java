@@ -29,6 +29,7 @@ public class PrintReservationByGroupNameC {
 	Hotel h = new Hotel();
 	String nomegruppo;
 	private boolean repeatOk=false;
+	private boolean fatto=false;
 	
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
@@ -105,12 +106,18 @@ public class PrintReservationByGroupNameC {
 			for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 				if(nomegruppo.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
 					JDOMExtractReservation jder =new JDOMExtractReservation(nomegruppo);
+					fatto=true;
 				}
+			}
+			if(fatto==false){
+				JOptionPane.showMessageDialog(null,"Il nome del gruppo inserito non è stato trovato tra quelli memorizzati");
+				repeatOk=true;
 			}
 			
 		}
 		else{
 			JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato");
+			repeatOk=true;
 		}
 
 	

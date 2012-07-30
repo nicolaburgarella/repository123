@@ -167,13 +167,20 @@ public  NextPage1(Hotel hotel) {
 	  public void actionPerformed(ActionEvent e){
 	JLabel label=new JLabel();
 	  label.setText(e.getActionCommand());
-	  JOptionPane.showMessageDialog(null,"Hai scelto l'opzione " + e.getActionCommand() + 
-	" .");
+	  //JOptionPane.showMessageDialog(null,"Hai scelto l'opzione " + e.getActionCommand() + " .");
 	  
 	  if(e.getActionCommand().equals("button1")){
+		  if(h.getGroupList().getGroupReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nell'inserire gli extra");
+		  }
+		  if(h.getReservationList().getReservReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcuna prenotazione,non è possibile procedere nell'inserire gli extra");
+		  }
+		  else {
 		  InsertExtra1 ie = new InsertExtra1(h,"name");
 			ie.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			ie.setVisible(true);
+		  }
 		  
 	  }
 	  if(e.getActionCommand().equals("button2")){
@@ -189,12 +196,27 @@ public  NextPage1(Hotel hotel) {
 	  }
 	  if(e.getActionCommand().equals("button3")){
 		 //stampo l'extra per numero di camera
+		  if(h.getGroupList().getGroupReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nello stampare gli extra");
+		  }
+		  if(h.getReservationList().getReservReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcuna prenotazione,non è possibile procedere nello stampare gli extra");
+		  }
+		  else {
 		  PrintExtraByRoomNr pebnr=new PrintExtraByRoomNr(h, "number");
 		  //pebnr.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			pebnr.setVisible(true);
+		  }
 	  }
 	  if(e.getActionCommand().equals("button4")){
-		 //stampo tutti gli extra ordinati per numero di camera,anch'esso da bufferizzare e mettere in pdf o jtextarea in un jdialog
+		 //stampo tutti gli extra ordinati per numero di camera
+		  if(h.getGroupList().getGroupReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nello stampare gli extra");
+		  }
+		  if(h.getReservationList().getReservReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcuna prenotazione,non è possibile procedere nello stampare gli extra");
+		  }
+		  else {
 		  if(!(h.getExtraList().isExtraListEmpty())){
 				try {
 					PrintAllExtrasC pc=new PrintAllExtrasC();
@@ -206,26 +228,43 @@ public  NextPage1(Hotel hotel) {
 			else{
 				JOptionPane.showMessageDialog(null,"Non sono ancora stati inseriti gli extra in alcuna stanza");
 			}
-		  
+		  }
 		  
 		  
 	  }
 	  if((e.getActionCommand().equals("button5"))){
+		  if(h.getGroupList().getGroupReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nel cancellare gli extra");
+		  }
+		  if(h.getReservationList().getReservReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcuna prenotazione,non è possibile procedere nel cancellare gli extra");
+		  }
+		  else {
 		  CancelExtra ce = new CancelExtra(h);
 			ce.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			ce.setVisible(true);
+		  }
 	  }
 	  if(e.getActionCommand().equals("button6")){
-			//stampo i dettagli della stanza per numeor di camera
+			//stampo i dettagli della stanza per numero di camera
+		  JOptionPane.showMessageDialog(null,"La camera numero 0 è di esempio,non viene mai usata");
 		  PrintRoomDetailsByRoomNr p=new PrintRoomDetailsByRoomNr(h, "number");
 			p.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			p.setVisible(true);
 		  
 	  }
 	  if(e.getActionCommand().equals("button7")){
+		  if(h.getGroupList().getGroupReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcun gruppo,non è possibile procedere nell'inserire gli extra");
+		  }
+		  if(h.getReservationList().getReservReg().isEmpty()){
+			  JOptionPane.showMessageDialog(null,"Non c'è memorizzato alcuna prenotazione,non è possibile procedere nell'inserire gli extra");
+		  }
+		  else {
 		  InsertExtra1 ie = new InsertExtra1(h,"number");
 			ie.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			ie.setVisible(true);
+		  }
 	  }
 	  
 	  

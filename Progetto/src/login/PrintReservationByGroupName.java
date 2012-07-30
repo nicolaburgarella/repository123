@@ -106,13 +106,15 @@ public class PrintReservationByGroupName extends JDialog {
 		}
 		
 		{
-			//try{
+			
 			jTextField4 = new JTextField();
 			jTextField4.setText("nome");
+			try{
 			nomegruppo=jTextField4.getText();
-			/*}catch(IOException nfe){
-				JOptionPane.showMessageDialog(null,"errore ");
-			}*/
+			}catch(NullPointerException npe){
+				JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve avere valore nullo ");
+				repeatOk=true;
+			}
 			
 			
 		}
@@ -132,11 +134,17 @@ public class PrintReservationByGroupName extends JDialog {
 						 
 						 
 						 if(e.getActionCommand().equals("OK")){
+							 
+							 try{
+									nomegruppo=jTextField4.getText();
+									}catch(NullPointerException npe){
+										JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve avere valore nullo ");
+										repeatOk=true;
+									}
 							 			 
 							 if (jCheckBox2.isSelected()){ //in base al nome del gruppo
 								 
 								 try {
-									nomegruppo=jTextField4.getText();
 									PrintReservationByGroupNameC p=new PrintReservationByGroupNameC(h, nomegruppo);
 								} catch (IOException e1) {
 									// TODO Auto-generated catch block
