@@ -59,27 +59,7 @@ public class MainGuiTest extends junit.framework.TestCase
 		assertTrue(problemMsg, obj.salvaFile(path));
 //		assertFalse(problemMsg, obj.salvaFile(path));
 	}
-	public void testCreaMessaggio()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: creaMessaggio";
-		String messaggio=null;
-		assertEquals(problemMsg, null, obj.creaMessaggio(messaggio));
-	}
-	public void testCreaMsgSintError()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: creaMsgSintError";
-		String messaggio=null;
-		assertEquals(problemMsg, null, obj.creaMsgSintError(messaggio));
-	}
-	public void testCreaMsgSemError()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: creaMsgSemError";
-		String messaggio=null;
-		assertEquals(problemMsg, null, obj.creaMsgSemError(messaggio));
-	}
+	
 	public void testDragEnter()
 	{
 		MainGui obj=new main.MainGui();

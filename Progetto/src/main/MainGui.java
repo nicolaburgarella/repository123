@@ -289,40 +289,12 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 		jCheckBox3Layout1.setHorizontalGroup(jCheckBox3Layout1.createSequentialGroup());
 		jCheckBox3Layout1.setVerticalGroup(jCheckBox3Layout1.createSequentialGroup());
 		jCheckBox3.setEnabled(false);
-		jCheckBox3.setText("CARICAMENTO DATI DALLE STRUTTURE XML IN ISTANZE JAVA");
+		jCheckBox3.setText("CARICAMENTO DATI DALLE STRUTTURE XML");
 		jCheckBox3.setSelected(true);
 		jCheckBox3.setFont(new java.awt.Font("Tahoma",0,12));
 		jCheckBox3.setBounds(310, 20, 340, 119);
 		jCheckBox3Layout.setVerticalGroup(jCheckBox3Layout.createParallelGroup());
 		jCheckBox3Layout.setHorizontalGroup(jCheckBox3Layout.createParallelGroup());
-
-		esportaPDF = new JCheckBox();
-		GroupLayout esportaPDFLayout1 = new GroupLayout((JComponent)esportaPDF);
-		GroupLayout esportaPDFLayout = new GroupLayout((JComponent)esportaPDF);
-		esportaPDF.setLayout(esportaPDFLayout1);
-		esportaPDFLayout1.setHorizontalGroup(esportaPDFLayout1.createSequentialGroup());
-		esportaPDFLayout1.setVerticalGroup(esportaPDFLayout1.createSequentialGroup());
-		esportaPDF.setEnabled(true);
-		esportaPDF.setText("Esporta conto ed extra  in formato PDF");
-		esportaPDF.setActionCommand("pdf");
-		esportaPDF.setFont(new java.awt.Font("Tahoma",0,11));
-		esportaPDF.setBounds(27, 78, 177, 18);
-		esportaPDFLayout.setVerticalGroup(esportaPDFLayout.createParallelGroup());
-		esportaPDFLayout.setHorizontalGroup(esportaPDFLayout.createParallelGroup());
-
-		esportaJPG = new JCheckBox();
-		GroupLayout esportaJPGLayout1 = new GroupLayout((JComponent)esportaJPG);
-		GroupLayout esportaJPGLayout = new GroupLayout((JComponent)esportaJPG);
-		esportaJPG.setLayout(esportaJPGLayout1);
-		esportaJPGLayout1.setHorizontalGroup(esportaJPGLayout1.createSequentialGroup());
-		esportaJPGLayout1.setVerticalGroup(esportaJPGLayout1.createSequentialGroup());
-		esportaJPG.setEnabled(true);
-		esportaJPG.setText("Esporta conto gruppo ed extra in formato JPG");
-		esportaJPG.setActionCommand("jpg");
-		esportaJPG.setFont(new java.awt.Font("Tahoma",0,11));
-		esportaJPG.setBounds(27, 97, 171, 17);
-		esportaJPGLayout.setVerticalGroup(esportaJPGLayout.createParallelGroup());
-		esportaJPGLayout.setHorizontalGroup(esportaJPGLayout.createParallelGroup());
 
 		roomAndExtra = new JButton();					
 		//GroupLayout roomAndExtraGL = new GroupLayout((JComponent)roomAndExtra);
@@ -352,42 +324,27 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 		reservation.setFont(new java.awt.Font("Tahoma",0,11));
 		reservation.setActionCommand("reservation");
 		jPanel2Layout.setVerticalGroup(jPanel2Layout.createSequentialGroup()
-			.addComponent(jCheckBox3, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+			.addComponent(jCheckBox3, 0, 24, Short.MAX_VALUE)
 			.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 			.addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-			    .addComponent(roomAndExtra, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-			    .addComponent(reservation, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
-			    .addComponent(groupAndRequest, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-			.addGap(0, 29, Short.MAX_VALUE)
-			.addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-			    .addComponent(esportaPDF, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
-			    .addComponent(esportaJPG, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE))
-			.addContainerGap(30, 30));
+			    .addComponent(roomAndExtra, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+			    .addComponent(reservation, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
+			    .addComponent(groupAndRequest, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+			.addContainerGap(35, 35));
 		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createSequentialGroup()
 			.addGap(7)
 			.addGroup(jPanel2Layout.createParallelGroup()
-			    .addGroup(jPanel2Layout.createSequentialGroup()
-			        .addGroup(jPanel2Layout.createParallelGroup()
-			            .addComponent(roomAndExtra, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-			            .addGroup(GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-			                .addGap(17)
-			                .addGap(9)))
-			        .addGap(20)
-			        .addGroup(jPanel2Layout.createParallelGroup()
-			            .addGroup(GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-			                .addComponent(groupAndRequest, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
-			                .addGap(25)
-			                .addComponent(reservation, GroupLayout.PREFERRED_SIZE, 156, GroupLayout.PREFERRED_SIZE)
-			                .addGap(0, 122, Short.MAX_VALUE))
-			            .addGroup(GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-			                .addGap(32)
-			                .addComponent(esportaJPG, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE)
-			                .addGap(0, 42, Short.MAX_VALUE)
-			                .addComponent(esportaPDF, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE))))
 			    .addGroup(GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-			        .addComponent(jCheckBox3, GroupLayout.PREFERRED_SIZE, 255, GroupLayout.PREFERRED_SIZE)
-			        .addGap(0, 405, Short.MAX_VALUE)))
-			.addContainerGap(60, 60));
+			        .addComponent(jCheckBox3, GroupLayout.PREFERRED_SIZE, 407, GroupLayout.PREFERRED_SIZE)
+			        .addGap(36))
+			    .addGroup(GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+			        .addGap(26)
+			        .addComponent(roomAndExtra, GroupLayout.PREFERRED_SIZE, 191, GroupLayout.PREFERRED_SIZE)
+			        .addGap(29)
+			        .addComponent(groupAndRequest, GroupLayout.PREFERRED_SIZE, 197, GroupLayout.PREFERRED_SIZE)))
+			.addGap(34)
+			.addComponent(reservation, GroupLayout.PREFERRED_SIZE, 192, GroupLayout.PREFERRED_SIZE)
+			.addContainerGap(51, Short.MAX_VALUE));
 		reservation.addActionListener(this);
 		//jButton1Layout.setVerticalGroup(jButton1Layout.createSequentialGroup());
 		//jButton1Layout.setHorizontalGroup(jButton1Layout.createSequentialGroup());
@@ -452,20 +409,6 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 		Hotel h=new Hotel();
 		LoadFromXml l=new LoadFromXml();
 		h=l.LoadFromXml();	
-		
-		// Attivazione e disattivazione generazione pdf e jpg
-		if (e.getActionCommand().equals("reservation")&& reservation.isSelected()){
-			esportaPDF.setSelected(true);
-			esportaJPG.setSelected(true);
-			esportaPDF.setEnabled(true);
-			esportaJPG.setEnabled(true);
-		}
-		else if (!(e.getActionCommand().equals("reservation"))){
-			esportaPDF.setSelected(false);
-			esportaJPG.setSelected(false);
-			esportaPDF.setEnabled(false);
-			esportaJPG.setEnabled(false);
-		} 
 
 			if (e.getActionCommand().equals("roomExtra")) {	
 				NextPage1 page1=new NextPage1(h);
@@ -494,29 +437,9 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 
 		} else if (e.getActionCommand().equals("save")) {
 			salvaFile(file);
+		}
 
-		}/*else if (e.getActionCommand().equals("openSvg")) {
-			inizializeErrorPanel();
-			SvgExporter svg= new SvgExporter(inizializeErrorPanel());
-			manageSvg(svg, 1);
-			jScrollErroriPane = new JScrollPane(erroriPanel);
-			pannelloTab.insertTab("<html><font color='red'>REPORT ERRORI</font></html>", null, jScrollErroriPane, null,0);  
-			pannelloTab.setSelectedIndex(0);
-			JLabel temp = new JLabel();
-			temp.setVisible(false);
-			erroriPanel.add(new JLabel(), setGridValuesComplete(2,0, riga++,1.0));
-		}else if (e.getActionCommand().equals("openJpeg")) {
-			inizializeErrorPanel();
-			SvgExporter svg= new SvgExporter(inizializeErrorPanel());
-			manageSvg(svg, 2);
-			jScrollErroriPane = new JScrollPane(erroriPanel);
-			pannelloTab.insertTab("<html><font color='red'>REPORT ERRORI</font></html>", null, jScrollErroriPane, null,0);  
-			pannelloTab.setSelectedIndex(0);
-			JLabel temp = new JLabel();
-			temp.setVisible(false);
-			erroriPanel.add(new JLabel(), setGridValuesComplete(2,0, riga++,1.0));
-
-		} */else {
+		else {
 			try {
 				jTextAreaXML.setCaretPosition(Integer.valueOf(e.getActionCommand()));
 				jTextAreaXML.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
@@ -604,12 +527,10 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 				}
 				return true;
 			}
-			else {JOptionPane.showMessageDialog(this, "L'estensione del file selezionato non è corretta (.xml).","Errore di caricamento",
-					JOptionPane.ERROR_MESSAGE);
+			else {JOptionPane.showMessageDialog(null, "L'estensione del file selezionato non è corretta (.xml).");		
 			return false;
 			}
-		}else {JOptionPane.showMessageDialog(this, "Non è stato possibile leggere il file.","Errore di lettura file",
-				JOptionPane.ERROR_MESSAGE); 
+		}else {JOptionPane.showMessageDialog(null, "Non è stato possibile leggere il file.");
 		return false;
 		}
 	}  
@@ -666,194 +587,7 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 		return false; 
 	}    
 
-	public JLabel creaMessaggio (String messaggio){
-		erroreLabel = new JLabel();	
-		erroreLabel.setText("<html><div style='background-color: white; width: 530px'><table><tr>" +
-				"<td align='right' valign='top' width='10'><img width='20' height='20' src='file:icons/Message.png' alt='Icon' /></td>" +
-				"<td align='left' valign='top' width='530'><p style='font-weight: 5'>"
-				+ messaggio
-				+ "</p></td></tr></table></div></html>");
-		return erroreLabel;	
-	}
-
-	/**
-	 * creaMsgSintError Creates the msg sint error.
-	 *
-	 * @param messaggio the error message
-	 * @return the j label
-	 */
-	public JLabel creaMsgSintError (String messaggio){
-		erroreLabel = new JLabel();	
-		erroreLabel.setText("<html><div style='background-color: red; width: 390px'><table><tr>" +
-				"<td align='right' valign='top' width='10'><img width='20' height='20' src='file:icons/Delete.png' alt='Icon' /></td>" +
-				"<td align='left' valign='top' width='390'><p style='font-weight: 5'>"
-				+ messaggio
-				+ "</p></td></tr></table></div></html>");
-		return erroreLabel;	
-	}
-
-	/**
-	 * creaMsgSemError Creates the semnatic error message
-	 *
-	 * @param messaggio the error message
-	 * @return the j label
-	 */
-	public JLabel creaMsgSemError (String messaggio){
-		erroreLabel.setText("<html><div style='background-color: yellow; width: 390px'><table><tr>" +
-				"<td align='right' valign='top' width='10'><img width='20' height='20' src='file:icons/Warning.png' alt='Icon' /></td>" +
-				"<td align='left' valign='top' width='390'><p style='font-weight: 5'>"
-				+ messaggio
-				+ "</p></td></tr></table></div></html>");
-		return erroreLabel;	
-	}
-
-	/**
-	 * GridBagConstraints Set Grid Layout
-	 *
-	 * @param Grid parameters
-	 * @return GridBagConstraints
-	 */
-	private GridBagConstraints setGridValues(int gridwidth,int gridx, int gridy){
-		GridBagConstraints c = new GridBagConstraints();
-		c.fill = GridBagConstraints.BOTH;
-		c.gridwidth = gridwidth;	
-		c.gridx = gridx;
-		c.gridy = gridy;
-		return c;		
-	}
-
-	/**
-	 * GridBagConstraints Set Complete Grid Layout
-	 *
-	 * @param Grid parameters
-	 * @return GridBagConstraints
-	 */
-	private GridBagConstraints setGridValuesComplete(int gridwidth,int gridx, int gridy, double weighty){
-		GridBagConstraints c = new GridBagConstraints();		
-		c= setGridValues(gridwidth, gridx, gridy);
-		c.weighty=weighty;
-		c.anchor=GridBagConstraints.ABOVE_BASELINE;
-		return c;		
-	}
-
 	
-	
-	
-	
-	
-	
-	
-	
-	/*
-	private void manageSql(SqlExporter sql, boolean connection){
-		if (cangetsql){							    
-			if (!connection) erroriPanel.add(creaMessaggio("Generato codice SQL"),setGridValues(2,0, riga++));
-			JTextArea sqlText = new JTextArea();					    
-			sqlText.setWrapStyleWord(true);
-			sqlText.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));						
-			sqlText.setText(sql.getSQL());
-			sqlText.setCaretPosition(0);
-			jScrollSQLPane = new JScrollPane(sqlText);		
-			jScrollSQLPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-			jScrollSQLPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-			pannelloTab.addTab("<html><font color='red'>ESECUZIONE</font></html>", null, jScrollSQLPane, null);	
-
-			if (connection){
-				MySqlDB db = new MySqlDB("localhost", "test", "root", "root");
-				try {
-					if (db.executeFile("codiceSQL.txt"))
-					{	
-						erroriPanel.add(creaMessaggio("Importato codice in Mysql"),setGridValues(2,0, riga++));
-					}else {
-						erroriPanel.add(creaMessaggio("Non è possibile importare il codice in Mysql"),setGridValues(2,0, riga++));
-					}
-				} catch (IOException e1) {
-					erroriPanel.add(creaMessaggio("Non è possibile importare il codice in Mysql"),setGridValues(2,0, riga++));		
-				}
-			} 
-		} else {
-			if (connection)
-				erroriPanel.add(creaMessaggio("Non è possibile importare il codice in Mysql"),setGridValues(2,0, riga++));									
-			else
-				erroriPanel.add(creaMessaggio("Non è possibile generare codice SQL"),setGridValues(2,0, riga++));
-		}
-	}
-
-	private void manageSvg(SvgExporter svg, int connection){
-		// connection == 0 means no svg exportation required;
-		// connection == 1 means pdf exportation of svg required;
-		// connection == 2 means jpeg exportationof svg required;
-		if (cangetsvg)  {
-			if (connection==0) erroriPanel.add(creaMessaggio("Generato grafico SVG"),setGridValues(2,0, riga++));
-			try {						
-				JSVGCanvas svgC = svg.createSVG();	
-				jScrollSVGPane = new JScrollPane(svgC);
-				jScrollSVGPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-				if (connection==0) SVGPane.add(jScrollSVGPane);
-			} catch (TransformerException e1) {
-				e1.printStackTrace();							
-			} catch (IOException e1) { 
-				e1.printStackTrace();
-			} catch (TranscoderException e1) {
-				e1.printStackTrace();
-			}
-			if (connection==1){				
-				try {
-					svg.SVG2PDF("test.svg", "test.pdf");
-					File pdf = new File("test.pdf");
-					Desktop.getDesktop().open(pdf);					
-					erroriPanel.add(creaMessaggio("Conversione ed apertura in pdf dello schema E-R"),setGridValues(2,0, riga++));
-				} catch (TranscoderException e1) {
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-			}else if (connection==2){	
-				try {
-					svg.SVG2JPG("test.svg", "test.jpg");
-					File jpg = new File("test.jpg");
-					Desktop.getDesktop().open(jpg);
-					erroriPanel.add(creaMessaggio("Conversione ed apertura in jpg dello schema E-R"),setGridValues(2,0, riga++));
-				} catch (TranscoderException e1) {
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}		
-			} if (connection==0){
-				pannelloTab.addTab("<html><font color='red'>DIAGRAMMA E-R</font></html>", null, jScrollSVGPane, null);
-				manageExportations (svg);
-			}
-		} else {
-			erroriPanel.add(creaMessaggio("Non è possibile generare codice SVG"),setGridValues(2,0, riga++));
-		}	
-	}
-
-	
-	private void manageExportations (SvgExporter svg){		
-		if (esportaPDF.isSelected()){
-			try {
-				svg.SVG2PDF("test.svg", "test.pdf");
-				File pdf = new File("test.pdf");
-				Desktop.getDesktop().open(pdf);
-			} catch (TranscoderException e1) {
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		}
-		if (esportaJPG.isSelected()){
-			try {
-				svg.SVG2JPG("test.svg", "test.jpg");
-				File jpg = new File("test.jpg");
-				Desktop.getDesktop().open(jpg);
-			} catch (TranscoderException e1) {
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		}
-	}
-*/
 	@Override
 	public void dragEnter(DropTargetDragEvent arg0) {
 	}

@@ -9,6 +9,8 @@ package room;
  
 import group.Group;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
  
@@ -37,6 +39,10 @@ public class PdfFee {
     	name=group.getName();
     	result="pdfHotel/"+name.toUpperCase()+"-Fee.pdf";
     	createPdf(result,mess);
+    	
+    	File myFile = new File(result);
+        Desktop.getDesktop().open(myFile);
+
     	
     }
  
