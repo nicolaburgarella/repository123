@@ -57,8 +57,8 @@ public class Main {
 					sceltaOpzione=promptLine.readLine();
 
 					if(!(sceltaOpzione.equals("0")||(sceltaOpzione.equals("1"))||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3")))){
-						sbagliato=true;
 						System.out.println("E' stata scelta un'opzione non valida riprova");
+						continua=true;
 			
 					}
 				}

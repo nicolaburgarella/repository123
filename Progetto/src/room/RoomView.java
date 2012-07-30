@@ -45,8 +45,8 @@ public RoomView(Hotel h){
 				sceltaOpzione=promptLine.readLine();
 
 				if(!(sceltaOpzione.equals("1")||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3"))||(sceltaOpzione.equals("4"))||(sceltaOpzione.equals("5"))||(sceltaOpzione.equals("6"))||(sceltaOpzione.equals("0"))||(sceltaOpzione.equals("7")))){
-					sbagliato=true;
 					System.out.println("E' stata scelta un'opzione non valida riprova");
+					exit=true;
 				}
 			}
 			catch(IOException ioe){
@@ -67,7 +67,7 @@ public RoomView(Hotel h){
 			}catch(NumberFormatException nfe){
 				System.out.println("Hai inserito un valore errato,riprova");
 				nfe.getMessage();
-	         	exit=false;	
+	         	exit=true;	
 			}
 		
 		
@@ -344,17 +344,20 @@ public RoomView(Hotel h){
 		
 		case 0:
 		{
-			exit=true; 
+			
+				System.out.println("Premi ENTER per continuare");
+				exit=false;
+			
 			break;
 		}
 		
-		 default:{
-	         	System.out.println("Hai inserito un valore errato,riprova");
-	         	exit=true;
-	         }
-		
+		default:
+		{
+			System.out.println("hai messo un valore non corretto,riprova");
+			exit=false;
+		}
 	}
-	}while(!exit);
+}while(!exit);
 		
 }
 

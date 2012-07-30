@@ -66,6 +66,7 @@ public GroupView(Hotel h){
 			}catch(NumberFormatException nfe){
 				System.out.print("La scelta deve essere un numero intero");
 				nfe.getMessage();
+				exit=true;
 			}
 		
 		
@@ -234,20 +235,22 @@ public GroupView(Hotel h){
 			break;
 		}
 		
-		 case 0:
-         {
-                 exit=true;
-                 break;
-                
-         }
-         
-         default:{
-         	System.out.println("Hai inserito un valore errato,riprova");
-         	exit=true;
-         }
+		case 0:
+		{
+			
+				System.out.println("Premi ENTER per continuare");
+				exit=false;
+			
+			break;
+		}
 		
+		default:
+		{
+			System.out.println("hai messo un valore non corretto,riprova");
+			exit=false;
+		}
 	}
-	}while(!exit);
+}while(!exit);
 		
 }
 

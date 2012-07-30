@@ -79,6 +79,7 @@ public ReservationView(Hotel h){
         			}catch(NumberFormatException nfe){
         				System.out.print("La scelta deve essere un numero intero");
         				nfe.getMessage();
+        				exit=true;
         			}
                 
                 switch(scelta){
@@ -355,19 +356,20 @@ public ReservationView(Hotel h){
                 }
                
                 case 0:
-                {
-                        exit=true;
-                        break;
-                       
-                }
-                
-                default:{
-                	System.out.println("Hai inserito un valore errato,riprova");
-                	exit=true;
-                	
-                }
-               
-        }
+        		{
+        			
+        				System.out.println("Premi ENTER per continuare");
+        				exit=false;
+        			
+        			break;
+        		}
+        		
+        		default:
+        		{
+        			System.out.println("hai messo un valore non corretto,riprova");
+        			exit=false;
+        		}
+        	}
         }while(!exit);
                
 }
