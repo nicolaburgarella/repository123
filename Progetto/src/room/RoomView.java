@@ -11,7 +11,8 @@ public class RoomView {
 
 
 private int roomNumber;
-private boolean fatto=false;;
+private boolean fatto=false;
+private int scelta=0;
 
 public RoomView(){
 	
@@ -23,9 +24,8 @@ public RoomView(Hotel h){
 	System.out.println(h);
 	boolean sbagliato=false;
 	boolean noExtra=false;
-	int scelta;
 	String sceltaOpzione="";
-	boolean exit=false;
+	boolean exit=true;
 	
 	System.out.println("BENVENUTO NELLA SEZIONE DELLE CAMERE E DEI RISPETTIVI EXTRA, SCEGLI UNA OPZIONE TRA LE SEGUENTI,PREMI 0 PER USCIRE: ");
 	
@@ -47,14 +47,13 @@ public RoomView(Hotel h){
 				if(!(sceltaOpzione.equals("1")||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3"))||(sceltaOpzione.equals("4"))||(sceltaOpzione.equals("5"))||(sceltaOpzione.equals("6"))||(sceltaOpzione.equals("0"))||(sceltaOpzione.equals("7")))){
 					sbagliato=true;
 					System.out.println("E' stata scelta un'opzione non valida riprova");
-					break;
 				}
 			}
 			catch(IOException ioe){
 				ioe.printStackTrace();
 			}
 		}while(sbagliato);
-		scelta=Integer.parseInt(sceltaOpzione);
+
 		BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
 		try {
 			sceltaOpzione=promptLine.readLine();
@@ -62,6 +61,16 @@ public RoomView(Hotel h){
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		try{
+			scelta=Integer.parseInt(sceltaOpzione);
+			}catch(NumberFormatException nfe){
+				System.out.println("Hai inserito un valore errato,riprova");
+				nfe.getMessage();
+	         	exit=false;	
+			}
+		
+		
 		switch(scelta){
 		
 		case 1:
@@ -338,6 +347,11 @@ public RoomView(Hotel h){
 			exit=true; 
 			break;
 		}
+		
+		 default:{
+	         	System.out.println("Hai inserito un valore errato,riprova");
+	         	exit=true;
+	         }
 		
 	}
 	}while(!exit);

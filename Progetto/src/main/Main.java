@@ -34,7 +34,7 @@ public class Main {
 		System.out.println("Completo nel main!\n"+h);
 		boolean sbagliato=false;
 		String sceltaOpzione="";
-		int scelta;
+		int scelta = 0;
 		boolean continua=true;
 		
 		do{
@@ -53,18 +53,25 @@ public class Main {
 				System.out.println("Inserire la scelta digitando l'apposito numero: ");
 				try{
 					BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
+					
 					sceltaOpzione=promptLine.readLine();
 
 					if(!(sceltaOpzione.equals("0")||(sceltaOpzione.equals("1"))||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3")))){
 						sbagliato=true;
 						System.out.println("E' stata scelta un'opzione non valida riprova");
+			
 					}
 				}
 				catch(IOException ioe){
 					ioe.printStackTrace();
 				}
 			}while(sbagliato);
+			try{
 			scelta=Integer.parseInt(sceltaOpzione);
+			}catch(NumberFormatException nfe){
+				System.out.print("La scelta deve essere un numero intero");
+				nfe.getMessage();
+			}
 			BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
 			try {
 				sceltaOpzione=promptLine.readLine();

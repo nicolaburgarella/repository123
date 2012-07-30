@@ -24,6 +24,7 @@ public class ReservationView {
 
 private int number;
 private boolean trovato=false;
+private int scelta=0;
 
 public ReservationView(){
        
@@ -34,9 +35,8 @@ public ReservationView(Hotel h){
         hotel=h;
         System.out.println(h);
         boolean sbagliato=false;
-        int scelta;
         String sceltaOpzione="";
-        boolean exit=false;
+        boolean exit=true;
         Group g =new Group();
        
         System.out.println("BENVENUTO NELLA SEZIONE DELLE PRENOTAZIONI, SCEGLI UNA OPZIONE TRA LE SEGUENTI,PREMI 0 PER USCIRE: ");
@@ -58,14 +58,14 @@ public ReservationView(Hotel h){
                                 if(!(sceltaOpzione.equals("1")||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3"))||(sceltaOpzione.equals("4"))||(sceltaOpzione.equals("5"))||(sceltaOpzione.equals("0")))){
                                         sbagliato=true;
                                         System.out.println("E' stata scelta un'opzione non valida riprova");
-                                        break;
                                 }
                         }
                         catch(IOException ioe){
                                 ioe.printStackTrace();
                         }
                 }while(sbagliato);
-                scelta=Integer.parseInt(sceltaOpzione);
+                
+        			
                 BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
                 try {
                         sceltaOpzione=promptLine.readLine();
@@ -73,6 +73,14 @@ public ReservationView(Hotel h){
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                 }
+                
+                try{
+        			scelta=Integer.parseInt(sceltaOpzione);
+        			}catch(NumberFormatException nfe){
+        				System.out.print("La scelta deve essere un numero intero");
+        				nfe.getMessage();
+        			}
+                
                 switch(scelta){
                
                 case 1:
@@ -110,6 +118,7 @@ public ReservationView(Hotel h){
                         }
                         else{
                                 System.out.println("Non ci sono prenotazioni memorizzate");
+                                sbagliato=true;
                         }
                        
                         break;
@@ -135,15 +144,18 @@ public ReservationView(Hotel h){
                                 }
                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                 	if(h.getGroupList().getGroupReg().get(j).getName().equals(groupName)){
+                                		trovato=true;
                                 		System.out.println("Il nome del gruppo inserito è valido ed stato riconosciuto tra quelli inseriti");
                                 		for(int n=0;n<h.getReservationList().getReservReg().size();n++){
                                 			if(h.getReservationList().getReservReg().get(n).getGroupName().equalsIgnoreCase((groupName))){
                                 				System.out.println("Esiste già una prenotazione con quel nome gruppo,non posso procedere nel checkin");
+                                				sbagliato=true;
                                 				//come faccio ad uscire dal menu??sbagliato=true non va..
                                 			}
                                 		}
-                                		
+                                		if(sbagliato==false){
                                 		AssignRooms a=new AssignRooms(groupName, h);
+                                		}
                                 		
                                 	}
                                 }
@@ -277,6 +289,7 @@ public ReservationView(Hotel h){
                                 //System.out.println(h.getReservationList().getReservReg().toString());
                                 for(int i=0;i<h.getReservationList().getReservReg().size();i++){
                                         if((h.getReservationList().getReservReg().get(i).getGroupName()).equalsIgnoreCase(groupName)){
+                                        	//trovato=true;
                                                 res=h.getReservationList().getReservReg().get(i);
                                                 System.out.println("Ecco la prenotazione da eliminare\n"+res.toString());
                                                
@@ -345,6 +358,13 @@ public ReservationView(Hotel h){
                 {
                         exit=true;
                         break;
+                       
+                }
+                
+                default:{
+                	System.out.println("Hai inserito un valore errato,riprova");
+                	exit=true;
+                	
                 }
                
         }

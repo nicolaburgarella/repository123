@@ -12,6 +12,7 @@ public class GroupView {
 
 private int groupId;
 private boolean trovato=false;
+private int scelta=0; 
 
 public GroupView(){
 	
@@ -21,10 +22,9 @@ public GroupView(Hotel h){
 	Hotel hotel = new Hotel();
 	hotel=h;
 	System.out.println(h);
-	boolean sbagliato=false;
-	int scelta;
 	String sceltaOpzione="";
-	boolean exit=false;
+	boolean exit=true;
+	boolean sbagliato=false;
 	
 	System.out.println("BENVENUTO NELLA SEZIONE DEI GRUPPI E DELLE RISPETTIVE RICHIESTE DI PERNOTTAMENTO, SCEGLI UNA OPZIONE TRA LE SEGUENTI,PREMI 0 PER USCIRE: ");
 	
@@ -45,14 +45,14 @@ public GroupView(Hotel h){
 				if(!(sceltaOpzione.equals("1")||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3"))||(sceltaOpzione.equals("4"))||(sceltaOpzione.equals("5"))||(sceltaOpzione.equals("0")))){
 					sbagliato=true;
 					System.out.println("E' stata scelta un'opzione non valida riprova");
-					break;
 				}
 			}
 			catch(IOException ioe){
 				ioe.printStackTrace();
 			}
 		}while(sbagliato);
-		scelta=Integer.parseInt(sceltaOpzione);
+		
+			
 		BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
 		try {
 			sceltaOpzione=promptLine.readLine();
@@ -60,6 +60,15 @@ public GroupView(Hotel h){
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		try{
+			scelta=Integer.parseInt(sceltaOpzione);
+			}catch(NumberFormatException nfe){
+				System.out.print("La scelta deve essere un numero intero");
+				nfe.getMessage();
+			}
+		
+		
 		switch(scelta){
 		
 		case 1:
@@ -225,11 +234,17 @@ public GroupView(Hotel h){
 			break;
 		}
 		
-		case 0:
-		{
-			exit=true; 
-			break;
-		}
+		 case 0:
+         {
+                 exit=true;
+                 break;
+                
+         }
+         
+         default:{
+         	System.out.println("Hai inserito un valore errato,riprova");
+         	exit=true;
+         }
 		
 	}
 	}while(!exit);
