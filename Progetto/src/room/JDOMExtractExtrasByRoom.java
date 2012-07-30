@@ -10,6 +10,7 @@ public class JDOMExtractExtrasByRoom {
 
 
 	  private boolean fatto=false;
+	private boolean ok=false;
 
 	public JDOMExtractExtrasByRoom(int number) { 
 	    try { 
@@ -39,7 +40,9 @@ public class JDOMExtractExtrasByRoom {
 	         System.out.print("\tCosto: " + ((Element) extra.get(i)).getAttributeValue("cost"));
 	         System.out.println("\tData: " + ((Element) extra.get(i)).getAttributeValue("date"));
 	         costo+=Float.parseFloat(((Element) extra.get(i)).getAttributeValue("cost"));
+	         ok=true;
 	         }
+	         if(ok){
 	         System.out.println("Costi totali: "+costo);
 	         System.out.println("Room details:");
 	         System.out.println("\tNumero: " + item.getAttributeValue("number")); 
@@ -50,11 +53,12 @@ public class JDOMExtractExtrasByRoom {
 	         costo=0;
 	         fatto=true;
 	         }
-	         if(fatto==false){
-	        	 System.out.println("non ho trovato nessun extra relativo alla room numero "+ number);
-	        	 break;
 	         }
+	         
 	      }
+	      if(fatto==false){
+	        	 System.out.println("non ho trovato nessun extra relativo alla room numero "+ number);
+	         }
 	      
 
 	    }  

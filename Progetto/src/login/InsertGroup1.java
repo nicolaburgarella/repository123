@@ -310,6 +310,7 @@ public class InsertGroup1 extends JDialog {
 					
 						 
 						 if(e.getActionCommand().equals("OK")){
+							 
 							 try{
 							 id=Integer.parseInt(jTextField1.getText());
 								for(int i=0;i<h.getGroupList().getGroupReg().size();i++){ 
@@ -371,6 +372,8 @@ public class InsertGroup1 extends JDialog {
 														JOptionPane.showMessageDialog(null,"Nell'albergo occorre la prenotazione di almeno una camera");
 														repeatOk=true;
 						                             }
+													
+							
                              
                              DataCheckout d=new DataCheckout();
                                     Date []dates=new Date[2];

@@ -204,9 +204,6 @@ public class NextPage3 extends JFrame implements ActionListener
 				  if(h.getGroupList().getGroupReg().isEmpty()){
 			        	 JOptionPane.showMessageDialog(null,"Non ci sono gruppi memorizzati,impossibile procedere nel checkin");
                   }
-			         if(h.getReservationList().isReservationListEmpty()){
-			        	 JOptionPane.showMessageDialog(null,"Non ci sono prenotazioni memorizzate,impossibile procedere nel checkin");
-			         }
 			         else{
 				  Checkin1 c=new Checkin1(h);
 				  c.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);

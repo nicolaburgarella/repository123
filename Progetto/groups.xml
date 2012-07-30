@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GROUP_LIST />
+<GROUP_LIST>
+  <GROUP number="0" name="nome_gruppo" checkin="30/07/2012" checkout="31/07/2012" deposit="0.0">
+    <RICHIESTA singole="0" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
+  </GROUP>
+  <GROUP number="1" name="gruppo1" checkin="30/07/2012" checkout="31/07/2012" deposit="1.0">
+    <RICHIESTA singole="1" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
+  </GROUP>
+  <GROUP number="1" name="gruppo1" checkin="30/07/2012" checkout="31/07/2012" deposit="1.0">
+    <RICHIESTA singole="1" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
+  </GROUP>
+  <GROUP number="11" name="gruppo11" checkin="30/07/2012" checkout="31/07/2012" deposit="1.0">
+    <RICHIESTA singole="1" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
+    <ASSIGN rooms="7 ">assegnate</ASSIGN>
+  </GROUP>
+</GROUP_LIST>
 
