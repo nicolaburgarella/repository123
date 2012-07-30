@@ -15,13 +15,13 @@
   </ROOM>
   <ROOM number="8" fee="75" free="yes" description="no" composition="1+1" />
   <ROOM number="9" fee="75" free="yes" description="no" composition="2" />
-  <ROOM number="10" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="10" fee="75" free="no" description="no" composition="1" />
   <ROOM number="11" fee="75" free="yes" description="no" composition="1+1" />
   <ROOM number="12" fee="75" free="yes" description="no" composition="2" />
-  <ROOM number="13" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="13" fee="75" free="no" description="no" composition="1" />
   <ROOM number="14" fee="75" free="yes" description="no" composition="1+1" />
   <ROOM number="15" fee="75" free="yes" description="no" composition="2" />
-  <ROOM number="16" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="16" fee="75" free="no" description="no" composition="1" />
   <ROOM number="17" fee="75" free="yes" description="no" composition="1+1" />
   <ROOM number="18" fee="75" free="yes" description="no" composition="2" />
 </ROOM_LIST>

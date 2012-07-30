@@ -26,7 +26,6 @@ import room.SetRoomNotFree;
 public class AssignRooms {
 
 	private boolean fatto=false;
-	private HashMap<String, Collection<Room>> m;
 
 	/**
 	 * @param args
@@ -195,6 +194,7 @@ public class AssignRooms {
 		//Collection<Room> c=g.getRoomAssigned();
 		h.getGroupList().setRoomAssignedIntoMap(g.getName(), g.getRoomAssigned());
 		System.out.println("mappa caricata nell'istanza grouplist:\n"+h.getGroupList().toString());
+		HashMap<String, ArrayList<Room>> m=new HashMap<String, ArrayList<Room>>();
 		m=h.getGroupList().getMapRoomAssigned();
 		System.out.println(m.toString());
 	

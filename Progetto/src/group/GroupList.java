@@ -16,53 +16,38 @@ public class GroupList {
 	
 	//
 	//Creo Mappa hash dove memorizzare in modo persistente nome del gruppo - stanze assegnate elaborate per ora dentro group
-	private HashMap<String, Collection<Room>> MapRoomAssigned = new HashMap<String,Collection<Room>>();
-	private Collection<Room> roomAssigned;
+	private HashMap<String, ArrayList<Room>> MapRoomAssigned = new HashMap<String,ArrayList<Room>>();
+	private ArrayList<Room> currentRoomAssigned;
+	String currentGroupName="";
 	
 //costruttore
 	public GroupList(
-			HashMap<String, Collection<Room>> mapRoomAssigned) {
+			HashMap<String, ArrayList<Room>> mapRoomAssigned) {
 		super();
 		MapRoomAssigned = mapRoomAssigned;
 	}
 
 	//getter della mappa
-	public HashMap <String, Collection<Room>> getMapRoomAssigned(){
+	public HashMap <String, ArrayList<Room>> getMapRoomAssigned(){
 		return this.MapRoomAssigned;
 	}
 	
 	//setter della mappa
-	public void setMapRoomAssigned(HashMap <String, Collection<Room>> m){
+	public void setMapRoomAssigned(HashMap <String, ArrayList<Room>> m){
 		this.MapRoomAssigned=m;
 	}
 	
 	//ottenere l'arraylist delle stanze assegnate dalla mappa
 	public ArrayList<Room> getRoomAssignedFromMap(String groupName){
-		roomAssigned = MapRoomAssigned.get(groupName);
-		if (roomAssigned==null) {
-			System.out.println("Non ci sono camere assegnate con quel nome(chiave)");
-			return null;
-		}
-		else{
-		System.out.println("Ecco la col");
-		return (ArrayList<Room>) this.roomAssigned;
+		this.currentRoomAssigned = MapRoomAssigned.get(groupName);
+		return currentRoomAssigned;
 		}	
-	}
 		
 	//aggiungere nella mappa l'associazione nomegruppo - stanze assegnate
 		public void setRoomAssignedIntoMap(String groupName,ArrayList<Room> roomAssignedp){
-			roomAssigned=roomAssignedp;
-			System.out.println("Interrogo la mappa delle assegnazioni per vedere se sià presente con quel nomegruppo");
-			roomAssigned = MapRoomAssigned.get(groupName);
-			if (roomAssigned==null) {
-				System.out.println("Non sono state ancora assegnate stanze per quel nome(chiave), aggiungo l'associazione nella mappa");
-				MapRoomAssigned.put(groupName, roomAssigned);
-				System.out.println("Entry inserita.Mappa aggiornata");
-				}
-			else{
-			    System.out.println("Esiste già una assegnazione delle stanze per quel nome");	
-			}
-			
+			currentGroupName=groupName;
+			currentRoomAssigned=roomAssignedp;
+			MapRoomAssigned.put(groupName, roomAssignedp);
 		}
 		
 		@Override
@@ -70,11 +55,6 @@ public class GroupList {
 			return "GroupList [groupReg=" + groupReg + "]";
 		}
 
-		
-		
-		
-		
-//
 		
 		
 	public ArrayList<Group> getGroupReg() {

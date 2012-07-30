@@ -74,13 +74,13 @@ public ReservationView(Hotel h){
                         e.printStackTrace();
                 }
                 
-                try{
+               // try{
         			scelta=Integer.parseInt(sceltaOpzione);
-        			}catch(NumberFormatException nfe){
+        		/*/	}catch(NumberFormatException nfe){
         				System.out.print("La scelta deve essere un numero intero");
         				nfe.getMessage();
         				exit=true;
-        			}
+        			}*/
                 
                 switch(scelta){
                
