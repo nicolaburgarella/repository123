@@ -25,7 +25,7 @@ public RoomView(Hotel h){
 	boolean sbagliato=false;
 	boolean noExtra=false;
 	String sceltaOpzione="";
-	boolean exit=true;
+	boolean exit=false;
 	
 	System.out.println("BENVENUTO NELLA SEZIONE DELLE CAMERE E DEI RISPETTIVI EXTRA, SCEGLI UNA OPZIONE TRA LE SEGUENTI,PREMI 0 PER USCIRE: ");
 	
@@ -46,7 +46,7 @@ public RoomView(Hotel h){
 
 				if(!(sceltaOpzione.equals("1")||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3"))||(sceltaOpzione.equals("4"))||(sceltaOpzione.equals("5"))||(sceltaOpzione.equals("6"))||(sceltaOpzione.equals("0"))||(sceltaOpzione.equals("7")))){
 					System.out.println("E' stata scelta un'opzione non valida riprova");
-					exit=true;
+					sbagliato=true;
 				}
 			}
 			catch(IOException ioe){
@@ -345,17 +345,12 @@ public RoomView(Hotel h){
 		case 0:
 		{
 			
-				System.out.println("Premi ENTER per continuare");
-				exit=false;
+				//System.out.println("Premi ENTER per continuare");
+				exit=true;
 			
 			break;
 		}
 		
-		default:
-		{
-			System.out.println("hai messo un valore non corretto,riprova");
-			exit=false;
-		}
 	}
 }while(!exit);
 		

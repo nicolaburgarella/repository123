@@ -111,12 +111,6 @@ public class Main {
 				
 				break;
 			}
-			
-			default:
-			{
-				System.out.println("hai messo un valore non corretto,riprova");
-				continua=false;
-			}
 		}
 	}while(!continua);
 

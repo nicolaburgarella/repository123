@@ -199,7 +199,16 @@ public ReservationView(Hotel h){
                                
                                 Reservation res=new Reservation();
                                 //System.out.println(h.getReservationList().getReservReg().toString());
+                                
                                 for(int i=0;i<h.getReservationList().getReservReg().size();i++){
+                                	for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
+                                	if(h.getReservationList().getReservReg().get(i).getGroupName().equals(h.getGroupList().getGroupReg().get(j).getName())){
+                                		System.out.println("Esiste già una prenotazio per quel gruppo,errore!");
+                                		sbagliato=true;
+                                	}
+                                	}
+                                	
+                                	
                                         if((h.getReservationList().getReservReg().get(i).getNumber())==number){
                                         	trovato=true;
                                                 res=h.getReservationList().getReservReg().get(i);
@@ -358,16 +367,10 @@ public ReservationView(Hotel h){
                 case 0:
         		{
         			
-        				System.out.println("Premi ENTER per continuare");
-        				exit=false;
+        				//System.out.println("Premi ENTER per continuare");
+        				exit=true;
         			
         			break;
-        		}
-        		
-        		default:
-        		{
-        			System.out.println("hai messo un valore non corretto,riprova");
-        			exit=false;
         		}
         	}
         }while(!exit);

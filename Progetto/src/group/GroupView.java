@@ -238,17 +238,12 @@ public GroupView(Hotel h){
 		case 0:
 		{
 			
-				System.out.println("Premi ENTER per continuare");
-				exit=false;
+				//System.out.println("Premi ENTER per continuare");
+				exit=true;
 			
 			break;
 		}
 		
-		default:
-		{
-			System.out.println("hai messo un valore non corretto,riprova");
-			exit=false;
-		}
 	}
 }while(!exit);
 		
