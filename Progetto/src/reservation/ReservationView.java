@@ -223,9 +223,11 @@ public ReservationView(Hotel h){
                                                         	g=h.getGroupList().getGroupReg().get(i);
                                                         	String name=g.getName();
                                                         	//inserire il valore della mappa interrogandola con la chiave groupname da cui estrapolare l'id
-                                                        	ArrayList<Room>r =new ArrayList<Room>();
-                                                        	r=h.getGroupList().getRoomAssignedFromMap(name);
-                                                        	g.setRoomAssigned(r);
+                                                        	ArrayList<Room>roomAssigned =new ArrayList<Room>();
+                                                        	roomAssigned=h.getGroupList().getRoomAssignedFromMap(name);
+                                                        	g.setRoomAssigned(roomAssigned);
+                                                        	System.out.println("Stanze assegnate al gruppo ricaricate nella istanza:\n"+g.getRoomAssigned().toString());
+
                                                         	
                                                         	System.out.println("Ecco il gruppo a cui la prenotazione si riferisce: "+g.toString());
                                                                 PayRooms p=new PayRooms();
@@ -315,6 +317,7 @@ public ReservationView(Hotel h){
                                                         	ArrayList<Room>r =new ArrayList<Room>();
                                                         	r=h.getGroupList().getRoomAssignedFromMap(groupName);
                                                         	g.setRoomAssigned(r);	
+                                                        	
                                                         	
                                                         	System.out.println("Ecco il gruppo a cui la prenotazione si riferisce:\n"+g.toString());
                                                                 PayRooms p=new PayRooms();

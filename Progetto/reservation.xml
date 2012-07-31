@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RESERVATION_LIST>
-  <RESERVATION number="11" groupname="gruppo11" checkin="30/07/2012" checkout="31/07/2012" deposit="1.0" totcost="74.0" />
-  <RESERVATION number="10" groupname="gruppo10" checkin="30/07/2012" checkout="31/07/2012" deposit="1.0" totcost="74.0" />
-  <RESERVATION number="100" groupname="gruppo100" checkin="30/07/2012" checkout="31/07/2012" deposit="1.0" totcost="74.0" />
-  <RESERVATION number="101" groupname="gruppo101" checkin="30/07/2012" checkout="31/07/2012" deposit="11.0" totcost="64.0" />
+  <RESERVATION number="1" groupname="gruppo1" checkin="31/07/2012" checkout="01/08/2012" deposit="11.0" totcost="214.0" />
+  <RESERVATION number="2" groupname="gruppo2" checkin="31/07/2012" checkout="01/08/2012" deposit="11.0" totcost="139.0" />
 </RESERVATION_LIST>
 

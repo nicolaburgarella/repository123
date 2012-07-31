@@ -146,10 +146,15 @@ public class CancelExtra extends JDialog {
 											if(id==h.getRoomList().getRoomReg().get(i).getNumber()){
 												ExtractExtrasInstByRoom ee=new ExtractExtrasInstByRoom();
 												el=ee.ExtractExtrasInstByRoom(id);
+												if(el.isExtraListEmpty()){
+													JOptionPane.showMessageDialog(null,"Lista degli extra estratti vuota");
+												}
+												else{
 												cancelExtras(hotel1, el);
 												room.JDOMRemoveExtraByRoomNr jdree =new room.JDOMRemoveExtraByRoomNr(id);
 												JOptionPane.showMessageDialog(null,"Fatto!");
 												fatto=true;
+												}
 											}
 										}
 										if(fatto==false){

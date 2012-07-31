@@ -1,5 +1,6 @@
 package login;
 import group.Group;
+import group.JDOMExtractRoomAssigned;
 import group.JDOMRemoveChild;
 import hotel.Hotel;
 
@@ -85,10 +86,10 @@ public class CheckoutId {
 			JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
 			repeatOk=true;
 			}
-			if(id==0){
+			/*if(id==0){
 				JOptionPane.showMessageDialog(null,"l'id della prenotazione deve essere un numero intero positivo maggiore di zero");
 				repeatOk=true;
-				}
+				}*/
 			if(group==null){
 				JOptionPane.showMessageDialog(null,"L'istanza del gruppo è nulla");
 				repeatOk=true;
@@ -136,8 +137,11 @@ public class CheckoutId {
                                     	String name=g.getName();
                                     	//inserire il valore della mappa interrogandola con la chiave groupname da cui estrapolare l'id
                                     	ArrayList<Room>r =new ArrayList<Room>();
-                                    	r=h.getGroupList().getRoomAssignedFromMap(name);
+                                    	//r=h.getGroupList().getRoomAssignedFromMap(name);
+                                    	JDOMExtractRoomAssigned dj=new JDOMExtractRoomAssigned();
+                                    	r=dj.JDOMExtractRoomAssigned(h,g.getNumber());
                                     	g.setRoomAssigned(r);
+                                    	System.out.println("Stanze assegnate al gruppo ricaricate nella istanza:\n"+g.getRoomAssigned().toString());
                                     	
                                     	JOptionPane.showMessageDialog(null,"Ecco il gruppo a cui la prenotazione si riferisce:\n"+g.toString());
                                             PayRooms p=new PayRooms();

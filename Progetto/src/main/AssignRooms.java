@@ -198,7 +198,6 @@ public class AssignRooms {
 		m=h.getGroupList().getMapRoomAssigned();
 		System.out.println(m.toString());
 	
-			
 			JDOMWriteAssignment  jdwa =new JDOMWriteAssignment(g,g.getName());
 			
 			//Creo la prenotazione

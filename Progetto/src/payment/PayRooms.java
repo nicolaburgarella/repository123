@@ -1,6 +1,7 @@
 package payment;
 
 import group.Group;
+import hotel.Hotel;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,12 +20,16 @@ public class PayRooms {
 	private float diffCost=0;
 	private float totCostByRoom;
 	private String mess="";
+	private Hotel h=new Hotel();
 	
 	public PayRooms(){
 	
 	}
 	
 	public float PayRooms(Group gruppo){
+		g=gruppo;
+    	
+    	System.out.println("Stanze assegnate al gruppo ricaricate nella istanza:\n"+g.getRoomAssigned().toString());
 		
 		if(gruppo==null){
 			System.out.println("E' stato passato un gruppo nullo come parametro");

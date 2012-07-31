@@ -40,13 +40,13 @@ public class GroupList {
 	//ottenere l'arraylist delle stanze assegnate dalla mappa
 	public ArrayList<Room> getRoomAssignedFromMap(String groupName){
 		this.currentRoomAssigned = MapRoomAssigned.get(groupName);
-		return currentRoomAssigned;
+		return this.currentRoomAssigned;
 		}	
 		
 	//aggiungere nella mappa l'associazione nomegruppo - stanze assegnate
 		public void setRoomAssignedIntoMap(String groupName,ArrayList<Room> roomAssignedp){
-			currentGroupName=groupName;
-			currentRoomAssigned=roomAssignedp;
+			this.currentGroupName=groupName;
+			this.currentRoomAssigned=roomAssignedp;
 			MapRoomAssigned.put(groupName, roomAssignedp);
 		}
 		

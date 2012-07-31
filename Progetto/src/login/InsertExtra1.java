@@ -1,5 +1,7 @@
 package login;
 
+import group.Group;
+import group.JDOMExtractRoomAssigned;
 import hotel.Hotel;
 
 import java.awt.BorderLayout;
@@ -9,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
@@ -32,6 +35,7 @@ import date.StringToDate;
 import room.AddExtraView;
 import room.Extra;
 import room.JDOMInsertExtraByRoomNr;
+import room.Room;
 
 
 /**
@@ -213,6 +217,9 @@ public class InsertExtra1 extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					private boolean repeatOk;
 					private boolean fatto=false;
+					private Group g;
+					private boolean gruppoTrovato=false;
+					private boolean esci=false;
 
 					public void actionPerformed(ActionEvent e){
 						System.out.println("called");
@@ -270,19 +277,30 @@ public class InsertExtra1 extends JDialog {
 								 
 								
 							 if(jCheckBox1.isSelected()){ //in base al nome del gruppo
-						
 								 
-								 
+								// while(esci==false){
 								 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
-										if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(nomegruppo)||!(h.getGroupList().getGroupReg().get(i).getRoomAssigned()).isEmpty()){
+									 if(h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nomegruppo)){
+									 g=h.getGroupList().getGroupReg().get(i);
+									 ArrayList<Room>r =new ArrayList<Room>();
+									 JDOMExtractRoomAssigned dj=new JDOMExtractRoomAssigned();
+	                               	r=dj.JDOMExtractRoomAssigned(h,g.getNumber());
+	                               	g.setRoomAssigned(r);
+	                               	if(g.getRoomAssigned().isEmpty()){
+	                               		JOptionPane.showMessageDialog(null, "Non ci sono stanze assegnate");
+	                               		gruppoTrovato=false;
+	                               	}
+	                               	else{
+									 gruppoTrovato=true;
+									 }
+
 											Extra extra=new Extra(cost, date, type);
 											h.getExtraList().getExtraList().add(extra);
 											
-											//VA FATTA SOPRA COME finestrapopupdi scelta non COMBOBOX,IN MODO CHE ABBIA SELEZIONATO SUBITO LA SCELTA
 											String msg=new String();
 											
 											for(int j=0;j<h.getGroupList().getGroupReg().get(i).getRoomAssigned().size();j++){
-												msg+=h.getGroupList().getGroupReg().get(i).getRoomAssigned().get(j).getNumber();
+												msg+=h.getGroupList().getGroupReg().get(i).getRoomAssigned().get(j).getNumber()+"   ";
 											}
 											 JOptionPane.showMessageDialog(null,"In quale stanza prenotata va inserito l'extra?Digita il nome della stanza a cui addebitare l'extra tra quelle prenotate dal gruppo\n"+"Stanze assegnate: "+msg);
 											
@@ -290,6 +308,7 @@ public class InsertExtra1 extends JDialog {
 												if(h.getGroupList().getGroupReg().get(i).getRoomAssigned().get(j).getNumber()==stanza){
 												JDOMInsertExtraByRoomNr jier =new JDOMInsertExtraByRoomNr(stanza, extra.getDate(), Float.toString(extra.getCost()), extra.getType());
 												fatto=true;
+												esci=true;
 												}
 											}
 											if(fatto==false){
@@ -300,6 +319,13 @@ public class InsertExtra1 extends JDialog {
 										}
 				 
 							 }
+								 if(gruppoTrovato==false){
+									 JOptionPane.showMessageDialog(null,"Non è stato trovato il gruppo con quel nome");
+								 }
+							//	 }
+								 if(esci==true){
+									 JOptionPane.showMessageDialog(null,"Fatto!");
+								 }
 							 }
 							 
 							 if (jCheckBox2.isSelected()){ //in base al numero di stanza

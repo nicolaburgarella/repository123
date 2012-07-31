@@ -62,7 +62,7 @@ public class Checkout1 extends JDialog {
         int groupId;
        
         Hotel h=new Hotel();
-		private boolean repeatOk=false;
+                private boolean repeatOk=false;
 
         /**
          * Create the dialog.
@@ -70,17 +70,17 @@ public class Checkout1 extends JDialog {
          * @param h
          */
         public Checkout1(Hotel hotel, String string) {
-        	
-        	if(hotel==null){
-        		JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
-        		repeatOk=true;
-        		}
-        		if(string==null){
-        			JOptionPane.showMessageDialog(null,"il nome del gruppo è nullo");
-        			repeatOk=true;
-        			}
-        		else{
-        	
+               
+                if(hotel==null){
+                        JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
+                        repeatOk=true;
+                        }
+                        if(string==null){
+                                JOptionPane.showMessageDialog(null,"il nome del gruppo è nullo");
+                                repeatOk=true;
+                                }
+                        else{
+               
                 h=hotel;
                 setBounds(100, 100, 450, 300);
                 getContentPane().setLayout(new BorderLayout());
@@ -154,13 +154,13 @@ public class Checkout1 extends JDialog {
                         jLabel5.setText("sia la prenotazione sia il gruppo relativo dal programma e dalle strutture dati");
                 }
                 {
-                        
+                       
                         //jTextField1 = new JTextField();
                         jTextField1.setText("id");
                         try{
                         id=Integer.parseInt(jTextField1.getText());
                         if(id==0){
-                        	JOptionPane.showMessageDialog(null,"L'id della prenotazione non può essere 0");
+                                JOptionPane.showMessageDialog(null,"L'id della prenotazione non può essere 0");
                         }
                         }catch(NumberFormatException nfe){
                                 JOptionPane.showMessageDialog(null,"L'id della prenotazione deve essere un intero positivo");
@@ -172,9 +172,9 @@ public class Checkout1 extends JDialog {
                         try{
                         nome=jTextField2.getText();
                         }catch(NullPointerException npe){
-                        	JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
-                        	npe.printStackTrace();
-                        	repeatOk=true;
+                                JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
+                                npe.printStackTrace();
+                                repeatOk=true;
                         }
                 }
                 contentPanelLayout.setVerticalGroup(contentPanelLayout.createSequentialGroup()
@@ -225,7 +225,7 @@ public class Checkout1 extends JDialog {
                         JPanel buttonPane = new JPanel();
                         buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
                         getContentPane().add(buttonPane, BorderLayout.SOUTH);
-                        
+                       
                         JButton cancelButton = new JButton("Cancel");
                         cancelButton.setActionCommand("Cancel");
                         buttonPane.add(cancelButton);
@@ -240,11 +240,11 @@ public class Checkout1 extends JDialog {
                                                  
                                                  
                                                  if(e.getActionCommand().equals("OK")){
-                                                	 
-                                                	 try{
+                                                         
+                                                         try{
                                                          id=Integer.parseInt(jTextField1.getText());
                                                          if(id==0){
-                                                         	JOptionPane.showMessageDialog(null,"L'id della prenotazione non può essere 0");
+                                                                JOptionPane.showMessageDialog(null,"L'id della prenotazione non può essere 0");
                                                          }
                                                          }catch(NumberFormatException nfe){
                                                                  JOptionPane.showMessageDialog(null,"L'id della prenotazione deve essere un intero positivo");
@@ -253,40 +253,39 @@ public class Checkout1 extends JDialog {
                                                          try{
                                                              nome=jTextField2.getText();
                                                              }catch(NullPointerException npe){
-                                                             	JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
-                                                             	npe.printStackTrace();
-                                                             	repeatOk=true;
+                                                                JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
+                                                                npe.printStackTrace();
+                                                                repeatOk=true;
                                                              }
                                                          
                                
                                                                 if(jCheckBox1.isSelected()){
                                                                         //id
                                                                         try {
-																			CheckoutId c = new CheckoutId(h, g, id);
-																		} catch (IOException e1) {
-																			JOptionPane.showMessageDialog(null,"Errore di i/o");
-																			e1.printStackTrace();
-																		}
-                  
+                                                                                                                                                        CheckoutId c = new CheckoutId(h, g, id);
+                                                                                                                                                } catch (IOException e1) {
+                                                                                                                                                        JOptionPane.showMessageDialog(null,"Errore di i/o");
+                                                                                                                                                        e1.printStackTrace();
+                                                                                                                                                }
+                 
                                                                 }
                                                                
                                                                 if(jCheckBox2.isSelected()){
                                                                         try {
-																			CheckoutName c = new CheckoutName(h, g, nome);
-																		} catch (IOException e1) {
-																			JOptionPane.showMessageDialog(null,"Errore di i/o");
-																			e1.printStackTrace();
-																		}
+                                                                                                                                                        CheckoutName c = new CheckoutName(h, g, nome);
+                                                                                                                                                } catch (IOException e1) {
+                                                                                                                                                        JOptionPane.showMessageDialog(null,"Errore di i/o");
+                                                                                                                                                        e1.printStackTrace();
+                                                                                                                                                }
                                                                                                              
                                                         }
                                                  }
                                                  }
                                 });
-                        
+                       
                 }
         }
         }
 
        
 }
-
