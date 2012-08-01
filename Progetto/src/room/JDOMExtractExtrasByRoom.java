@@ -97,8 +97,11 @@ public JDOMExtractExtrasByRoom(){
 	         if(Integer.parseInt(item.getAttributeValue("number"))==number){
 	    
 	         List extra = item.getChildren("EXTRA"); 
-	         if(extra.size()!=0){
+	         if(!extra.isEmpty()&&extra.size()>0){
 	         fatto=true;
+	         }
+	         else{
+	        	 fatto=false;
 	         }
 	         }
 	         

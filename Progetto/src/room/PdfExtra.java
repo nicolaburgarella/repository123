@@ -39,9 +39,9 @@ public class PdfExtra {
     	result="pdfHotel/"+name.toUpperCase()+"CAMERA "+roomId+"-Extra.pdf";
     	createPdf(result,mess);
     	
-    	/*File myFile = new File(result);
+    	File myFile = new File(result);
         Desktop.getDesktop().open(myFile);
-    	*/
+    	
     	
     	
     	

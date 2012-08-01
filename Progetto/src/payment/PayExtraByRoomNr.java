@@ -30,10 +30,10 @@ public class PayExtraByRoomNr {
 		
 		
 		
-		if (!(g.getRoomAssigned().isEmpty())) {
+		if (!(g.getRoomAssigned().isEmpty())&&g.getRoomAssigned().size()>0) {
 			noRoomAssigned=false;
 			for(int i=0;i<g.getRoomAssigned().size();i++){
-				if(ee.JDOMIsExtractExtrasByRoom(g.getRoomAssigned().get(i).getNumber())){
+				if(ee.JDOMIsExtractExtrasByRoom(g.getRoomAssigned().get(i).getNumber())==true){
 					extraTrovati=true;
 					//metti in stringa:
 					

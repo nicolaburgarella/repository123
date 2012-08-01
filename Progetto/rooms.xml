@@ -4,11 +4,9 @@
     <EXTRA cost="50" date="12/5/2012">Ristorante</EXTRA>
     <EXTRA cost="50" date="12/5/2012">Bar</EXTRA>
   </ROOM>
-  <ROOM number="1" fee="75" free="no" description="no" composition="2">
-    <EXTRA cost="5.0" date="12/2/2012">internet</EXTRA>
-  </ROOM>
-  <ROOM number="2" fee="75" free="no" description="no" composition="1+1" />
-  <ROOM number="3" fee="75" free="no" description="no" composition="1" />
+  <ROOM number="1" fee="75" free="yes" description="no" composition="2" />
+  <ROOM number="2" fee="75" free="yes" description="no" composition="1+1" />
+  <ROOM number="3" fee="75" free="yes" description="no" composition="1" />
   <ROOM number="4" fee="75" free="yes" description="no" composition="1" />
   <ROOM number="5" fee="75" free="yes" description="no" composition="1+1" />
   <ROOM number="6" fee="75" free="yes" description="no" composition="2" />
