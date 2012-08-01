@@ -9,6 +9,8 @@ package room;
  
 import group.Group;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
  
@@ -30,13 +32,18 @@ public class PdfExtra {
      * Creates a PDF file: hello.pdf
      * @param    args    no arguments needed
      */
-    public PdfExtra(Group group,String msg)
+    public PdfExtra(String name,int roomId,String msg)
     	throws DocumentException, IOException {
     	
     	String mess=msg;
-    	name=group.getName();
-    	result="pdfHotel/"+name.toUpperCase()+"-Fee.pdf";
+    	result="pdfHotel/"+name.toUpperCase()+"CAMERA "+roomId+"-Extra.pdf";
     	createPdf(result,mess);
+    	
+    	/*File myFile = new File(result);
+        Desktop.getDesktop().open(myFile);
+    	*/
+    	
+    	
     	
     }
  
