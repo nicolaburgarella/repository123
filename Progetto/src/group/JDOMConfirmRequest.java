@@ -8,9 +8,18 @@ import org.jdom.input.*;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
+	// TODO: Auto-generated Javadoc
+/**
+	 * The Class JDOMConfirmRequest.
+	 */
 	public class JDOMConfirmRequest { 
 
-	  public JDOMConfirmRequest(int number) { 
+	  /**
+  	 * Instantiates a new jDOM confirm request.
+  	 *
+  	 * @param number the number
+  	 */
+  	public JDOMConfirmRequest(int number) { 
 	    try { 
 	      //Creo un SAXBuilder e con esco costruisco un document 
 	      SAXBuilder builder = new SAXBuilder(); 
@@ -65,7 +74,12 @@ import org.jdom.output.XMLOutputter;
 
 	}
 	  
-	  public JDOMConfirmRequest(String groupname) { 
+	  /**
+  	 * Instantiates a new jDOM confirm request.
+  	 *
+  	 * @param groupname the groupname
+  	 */
+  	public JDOMConfirmRequest(String groupname) { 
 		    try { 
 		      //Creo un SAXBuilder e con esco costruisco un document 
 		      SAXBuilder builder = new SAXBuilder(); 

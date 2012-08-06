@@ -21,13 +21,31 @@ import javax.swing.SwingWorker;
 import room.JDOMExtractExtrasByRoom;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PrintExtraByRoomNrC.
+ */
 public class PrintExtraByRoomNrC {
 	
+	/** The h. */
 	Hotel h = new Hotel();
+	
+	/** The stanza. */
 	int stanza;
+	
+	/** The fatto. */
 	private boolean fatto;
+	
+	/** The repeat ok. */
 	private boolean repeatOk=false;
 	
+	/**
+	 * Console.
+	 *
+	 * @param out the out
+	 * @param in the in
+	 * @return the j scroll pane
+	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
@@ -66,6 +84,13 @@ public class PrintExtraByRoomNrC {
 
 	
 	
+	/**
+	 * Instantiates a new prints the extra by room nr c.
+	 *
+	 * @param hotel the hotel
+	 * @param s the s
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public PrintExtraByRoomNrC(Hotel hotel,int s) throws IOException {
 		if(hotel==null){
 			JOptionPane.showMessageDialog(null,"L'istanza dell'hotel è nulla");

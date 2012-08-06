@@ -7,16 +7,34 @@ import date.DataCheckout;
 import date.DateToString;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AddRequestView.
+ */
 public class AddRequestView {
+	
+	/** The kb. */
 	Scanner kb;
+	
+	/** The matrimoniali. */
 	static int singole,doppie,matrimoniali;
+	
+	/** The flag. */
 	static String flag;
 	
 
+	/**
+	 * Instantiates a new adds the request view.
+	 */
 	public AddRequestView() {
 
 	}
 
+	/**
+	 * Adds the request view.
+	 *
+	 * @return the request
+	 */
 	public Request AddRequestView() {
 
 

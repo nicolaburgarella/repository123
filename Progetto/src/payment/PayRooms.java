@@ -13,19 +13,43 @@ import date.DaysBetweenDates;
 import room.PdfFee;
 import room.Room;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PayRooms.
+ */
 public class PayRooms {
 
+	/** The g. */
 	Group g = new Group();
+	
+	/** The tot cost rooms. */
 	private float totCostRooms=0;
+	
+	/** The diff cost. */
 	private float diffCost=0;
+	
+	/** The tot cost by room. */
 	private float totCostByRoom;
+	
+	/** The mess. */
 	private String mess="";
+	
+	/** The h. */
 	private Hotel h=new Hotel();
 	
+	/**
+	 * Instantiates a new pay rooms.
+	 */
 	public PayRooms(){
 	
 	}
 	
+	/**
+	 * Pay rooms.
+	 *
+	 * @param gruppo the gruppo
+	 * @return the float
+	 */
 	public float PayRooms(Group gruppo){
 		g=gruppo;
     	

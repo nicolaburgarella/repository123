@@ -1,8 +1,16 @@
 package room;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ExtractRoomByNumberTest.
+ */
 public class ExtractRoomByNumberTest extends junit.framework.TestCase
 {
+	
+	/**
+	 * Test extract room.
+	 */
 	public void testExtractRoom()
 	{
 		ExtractRoomByNumber obj=new room.ExtractRoomByNumber();

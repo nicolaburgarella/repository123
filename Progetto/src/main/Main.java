@@ -16,10 +16,16 @@ import date.DataCheckout;
 import group.GroupView;
 import hotel.Hotel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Main.
+ */
 public class Main {
 
 	/**
-	 * @param args
+	 * The main method.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		

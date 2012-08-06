@@ -12,8 +12,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+	// TODO: Auto-generated Javadoc
+/**
+	 * The Class JDOMAddChild.
+	 */
 	public class JDOMAddChild {
-	  public static void main(String[] args) {
+	  
+  	/**
+  	 * The main method.
+  	 *
+  	 * @param args the arguments
+  	 */
+  	public static void main(String[] args) {
 	/*String XmlFile = "<Company>" 
 	  + "<Employee name=\"satya\" age=\"25\"/> "
 	    + "<Employee  name=\"bharat\" age=\"24\"/>" 

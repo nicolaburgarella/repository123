@@ -12,13 +12,25 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+	// TODO: Auto-generated Javadoc
+/**
+	 * The Class JDOMAddChild.
+	 */
 	public class JDOMAddChild {
 		
+		/**
+		 * Instantiates a new jDOM add child.
+		 */
 		public JDOMAddChild(){
 			
 		}
 		
-	  public JDOMAddChild(Reservation res) {
+	  /**
+  	 * Instantiates a new jDOM add child.
+  	 *
+  	 * @param res the res
+  	 */
+  	public JDOMAddChild(Reservation res) {
 	/*String XmlFile = "<Company>" 
 	  + "<Employee name=\"satya\" age=\"25\"/> "
 	    + "<Employee  name=\"bharat\" age=\"24\"/>" 

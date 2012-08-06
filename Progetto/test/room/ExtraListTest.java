@@ -6,8 +6,16 @@ import group.GroupList;
 import java.lang.String;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ExtraListTest.
+ */
 public class ExtraListTest extends junit.framework.TestCase
 {
+	
+	/**
+	 * Test get extra reg.
+	 */
 	public void testGetExtraReg()
 	{
 		ExtraList obj=new room.ExtraList();
@@ -15,6 +23,10 @@ public class ExtraListTest extends junit.framework.TestCase
 		obj.setExtraReg(extraReg);
 		assertTrue(extraReg==obj.getExtraReg());
 	}
+	
+	/**
+	 * Test set extra reg.
+	 */
 	public void testSetExtraReg()
 	{
 		ExtraList obj=new room.ExtraList();
@@ -23,6 +35,10 @@ public class ExtraListTest extends junit.framework.TestCase
 		obj.setExtraReg(extraReg);
 		assertTrue(extraReg==obj.getExtraReg());
 	}
+	
+	/**
+	 * Test get extra list.
+	 */
 	public void testGetExtraList()
 	{
 		ExtraList obj=new room.ExtraList();
@@ -30,6 +46,10 @@ public class ExtraListTest extends junit.framework.TestCase
 		obj.setExtraReg(extraReg);
 		assertTrue(extraReg==obj.getExtraReg());
 	}
+	
+	/**
+	 * Test add extra.
+	 */
 	public void testAddExtra()
 	{
 		ExtraList obj=new ExtraList();
@@ -41,6 +61,9 @@ public class ExtraListTest extends junit.framework.TestCase
 	}
 	
 	
+	/**
+	 * Test is extra list empty.
+	 */
 	public void testIsExtraListEmpty()
 	{
 		ExtraList obj=new room.ExtraList();

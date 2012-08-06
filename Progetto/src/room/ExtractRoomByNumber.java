@@ -13,12 +13,25 @@ import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ExtractRoomByNumber.
+ */
 public class ExtractRoomByNumber {
 	
+	/**
+	 * Instantiates a new extract room by number.
+	 */
 	public ExtractRoomByNumber(){
 		
 	}
 	
+	/**
+	 * Extract room.
+	 *
+	 * @param number the number
+	 * @return the room
+	 */
 	public Room ExtractRoom(int number) { 
 		
 		if(number==0||number==500){
@@ -68,7 +81,12 @@ public class ExtractRoomByNumber {
 
 	}
 	
-		  public ExtractRoomByNumber(int number) {
+		  /**
+  		 * Instantiates a new extract room by number.
+  		 *
+  		 * @param number the number
+  		 */
+  		public ExtractRoomByNumber(int number) {
 		/*String XmlFile = "<Company>" 
 		  + "<Employee name=\"satya\" age=\"25\"/> "
 		    + "<Employee  name=\"bharat\" age=\"24\"/>" 

@@ -8,12 +8,28 @@ import main.MainGui;
 import java.awt.*;
 import java.awt.event.*;
  
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Login.
+ */
 public class Login extends JFrame implements ActionListener
 {
+ 
+ /** The SUBMIT. */
  JButton SUBMIT;
+ 
+ /** The panel. */
  JPanel panel;
+ 
+ /** The label2. */
  JLabel label1,label2;
+ 
+ /** The text2. */
  final JTextField  text1,text2;
+  
+  /**
+   * Instantiates a new login.
+   */
   public Login()
   {
   label1 = new JLabel();
@@ -36,6 +52,10 @@ public class Login extends JFrame implements ActionListener
   SUBMIT.addActionListener(this);
   setTitle("LOGIN FORM");
   }
+ 
+ /* (non-Javadoc)
+  * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+  */
  public void actionPerformed(ActionEvent ae)
   {
   String value1=text1.getText();

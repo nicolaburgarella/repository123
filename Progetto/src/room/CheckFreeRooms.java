@@ -13,7 +13,15 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CheckFreeRooms.
+ */
 public class CheckFreeRooms {
+  
+  /**
+   * Instantiates a new check free rooms.
+   */
   public CheckFreeRooms() {
 /*String XmlFile = "<Company>" 
   + "<Employee name=\"satya\" age=\"25\"/> "

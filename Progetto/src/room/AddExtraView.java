@@ -4,15 +4,33 @@ import java.util.Scanner;
 
 import date.StringToDate;
 
+	// TODO: Auto-generated Javadoc
+/**
+	 * The Class AddExtraView.
+	 */
 	public class AddExtraView {
+	
+	/** The kb. */
 	Scanner kb;
+	
+	/** The date. */
 	static String type,date;
+	
+	/** The cost. */
 	static float cost;
 
+	/**
+	 * Instantiates a new adds the extra view.
+	 */
 	public AddExtraView(){
 		
 	}
 
+	/**
+	 * Adds the extra view.
+	 *
+	 * @return the extra
+	 */
 	public Extra AddExtraView(){
 	type = "";
 	cost=0;

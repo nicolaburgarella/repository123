@@ -11,18 +11,41 @@ import date.DateToString;
 
 import room.Extra;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AddGroupView.
+ */
 public class AddGroupView {
+	
+	/** The kb. */
 	Scanner kb;
+	
+	/** The checkout. */
 	static String name, checkin,checkout;
+	
+	/** The deposit. */
 	static float deposit;
+	
+	/** The days. */
 	static int number,days;
+	
+	/** The h. */
 	Hotel h = new Hotel();
 
 
+	/**
+	 * Instantiates a new adds the group view.
+	 */
 	public AddGroupView() {
 
 	}
 
+	/**
+	 * Adds the group view.
+	 *
+	 * @param hotel the hotel
+	 * @return the group
+	 */
 	public Group AddGroupView(Hotel hotel) {
 	//	g=new Group();
 		if(hotel==null){

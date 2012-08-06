@@ -15,10 +15,16 @@ import room.RoomList;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoadExtrasAndRoomsFromXML.
+ */
 public class LoadExtrasAndRoomsFromXML {
 
 	/**
-	 * @param args
+	 * Load extras and rooms from xml.
+	 *
+	 * @return the hotel
 	 */
 	/*public LoadExtrasAndRoomsFromXML(){
 		

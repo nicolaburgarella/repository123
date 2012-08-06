@@ -5,15 +5,26 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DataCheckout.
+ */
 public class DataCheckout {
 
 	/**
-	 * @param args
+	 * Instantiates a new data checkout.
+	 *
 	 */
 	public DataCheckout(){
 		
 	}
 	
+	/**
+	 * Data checkout.
+	 *
+	 * @param days the days
+	 * @return the date[]
+	 */
 	public Date[] DataCheckout(int days) {
 		 Date today = new Date();
 	        Calendar calendar = Calendar.getInstance();

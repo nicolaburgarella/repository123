@@ -8,8 +8,15 @@ import java.util.*;
 import org.jdom.*; 
 import org.jdom.input.*; 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMReader.
+ */
 public class JDOMReader { 
 
+  /**
+   * Instantiates a new jDOM reader.
+   */
   public JDOMReader() { 
     try { 
       //Creo un SAXBuilder e con esco costruisco un document 

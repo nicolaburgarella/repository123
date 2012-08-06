@@ -2,8 +2,16 @@ package login;
 
 import java.awt.event.ActionEvent;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoginTest.
+ */
 public class LoginTest extends junit.framework.TestCase
 {
+	
+	/**
+	 * Test action performed.
+	 */
 	public void testActionPerformed()
 	{
 		Login obj=new login.Login();
@@ -12,6 +20,12 @@ public class LoginTest extends junit.framework.TestCase
 		obj.actionPerformed(ae);
 		//Examine the object and assert something appropriate here
 	}
+	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args)
 	{
 		junit.textui.TestRunner.run(new junit.framework.TestSuite(LoginTest.class));

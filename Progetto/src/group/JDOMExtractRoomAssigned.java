@@ -12,20 +12,41 @@ import room.Room;
 import room.RoomList;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMExtractRoomAssigned.
+ */
 public class JDOMExtractRoomAssigned {
 	
+	/** The rooms assigned msg. */
 	private static String roomsAssignedMsg="";
+	
+	/** The trovato. */
 	private static boolean trovato=false;
+	
+	/** The new array. */
 	static String[] newArray=null;
+	
+	/** The room assigned. */
 	static ArrayList<Room> roomAssigned=new ArrayList<Room>();
 
 
+	/**
+	 * Instantiates a new jDOM extract room assigned.
+	 */
 	public JDOMExtractRoomAssigned(){
 		
 	}
 
 
-	  public ArrayList<Room> JDOMExtractRoomAssigned(Hotel hotel,int groupId) {
+	  /**
+  	 * JDOM extract room assigned.
+  	 *
+  	 * @param hotel the hotel
+  	 * @param groupId the group id
+  	 * @return the array list
+  	 */
+  	public ArrayList<Room> JDOMExtractRoomAssigned(Hotel hotel,int groupId) {
 		  
 			Hotel h =new Hotel();
 			h=hotel;

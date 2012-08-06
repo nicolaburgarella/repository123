@@ -15,12 +15,17 @@ import room.ExtraList;
 import room.Room;
 import room.RoomList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMWriteAssignment.
+ */
 public class JDOMWriteAssignment {
 
 	/**
-	 * @param args
-	 * @throws IOException
-	 * @throws JDOMException
+	 * Instantiates a new jDOM write assignment.
+	 *
+	 * @param group the group
+	 * @param name the name
 	 */
 	public JDOMWriteAssignment(Group group, String name) {
 

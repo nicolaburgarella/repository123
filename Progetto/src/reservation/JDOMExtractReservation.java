@@ -8,8 +8,17 @@ import java.util.*;
 import org.jdom.*; 
 import org.jdom.input.*; 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMExtractReservation.
+ */
 public class JDOMExtractReservation { 
 
+  /**
+   * Instantiates a new jDOM extract reservation.
+   *
+   * @param name the name
+   */
   public JDOMExtractReservation(String name) { 
     try { 
       //Creo un SAXBuilder e con esco costruisco un document 

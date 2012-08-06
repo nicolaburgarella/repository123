@@ -14,15 +14,25 @@ import org.jdom.input.*;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoadGroupsAndRequestsFromXML.
+ */
 public class LoadGroupsAndRequestsFromXML {
 
 	/**
-	 * @param args
+	 * Instantiates a new load groups and requests from xml.
+	 *
 	 */
 	public LoadGroupsAndRequestsFromXML(){
 		
 	}
 	
+	/**
+	 * Load groups and requests from xml.
+	 *
+	 * @return the hotel
+	 */
 	public Hotel LoadGroupsAndRequestsFromXML() {
 		Hotel h=null;
 		

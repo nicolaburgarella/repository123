@@ -25,13 +25,31 @@ import reservation.JDOMExtractReservation;
 import room.JDOMExtractExtrasByRoom;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PrintRoomDetailsByRoomNrC.
+ */
 public class PrintRoomDetailsByRoomNrC {
 	
+	/** The h. */
 	Hotel h = new Hotel();
+	
+	/** The stanza. */
 	int stanza;
+	
+	/** The fatto. */
 	private boolean fatto=false;
+	
+	/** The repeat ok. */
 	private boolean repeatOk=false;
 	
+	/**
+	 * Console.
+	 *
+	 * @param out the out
+	 * @param in the in
+	 * @return the j scroll pane
+	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
@@ -69,6 +87,13 @@ public class PrintRoomDetailsByRoomNrC {
 
 	
 	
+	/**
+	 * Instantiates a new prints the room details by room nr c.
+	 *
+	 * @param hotel the hotel
+	 * @param s the s
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public PrintRoomDetailsByRoomNrC(Hotel hotel,int s) throws IOException {
 		
 		if(hotel==null){

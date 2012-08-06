@@ -12,8 +12,17 @@
 	import org.jdom.output.Format;
 	import org.jdom.output.XMLOutputter;
 	
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SetRoomNotFree.
+ */
 public class SetRoomNotFree {
 
+		/**
+		 * Instantiates a new sets the room not free.
+		 *
+		 * @param number the number
+		 */
 		public SetRoomNotFree(int number) {
 	 
 		  try {

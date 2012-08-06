@@ -6,16 +6,31 @@ import java.util.*;
 import org.jdom.*; 
 import org.jdom.input.*; 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMExtractExtrasByRoom.
+ */
 public class JDOMExtractExtrasByRoom {
 
 
-	  private boolean fatto=false;
+	  /** The fatto. */
+  	private boolean fatto=false;
+	
+	/** The ok. */
 	private boolean ok=false;
 	
+/**
+ * Instantiates a new jDOM extract extras by room.
+ */
 public JDOMExtractExtrasByRoom(){
 	
 }
 	
+	/**
+	 * Instantiates a new jDOM extract extras by room.
+	 *
+	 * @param number the number
+	 */
 	public JDOMExtractExtrasByRoom(int number) { 
 	    try { 
 	      //Creo un SAXBuilder e con esco costruisco un document 
@@ -74,6 +89,12 @@ public JDOMExtractExtrasByRoom(){
 	}
 	
 	
+	/**
+	 * JDOM is extract extras by room.
+	 *
+	 * @param number the number
+	 * @return true, if successful
+	 */
 	public boolean JDOMIsExtractExtrasByRoom(int number) { 
 	    try { 
 	      //Creo un SAXBuilder e con esco costruisco un document 

@@ -2,10 +2,17 @@ package date;
 
 import java.util.Date;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class prova.
+ */
 public class prova {
 
 	/**
-	 * @param args
+	 * Instantiates a new prova.
+	 *
+	 * @param checkin the checkin
+	 * @param checkout the checkout
 	 */
 	public prova(String checkin, String checkout) {
 		// TODO Auto-generated method stub

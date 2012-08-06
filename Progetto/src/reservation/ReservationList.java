@@ -2,36 +2,69 @@ package reservation;
 
 import java.util.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ReservationList.
+ */
 public class ReservationList {
 		
+	/** The reserv reg. */
 	private ArrayList<Reservation> reservReg=new ArrayList<Reservation>();
 	
 	
 
+		/**
+		 * Gets the reserv reg.
+		 *
+		 * @return the reserv reg
+		 */
 		public ArrayList<Reservation> getReservReg() {
 		return reservReg;
 	}
 
+	/**
+	 * Sets the reserv reg.
+	 *
+	 * @param reservReg the new reserv reg
+	 */
 	public void setReservReg(ArrayList<Reservation> reservReg) {
 		this.reservReg = reservReg;
 	}
 
+		/**
+		 * Instantiates a new reservation list.
+		 *
+		 * @param reservReg the reserv reg
+		 */
 		public ReservationList(ArrayList<Reservation> reservReg) {
 		super();
 		this.reservReg = reservReg;
 	}
 
 
+		/**
+		 * Instantiates a new reservation list.
+		 */
 		public ReservationList(){
 			//Removes all of the elements from this list.
 			reservReg.clear();
 		}
 		
+		/**
+		 * Checks if is reservation list empty.
+		 *
+		 * @return true, if is reservation list empty
+		 */
 		public boolean isReservationListEmpty(){
 			return reservReg.isEmpty();
 		}
 
 
+		/**
+		 * Adds the reservation.
+		 *
+		 * @param res the res
+		 */
 		public void addReservation(Reservation res){
 			for(int i=0;i<reservReg.size();i++){
 				if((reservReg.get(i)).equals(res)){
@@ -44,6 +77,9 @@ public class ReservationList {
 		}
 
 		
+		/* (non-Javadoc)
+		 * @see java.lang.Object#toString()
+		 */
 		@Override
 		public String toString() {
 			return "ReservationList [reservReg=" + reservReg + "]";

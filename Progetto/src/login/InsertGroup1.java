@@ -25,6 +25,7 @@ import javax.swing.border.EmptyBorder;
 import date.DataCheckout;
 import date.DateToString;
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -39,34 +40,82 @@ import date.DateToString;
 */
 public class InsertGroup1 extends JDialog {
 
+	/** The content panel. */
 	private final JPanel contentPanel = new JPanel();
+	
+	/** The j text field1. */
 	private JTextField jTextField1;
+	
+	/** The j label2. */
 	private JLabel jLabel2;
+	
+	/** The j label3. */
 	private JLabel jLabel3;
+	
+	/** The j label4. */
 	private JLabel jLabel4;
+	
+	/** The j label5. */
 	private JLabel jLabel5;
+	
+	/** The j text field7. */
 	private JTextField jTextField7;
+	
+	/** The j text field6. */
 	private JTextField jTextField6;
+	
+	/** The j text field5. */
 	private JTextField jTextField5;
+	
+	/** The j label9. */
 	private JLabel jLabel9;
+	
+	/** The j label8. */
 	private JLabel jLabel8;
+	
+	/** The j label7. */
 	private JLabel jLabel7;
+	
+	/** The j label6. */
 	private JLabel jLabel6;
+	
+	/** The j text field4. */
 	private JTextField jTextField4;
+	
+	/** The j text field3. */
 	private JTextField jTextField3;
+	
+	/** The j text field2. */
 	private JTextField jTextField2;
+	
+	/** The j label1. */
 	private JLabel jLabel1;
+	
+	/** The matrimoniali. */
 	int singole,doppie,matrimoniali;
+	
+	/** The days. */
 	int id,days;
+	
+	/** The nome. */
 	String nome;
+	
+	/** The deposit. */
 	float deposit;
+	
+	/** The checkout. */
 	String checkin,checkout;
+	
+	/** The h. */
 	Hotel h=new Hotel();
+	
+	/** The repeat ok. */
 	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
-	 * @param h 
+	 *
+	 * @param hotel the hotel
 	 */
 	public InsertGroup1(Hotel hotel) {
 		

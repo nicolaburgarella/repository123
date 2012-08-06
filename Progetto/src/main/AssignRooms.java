@@ -23,12 +23,20 @@ import room.Room;
 import room.RoomList;
 import room.SetRoomNotFree;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AssignRooms.
+ */
 public class AssignRooms {
 
+	/** The fatto. */
 	private boolean fatto=false;
 
 	/**
-	 * @param args
+	 * Instantiates a new assign rooms.
+	 *
+	 * @param groupName the group name
+	 * @param h the h
 	 */
 	public AssignRooms(String groupName, Hotel h) {
 		Group g=new Group();

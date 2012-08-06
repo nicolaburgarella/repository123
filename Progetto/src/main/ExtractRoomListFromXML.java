@@ -13,15 +13,25 @@ import room.RoomList;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ExtractRoomListFromXML.
+ */
 public class ExtractRoomListFromXML {
 
 	/**
-	 * @param args
+	 * Instantiates a new extract room list from xml.
+	 *
 	 */
 	public ExtractRoomListFromXML(){
 		
 	}
 	
+	/**
+	 * Extract room list.
+	 *
+	 * @return the room list
+	 */
 	public RoomList ExtractRoomList() {
 		RoomList rl=new RoomList();
 			    try { 

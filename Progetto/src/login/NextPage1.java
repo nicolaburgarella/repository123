@@ -13,6 +13,7 @@ import javax.swing.ButtonGroup;
 import room.CheckFreeRooms;
 import room.JDOMReader;
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -27,17 +28,42 @@ import room.JDOMReader;
 */
 public class NextPage1 extends JFrame implements ActionListener
 {
+	
+	/** The j radio button1. */
 	private JRadioButton jRadioButton1;
+	
+	/** The j radio button3. */
 	private JRadioButton jRadioButton3;
+	
+	/** The j radio button4. */
 	private JRadioButton jRadioButton4;
+	
+	/** The j radio button5. */
 	private JRadioButton jRadioButton5;
+	
+	/** The j radio button6. */
 	private JRadioButton jRadioButton6;
+	
+	/** The j radio button7. */
 	private JRadioButton jRadioButton7;
+	
+	/** The j label2. */
 	private JLabel jLabel2;
+	
+	/** The j label1. */
 	private JLabel jLabel1;
+	
+	/** The j radio button2. */
 	private JRadioButton jRadioButton2;
+	
+	/** The h. */
 	Hotel h;
 	
+/**
+ * Instantiates a new next page1.
+ *
+ * @param hotel the hotel
+ */
 public  NextPage1(Hotel hotel) {
 	h=hotel;
  setDefaultCloseOperation(javax.swing.
@@ -164,7 +190,10 @@ public  NextPage1(Hotel hotel) {
   }
 
 	
-	  public void actionPerformed(ActionEvent e){
+	  /* (non-Javadoc)
+  	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+  	 */
+  	public void actionPerformed(ActionEvent e){
 	JLabel label=new JLabel();
 	  label.setText(e.getActionCommand());
 	  //JOptionPane.showMessageDialog(null,"Hai scelto l'opzione " + e.getActionCommand() + " .");

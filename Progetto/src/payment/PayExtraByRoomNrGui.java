@@ -6,12 +6,24 @@ import room.JDOMExtractExtrasByRoom;
 import room.RoomList;
 import group.Group;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PayExtraByRoomNrGui.
+ */
 public class PayExtraByRoomNrGui {
 
+	/**
+	 * Instantiates a new pay extra by room nr gui.
+	 */
 	public PayExtraByRoomNrGui() {
 
 	}
 
+	/**
+	 * Instantiates a new pay extra by room nr gui.
+	 *
+	 * @param g the g
+	 */
 	public PayExtraByRoomNrGui(Group g) {
 
 		if (!(g.getRoomAssigned().isEmpty())) {

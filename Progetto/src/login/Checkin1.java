@@ -27,6 +27,7 @@ import main.AssignRooms;
 
 
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -41,30 +42,51 @@ import main.AssignRooms;
 */
 public class Checkin1 extends JDialog {
 
+	/** The content panel. */
 	private final JPanel contentPanel = new JPanel();
+	
+	/** The j label2. */
 	private JLabel jLabel2;
+	
+	/** The j label3. */
 	private JLabel jLabel3;
+	
+	/** The j label4. */
 	private JLabel jLabel4;
+	
+	/** The j text field1. */
 	private JTextField jTextField1;
+	
+	/** The j label1. */
 	private JLabel jLabel1;
+	
+	/** The j text area1. */
 	private JTextArea jTextArea1;
+	
+	/** The nome. */
 	String nome;
+	
+	/** The h. */
 	Hotel h=new Hotel();
+	
+	/** The repeat ok. */
 	private boolean repeatOk=false;
 
 	/**
 	 * Launch the application.
-
-	public static void main(String[] args) {
-		try {
-			Checkin dialog = new Checkin();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	*/
+	 * 
+	 * public static void main(String[] args) {
+	 * try {
+	 * Checkin dialog = new Checkin();
+	 * dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+	 * dialog.setVisible(true);
+	 * } catch (Exception e) {
+	 * e.printStackTrace();
+	 * }
+	 * }
+	 *
+	 * @param hotel the hotel
+	 */
 
 	/**
 	 * Create the dialog.

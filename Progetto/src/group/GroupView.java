@@ -8,16 +8,33 @@ import java.util.Calendar;
 
 import hotel.Hotel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GroupView.
+ */
 public class GroupView {
 
+/** The group id. */
 private int groupId;
+
+/** The trovato. */
 private boolean trovato=false;
+
+/** The scelta. */
 private int scelta=0; 
 
+/**
+ * Instantiates a new group view.
+ */
 public GroupView(){
 	
 }
 
+/**
+ * Instantiates a new group view.
+ *
+ * @param h the h
+ */
 public GroupView(Hotel h){
 	Hotel hotel = new Hotel();
 	hotel=h;
@@ -249,6 +266,12 @@ public GroupView(Hotel h){
 		
 }
 
+/**
+ * Cancel request.
+ *
+ * @param h the h
+ * @param r the r
+ */
 public void cancelRequest(Hotel h, Request r){
 	for(int i=0;i<h.getRequestList().getRequestReg().size();i++){
 			if(h.getRequestList().getRequestReg().get(i).equals(r)){

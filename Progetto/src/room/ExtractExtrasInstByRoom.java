@@ -6,14 +6,27 @@ import java.util.*;
 import org.jdom.*; 
 import org.jdom.input.*; 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ExtractExtrasInstByRoom.
+ */
 public class ExtractExtrasInstByRoom {
 	
+	/**
+	 * Instantiates a new extract extras inst by room.
+	 */
 	public ExtractExtrasInstByRoom(){
 		
 	}
 
 
-	  public ExtraList ExtractExtrasInstByRoom(int number) { 
+	  /**
+  	 * Extract extras inst by room.
+  	 *
+  	 * @param number the number
+  	 * @return the extra list
+  	 */
+  	public ExtraList ExtractExtrasInstByRoom(int number) { 
 		  if(number==0){
 			  System.out.println("Non ci sono stanze con quel numero");
 			  return null;

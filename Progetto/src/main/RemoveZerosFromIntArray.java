@@ -2,10 +2,16 @@ package main;
 
 import java.util.Arrays;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RemoveZerosFromIntArray.
+ */
 public class RemoveZerosFromIntArray {
 
 	/**
-	 * @param args
+	 * The main method.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

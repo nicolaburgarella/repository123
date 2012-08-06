@@ -6,8 +6,16 @@ import group.GroupList;
 import java.lang.String;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ReservationListTest.
+ */
 public class ReservationListTest extends junit.framework.TestCase
 {
+	
+	/**
+	 * Test get reserv reg.
+	 */
 	public void testGetReservReg()
 	{
 		ReservationList obj=new reservation.ReservationList(null);
@@ -17,6 +25,10 @@ public class ReservationListTest extends junit.framework.TestCase
 		obj.setReservReg(reservReg);
 		assertTrue(reservReg==obj.getReservReg());
 	}
+	
+	/**
+	 * Test set reserv reg.
+	 */
 	public void testSetReservReg()
 	{
 		ReservationList obj=new reservation.ReservationList(null);
@@ -26,6 +38,10 @@ public class ReservationListTest extends junit.framework.TestCase
 		assertTrue(reservReg==obj.getReservReg());
 
 	}
+	
+	/**
+	 * Test is reservation list empty.
+	 */
 	public void testIsReservationListEmpty()
 	{
 		ReservationList obj=new reservation.ReservationList();
@@ -33,6 +49,10 @@ public class ReservationListTest extends junit.framework.TestCase
 		assertTrue(problemMsg, obj.isReservationListEmpty());
 	//	assertFalse(problemMsg, obj.isReservationListEmpty());
 	}
+	
+	/**
+	 * Test add reservation.
+	 */
 	public void testAddReservation()
 	{
 		ReservationList obj=new reservation.ReservationList();

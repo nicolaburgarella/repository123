@@ -19,17 +19,34 @@ import group.Group;
 import group.JDOMRemoveChild;
 import hotel.Hotel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ReservationView.
+ */
 public class ReservationView {
 
 
+/** The number. */
 private int number;
+
+/** The trovato. */
 private boolean trovato=false;
+
+/** The scelta. */
 private int scelta=0;
 
+/**
+ * Instantiates a new reservation view.
+ */
 public ReservationView(){
        
 }
 
+/**
+ * Instantiates a new reservation view.
+ *
+ * @param h the h
+ */
 public ReservationView(Hotel h){
         Hotel hotel = new Hotel();
         hotel=h;

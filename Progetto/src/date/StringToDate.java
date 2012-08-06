@@ -5,11 +5,25 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
  
+// TODO: Auto-generated Javadoc
+/**
+ * The Class StringToDate.
+ */
 public class StringToDate {
 	
+	/**
+	 * Instantiates a new string to date.
+	 */
 	public StringToDate(){
 		
 	}
+    
+    /**
+     * String to date.
+     *
+     * @param s the s
+     * @return the date
+     */
     public Date StringToDate(String s) {
     	//s="";
     	//s="20/12/2005";
@@ -32,6 +46,12 @@ public class StringToDate {
 		return date;
     }
     
+    /**
+     * String to date check.
+     *
+     * @param s the s
+     * @return true, if successful
+     */
     public boolean StringToDateCheck(String s) {
     	//s="";
     	//s="20/12/2005";

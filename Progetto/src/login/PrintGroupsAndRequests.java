@@ -36,6 +36,7 @@ import room.JDOMExtractExtrasByRoom;
 import room.JDOMInsertExtraByRoomNr;
 
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -50,21 +51,38 @@ import room.JDOMInsertExtraByRoomNr;
 */
 public class PrintGroupsAndRequests extends JDialog {
 
+	/** The content panel. */
 	private final JPanel contentPanel = new JPanel();
+	
+	/** The j check box2. */
 	private JCheckBox jCheckBox2;
+	
+	/** The j text area1. */
 	private JTextArea jTextArea1;
+	
+	/** The j label5. */
 	private JLabel jLabel5;
+	
+	/** The j text field4. */
 	private JTextField jTextField4;
+	
+	/** The j label1. */
 	private JLabel jLabel1;
 	
-	 String nomegruppo;
-	 Hotel h=new Hotel();
+	 /** The nomegruppo. */
+ 	String nomegruppo;
+	 
+ 	/** The h. */
+ 	Hotel h=new Hotel();
+	
+	/** The repeat ok. */
 	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
-	 * @param hotel 
-	 * @param string 
+	 *
+	 * @param hotel the hotel
+	 * @param string the string
 	 */
 	public PrintGroupsAndRequests(Hotel hotel, String string) {
 		if(hotel==null||string.equals(null)){

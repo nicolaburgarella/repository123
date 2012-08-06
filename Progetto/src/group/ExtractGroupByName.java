@@ -9,12 +9,25 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ExtractGroupByName.
+ */
 public class ExtractGroupByName {
 	
+	/**
+	 * Instantiates a new extract group by name.
+	 */
 	public ExtractGroupByName(){
 		
 	}
 	
+	/**
+	 * Extract group by name.
+	 *
+	 * @param name the name
+	 * @return the group
+	 */
 	public Group extractGroupByName(String name) {
 		  
 		  Group g=null;

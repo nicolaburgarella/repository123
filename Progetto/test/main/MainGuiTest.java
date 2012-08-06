@@ -9,8 +9,16 @@ import java.lang.String;
 import javax.swing.JLabel;
 import javax.swing.event.CaretEvent;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MainGuiTest.
+ */
 public class MainGuiTest extends junit.framework.TestCase
 {
+	
+	/**
+	 * Test action performed.
+	 */
 	public void testActionPerformed()
 	{
 		MainGui obj=new main.MainGui();
@@ -19,6 +27,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		obj.actionPerformed(e);
 		//Examine the object and assert something appropriate here
 	}
+	
+	/**
+	 * Test is file allow ext.
+	 */
 	public void testIsFileAllowExt()
 	{
 		MainGui obj=new main.MainGui();
@@ -27,6 +39,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		assertTrue(problemMsg, obj.isFileAllowExt(file));
 //		assertFalse(problemMsg, obj.isFileAllowExt(file));
 	}
+	
+	/**
+	 * Test is file ok.
+	 */
 	public void testIsFileOk()
 	{
 		MainGui obj=new main.MainGui();
@@ -35,6 +51,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		assertTrue(problemMsg, obj.isFileOk(file));
 //		assertFalse(problemMsg, obj.isFileOk(file));
 	}
+	
+	/**
+	 * Test carica file.
+	 */
 	public void testCaricaFile()
 	{
 		MainGui obj=new main.MainGui();
@@ -43,6 +63,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		assertTrue(problemMsg, obj.caricaFile(file));
 //		assertFalse(problemMsg, obj.caricaFile(file));
 	}
+	
+	/**
+	 * Test drop.
+	 */
 	public void testDrop()
 	{
 		MainGui obj=new main.MainGui();
@@ -51,6 +75,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		obj.drop(dtde);
 		//Examine the object and assert something appropriate here
 	}
+	
+	/**
+	 * Test salva file.
+	 */
 	public void testSalvaFile()
 	{
 		MainGui obj=new main.MainGui();
@@ -60,6 +88,9 @@ public class MainGuiTest extends junit.framework.TestCase
 //		assertFalse(problemMsg, obj.salvaFile(path));
 	}
 	
+	/**
+	 * Test drag enter.
+	 */
 	public void testDragEnter()
 	{
 		MainGui obj=new main.MainGui();
@@ -68,6 +99,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		obj.dragEnter(arg0);
 		//Examine the object and assert something appropriate here
 	}
+	
+	/**
+	 * Test drag exit.
+	 */
 	public void testDragExit()
 	{
 		MainGui obj=new main.MainGui();
@@ -76,6 +111,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		obj.dragExit(arg0);
 		//Examine the object and assert something appropriate here
 	}
+	
+	/**
+	 * Test drag over.
+	 */
 	public void testDragOver()
 	{
 		MainGui obj=new main.MainGui();
@@ -84,6 +123,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		obj.dragOver(arg0);
 		//Examine the object and assert something appropriate here
 	}
+	
+	/**
+	 * Test drop action changed.
+	 */
 	public void testDropActionChanged()
 	{
 		MainGui obj=new main.MainGui();
@@ -92,6 +135,10 @@ public class MainGuiTest extends junit.framework.TestCase
 		obj.dropActionChanged(arg0);
 		//Examine the object and assert something appropriate here
 	}
+	
+	/**
+	 * Test caret update.
+	 */
 	public void testCaretUpdate()
 	{
 		MainGui obj=new main.MainGui();
@@ -100,6 +147,12 @@ public class MainGuiTest extends junit.framework.TestCase
 		obj.caretUpdate(arg0);
 		//Examine the object and assert something appropriate here
 	}
+	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args)
 	{
 		junit.textui.TestRunner.run(new junit.framework.TestSuite(MainGuiTest.class));

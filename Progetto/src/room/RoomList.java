@@ -3,35 +3,66 @@ package room;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RoomList.
+ */
 public class RoomList {
 
+/** The room reg. */
 private ArrayList<Room> roomReg=new ArrayList<Room>();
 
+		/* (non-Javadoc)
+		 * @see java.lang.Object#toString()
+		 */
 		@Override
 		public String toString() {
 			return "RoomList [registroCamere=" + roomReg + "]\n";
 		}
 		
+		/**
+		 * Gets the room reg.
+		 *
+		 * @return the room reg
+		 */
 		public ArrayList<Room> getRoomReg(){
 			return roomReg;
 		}
 
+		/**
+		 * Sets the room reg.
+		 *
+		 * @param roomReg the new room reg
+		 */
 		public void setRoomReg(ArrayList<Room> roomReg) {
 			this.roomReg = roomReg;
 		}
 
 
+		/**
+		 * Instantiates a new room list.
+		 */
 		public RoomList(){
 				//Removes all of the elements from this list.
 				roomReg.clear();
 
 			}
 
+		/**
+		 * Checks if is room list empty.
+		 *
+		 * @return true, if is room list empty
+		 */
 		public boolean isRoomListEmpty(){
 			return roomReg.isEmpty();
 		}
 
 	
+			/**
+			 * Adds the room.
+			 *
+			 * @param room the room
+			 */
 			public void addRoom(Room room){
 				for(int i=0;i<roomReg.size();i++){
 					if((roomReg.get(i)).equals(room)){
@@ -43,10 +74,22 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 			}
 
 	//Ritorna la camera in base all'indice della lista passato come parametro
-			public Room getRoomByPos(int posizione){
+			/**
+	 * Gets the room by pos.
+	 *
+	 * @param posizione the posizione
+	 * @return the room by pos
+	 */
+	public Room getRoomByPos(int posizione){
 				return roomReg.get(posizione);
 			}
 			
+			/**
+			 * Gets the free rooms count by comp.
+			 *
+			 * @param flagcomp the flagcomp
+			 * @return the free rooms count by comp
+			 */
 			public int getFreeRoomsCountByComp(String flagcomp) {
 				int count = 0;
 				if(flagcomp=="singole"){
@@ -93,6 +136,11 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 			}
 
 
+			/**
+			 * Gets the free single rooms.
+			 *
+			 * @return the free single rooms
+			 */
 			public int [] getFreeSingleRooms() {
 				//System.out.print("Ora salvo in array l'elenco del numero di camera di quelle singole disponibili :\t");
 				int count = 0;
@@ -110,6 +158,11 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 				return singleArray; 
 			}
 
+			/**
+			 * Gets the free double rooms.
+			 *
+			 * @return the free double rooms
+			 */
 			public int [] getFreeDoubleRooms() {
 				//System.out.print("Ora salvo in array l'elenco del numero di camera di quelle doppie disponibili :\t");
 				int count=0;
@@ -125,6 +178,11 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 				return doubleArray;
 			}
 
+			/**
+			 * Gets the free wedding rooms.
+			 *
+			 * @return the free wedding rooms
+			 */
 			public int [] getFreeWeddingRooms() {
 				//System.out.print("Ora salvo in array l'elenco del numero di camera di quelle matrimoniali disponibili :\t");
 				int count=0;
@@ -141,6 +199,12 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 			}
 			
 
+			/**
+			 * Removes the zeros from int array.
+			 *
+			 * @param arr the arr
+			 * @return the int[]
+			 */
 			public int[] removeZerosFromIntArray(int[] arr) {
 				// TODO Auto-generated method stub
 				

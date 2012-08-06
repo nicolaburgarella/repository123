@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GROUP_LIST />
+<GROUP_LIST>
+  <GROUP number="1" name="gruppo1" checkin="06/08/2012" checkout="07/08/2012" deposit="11.0">
+    <RICHIESTA singole="1" doppie="2" matrimoniali="0">eseguita</RICHIESTA>
+    <ASSIGN rooms="3 2 5 ">assegnate</ASSIGN>
+  </GROUP>
+  <GROUP number="2" name="gruppo2" checkin="06/08/2012" checkout="09/08/2012" deposit="112.0">
+    <RICHIESTA singole="1" doppie="0" matrimoniali="0">eseguita</RICHIESTA>
+    <ASSIGN rooms="3 ">assegnate</ASSIGN>
+  </GROUP>
+</GROUP_LIST>
 

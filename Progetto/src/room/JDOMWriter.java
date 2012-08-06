@@ -4,8 +4,15 @@ import org.jdom.*;
 import org.jdom.output.*; 
 import java.io.*; 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMWriter.
+ */
 public class JDOMWriter { 
 
+  /**
+   * Instantiates a new jDOM writer.
+   */
   public JDOMWriter() {
 	// TODO Auto-generated constructor stub
     try { 

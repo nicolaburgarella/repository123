@@ -6,11 +6,25 @@ import java.util.*;
 import org.jdom.*; 
 import org.jdom.input.*; 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ExtractRequest.
+ */
 public class ExtractRequest { 
+	
+	/**
+	 * Instantiates a new extract request.
+	 */
 	public ExtractRequest(){
 		
 	}
 
+  /**
+   * Extract requestby group name.
+   *
+   * @param groupname the groupname
+   * @return the request
+   */
   public Request ExtractRequestbyGroupName(String groupname) { 
 	  Request r=null;
 	  

@@ -25,8 +25,19 @@ import room.JDOMExtractExtrasByRoom;
 import room.JDOMReader;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PrintAllExtrasC.
+ */
 public class PrintAllExtrasC {
 	
+	/**
+	 * Console.
+	 *
+	 * @param out the out
+	 * @param in the in
+	 * @return the j scroll pane
+	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
@@ -65,6 +76,11 @@ public class PrintAllExtrasC {
 
 	
 	
+	/**
+	 * Instantiates a new prints the all extras c.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public PrintAllExtrasC() throws IOException {
 
 	    // 1. create the pipes

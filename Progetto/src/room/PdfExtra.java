@@ -19,6 +19,7 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
  
+// TODO: Auto-generated Javadoc
 /**
  * First iText example: Hello World.
  */
@@ -26,11 +27,18 @@ public class PdfExtra {
  
     /** Path to the resulting PDF file. */
     private String result="";
+	
+	/** The name. */
 	private String name;
  
     /**
      * Creates a PDF file: hello.pdf
-     * @param    args    no arguments needed
+     *
+     * @param name the name
+     * @param roomId the room id
+     * @param msg the msg
+     * @throws DocumentException the document exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public PdfExtra(String name,int roomId,String msg)
     	throws DocumentException, IOException {
@@ -49,10 +57,11 @@ public class PdfExtra {
  
     /**
      * Creates a PDF document.
+     *
      * @param filename the path to the new PDF document
-     * @param mess 
-     * @throws    DocumentException 
-     * @throws    IOException 
+     * @param mess the mess
+     * @throws DocumentException the document exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public void createPdf(String filename, String mess)
 	throws DocumentException, IOException {

@@ -3,12 +3,26 @@ package date;
 import java.util.Calendar;
 import java.util.Date;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DaysBetweenDates.
+ */
 public class DaysBetweenDates {
 
+	/**
+	 * Instantiates a new days between dates.
+	 */
 	public DaysBetweenDates() {
 
 	}
 
+	/**
+	 * Days between dates.
+	 *
+	 * @param uno the uno
+	 * @param due the due
+	 * @return the long
+	 */
 	public long DaysBetweenDates(Date uno, Date due) {
 
 		Calendar c1 = Calendar.getInstance();
@@ -27,6 +41,13 @@ public class DaysBetweenDates {
 	}
 	
 	
+	/**
+	 * Days in hotel.
+	 *
+	 * @param checkin the checkin
+	 * @param checkout the checkout
+	 * @return the long
+	 */
 	public long daysInHotel(String checkin, String checkout) {
 		// TODO Auto-generated method stub
 		System.out.println("•checkin "+checkin+" e checkout "+checkout);

@@ -24,8 +24,19 @@ import javax.swing.SwingWorker;
 import room.JDOMExtractExtrasByRoom;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PrintAllReservationsC.
+ */
 public class PrintAllReservationsC {
 	
+	/**
+	 * Console.
+	 *
+	 * @param out the out
+	 * @param in the in
+	 * @return the j scroll pane
+	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
@@ -64,6 +75,11 @@ public class PrintAllReservationsC {
 
 	
 	
+	/**
+	 * Instantiates a new prints the all reservations c.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public PrintAllReservationsC() throws IOException {
 
 	    // 1. create the pipes

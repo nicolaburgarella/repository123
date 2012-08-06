@@ -5,8 +5,16 @@ import hotel.Hotel;
 
 import java.awt.event.ActionEvent;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CancelGroup1Test.
+ */
 public class CancelGroup1Test extends junit.framework.TestCase
 {
+	
+	/**
+	 * Test action performed.
+	 */
 	public void testActionPerformed()
 	{
 		

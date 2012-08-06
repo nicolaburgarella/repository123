@@ -3,8 +3,16 @@ package group;
 import java.lang.String;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GroupListTest.
+ */
 public class GroupListTest extends junit.framework.TestCase
 {
+	
+	/**
+	 * Test get group reg.
+	 */
 	public void testGetGroupReg()
 	{
 		GroupList obj=new group.GroupList();
@@ -14,6 +22,9 @@ public class GroupListTest extends junit.framework.TestCase
 		
 	}
 	
+	/**
+	 * Test set group reg.
+	 */
 	public void testSetGroupReg()
 	{
 		GroupList obj=new group.GroupList();
@@ -23,6 +34,9 @@ public class GroupListTest extends junit.framework.TestCase
 	}
 	
 	
+	/**
+	 * Test is group list empty.
+	 */
 	public void testIsGroupListEmpty()
 	{
 		GroupList obj=new group.GroupList();
@@ -30,6 +44,10 @@ public class GroupListTest extends junit.framework.TestCase
 		assertTrue(problemMsg, obj.isGroupListEmpty());
 //		assertFalse(problemMsg, obj.isGroupListEmpty());
 	}
+	
+	/**
+	 * Test add group.
+	 */
 	public void testAddGroup()
 	{
 		GroupList obj=new group.GroupList();

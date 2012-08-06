@@ -35,13 +35,31 @@ import room.JDOMExtractExtrasByRoom;
 import room.Room;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CheckoutId.
+ */
 public class CheckoutId {
 	
+	/** The h. */
 	Hotel h = new Hotel();
+	
+	/** The g. */
 	Group g=new Group();
+	
+	/** The repeat ok. */
 	private boolean repeatOk=false;
+	
+	/** The trovato. */
 	private boolean trovato=false;
 	
+	/**
+	 * Console.
+	 *
+	 * @param out the out
+	 * @param in the in
+	 * @return the j scroll pane
+	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
@@ -80,6 +98,14 @@ public class CheckoutId {
 
 	
 	
+	/**
+	 * Instantiates a new checkout id.
+	 *
+	 * @param hotel the hotel
+	 * @param group the group
+	 * @param id the id
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public CheckoutId(Hotel hotel,Group group,int id) throws IOException {
 		
 		if(hotel==null){

@@ -7,15 +7,25 @@ import group.GroupList;
 import group.RequestList;
 import hotel.Hotel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoadFromXml.
+ */
 public class LoadFromXml {
 
 	/**
-	 * @param args
+	 * Instantiates a new load from xml.
+	 *
 	 */
 	public LoadFromXml(){
 		
 	}
 	
+	/**
+	 * Load from xml.
+	 *
+	 * @return the hotel
+	 */
 	public Hotel LoadFromXml() {
 		// TODO Auto-generated method stub
 		Hotel h = new Hotel();

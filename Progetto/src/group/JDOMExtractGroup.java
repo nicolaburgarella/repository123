@@ -13,9 +13,18 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMExtractGroup.
+ */
 public class JDOMExtractGroup {
 	
 	
+  /**
+   * Instantiates a new jDOM extract group.
+   *
+   * @param name the name
+   */
   public JDOMExtractGroup(String name) {
 /*String XmlFile = "<Company>" 
   + "<Employee name=\"satya\" age=\"25\"/> "

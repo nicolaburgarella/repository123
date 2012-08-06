@@ -4,8 +4,16 @@ import group.Group;
 import hotel.Hotel;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PayRoomsTest.
+ */
 public class PayRoomsTest extends junit.framework.TestCase
 {
+	
+	/**
+	 * Test pay rooms.
+	 */
 	public void testPayRooms()
 	{
 		PayRooms obj=new payment.PayRooms();

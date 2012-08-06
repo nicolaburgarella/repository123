@@ -28,6 +28,7 @@ import room.ExtraList;
 import room.ExtractExtrasInstByRoom;
 
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -42,18 +43,34 @@ import room.ExtractExtrasInstByRoom;
 */
 public class CancelExtra extends JDialog {
 
+	/** The content panel. */
 	private final JPanel contentPanel = new JPanel();
+	
+	/** The j label2. */
 	private JLabel jLabel2;
+	
+	/** The j text field1. */
 	private JTextField jTextField1;
+	
+	/** The j label1. */
 	private JLabel jLabel1;
+	
+	/** The hotel1. */
 	Hotel hotel1=new Hotel();
+	
+	/** The h. */
 	Hotel h;
+	
+	/** The id. */
 	int id;
+	
+	/** The repeat ok. */
 	private boolean repeatOk=false;
 
 	/**
 	 * Create the dialog.
-	 * @param hotel 
+	 *
+	 * @param hotel the hotel
 	 */
 	public CancelExtra(Hotel hotel) {
 		
@@ -178,6 +195,12 @@ public class CancelExtra extends JDialog {
 		}
 	}
 	
+	/**
+	 * Cancel extras.
+	 *
+	 * @param h the h
+	 * @param el the el
+	 */
 	public void cancelExtras(Hotel h, ExtraList el){
 		for(int i=0;i<h.getExtraList().getExtraReg().size();i++){
 			for(int j=0;j<el.getExtraReg().size();j++){

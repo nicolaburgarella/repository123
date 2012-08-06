@@ -19,12 +19,19 @@ import room.RoomList;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMRemoveExtraByRoomNr.
+ */
 public class JDOMRemoveExtraByRoomNr {
 
+	/** The trovato. */
 	private boolean trovato=false;
 
 	/**
-	 * @param args
+	 * Instantiates a new jDOM remove extra by room nr.
+	 *
+	 * @param roomId the room id
 	 */
 	public JDOMRemoveExtraByRoomNr(int roomId) {
 		

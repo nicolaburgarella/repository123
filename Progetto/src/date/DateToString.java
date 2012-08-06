@@ -5,12 +5,26 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
  
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DateToString.
+ */
 public class DateToString
 {
+	
+	/**
+	 * Instantiates a new date to string.
+	 */
 	public DateToString(){
 		
 	}
 
+    /**
+     * Date to string.
+     *
+     * @param d the d
+     * @return the string
+     */
     public String DateToString(Date d)
     {
         // Create an instance of SimpleDateFormat used for formatting

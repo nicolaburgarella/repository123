@@ -13,7 +13,17 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMRemoveChild2.
+ */
 public class JDOMRemoveChild2 {
+  
+  /**
+   * Instantiates a new jDOM remove child2.
+   *
+   * @param number the number
+   */
   public JDOMRemoveChild2(int number) {
 /*String XmlFile = "<Company>" 
   + "<Employee name=\"satya\" age=\"25\"/> "
@@ -63,6 +73,11 @@ public class JDOMRemoveChild2 {
     }
   }
   
+  /**
+   * Instantiates a new jDOM remove child2.
+   *
+   * @param name the name
+   */
   public JDOMRemoveChild2(String name) {
 	  /*String XmlFile = "<Company>" 
 	    + "<Employee name=\"satya\" age=\"25\"/> "

@@ -38,6 +38,7 @@ import room.JDOMInsertExtraByRoomNr;
 import room.Room;
 
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -52,32 +53,71 @@ import room.Room;
 */
 public class InsertExtra1 extends JDialog {
 
+	/** The content panel. */
 	private final JPanel contentPanel = new JPanel();
+	
+	/** The j check box1. */
 	private JCheckBox jCheckBox1;
+	
+	/** The j check box2. */
 	private JCheckBox jCheckBox2;
+	
+	/** The j text field6. */
 	private JTextField jTextField6;
+	
+	/** The j label7. */
 	private JLabel jLabel7;
+	
+	/** The j label5. */
 	private JLabel jLabel5;
+	
+	/** The j text field4. */
 	private JTextField jTextField4;
+	
+	/** The j text field3. */
 	private JTextField jTextField3;
+	
+	/** The j text field2. */
 	private JTextField jTextField2;
+	
+	/** The j text field1. */
 	private JTextField jTextField1;
+	
+	/** The j label4. */
 	private JLabel jLabel4;
+	
+	/** The j label3. */
 	private JLabel jLabel3;
+	
+	/** The j label2. */
 	private JLabel jLabel2;
+	
+	/** The j label1. */
 	private JLabel jLabel1;
 	
+	/** The date. */
 	String date;
-	 String type;
-	 Float cost;
-	 int stanza;
-	 String nomegruppo;
-	 Hotel h=new Hotel();
+	 
+ 	/** The type. */
+ 	String type;
+	 
+ 	/** The cost. */
+ 	Float cost;
+	 
+ 	/** The stanza. */
+ 	int stanza;
+	 
+ 	/** The nomegruppo. */
+ 	String nomegruppo;
+	 
+ 	/** The h. */
+ 	Hotel h=new Hotel();
 
 	/**
 	 * Create the dialog.
-	 * @param hotel 
-	 * @param string 
+	 *
+	 * @param hotel the hotel
+	 * @param string the string
 	 */
 	public InsertExtra1(Hotel hotel, String string) {
 		h=hotel;

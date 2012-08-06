@@ -12,12 +12,24 @@ import reservation.ReservationList;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoadReservationsFromXML.
+ */
 public class LoadReservationsFromXML {
 
+	/**
+	 * Instantiates a new load reservations from xml.
+	 */
 	public LoadReservationsFromXML(){
 		
 	}
 	
+	/**
+	 * Load reservations from xml.
+	 *
+	 * @return the reservation list
+	 */
 	public ReservationList LoadReservationsFromXML() {
 		ReservationList rl =new ReservationList();
 			    try { 

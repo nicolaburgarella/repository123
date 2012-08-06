@@ -64,6 +64,7 @@ import room.RoomView;
 
 
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -78,29 +79,76 @@ import room.RoomView;
 */
 public class MainGui extends JFrame implements ActionListener, DropTargetListener,CaretListener {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The Constant textFieldString. */
 	protected static final String textFieldString = "JTextField";
+	
+	/** The Constant ftfString. */
 	protected static final String ftfString = "JFormattedTextField";
+	
+	/** The Constant buttonString. */
 	protected static final String buttonString = "JButton";
+	
+	/** The esporta jpg. */
 	private JCheckBox jCheckBox3,jCheckBox4,jCheckBox1,esportaPDF,esportaJPG;
+	
+	/** The j scroll svg pane. */
 	private JScrollPane jScrollErroriPane, jScrollSQLPane,jScrollSVGPane;
+	
+	/** The j scroll esecuzione pane3. */
 	private JScrollPane jScrollEsecuzionePane1, jScrollEsecuzionePane2, jScrollEsecuzionePane3;
+	
+	/** The welcome panel. */
 	private JPanel contenitoreErroriPane,contenitoreSQLPane,contenitoreSVGPane,textControlsPane,jPanel2,welcomePanel;
+	
+	/** The SVG pane. */
 	private JEditorPane ErroriPane, SQLPane,SVGPane;
+	
+	/** The fc. */
 	private JFileChooser fc;
+	
+	/** The errori panel. */
 	private JPanel erroriPanel;
+	
+	/** The esecuzione panel3. */
 	private JPanel esecuzionePanel1,esecuzionePanel2,esecuzionePanel3;
+	
+	/** The Constant allowExt. */
 	private static final String[] allowExt = { "xml" };
+	
+	/** The cangetsvg. */
 	private boolean cangetsvg = true;
+	
+	/** The cangetsql. */
 	private boolean cangetsql = true;
+	
+	/** The parseok. */
 	private boolean parseok = true;
+	
+	/** The dt. */
 	private DropTarget dt;
+	
+	/** The group and request. */
 	private JButton reservation, importMysql,roomAndExtra,saveButton,openButton,avvia,groupAndRequest;
+	
+	/** The errore label. */
 	private JLabel titoloLabel2,label2,titoloLabel,jLabel1,erroreLabel;
+	
+	/** The pannello tab3. */
 	private JTabbedPane pannelloTab,pannelloTab1,pannelloTab2,pannelloTab3;
+	
+	/** The j text area3. */
 	private JTextArea jTextAreaXML,jTextArea1,jTextArea2,jTextArea3;
+	
+	/** The j scroll pane2. */
 	private JScrollPane jScrollPane2;
+	
+	/** The riga. */
 	private int riga = 0;
+	
+	/** The file. */
 	private File file = null;
 
 	/**
@@ -211,7 +259,7 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 				{
 					titoloLabel = new JLabel();
 					GroupLayout titoloLabelLayout = new GroupLayout((JComponent)titoloLabel);
-					titoloLabel.setText("<html><b>Implementare un software per la gestione delle prenotazioni delle camere di un albergo</b></html>");
+					titoloLabel.setText("<html><b>Software per la gestione delle prenotazioni delle camere di un albergo</b></html>");
 					titoloLabel.setFont(new java.awt.Font("Tahoma",1,12));
 					titoloLabel.setForeground(new java.awt.Color(49,106,196));
 					titoloLabel.setLayout(null);
@@ -221,7 +269,7 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 				{
 					titoloLabel2 = new JLabel();		    				
 					GroupLayout titoloLabel2Layout = new GroupLayout((JComponent)titoloLabel2);
-					titoloLabel2.setText("<html><p>SELEZIONARE LE IMPOSTAZIONI PREFERITE E PREMERE 'AVVIA'.</p><br/><p>SUGGERIMENTO: Per importare più velocemente un file è possibile trascinare direttamente il relativo file sull'editor.</p></html>");
+					titoloLabel2.setText("<html><p>SELEZIONARE UNA OPZIONE TRA QUELLE RIPORTATE NELA PANNELLO SUPERIORE PREMENDO IL RISPETTIVO BOTTONE.</p><br/><p>SUGGERIMENTO: Per importare più velocemente un file xml nel pannello è possibile trascinarlo direttamente sull'editor.</p></html>");
 					titoloLabel2.setHorizontalAlignment(2);
 					titoloLabel2.setFont(new java.awt.Font("Tahoma",0,11));
 					titoloLabel2.setLayout(null);
@@ -373,7 +421,7 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 		openButtonLayout.setHorizontalGroup(openButtonLayout.createParallelGroup());
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setTitle("implementare un software per la gestione delle prenotazioni delle camere di un albergo");  
+		setTitle("Software per la gestione delle prenotazioni delle camere di un albergo");  
 		pack();
 		this.setSize(1165, 869);
 
@@ -392,16 +440,8 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	/**
 	 * The main method.
 	 *
-	 * @param args the arguments
-	 
-	public static void main(String[] args) {
-		
-		 Login frame=new Login();
-		  frame.setSize(300,100);
-		  frame.setVisible(true);
-		
-	}
-	*/
+	 * @param e the e
+	 */
 
 	public void actionPerformed(ActionEvent e) {
 		
@@ -450,7 +490,7 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	}
 
 	/**
-	 * getExt Extracts the extension of the selected file
+	 * getExt Extracts the extension of the selected file.
 	 *
 	 * @param file the file
 	 * @return String
@@ -469,7 +509,7 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	} 
 
 	/**
-	 * isFileAllowExt checks that the extensions of the imported file are allowed
+	 * isFileAllowExt checks that the extensions of the imported file are allowed.
 	 *
 	 * @param file the file
 	 * @return boolean
@@ -489,7 +529,8 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	}
 
 	/**
-	 * isFileOk checks that the selected file is readable
+	 * isFileOk checks that the selected file is readable.
+	 *
 	 * @param file the file
 	 * @return boolean
 	 */
@@ -500,7 +541,7 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	}
 
 	/**
-	 * caricaFile loads the selected file's contents into the matching field,only if the extension is correct
+	 * caricaFile loads the selected file's contents into the matching field,only if the extension is correct.
 	 *
 	 * @param file the file
 	 * @return true, if successful
@@ -535,6 +576,9 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 		}
 	}  
 
+	/* (non-Javadoc)
+	 * @see java.awt.dnd.DropTargetListener#drop(java.awt.dnd.DropTargetDropEvent)
+	 */
 	public void drop(DropTargetDropEvent dtde) {
 		try {
 			Transferable tr = dtde.getTransferable();
@@ -588,22 +632,37 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	}    
 
 	
+	/* (non-Javadoc)
+	 * @see java.awt.dnd.DropTargetListener#dragEnter(java.awt.dnd.DropTargetDragEvent)
+	 */
 	@Override
 	public void dragEnter(DropTargetDragEvent arg0) {
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.dnd.DropTargetListener#dragExit(java.awt.dnd.DropTargetEvent)
+	 */
 	@Override
 	public void dragExit(DropTargetEvent arg0) {	
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.dnd.DropTargetListener#dragOver(java.awt.dnd.DropTargetDragEvent)
+	 */
 	@Override
 	public void dragOver(DropTargetDragEvent arg0) {		
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.dnd.DropTargetListener#dropActionChanged(java.awt.dnd.DropTargetDragEvent)
+	 */
 	@Override
 	public void dropActionChanged(DropTargetDragEvent arg0) {
 	}  
 
+	/* (non-Javadoc)
+	 * @see javax.swing.event.CaretListener#caretUpdate(javax.swing.event.CaretEvent)
+	 */
 	@Override
 	public void caretUpdate(CaretEvent arg0) {
 		int posizione =jTextAreaXML.getCaretPosition();

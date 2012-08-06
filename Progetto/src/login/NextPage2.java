@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
  
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -23,16 +24,37 @@ import java.io.IOException;
 */
 public class NextPage2 extends JFrame implements ActionListener
 {
+	
+	/** The j radio button1. */
 	private JRadioButton jRadioButton1;
+	
+	/** The j radio button3. */
 	private JRadioButton jRadioButton3;
+	
+	/** The j radio button4. */
 	private JRadioButton jRadioButton4;
+	
+	/** The j radio button5. */
 	private JRadioButton jRadioButton5;
+	
+	/** The j radio button7. */
 	private JRadioButton jRadioButton7;
+	
+	/** The j label2. */
 	private JLabel jLabel2;
+	
+	/** The j label1. */
 	private JLabel jLabel1;
+	
+	/** The h. */
 	Hotel h;
 	
 	
+  /**
+   * Instantiates a new next page2.
+   *
+   * @param hotel the hotel
+   */
   public NextPage2(Hotel hotel)
  {
 	  h=hotel;
@@ -135,7 +157,10 @@ public class NextPage2 extends JFrame implements ActionListener
 } 
 		
 		
-		  public void actionPerformed(ActionEvent e){
+		  /* (non-Javadoc)
+  		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+  		 */
+  		public void actionPerformed(ActionEvent e){
 			  JLabel label=new JLabel();
 		  label.setText(e.getActionCommand());
 		//  JOptionPane.showMessageDialog(null,"This is the " + e.getActionCommand() + " radio button.");

@@ -24,10 +24,22 @@ import room.CheckFreeRooms;
 import room.JDOMExtractExtrasByRoom;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PrintAllGroupsAndRequestsC.
+ */
 public class PrintAllGroupsAndRequestsC {
 	
+	/** The h. */
 	Hotel h=new Hotel();
 	
+	/**
+	 * Console.
+	 *
+	 * @param out the out
+	 * @param in the in
+	 * @return the j scroll pane
+	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
@@ -66,6 +78,12 @@ public class PrintAllGroupsAndRequestsC {
 
 	
 	
+	/**
+	 * Instantiates a new prints the all groups and requests c.
+	 *
+	 * @param hotel the hotel
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public PrintAllGroupsAndRequestsC(Hotel hotel) throws IOException {
 		h=hotel;
 		

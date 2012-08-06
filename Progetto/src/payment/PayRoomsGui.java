@@ -8,13 +8,26 @@ import date.DaysBetweenDates;
 
 import room.Room;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PayRoomsGui.
+ */
 public class PayRoomsGui {
 
 	
+	/**
+	 * Instantiates a new pay rooms gui.
+	 */
 	public PayRoomsGui(){
 	
 	}
 	
+	/**
+	 * Pay rooms.
+	 *
+	 * @param g the g
+	 * @return the float
+	 */
 	public float PayRooms(Group g){
 		float totCostRooms=0;
 		float diffCost=0;

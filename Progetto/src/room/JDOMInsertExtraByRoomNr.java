@@ -17,10 +17,19 @@ import room.RoomList;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDOMInsertExtraByRoomNr.
+ */
 public class JDOMInsertExtraByRoomNr {
 
 	/**
-	 * @param args
+	 * Instantiates a new jDOM insert extra by room nr.
+	 *
+	 * @param number the number
+	 * @param date the date
+	 * @param cost the cost
+	 * @param descr the descr
 	 */
 	public JDOMInsertExtraByRoomNr(int number,String date,String cost, String descr) {
 		

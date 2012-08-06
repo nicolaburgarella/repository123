@@ -15,14 +15,19 @@ import org.junit.runner.notification.RunListener;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.Suite;
  
+// TODO: Auto-generated Javadoc
 /**
  * Discovers all JUnit tests and runs them in a suite.
  */
 @RunWith(AllTests.AllTestsRunner.class)
 public final class AllTests {
  
+  /** The Constant CLASSES_DIR. */
   private static final File CLASSES_DIR = findClassesDir();
  
+  /**
+   * Instantiates a new all tests.
+   */
   private AllTests() {
     // static only
   }
@@ -32,6 +37,7 @@ public final class AllTests {
    */
   public static class AllTestsRunner extends Suite {
  
+    /** The _log. */
     private final Logger _log = Logger.getLogger(getClass());
  
     /**
@@ -39,7 +45,7 @@ public final class AllTests {
      *
      * @param clazz  the suite class - <code>AllTests</code>
      * @throws InitializationError  if there's a problem
-     * @throws org.junit.runners.model.InitializationError 
+     * @throws InitializationError  if there's a problem
      */
     public AllTestsRunner(final Class<?> clazz) throws InitializationError, org.junit.runners.model.InitializationError {
       super(clazz, findClasses());
@@ -72,6 +78,11 @@ public final class AllTests {
       super.run(notifier);
     }
  
+    /**
+     * Find classes.
+     *
+     * @return the class[]
+     */
     private static Class<?>[] findClasses() {
       List<File> classFiles = new ArrayList<File>();
       findClasses(classFiles, CLASSES_DIR);
@@ -79,10 +90,20 @@ public final class AllTests {
       return classes.toArray(new Class[classes.size()]);
     }
  
+    /**
+     * Initialize before tests.
+     */
     private static void initializeBeforeTests() {
       // do one-time initialization here
     }
  
+    /**
+     * Convert to classes.
+     *
+     * @param classFiles the class files
+     * @param classesDir the classes dir
+     * @return the list
+     */
     private static List<Class<?>> convertToClasses(
         final List<File> classFiles, final File classesDir) {
  
@@ -117,6 +138,12 @@ public final class AllTests {
       return classes;
     }
  
+    /**
+     * Find classes.
+     *
+     * @param classFiles the class files
+     * @param dir the dir
+     */
     private static void findClasses(final List<File> classFiles, final File dir) {
       for (File file : dir.listFiles()) {
         if (file.isDirectory()) {
@@ -129,6 +156,11 @@ public final class AllTests {
     }
   }
  
+  /**
+   * Find classes dir.
+   *
+   * @return the file
+   */
   private static File findClassesDir() {
     try {
       String path = AllTests.class.getProtectionDomain()

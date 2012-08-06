@@ -24,8 +24,19 @@ import room.CheckFreeRooms;
 import room.JDOMExtractExtrasByRoom;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CheckFreeRoomsGuiC.
+ */
 public class CheckFreeRoomsGuiC {
 	
+	/**
+	 * Console.
+	 *
+	 * @param out the out
+	 * @param in the in
+	 * @return the j scroll pane
+	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
@@ -64,6 +75,11 @@ public class CheckFreeRoomsGuiC {
 
 	
 	
+	/**
+	 * Instantiates a new check free rooms gui c.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public CheckFreeRoomsGuiC() throws IOException {
 		
 	    // 1. create the pipes

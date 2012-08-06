@@ -23,12 +23,28 @@ import javax.swing.SwingWorker;
 import room.JDOMExtractExtrasByRoom;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PrintGroupsAndRequestsC.
+ */
 public class PrintGroupsAndRequestsC {
 	
+	/** The h. */
 	Hotel h = new Hotel();
+	
+	/** The nomegruppo. */
 	String nomegruppo;
+	
+	/** The repeat ok. */
 	private boolean repeatOk;
 	
+	/**
+	 * Console.
+	 *
+	 * @param out the out
+	 * @param in the in
+	 * @return the j scroll pane
+	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
 	    final JTextArea area = new JTextArea();
 
@@ -67,6 +83,13 @@ public class PrintGroupsAndRequestsC {
 
 	
 	
+	/**
+	 * Instantiates a new prints the groups and requests c.
+	 *
+	 * @param hotel the hotel
+	 * @param nome the nome
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public PrintGroupsAndRequestsC(Hotel hotel,String nome) throws IOException {
 		
 		if(hotel==null){

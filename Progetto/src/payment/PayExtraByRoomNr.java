@@ -13,17 +13,36 @@ import room.PdfExtra;
 import room.RoomList;
 import group.Group;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PayExtraByRoomNr.
+ */
 public class PayExtraByRoomNr {
 	
+	/** The g. */
 	Group g = new Group();
+	
+	/** The no room assigned. */
 	private boolean noRoomAssigned=false;
+	
+	/** The ee. */
 	JDOMExtractExtrasByRoom ee = new JDOMExtractExtrasByRoom();
+	
+	/** The extra trovati. */
 	private boolean extraTrovati=false;
 
+	/**
+	 * Instantiates a new pay extra by room nr.
+	 */
 	public PayExtraByRoomNr() {
 
 	}
 
+	/**
+	 * Instantiates a new pay extra by room nr.
+	 *
+	 * @param gruppo the gruppo
+	 */
 	public PayExtraByRoomNr(Group gruppo) {
 		//Il gruppo esiste e non ha valore nullo
 		g=gruppo;

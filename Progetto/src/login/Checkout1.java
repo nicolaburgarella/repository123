@@ -31,6 +31,7 @@ import reservation.JDOMRemoveChild2;
 import reservation.Reservation;
 
 
+// TODO: Auto-generated Javadoc
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -45,29 +46,59 @@ import reservation.Reservation;
 */
 public class Checkout1 extends JDialog {
 
+        /** The content panel. */
         private final JPanel contentPanel = new JPanel();
+        
+        /** The j check box1. */
         private JCheckBox jCheckBox1;
+        
+        /** The j check box2. */
         private JCheckBox jCheckBox2;
+        
+        /** The j label5. */
         private JLabel jLabel5;
+        
+        /** The j text field2. */
         private JTextField jTextField2;
+        
+        /** The j text field1. */
         private JTextField jTextField1;
+        
+        /** The j label4. */
         private JLabel jLabel4;
+        
+        /** The j label3. */
         private JLabel jLabel3;
+        
+        /** The j label2. */
         private JLabel jLabel2;
+        
+        /** The j label1. */
         private JLabel jLabel1;
+        
+        /** The g. */
         Group g = new Group();
        
+        /** The id. */
         int id;
+        
+        /** The nome. */
         String nome;
+        
+        /** The group id. */
         int groupId;
        
+        /** The h. */
         Hotel h=new Hotel();
+                
+                /** The repeat ok. */
                 private boolean repeatOk=false;
 
         /**
          * Create the dialog.
-         * @param string
-         * @param h
+         *
+         * @param hotel the hotel
+         * @param string the string
          */
         public Checkout1(Hotel hotel, String string) {
                

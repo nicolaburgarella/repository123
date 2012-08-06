@@ -7,17 +7,34 @@ import java.io.InputStreamReader;
 import group.Group;
 import hotel.Hotel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RoomView.
+ */
 public class RoomView {
 
 
+/** The room number. */
 private int roomNumber;
+
+/** The fatto. */
 private boolean fatto=false;
+
+/** The scelta. */
 private int scelta=0;
 
+/**
+ * Instantiates a new room view.
+ */
 public RoomView(){
 	
 }
 
+/**
+ * Instantiates a new room view.
+ *
+ * @param h the h
+ */
 public RoomView(Hotel h){
 	Hotel hotel = new Hotel();
 	hotel=h;
@@ -356,6 +373,12 @@ public RoomView(Hotel h){
 		
 }
 
+/**
+ * Cancel extras.
+ *
+ * @param h the h
+ * @param el the el
+ */
 public void cancelExtras(Hotel h, ExtraList el){
 	for(int i=0;i<h.getExtraList().getExtraReg().size();i++){
 		for(int j=0;j<el.getExtraReg().size();j++){

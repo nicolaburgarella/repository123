@@ -12,14 +12,30 @@ import room.ExtraList;
 import reservation.Reservation;
 import reservation.ReservationList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Hotel.
+ */
 public class Hotel {
 	
+	/** The request list. */
 	RequestList requestList =new RequestList();
+	
+	/** The group list. */
 	GroupList groupList = new GroupList();
+	
+	/** The room list. */
 	RoomList roomList = new RoomList();
+	
+	/** The extra list. */
 	ExtraList extraList=new ExtraList();
+	
+	/** The reservation list. */
 	ReservationList reservationList=new ReservationList();
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Hotel\n[requestList=\n" + requestList + ",\ngroupList=\n" + groupList
@@ -28,51 +44,109 @@ public class Hotel {
 
 	
 	
+	/**
+	 * Gets the reservation list.
+	 *
+	 * @return the reservation list
+	 */
 	public ReservationList getReservationList() {
 		return reservationList;
 	}
 
 
 
+	/**
+	 * Sets the reservation list.
+	 *
+	 * @param reservationList the new reservation list
+	 */
 	public void setReservationList(ReservationList reservationList) {
 		this.reservationList = reservationList;
 	}
 
 
 
+	/**
+	 * Gets the request list.
+	 *
+	 * @return the request list
+	 */
 	public RequestList getRequestList() {
 		return requestList;
 	}
 
+	/**
+	 * Sets the request list.
+	 *
+	 * @param requestList the new request list
+	 */
 	public void setRequestList(RequestList requestList) {
 		this.requestList = requestList;
 	}
 
+	/**
+	 * Gets the group list.
+	 *
+	 * @return the group list
+	 */
 	public GroupList getGroupList() {
 		return groupList;
 	}
 
+	/**
+	 * Sets the group list.
+	 *
+	 * @param groupList the new group list
+	 */
 	public void setGroupList(GroupList groupList) {
 		this.groupList = groupList;
 	}
 
+	/**
+	 * Gets the room list.
+	 *
+	 * @return the room list
+	 */
 	public RoomList getRoomList() {
 		return roomList;
 	}
 
+	/**
+	 * Sets the room list.
+	 *
+	 * @param roomList the new room list
+	 */
 	public void setRoomList(RoomList roomList) {
 		this.roomList = roomList;
 	}
 
+	/**
+	 * Gets the extra list.
+	 *
+	 * @return the extra list
+	 */
 	public ExtraList getExtraList() {
 		return extraList;
 	}
 
+	/**
+	 * Sets the extra list.
+	 *
+	 * @param extraList the new extra list
+	 */
 	public void setExtraList(ExtraList extraList) {
 		this.extraList = extraList;
 	}
 
 	
+	/**
+	 * Instantiates a new hotel.
+	 *
+	 * @param requestList the request list
+	 * @param groupList the group list
+	 * @param roomList the room list
+	 * @param extraList the extra list
+	 */
 	public Hotel(RequestList requestList, GroupList groupList,
 			RoomList roomList, ExtraList extraList) {
 		super();
@@ -83,12 +157,24 @@ public class Hotel {
 	}
 	
 
+	/**
+	 * Instantiates a new hotel.
+	 *
+	 * @param roomList the room list
+	 * @param extraList the extra list
+	 */
 	public Hotel(RoomList roomList, ExtraList extraList) {
 		super();
 		this.roomList = roomList;
 		this.extraList = extraList;
 	}
 
+	/**
+	 * Instantiates a new hotel.
+	 *
+	 * @param requestList the request list
+	 * @param groupList the group list
+	 */
 	public Hotel(RequestList requestList, GroupList groupList) {
 		super();
 		this.requestList = requestList;
@@ -97,6 +183,15 @@ public class Hotel {
 	
 	
 
+	/**
+	 * Instantiates a new hotel.
+	 *
+	 * @param requestList the request list
+	 * @param groupList the group list
+	 * @param roomList the room list
+	 * @param extraList the extra list
+	 * @param reservationList the reservation list
+	 */
 	public Hotel(RequestList requestList, GroupList groupList,
 			RoomList roomList, ExtraList extraList,
 			ReservationList reservationList) {
@@ -110,6 +205,9 @@ public class Hotel {
 
 
 
+	/**
+	 * Instantiates a new hotel.
+	 */
 	public Hotel() {
 		
 	}
