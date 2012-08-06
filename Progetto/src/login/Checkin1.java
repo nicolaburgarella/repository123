@@ -63,34 +63,19 @@ public class Checkin1 extends JDialog {
 	/** The j text area1. */
 	private JTextArea jTextArea1;
 	
-	/** The nome. */
+	/** The group name. */
 	String nome;
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h=new Hotel();
 	
 	/** The repeat ok. */
 	private boolean repeatOk=false;
 
-	/**
-	 * Launch the application.
-	 * 
-	 * public static void main(String[] args) {
-	 * try {
-	 * Checkin dialog = new Checkin();
-	 * dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-	 * dialog.setVisible(true);
-	 * } catch (Exception e) {
-	 * e.printStackTrace();
-	 * }
-	 * }
-	 *
-	 * @param hotel the hotel
-	 */
 
 	/**
 	 * Create the dialog.
-	 * @param h 
+	 * @param h Hotel instance loaded at the beginning of the application
 	 */
 	public Checkin1(Hotel hotel) {
 		
@@ -188,14 +173,6 @@ public class Checkin1 extends JDialog {
 											JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato sa cui associare la prenotazione");
 										}
 								 
-								 
-								/* try {
-									 nome=jTextField1.getText();
-									CheckinC c=new CheckinC(h, nome);
-								} catch (IOException e1) {
-									// TODO Auto-generated catch block
-									e1.printStackTrace();
-								}*/
 
 								 }
 					}

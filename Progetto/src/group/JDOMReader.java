@@ -8,7 +8,7 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMReader.
+ * The Class JDOMReader reads all the groups parsing the data structure groups.xml.
  */
 public class JDOMReader { 
 

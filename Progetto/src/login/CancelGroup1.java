@@ -62,13 +62,13 @@ public class CancelGroup1 extends JDialog {
 	/** The j label1. */
 	private JLabel jLabel1;
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h=new Hotel();
 	
-	/** The id. */
+	/** The group id. */
 	int id;
 	
-	/** The nome. */
+	/** The group name. */
 	String nome;
 	
 	/** The repeat ok. */
@@ -77,9 +77,12 @@ public class CancelGroup1 extends JDialog {
 	/**
 	 * Create the dialog.
 	 *
-	 * @param hotel the hotel
-	 * @param string the string
-	 */
+	 * @param hotel the hotel instance
+	 * @param string the string flag specifies if processing
+	 *  the option cancel group by group name(string='name') 
+	 *  or by group id (string='id')	 
+	 *  */
+	
 	public CancelGroup1(Hotel hotel, String string) {
 		
 		if(hotel==null|| string==null){

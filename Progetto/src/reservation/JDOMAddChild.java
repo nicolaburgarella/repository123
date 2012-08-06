@@ -14,7 +14,7 @@ import java.util.List;
 
 	// TODO: Auto-generated Javadoc
 /**
-	 * The Class JDOMAddChild.
+	 * The controller Class JDOMAddChild.
 	 */
 	public class JDOMAddChild {
 		
@@ -26,7 +26,7 @@ import java.util.List;
 		}
 		
 	  /**
-  	 * Instantiates a new jDOM add child.
+  	 * Adds a new reservation in the data structure reservation.xml.
   	 *
   	 * @param res the res
   	 */

@@ -26,15 +26,15 @@ import room.JDOMExtractExtrasByRoom;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class CheckFreeRoomsGuiC.
+ * The controller Class CheckFreeRoomsGuiC.
  */
 public class CheckFreeRoomsGuiC {
 	
 	/**
 	 * Console.
 	 *
-	 * @param out the out
-	 * @param in the in
+	 * @param out the InputStream
+	 * @param in the Printwriter
 	 * @return the j scroll pane
 	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
@@ -51,22 +51,6 @@ public class CheckFreeRoomsGuiC {
 	            for (String line : chunks) area.append(line);
 	        }
 	    }.execute();
-
-	    /* handle "System.in"
-	    area.addKeyListener(new KeyAdapter() {
-	        private StringBuffer line = new StringBuffer();
-	        @Override public void keyTyped(KeyEvent e) {
-	            char c = e.getKeyChar();
-	            if (c == KeyEvent.VK_ENTER) {
-	                in.println(line);
-	                line.setLength(0); 
-	            } else if (c == KeyEvent.VK_BACK_SPACE) { 
-	                line.setLength(line.length() - 1); 
-	            } else if (!Character.isISOControl(c)) {
-	                line.append(e.getKeyChar());
-	            }
-	        }
-	    });*/
 	    
 	    JScrollPane sp = new JScrollPane(area);
 
@@ -76,7 +60,7 @@ public class CheckFreeRoomsGuiC {
 	
 	
 	/**
-	 * Instantiates a new check free rooms gui c.
+	 * Prints the results of CheckFreeRoomsGui into a JFrame
 	 *
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */

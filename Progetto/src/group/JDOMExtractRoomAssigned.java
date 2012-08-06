@@ -14,20 +14,20 @@ import room.RoomList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMExtractRoomAssigned.
+ * The Class JDOMExtractRoomAssigned extract the rooms assigned to the group specified as parameter into a list.
  */
 public class JDOMExtractRoomAssigned {
 	
-	/** The rooms assigned msg. */
+	/** The rooms assigned message. */
 	private static String roomsAssignedMsg="";
 	
-	/** The trovato. */
+	/** The boolean variable trovato,if true i've found the rooms assigned to the group. */
 	private static boolean trovato=false;
 	
 	/** The new array. */
 	static String[] newArray=null;
 	
-	/** The room assigned. */
+	/** The room assigned list. */
 	static ArrayList<Room> roomAssigned=new ArrayList<Room>();
 
 
@@ -42,9 +42,9 @@ public class JDOMExtractRoomAssigned {
 	  /**
   	 * JDOM extract room assigned.
   	 *
-  	 * @param hotel the hotel
+  	 * @param hotel the hotel instance loaded at the beginning of the application
   	 * @param groupId the group id
-  	 * @return the array list
+  	 * @return the array list of the rooms assigned
   	 */
   	public ArrayList<Room> JDOMExtractRoomAssigned(Hotel hotel,int groupId) {
 		  
@@ -148,32 +148,6 @@ public class JDOMExtractRoomAssigned {
 		return roomAssigned;
 
 	}
-	  
-	  /*
-	  public static void main(String[] args) {
-		  
-		  Hotel h=new Hotel();
-		  LoadFromXml l=new LoadFromXml();
-		  h=l.LoadFromXml();
-		  System.out.println("-----------------------------------------------------------------------------------------");
-		  
-		  ArrayList<Room> prova=new ArrayList<Room>();
-		  prova.clear();
-		 
-  
-		  //for(int i=1;i<2;i++){
-		  int i=1;
-				System.out.println("Gruppo "+i+"esimo:");
-			System.out.println("\nEcco i singoli valori estratti delle stanze assegnate:");
-				prova=JDOMExtractRoomAssigned(h,i);
-				System.out.println("Ecco l'arraylist del groupid inserito:\n"+prova);
-		//	}
-		  
-	  }*/
-	  
-	  
-	  
-	  
 	  }
 	  
 	  

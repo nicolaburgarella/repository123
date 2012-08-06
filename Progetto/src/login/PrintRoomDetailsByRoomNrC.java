@@ -27,14 +27,14 @@ import room.JDOMExtractExtrasByRoom;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class PrintRoomDetailsByRoomNrC.
+ * The controller Class PrintRoomDetailsByRoomNrC.
  */
 public class PrintRoomDetailsByRoomNrC {
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h = new Hotel();
 	
-	/** The stanza. */
+	/** The room number. */
 	int stanza;
 	
 	/** The fatto. */
@@ -46,8 +46,8 @@ public class PrintRoomDetailsByRoomNrC {
 	/**
 	 * Console.
 	 *
-	 * @param out the out
-	 * @param in the in
+	 * @param out the InputStream
+	 * @param in the PrintWriter
 	 * @return the j scroll pane
 	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
@@ -65,21 +65,6 @@ public class PrintRoomDetailsByRoomNrC {
 	        }
 	    }.execute();
 
-	    /* handle "System.in"
-	    area.addKeyListener(new KeyAdapter() {
-	        private StringBuffer line = new StringBuffer();
-	        @Override public void keyTyped(KeyEvent e) {
-	            char c = e.getKeyChar();
-	            if (c == KeyEvent.VK_ENTER) {
-	                in.println(line);
-	                line.setLength(0); 
-	            } else if (c == KeyEvent.VK_BACK_SPACE) { 
-	                line.setLength(line.length() - 1); 
-	            } else if (!Character.isISOControl(c)) {
-	                line.append(e.getKeyChar());
-	            }
-	        }
-	    });*/
 	    JScrollPane sp = new JScrollPane(area);  
 
 	    return sp;
@@ -90,8 +75,8 @@ public class PrintRoomDetailsByRoomNrC {
 	/**
 	 * Instantiates a new prints the room details by room nr c.
 	 *
-	 * @param hotel the hotel
-	 * @param s the s
+	 * @param hotel the hotel instance
+	 * @param s the room number
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public PrintRoomDetailsByRoomNrC(Hotel hotel,int s) throws IOException {

@@ -9,7 +9,7 @@ import hotel.Hotel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class LoadFromXml.
+ * The controller Class LoadFromXml.
  */
 public class LoadFromXml {
 
@@ -24,7 +24,7 @@ public class LoadFromXml {
 	/**
 	 * Load from xml.
 	 *
-	 * @return the hotel
+	 * @return the hotel instance
 	 */
 	public Hotel LoadFromXml() {
 		// TODO Auto-generated method stub

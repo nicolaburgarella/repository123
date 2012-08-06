@@ -15,18 +15,14 @@ import java.util.List;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class CheckFreeRooms.
+ * The controller Class CheckFreeRooms.
  */
 public class CheckFreeRooms {
   
   /**
-   * Instantiates a new check free rooms.
+   * checks all the free rooms from the file rooms.xml.
    */
   public CheckFreeRooms() {
-/*String XmlFile = "<Company>" 
-  + "<Employee name=\"satya\" age=\"25\"/> "
-    + "<Employee  name=\"bharat\" age=\"24\"/>" 
-   + "</Company>";*/
 	  SAXBuilder builder = new SAXBuilder(); 
       Document document = null;
 	try {
@@ -54,9 +50,6 @@ public class CheckFreeRooms {
                 System.out.println("\tCosto: " + ((Element)children.get(i)).getAttributeValue("fee"));
                 System.out.println("\tLibera: " + ((Element)children.get(i)).getAttributeValue("free")+"\n");
         	}
-        	/*else{
-       			System.out.println("Gruppo da estrarre non trovato");
-       		}*/
         	
         }
    

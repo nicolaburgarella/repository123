@@ -15,7 +15,7 @@ import java.util.List;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMExtractGroup.
+ * The Class JDOMExtractGroup extracts groups data details from xml file groups.xml.
  */
 public class JDOMExtractGroup {
 	
@@ -23,7 +23,7 @@ public class JDOMExtractGroup {
   /**
    * Instantiates a new jDOM extract group.
    *
-   * @param name the name
+   * @param name the name of the group to be extracted
    */
   public JDOMExtractGroup(String name) {
 /*String XmlFile = "<Company>" 

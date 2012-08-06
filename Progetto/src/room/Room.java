@@ -2,11 +2,11 @@ package room;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Room.
+ * The model Class Room.
  */
 public class Room {
 	
-	/** The number. */
+	/** The room number. */
 	private int number;
 	
 	/** The fee. */
@@ -26,7 +26,7 @@ public class Room {
 	/**
 	 * Instantiates a new room.
 	 *
-	 * @param number the number
+	 * @param number the room number
 	 * @param fee the fee
 	 * @param free the free
 	 * @param composition the composition
@@ -44,9 +44,9 @@ public class Room {
 
 
 	/**
-	 * Gets the number.
+	 * Gets the room number.
 	 *
-	 * @return the number
+	 * @return the room number
 	 */
 	public int getNumber() {
 		return number;
@@ -54,9 +54,9 @@ public class Room {
 
 
 	/**
-	 * Sets the number.
+	 * Sets the room number.
 	 *
-	 * @param number the new number
+	 * @param number the new room number
 	 */
 	public void setNumber(int number) {
 		this.number = number;

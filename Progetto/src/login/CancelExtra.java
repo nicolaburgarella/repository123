@@ -55,13 +55,13 @@ public class CancelExtra extends JDialog {
 	/** The j label1. */
 	private JLabel jLabel1;
 	
-	/** The hotel1. */
+	/** The hotel constructor. */
 	Hotel hotel1=new Hotel();
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h;
 	
-	/** The id. */
+	/** The group id. */
 	int id;
 	
 	/** The repeat ok. */

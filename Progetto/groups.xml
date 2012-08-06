@@ -8,5 +8,12 @@
     <RICHIESTA singole="1" doppie="0" matrimoniali="0">eseguita</RICHIESTA>
     <ASSIGN rooms="3 ">assegnate</ASSIGN>
   </GROUP>
+  <GROUP number="1" name="gruppo1" checkin="06/08/2012" checkout="07/08/2012" deposit="11.0">
+    <RICHIESTA singole="1" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
+  </GROUP>
+  <GROUP number="11" name="gruppo11" checkin="06/08/2012" checkout="07/08/2012" deposit="11.0">
+    <RICHIESTA singole="1" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
+    <ASSIGN rooms="4 ">assegnate</ASSIGN>
+  </GROUP>
 </GROUP_LIST>
 

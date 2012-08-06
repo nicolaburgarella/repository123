@@ -95,29 +95,30 @@ public class InsertExtra1 extends JDialog {
 	/** The j label1. */
 	private JLabel jLabel1;
 	
-	/** The date. */
+	/** The date of the extra. */
 	String date;
 	 
- 	/** The type. */
+ 	/** The type of the extra. */
  	String type;
 	 
- 	/** The cost. */
+ 	/** The cost of the extra. */
  	Float cost;
 	 
- 	/** The stanza. */
+ 	/** The room which the extra is assigned to. */
  	int stanza;
 	 
- 	/** The nomegruppo. */
+ 	/** The group name. */
  	String nomegruppo;
 	 
- 	/** The h. */
+ 	/** The Hotel instance h. */
  	Hotel h=new Hotel();
 
 	/**
 	 * Create the dialog.
 	 *
-	 * @param hotel the hotel
-	 * @param string the string
+	 * @param hotel the Hotel instance hotel
+	 * @param string the string flag, if it is 'name' starts the procedure of inserting the extra by groupname,
+	 * if it is 'number' starts the procedure of inseritng the extra by room number
 	 */
 	public InsertExtra1(Hotel hotel, String string) {
 		h=hotel;
@@ -370,12 +371,6 @@ public class InsertExtra1 extends JDialog {
 							 
 							 if (jCheckBox2.isSelected()){ //in base al numero di stanza
 								 
-								/*date =jTextField1.getText();
-								 type=jTextField2.getText();
-								 cost=Float.parseFloat(jTextField3.getText());
-								 stanza=Integer.parseInt(jTextField4.getText());
-								 */
-								 
 								 for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 										if(stanza==h.getRoomList().getRoomReg().get(i).getNumber()){
 											 Extra extra = new Extra(cost, date, type);
@@ -467,93 +462,6 @@ public class InsertExtra1 extends JDialog {
 
 	}
 
-	/*
-	 public void actionPerformed(ActionEvent e){
-		 
-		 if(jCheckBox1.isSelected()){
-			 jLabel6.setVisible(true);
-			 jTextField5.setVisible(true);
-			 
-		 }
-		 
-		 if(jCheckBox2.isSelected()){
-			 jLabel6.setVisible(false);
-			 jTextField5.setVisible(false);
-		 }
-		 
-		 if(e.getActionCommand().equals("OK")){
-			 if(jCheckBox1.isSelected()){  //in base al nome del gruppo
-				 date =jTextField1.getText();
-				 type=jTextField2.getText();
-				 cost=Float.parseFloat(jTextField3.getText());
-				 stanza=Integer.parseInt(jTextField4.getText());
-				 nomegruppo=jTextField5.getText();
-				 
-				 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
-						if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(nomegruppo)||!(h.getGroupList().getGroupReg().get(i).getRoomAssigned()).isEmpty()){
-							Extra extra=new Extra(cost, date, type);
-							h.getExtraList().getExtraList().add(extra);
-							
-							//VA FATTA SOPRA COME finestrapopupdi scelta non COMBOBOX,IN MODO CHE ABBIA SELEZIONATO SUBITO LA SCELTA
-							String msg=new String();
-							
-							for(int j=0;j<h.getGroupList().getGroupReg().get(i).getRoomAssigned().size();j++){
-								msg+=h.getGroupList().getGroupReg().get(i).getRoomAssigned().get(j).getNumber();
-							}
-							 JOptionPane.showMessageDialog(null,"In quale stanza prenotata va inserito l'extra?Digita il nome della stanza a cui addebitare l'extra tra quelle prenotate dal gruppo\n"+"Stanze assegnate: "+msg);
-							/*BufferedReader pLine=new BufferedReader(new InputStreamReader(System.in));
-							try {
-								sceltaOpzione=pLine.readLine();
-							} catch (IOException ee) {
-								// TODO Auto-generated catch block
-								ee.printStackTrace();
-							}
-							int roomNumber=Integer.parseInt(sceltaOpzione);
-							*/
-							/*
-							for(int j=0;j<h.getGroupList().getGroupReg().get(i).getRoomAssigned().size();j++){
-								if(h.getGroupList().getGroupReg().get(i).getRoomAssigned().get(j).getNumber()==stanza){
-								JDOMInsertExtraByRoomNr jier =new JDOMInsertExtraByRoomNr(stanza, extra.getDate(), Float.toString(extra.getCost()), extra.getType());
-								}
-								else{
-									JOptionPane.showMessageDialog(null,"E' stato scritto un numero di stanza non valido");
-								}
-							}
-							
-						}
- 
-			 }
-			 
-			 if (jCheckBox2.isSelected()){ //in base al numero di stanza
-				 
-				 date =jTextField1.getText();
-				 type=jTextField2.getText();
-				 cost=Float.parseFloat(jTextField3.getText());
-				 stanza=Integer.parseInt(jTextField4.getText());
-				 
-				 
-				 for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
-						if(stanza==h.getRoomList().getRoomReg().get(i).getNumber()){
-							 Extra extra = new Extra(cost, date, type);
-							 h.getExtraList().getExtraList().add(extra);
-								JDOMInsertExtraByRoomNr jier =new JDOMInsertExtraByRoomNr(stanza, extra.getDate(), Float.toString(extra.getCost()), extra.getType());
-								JOptionPane.showMessageDialog(null,"Fatto!");
-				 
-			 }
-			/*String date =jTextField1.getText();
-			 String type=jTextField2.getText();
-			 Float cost=Float.parseFloat(jTextField3.getText());
-			 int stanza=Integer.parseInt(jTextField4.getText());
-			 String nomegruppo=jTextField5.getText();
-			 Extra extra = new Extra(cost, date, type);
-	*//*
-			 
-		 }
-		 
-	 }
-	 }
-}
-	 }*/
 }
 		 
 

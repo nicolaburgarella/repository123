@@ -1,11 +1,5 @@
 package room;
 
-/*
- * This class is part of the book "iText in Action - 2nd Edition"
- * written by Bruno Lowagie (ISBN: 9781935182610)
- * For more info, go to: http://itextpdf.com/examples/
- * This example only works with the AGPL version of iText.
- */
  
 import group.Group;
 
@@ -34,9 +28,9 @@ public class PdfExtra {
     /**
      * Creates a PDF file: hello.pdf
      *
-     * @param name the name
+     * @param name the group name
      * @param roomId the room id
-     * @param msg the msg
+     * @param msg the content of the pdf
      * @throws DocumentException the document exception
      * @throws IOException Signals that an I/O exception has occurred.
      */

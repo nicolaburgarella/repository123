@@ -26,15 +26,15 @@ import room.JDOMExtractExtrasByRoom;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class PrintAllReservationsC.
+ * The controller Class PrintAllReservationsC.
  */
 public class PrintAllReservationsC {
 	
 	/**
 	 * Console.
 	 *
-	 * @param out the out
-	 * @param in the in
+	 * @param out the InputStream
+	 * @param in the PrintWriter
 	 * @return the j scroll pane
 	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
@@ -52,22 +52,6 @@ public class PrintAllReservationsC {
 	        }
 	    }.execute();
 
-	    /* handle "System.in"
-	    area.addKeyListener(new KeyAdapter() {
-	        private StringBuffer line = new StringBuffer();
-	        @Override public void keyTyped(KeyEvent e) {
-	            char c = e.getKeyChar();
-	            if (c == KeyEvent.VK_ENTER) {
-	                in.println(line);
-	                line.setLength(0); 
-	            } else if (c == KeyEvent.VK_BACK_SPACE) { 
-	                line.setLength(line.length() - 1); 
-	            } else if (!Character.isISOControl(c)) {
-	                line.append(e.getKeyChar());
-	            }
-	        }
-	    });*/
-	    
 	    JScrollPane sp=new JScrollPane(area);
 
 	    return sp;
@@ -76,7 +60,7 @@ public class PrintAllReservationsC {
 	
 	
 	/**
-	 * Instantiates a new prints the all reservations c.
+	 * Prints the all reservations .
 	 *
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */

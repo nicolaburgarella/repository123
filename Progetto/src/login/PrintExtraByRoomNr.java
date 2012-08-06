@@ -67,13 +67,13 @@ public class PrintExtraByRoomNr extends JDialog {
 	/** The j label1. */
 	private JLabel jLabel1;
 	
-	 /** The stanza. */
+	 /** The number of the room. */
  	int stanza;
 	 
- 	/** The nomegruppo. */
+ 	/** The name of the group */
  	String nomegruppo;
 	 
- 	/** The h. */
+ 	/** The Hotel instance h. */
  	Hotel h=new Hotel();
 	
 	/** The repeat ok. */

@@ -10,12 +10,12 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMExtractReservation.
+ * The controller Class JDOMExtractReservation.
  */
 public class JDOMExtractReservation { 
 
   /**
-   * Instantiates a new jDOM extract reservation.
+   * JDOMExtractReservation extract the reservation from the file xml by the group name.
    *
    * @param name the name
    */
@@ -31,11 +31,8 @@ public class JDOMExtractReservation {
       List children = root.getChildren(); 
       Iterator iterator = children.iterator(); 
       
-       //Per ogni figlio 
       while(iterator.hasNext()){ 
-         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-         //attributi "importanza", "perc_completamento", e "completata" 
-         //sullo standard output 
+        
          Element item = (Element)iterator.next();
          
          if(item.getAttributeValue("groupname").equalsIgnoreCase(name)){

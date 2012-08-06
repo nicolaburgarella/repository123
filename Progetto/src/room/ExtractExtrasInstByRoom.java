@@ -8,7 +8,7 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ExtractExtrasInstByRoom.
+ * The controller Class ExtractExtrasInstByRoom.
  */
 public class ExtractExtrasInstByRoom {
 	
@@ -21,10 +21,10 @@ public class ExtractExtrasInstByRoom {
 
 
 	  /**
-  	 * Extract extras inst by room.
+  	 * Extract extras instances from the file rooms.xml by room number.
   	 *
-  	 * @param number the number
-  	 * @return the extra list
+  	 * @param number the room number 
+  	 * @return the ExtraList instance
   	 */
   	public ExtraList ExtractExtrasInstByRoom(int number) { 
 		  if(number==0){
@@ -47,9 +47,6 @@ public class ExtractExtrasInstByRoom {
 	      
 	       //Per ogni figlio 
 	      while(iterator.hasNext()){ 
-	         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-	         //attributi "importanza", "perc_completamento", e "completata" 
-	         //sullo standard output 
 	         Element item = (Element)iterator.next();
 	         
 	         if(Integer.parseInt(item.getAttributeValue("number"))==number){

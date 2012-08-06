@@ -19,17 +19,17 @@ import room.RoomList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMInsertExtraByRoomNr.
+ * The controller Class JDOMInsertExtraByRoomNr.
  */
 public class JDOMInsertExtraByRoomNr {
 
 	/**
-	 * Instantiates a new jDOM insert extra by room nr.
+	 * Inserts extra by room number.
 	 *
-	 * @param number the number
+	 * @param number the room number
 	 * @param date the date
 	 * @param cost the cost
-	 * @param descr the descr
+	 * @param descr the description of the room
 	 */
 	public JDOMInsertExtraByRoomNr(int number,String date,String cost, String descr) {
 		
@@ -46,12 +46,8 @@ public class JDOMInsertExtraByRoomNr {
 			      RoomList rl=new RoomList();
 			      
 			       //Per ogni figlio 
-			      while(iterator.hasNext()){ 
-			         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-			         //attributi "importanza", "perc_completamento", e "completata" 
-			         //sullo standard output 
+			      while(iterator.hasNext()){  
 			         Element item = (Element)iterator.next();
-			         //Room r =new Room();
 			         
 			         if(Integer.parseInt(item.getAttributeValue("number"))==number){
 			        	 
@@ -64,32 +60,9 @@ public class JDOMInsertExtraByRoomNr {
 			     		 ((Element)room2.get(i)).addContent(extra);
 			     		}
 			     		}
-			    /*
-			         List extra = item.getChildren("EXTRA"); 
-			         float costo=0;
-			         ExtraList el=new ExtraList();
-			         for(int i=0;i<(extra.size());i++){
-			        	 costo+=Float.parseFloat(((Element) extra.get(i)).getAttributeValue("cost"));
-			        	 Extra e = new Extra(Float.parseFloat(((Element) extra.get(i)).getAttributeValue("cost")), ((Element) extra.get(i)).getAttributeValue("date"), ((Element) extra.get(i)).getText());
-			        	 System.out.println(e.toString());
-			        	 el.addExtra(e);
-			        	 System.out.println(el.toString());
-			        	 
+			  
 			         }
-			         //System.out.println("Costi totali: "+costo);
-			         System.out.println("Room details:");
-	
-			         Room r =new Room(Integer.parseInt(item.getAttributeValue("number")), Float.parseFloat(item.getAttributeValue("fee")), item.getAttributeValue("free"), item.getAttributeValue("composizione"), item.getAttributeValue("descrizione"));
-			         System.out.println(r.toString());
-			         rl.addRoom(r);
-			         System.out.println(rl.toString());
-			         
-			         //costo=0;
-			         //break;*/
-			         }
-			         /*else{
-			        	 System.out.println("non ho trovato nessun extra relativo alla room numero "+ number);
-			         }*/
+			        
 			      }
 			      
 			      XMLOutputter xmlOutput = new XMLOutputter();

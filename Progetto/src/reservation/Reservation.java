@@ -2,11 +2,11 @@ package reservation;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Reservation.
+ * The model Class Reservation.
  */
 public class Reservation {
 	
-	/** The number. */
+	/** The reservation ID. */
 	private int number;
 	
 	/** The group name. */
@@ -21,7 +21,7 @@ public class Reservation {
 	/** The deposit. */
 	private float deposit=0;
 	
-	/** The totcost. */
+	/** The total cost. */
 	private float totcost=0;
 	
 	/**
@@ -34,12 +34,12 @@ public class Reservation {
 	/**
 	 * Instantiates a new reservation.
 	 *
-	 * @param number the number
-	 * @param groupname the groupname
+	 * @param number the reservation ID
+	 * @param groupname the group name
 	 * @param checkin the checkin
 	 * @param checkout the checkout
 	 * @param deposit the deposit
-	 * @param totcost the totcost
+	 * @param totcost the total cost
 	 */
 	public Reservation(int number, String groupname, String checkin,
 			String checkout, float deposit, float totcost) {
@@ -53,18 +53,18 @@ public class Reservation {
 	}
 	
 	/**
-	 * Gets the number.
+	 * Gets the reservation ID.
 	 *
-	 * @return the number
+	 * @return number the reservation ID
 	 */
 	public int getNumber() {
 		return number;
 	}
 	
 	/**
-	 * Sets the number.
+	 * Sets the reservation ID.
 	 *
-	 * @param number the new number
+	 * @param number the reservation ID
 	 */
 	public void setNumber(int number) {
 		this.number = number;
@@ -80,7 +80,7 @@ public class Reservation {
 	}
 	
 	/**
-	 * Sets the groupname.
+	 * Sets the group name.
 	 *
 	 * @param groupname the new groupname
 	 */
@@ -143,18 +143,18 @@ public class Reservation {
 	}
 	
 	/**
-	 * Gets the totcost.
+	 * Gets the total cost.
 	 *
-	 * @return the totcost
+	 * @return the total cost
 	 */
 	public float getTotcost() {
 		return totcost;
 	}
 	
 	/**
-	 * Sets the totcost.
+	 * Sets the total cost.
 	 *
-	 * @param totcost the new totcost
+	 * @param totcost the new total cost
 	 */
 	public void setTotcost(float totcost) {
 		this.totcost = totcost;

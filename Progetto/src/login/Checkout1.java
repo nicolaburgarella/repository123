@@ -76,19 +76,19 @@ public class Checkout1 extends JDialog {
         /** The j label1. */
         private JLabel jLabel1;
         
-        /** The g. */
+        /** The Group instance g. */
         Group g = new Group();
        
-        /** The id. */
+        /** The reservation id. */
         int id;
         
-        /** The nome. */
+        /** The group name. */
         String nome;
         
         /** The group id. */
         int groupId;
        
-        /** The h. */
+        /** The Hotel instance h. */
         Hotel h=new Hotel();
                 
                 /** The repeat ok. */
@@ -97,8 +97,8 @@ public class Checkout1 extends JDialog {
         /**
          * Create the dialog.
          *
-         * @param hotel the hotel
-         * @param string the string
+         * @param hotel the hotel instance
+         * @param string the string flag,if setted as 'name' processing the checkout by groupname if setted as 'id' processing the checkout by reservation id
          */
         public Checkout1(Hotel hotel, String string) {
                

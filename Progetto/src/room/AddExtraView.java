@@ -6,14 +6,14 @@ import date.StringToDate;
 
 	// TODO: Auto-generated Javadoc
 /**
-	 * The Class AddExtraView.
+	 * The view Class AddExtraView.
 	 */
 	public class AddExtraView {
 	
-	/** The kb. */
+	/** The scanner component. */
 	Scanner kb;
 	
-	/** The date. */
+	/** The type,date variables. */
 	static String type,date;
 	
 	/** The cost. */
@@ -27,9 +27,9 @@ import date.StringToDate;
 	}
 
 	/**
-	 * Adds the extra view.
+	 * Adds the extra.
 	 *
-	 * @return the extra
+	 * @return the extra instance
 	 */
 	public Extra AddExtraView(){
 	type = "";

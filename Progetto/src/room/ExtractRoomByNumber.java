@@ -15,7 +15,7 @@ import org.jdom.output.XMLOutputter;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ExtractRoomByNumber.
+ * The controller Class ExtractRoomByNumber.
  */
 public class ExtractRoomByNumber {
 	
@@ -29,8 +29,8 @@ public class ExtractRoomByNumber {
 	/**
 	 * Extract room.
 	 *
-	 * @param number the number
-	 * @return the room
+	 * @param number the room number
+	 * @return the room instance
 	 */
 	public Room ExtractRoom(int number) { 
 		
@@ -52,9 +52,6 @@ public class ExtractRoomByNumber {
 	      
 	       //Per ogni figlio 
 	      while(iterator.hasNext()){ 
-	         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-	         //attributi "importanza", "perc_completamento", e "completata" 
-	         //sullo standard output 
 	         Element item = (Element)iterator.next();
 	         
 	         if(Integer.parseInt((item.getAttributeValue("number")))==number){
@@ -67,9 +64,7 @@ public class ExtractRoomByNumber {
 	             System.out.println(r);
 	             return r;
 	         }
-	         /*else{
-	        	 System.out.println("non ho trovato nessuna stanza identificata con il numero "+ number);
-	         }*/
+	         
 	      }
 
 	    }  
@@ -82,15 +77,12 @@ public class ExtractRoomByNumber {
 	}
 	
 		  /**
-  		 * Instantiates a new extract room by number.
+  		 * Extract room by room number.
   		 *
-  		 * @param number the number
+  		 * @param number the room number
   		 */
   		public ExtractRoomByNumber(int number) {
-		/*String XmlFile = "<Company>" 
-		  + "<Employee name=\"satya\" age=\"25\"/> "
-		    + "<Employee  name=\"bharat\" age=\"24\"/>" 
-		   + "</Company>";*/
+		
 			  SAXBuilder builder = new SAXBuilder(); 
 		      Document document = null;
 			try {
@@ -117,9 +109,7 @@ public class ExtractRoomByNumber {
 		                System.out.println("\tDescrizione: " + ((Element)children.get(i)).getAttributeValue("description"));
 		                System.out.println("\tComposizione: " + ((Element)children.get(i)).getAttributeValue("composition")+"\n");
 		        	}
-		        	/*else{
-		       			System.out.println("Gruppo da estrarre non trovato");
-		       		}*/
+		        	
 		        	
 		        }
 		           

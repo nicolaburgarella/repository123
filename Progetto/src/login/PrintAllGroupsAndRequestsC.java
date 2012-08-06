@@ -26,18 +26,18 @@ import room.JDOMExtractExtrasByRoom;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class PrintAllGroupsAndRequestsC.
+ * The controller Class PrintAllGroupsAndRequestsC.
  */
 public class PrintAllGroupsAndRequestsC {
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h=new Hotel();
 	
 	/**
 	 * Console.
 	 *
-	 * @param out the out
-	 * @param in the in
+	 * @param out the InputStream
+	 * @param in the PrintWriter
 	 * @return the j scroll pane
 	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
@@ -54,22 +54,6 @@ public class PrintAllGroupsAndRequestsC {
 	            for (String line : chunks) area.append(line);
 	        }
 	    }.execute();
-
-	    /* handle "System.in"
-	    area.addKeyListener(new KeyAdapter() {
-	        private StringBuffer line = new StringBuffer();
-	        @Override public void keyTyped(KeyEvent e) {
-	            char c = e.getKeyChar();
-	            if (c == KeyEvent.VK_ENTER) {
-	                in.println(line);
-	                line.setLength(0); 
-	            } else if (c == KeyEvent.VK_BACK_SPACE) { 
-	                line.setLength(line.length() - 1); 
-	            } else if (!Character.isISOControl(c)) {
-	                line.append(e.getKeyChar());
-	            }
-	        }
-	    });*/
 	    
 	    JScrollPane sp=new JScrollPane(area);
 
@@ -79,7 +63,7 @@ public class PrintAllGroupsAndRequestsC {
 	
 	
 	/**
-	 * Instantiates a new prints the all groups and requests c.
+	 * Prints the all groups and requests.
 	 *
 	 * @param hotel the hotel
 	 * @throws IOException Signals that an I/O exception has occurred.

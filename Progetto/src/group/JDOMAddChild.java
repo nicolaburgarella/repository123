@@ -14,7 +14,7 @@ import java.util.List;
 
 	// TODO: Auto-generated Javadoc
 /**
-	 * The Class JDOMAddChild.
+	 * The Class JDOMAddChild adds a group entry into xml data structure groups.xml.
 	 */
 	public class JDOMAddChild {
 		
@@ -28,8 +28,8 @@ import java.util.List;
 	  /**
   	 * Instantiates a new jDOM add child.
   	 *
-  	 * @param g the g
-  	 * @param r the r
+  	 * @param g the group entity to be added
+  	 * @param r the request entity to be added
   	 */
   	public JDOMAddChild(Group g,Request r) {
 	/*String XmlFile = "<Company>" 

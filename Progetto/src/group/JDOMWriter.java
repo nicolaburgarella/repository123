@@ -6,12 +6,12 @@ import java.io.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMWriter.
+ * The Class JDOMWriter is used to initalize the file groups.xml without entries.
  */
 public class JDOMWriter { 
 
   /**
-   * Instantiates a new jDOM writer.
+   * Instantiates a new jDOM writer that initializes the fils groups.xml.
    */
   public JDOMWriter() { 
     try { 

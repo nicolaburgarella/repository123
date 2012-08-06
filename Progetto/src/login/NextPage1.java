@@ -56,11 +56,11 @@ public class NextPage1 extends JFrame implements ActionListener
 	/** The j radio button2. */
 	private JRadioButton jRadioButton2;
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h;
 	
 /**
- * Instantiates a new next page1.
+ * Instantiates the first panel from the maingui.
  *
  * @param hotel the hotel
  */

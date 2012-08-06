@@ -11,13 +11,11 @@ import org.jdom.input.SAXBuilder;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ExtractGroupByName.
+ * The Class ExtractGroupByName extract a group entity from XML data structure.
  */
 public class ExtractGroupByName {
 	
-	/**
-	 * Instantiates a new extract group by name.
-	 */
+
 	public ExtractGroupByName(){
 		
 	}
@@ -25,8 +23,8 @@ public class ExtractGroupByName {
 	/**
 	 * Extract group by name.
 	 *
-	 * @param name the name
-	 * @return the group
+	 * @param name the name of the group to be extracted
+	 * @return the group entity 
 	 */
 	public Group extractGroupByName(String name) {
 		  

@@ -21,7 +21,7 @@ import room.RoomList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMRemoveExtraByRoomNr.
+ * The controller Class JDOMRemoveExtraByRoomNr.
  */
 public class JDOMRemoveExtraByRoomNr {
 
@@ -29,7 +29,7 @@ public class JDOMRemoveExtraByRoomNr {
 	private boolean trovato=false;
 
 	/**
-	 * Instantiates a new jDOM remove extra by room nr.
+	 * Removes extra by room number.
 	 *
 	 * @param roomId the room id
 	 */
@@ -48,10 +48,7 @@ public class JDOMRemoveExtraByRoomNr {
 		      
 		      
 		       //Per ogni figlio 
-		      while(iterator.hasNext()){ 
-		         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-		         //attributi "importanza", "perc_completamento", e "completata" 
-		         //sullo standard output 
+		      while(iterator.hasNext()){  
 		         Element item = (Element)iterator.next();
 		         
 		         if(Integer.parseInt(item.getAttributeValue("number"))==roomId){

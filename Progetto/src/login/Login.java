@@ -10,7 +10,7 @@ import java.awt.event.*;
  
 // TODO: Auto-generated Javadoc
 /**
- * The Class Login.
+ * The view Class Login.
  */
 public class Login extends JFrame implements ActionListener
 {
@@ -61,11 +61,6 @@ public class Login extends JFrame implements ActionListener
   String value1=text1.getText();
   String value2=text2.getText();
   if (value1.equals("admin") && value2.equals("admin")) {
-  /*NextPage page=new NextPage();
-  page.setVisible(true);
-  JLabel label = new JLabel("Welcome:"+value1);
-  page.getContentPane().add(label);
-  */
   
 
   MainGui main = new MainGui();
@@ -75,16 +70,6 @@ public class Login extends JFrame implements ActionListener
 	Dimension dimensioniSchermo = mioTKit.getScreenSize();
 	main.setSize(dimensioniSchermo.width-20, dimensioniSchermo.height-40);
 	main.setVisible(true);
-  
-  
- /*
-  NextPage1 page1=new NextPage1();
-  page1.setVisible(true);
-  NextPage2 page2=new NextPage2();
-  page2.setVisible(true);
-  NextPage3 page3=new NextPage3();
-  page3.setVisible(true);
-  */
   
   }
   else{

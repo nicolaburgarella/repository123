@@ -25,7 +25,7 @@ import room.SetRoomNotFree;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class AssignRooms.
+ * The controller Class AssignRooms.
  */
 public class AssignRooms {
 
@@ -36,7 +36,7 @@ public class AssignRooms {
 	 * Instantiates a new assign rooms.
 	 *
 	 * @param groupName the group name
-	 * @param h the h
+	 * @param h the Hotel instance h
 	 */
 	public AssignRooms(String groupName, Hotel h) {
 		Group g=new Group();
@@ -61,14 +61,6 @@ public class AssignRooms {
 		//Setto la richiesta come eseguita
 		System.out.println("•Passo base:la richiesta del gruppo deve esserci, la setto come eseguita");
 		ExtractRequest er=new ExtractRequest();
-		
-		/*for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
-			for(int q=0;q<h.getGroupList().getGroupReg().size();q++){
-			if(h.getGroupList().getGroupReg().get(j).getRequest()==h.getRequestList().getRequestReg().get(q)){
-				System.out.println("Riconosco la richiesta del gruppo dentro l'istanza group come una richiesta presente dentro l'arraylist delle richieste");
-			}
-		}
-		}*/
 		
 		
 		if(er.ExtractRequestbyGroupName(groupName)!=null){
@@ -146,7 +138,6 @@ public class AssignRooms {
 					for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
 						if(h.getGroupList().getGroupReg().get(j).getNumber()==g.getNumber()){
 						h.getGroupList().getGroupReg().get(j).addRoomAssigned(room);	
-						//System.out.println("PROVAAAAAA ISTANZIA la stanza assegnata???"+g.getRoomAssigned().toString()+"\n"+h.getGroupList().getGroupReg().get(j).getRoomAssigned().toString());
 						System.out.println();
 						fatto=true;
 						}
@@ -180,7 +171,6 @@ public class AssignRooms {
 					for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
 						if(h.getGroupList().getGroupReg().get(j).getNumber()==g.getNumber()){
 						h.getGroupList().getGroupReg().get(j).addRoomAssigned(room);	
-						//System.out.println("PROVAAAAAA ISTANZIA la stanza assegnata???"+g.getRoomAssigned().toString()+"\n"+h.getGroupList().getGroupReg().get(j).getRoomAssigned().toString());
 						System.out.println();
 						fatto=true;
 						}
@@ -197,14 +187,6 @@ public class AssignRooms {
 				System.out.println("La richiesta di camere doppie eccede le disponibilità attuali dell'hotel");
 			}
 		System.out.println("Stampo tutto il gruppo:dati e anche la lista delle camere assegnate al gruppo:\n"+g.toString()+"\n\n");	
-		System.out.println("Memorizzo i valori nella mappa");
-		//DA RIVEDEREEEE G.GETROOMASSIGNED è CARICA,MA NON PASSA NIENTE ALLA MAPPA,SOLO IL NOMEDELGRUPPO SENZA VALORE
-		//Collection<Room> c=g.getRoomAssigned();
-		h.getGroupList().setRoomAssignedIntoMap(g.getName(), g.getRoomAssigned());
-		System.out.println("mappa caricata nell'istanza grouplist:\n"+h.getGroupList().toString());
-		HashMap<String, ArrayList<Room>> m=new HashMap<String, ArrayList<Room>>();
-		m=h.getGroupList().getMapRoomAssigned();
-		System.out.println(m.toString());
 	
 			JDOMWriteAssignment  jdwa =new JDOMWriteAssignment(g,g.getName());
 			

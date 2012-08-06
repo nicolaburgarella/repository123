@@ -10,12 +10,12 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMReader.
+ * The controller Class JDOMReader.
  */
 public class JDOMReader { 
 
   /**
-   * Instantiates a new jDOM reader.
+   * Reads and prints all the reservation from the file reservation.xml.
    */
   public JDOMReader() { 
     try { 
@@ -31,9 +31,7 @@ public class JDOMReader {
       
        //Per ogni figlio 
       while(iterator.hasNext()){ 
-         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-         //attributi "importanza", "perc_completamento", e "completata" 
-         //sullo standard output 
+    	  
          Element item = (Element)iterator.next();
     
          System.out.println("Reservation details:");

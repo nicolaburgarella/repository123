@@ -19,9 +19,9 @@ public class DaysBetweenDates {
 	/**
 	 * Days between dates.
 	 *
-	 * @param uno the uno
-	 * @param due the due
-	 * @return the long
+	 * @param uno the checkin date
+	 * @param due the checkout date
+	 * @return the days between the two dates
 	 */
 	public long DaysBetweenDates(Date uno, Date due) {
 
@@ -44,9 +44,9 @@ public class DaysBetweenDates {
 	/**
 	 * Days in hotel.
 	 *
-	 * @param checkin the checkin
-	 * @param checkout the checkout
-	 * @return the long
+	 * @param checkin the checkin date
+	 * @param checkout the checkout date
+	 * @return the number of days between the two dates
 	 */
 	public long daysInHotel(String checkin, String checkout) {
 		// TODO Auto-generated method stub

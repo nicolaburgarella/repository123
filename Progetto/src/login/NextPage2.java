@@ -51,9 +51,9 @@ public class NextPage2 extends JFrame implements ActionListener
 	
 	
   /**
-   * Instantiates a new next page2.
+ * Instantiates the second panel from the maingui.
    *
-   * @param hotel the hotel
+   * @param hotel the Hotel instance hotel
    */
   public NextPage2(Hotel hotel)
  {

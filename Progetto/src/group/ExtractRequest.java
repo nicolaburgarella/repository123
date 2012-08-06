@@ -8,7 +8,7 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ExtractRequest.
+ * The Class ExtractRequest extracts the request from the xml data structure.
  */
 public class ExtractRequest { 
 	
@@ -22,8 +22,8 @@ public class ExtractRequest {
   /**
    * Extract requestby group name.
    *
-   * @param groupname the groupname
-   * @return the request
+   * @param groupname the group name
+   * @return the request entity
    */
   public Request ExtractRequestbyGroupName(String groupname) { 
 	  Request r=null;

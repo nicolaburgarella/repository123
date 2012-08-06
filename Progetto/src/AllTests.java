@@ -142,7 +142,7 @@ public final class AllTests {
      * Find classes.
      *
      * @param classFiles the class files
-     * @param dir the dir
+     * @param dir the directory
      */
     private static void findClasses(final List<File> classFiles, final File dir) {
       for (File file : dir.listFiles()) {

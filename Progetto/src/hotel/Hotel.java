@@ -14,7 +14,7 @@ import reservation.ReservationList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Hotel.
+ * The model Class Hotel.
  */
 public class Hotel {
 	
@@ -206,7 +206,7 @@ public class Hotel {
 
 
 	/**
-	 * Instantiates a new hotel.
+	 * Instantiates a new hotel with a empty constructor.
 	 */
 	public Hotel() {
 		

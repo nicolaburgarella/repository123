@@ -5,28 +5,28 @@ import java.util.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class RequestList.
+ * The model Class RequestList lists all the group request instances inserted into application.
  */
 public class RequestList {
 		
-	/** The request reg. */
+	/** The request register list . */
 	private ArrayList<Request> requestReg=new ArrayList<Request>();
 	
 	
 
 	/**
-	 * Gets the request reg.
+	 * Gets the request register list.
 	 *
-	 * @return the request reg
+	 * @return the request register list
 	 */
 	public ArrayList<Request> getRequestReg() {
 		return requestReg;
 	}
 
 	/**
-	 * Sets the request reg.
+	 * Sets the request register list.
 	 *
-	 * @param requestReg the new request reg
+	 * @param requestReg the new request register list
 	 */
 	public void setRequestReg(ArrayList<Request> requestReg) {
 		this.requestReg = requestReg;
@@ -37,7 +37,7 @@ public class RequestList {
 		/**
 		 * Instantiates a new request list.
 		 *
-		 * @param requestReg the request reg
+		 * @param requestReg the request register list
 		 */
 		public RequestList(ArrayList<Request> requestReg) {
 		super();
@@ -45,7 +45,7 @@ public class RequestList {
 	}
 
 		/**
-		 * Instantiates a new request list.
+		 * Instantiates a new request list and inizialize the requestList register list.
 		 */
 		public RequestList(){
 			requestReg.clear();
@@ -62,9 +62,9 @@ public class RequestList {
 
 
 		/**
-		 * Adds the request.
+		 * Adds the request into the request register.
 		 *
-		 * @param request the request
+		 * @param request the request entity
 		 */
 		public void addRequest(Request request){
 			for(int i=0;i<requestReg.size();i++){

@@ -22,8 +22,8 @@ public class DataCheckout {
 	/**
 	 * Data checkout.
 	 *
-	 * @param days the days
-	 * @return the date[]
+	 * @param days the days between checkin and checkout
+	 * @return the date of checkin and checkout as array date[]
 	 */
 	public Date[] DataCheckout(int days) {
 		 Date today = new Date();
@@ -49,19 +49,7 @@ public class DataCheckout {
 	        String message = MessageFormat.format("Today is {0} and the checkout is {1}", dates);
 	        System.out.println(message);
 			return dates;
-	 
-	        /*//
-	        // Format a date and display only the date portion
-	        //
-	        message = MessageFormat.format("Today is {0,date} and the checkout is {1,date}", dates);
-	        System.out.println(message);
-	 
-	        //
-	        // Format a date using a short format (eg. dd/MM/yyyy)
-	        //
-	        message = MessageFormat.format("Today is {0,date,short} and the checkout is {1,date,short}", dates);
-	        System.out.println(message);
-	 */
+	
 	}
 
 }

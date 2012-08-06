@@ -22,8 +22,8 @@ public class DateToString
     /**
      * Date to string.
      *
-     * @param d the d
-     * @return the string
+     * @param d the date do be converted as string if correct
+     * @return the string of the date
      */
     public String DateToString(Date d)
     {

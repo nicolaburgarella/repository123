@@ -2,6 +2,8 @@ package login;
 
 import java.lang.String;
 
+import login.LoginDemo;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class LoginDemoTest.

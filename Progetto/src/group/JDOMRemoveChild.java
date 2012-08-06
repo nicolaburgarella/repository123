@@ -15,14 +15,14 @@ import java.util.List;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMRemoveChild.
+ * The Class JDOMRemoveChild remove a group by the group id passed as parameter.
  */
 public class JDOMRemoveChild {
   
   /**
-   * Instantiates a new jDOM remove child.
+   * Instantiates a new jDOM remove child,that removes a group from the xml file groups.xml.
    *
-   * @param number the number
+   * @param number the group ID
    */
   public JDOMRemoveChild(int number) {
 /*String XmlFile = "<Company>" 

@@ -8,7 +8,7 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMReader.
+ * The controller Class JDOMReader.
  */
 public class JDOMReader { 
 	
@@ -20,7 +20,7 @@ public class JDOMReader {
 private float costo=0;
 
 /**
- * Instantiates a new jDOM reader.
+ * Parses and prints all the room entries from the file xml rooms.xml.
  */
 public JDOMReader() { 
     try { 
@@ -37,9 +37,6 @@ public JDOMReader() {
       
        //Per ogni figlio 
       while(iterator.hasNext()){ 
-         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-         //attributi "importanza", "perc_completamento", e "completata" 
-         //sullo standard output 
          Element item = (Element)iterator.next();
     
          List extra = item.getChildren("EXTRA"); 

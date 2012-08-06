@@ -6,12 +6,12 @@ import java.io.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMWriter.
+ * The controller Class JDOMWriter.
  */
 public class JDOMWriter { 
 
   /**
-   * Instantiates a new jDOM writer.
+   * Initalize all the rooms from the file rooms.xml.
    */
   public JDOMWriter() {
 	// TODO Auto-generated constructor stub
@@ -21,10 +21,6 @@ public class JDOMWriter {
       //Documento 
       Document document = new Document(root); 
 
-      //Creazione di tre elementi figli denominato ITEM 
-      //a ciascuno dei quali vengono settati tre attributi 
-      //e viene aggiunto un elemento figlio contenente 
-      //la descrizione della cosa da fare 
       Element item0 = new Element("ROOM"); 
       item0.setAttribute("number", "0"); 
       item0.setAttribute("fee", "75"); 

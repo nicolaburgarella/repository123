@@ -70,10 +70,10 @@ public class PrintRoomDetailsByRoomNr extends JDialog {
 	 /** The stanza. */
  	int stanza;
 	 
- 	/** The nomegruppo. */
+ 	/** The group name. */
  	String nomegruppo;
 	 
- 	/** The h. */
+ 	/** The Hotel instance h. */
  	Hotel h=new Hotel();
 	
 	/** The repeat ok. */
@@ -82,8 +82,8 @@ public class PrintRoomDetailsByRoomNr extends JDialog {
 	/**
 	 * Create the dialog.
 	 *
-	 * @param hotel the hotel
-	 * @param string the string
+	 * @param hotel the hotel instance
+	 * @param string the flag 'number'
 	 */
 	public PrintRoomDetailsByRoomNr(Hotel hotel, String string) {
 		

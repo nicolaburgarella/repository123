@@ -4,28 +4,28 @@ import java.util.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ReservationList.
+ * The model Class ReservationList.
  */
 public class ReservationList {
 		
-	/** The reserv reg. */
+	/** The reservation register list. */
 	private ArrayList<Reservation> reservReg=new ArrayList<Reservation>();
 	
 	
 
 		/**
-		 * Gets the reserv reg.
+		 * Gets the reservation register.
 		 *
-		 * @return the reserv reg
+		 * @return the reservation register
 		 */
 		public ArrayList<Reservation> getReservReg() {
 		return reservReg;
 	}
 
 	/**
-	 * Sets the reserv reg.
+	 * Sets the reservation register.
 	 *
-	 * @param reservReg the new reserv reg
+	 * @param reservReg the new reservation register
 	 */
 	public void setReservReg(ArrayList<Reservation> reservReg) {
 		this.reservReg = reservReg;
@@ -34,7 +34,7 @@ public class ReservationList {
 		/**
 		 * Instantiates a new reservation list.
 		 *
-		 * @param reservReg the reserv reg
+		 * @param reservReg the reservation register
 		 */
 		public ReservationList(ArrayList<Reservation> reservReg) {
 		super();
@@ -63,7 +63,7 @@ public class ReservationList {
 		/**
 		 * Adds the reservation.
 		 *
-		 * @param res the res
+		 * @param res the reservation instance
 		 */
 		public void addReservation(Reservation res){
 			for(int i=0;i<reservReg.size();i++){
@@ -84,67 +84,5 @@ public class ReservationList {
 		public String toString() {
 			return "ReservationList [reservReg=" + reservReg + "]";
 		}
-
-
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/*
-		 * salva va reso un file xml <GRUPPO id="" nome="" dataArrivo="" anticipo="" richiestaComposizione=""/>
-		 * */
-		/*
-		public void salvaInXML(){
-			try{
-				File file =new File("extra");
-				FileOutputStream outStream= new FileOutputStream(file);
-		        BufferedWriter lineWriter= new BufferedWriter(new OutputStreamWriter(outStream));
-		        for(int i=0;i<extraReg.size();i++){
-		            String LineaTesto="";
-		            int index=0;
-		            	if((rc.cercaIdCamera((extraReg.get(i)).getCodiceCamera())>0)){
-		            		for(int j=0;j<(rc.getRegistroCamere()).size();j++){
-		            			LineaTesto="<EXTRA id="+(extraReg.get(i)).getId()+" tipo="+(extraReg.get(i)).getTipo()+" idCamera="+(rc.getRegistroCamere().get(i)).getId()+" dataExtra="+
-		            			((extraReg.get(i)).getDataExtra())+" />";
-		            			lineWriter.write(LineaTesto);
-		            			lineWriter.newLine();
-		            			}
-		            	}
-		            	else{
-		            		//System.out.println("Non ci sono extra per questa camera");
-		            		break;
-		            	}
-
-				}
-		        outStream.close();
-		        lineWriter.close();
-			}
-			catch(IOException ioe){
-				ioe.printStackTrace();
-			}
-		}
-
-*/
-
-		
-
 
 }

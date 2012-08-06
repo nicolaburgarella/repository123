@@ -25,14 +25,14 @@ import room.JDOMExtractExtrasByRoom;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class CheckinC.
+ * The controller Class CheckinC.
  */
 public class CheckinC {
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h = new Hotel();
 	
-	/** The nomegruppo. */
+	/** The group name. */
 	String nomegruppo;
 	
 	/** The repeat ok. */
@@ -41,8 +41,8 @@ public class CheckinC {
 	/**
 	 * Console.
 	 *
-	 * @param out the out
-	 * @param in the in
+	 * @param out the InputStream
+	 * @param in the PrintStream
 	 * @return the j scroll pane
 	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
@@ -60,21 +60,6 @@ public class CheckinC {
 	        }
 	    }.execute();
 
-	    /* handle "System.in"
-	    area.addKeyListener(new KeyAdapter() {
-	        private StringBuffer line = new StringBuffer();
-	        @Override public void keyTyped(KeyEvent e) {
-	            char c = e.getKeyChar();
-	            if (c == KeyEvent.VK_ENTER) {
-	                in.println(line);
-	                line.setLength(0); 
-	            } else if (c == KeyEvent.VK_BACK_SPACE) { 
-	                line.setLength(line.length() - 1); 
-	            } else if (!Character.isISOControl(c)) {
-	                line.append(e.getKeyChar());
-	            }
-	        }
-	    });*/
 	    
 	    JScrollPane sp = new JScrollPane(area);
 
@@ -86,8 +71,8 @@ public class CheckinC {
 	/**
 	 * Instantiates a new checkin c.
 	 *
-	 * @param hotel the hotel
-	 * @param nome the nome
+	 * @param hotel the hotel instance
+	 * @param nome the group name
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public CheckinC(Hotel hotel,String nome) throws IOException {

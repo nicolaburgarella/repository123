@@ -15,12 +15,12 @@ import room.RoomList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ExtractRoomListFromXML.
+ * The controller Class ExtractRoomListFromXML.
  */
 public class ExtractRoomListFromXML {
 
 	/**
-	 * Instantiates a new extract room list from xml.
+	 * Instantiates a new extract room list.
 	 *
 	 */
 	public ExtractRoomListFromXML(){
@@ -30,7 +30,7 @@ public class ExtractRoomListFromXML {
 	/**
 	 * Extract room list.
 	 *
-	 * @return the room list
+	 * @return the RoomList object
 	 */
 	public RoomList ExtractRoomList() {
 		RoomList rl=new RoomList();
@@ -45,20 +45,11 @@ public class ExtractRoomListFromXML {
 			      List children = root.getChildren(); 
 			      Iterator iterator = children.iterator(); 
 			      
-			       //Per ogni figlio 
 			      while(iterator.hasNext()){ 
-			         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-			         //attributi "importanza", "perc_completamento", e "completata" 
-			         //sullo standard output 
+
 			         Element item = (Element)iterator.next();
-			         //Room r =new Room();
-			         
-			        
-			         
-			         //System.out.println("Room details:");
 	
 			         Room r =new Room(Integer.parseInt(item.getAttributeValue("number")), Float.parseFloat(item.getAttributeValue("fee")), item.getAttributeValue("free"), item.getAttributeValue("composition"), item.getAttributeValue("description"));
-			         //System.out.println(r.toString());
 			         rl.addRoom(r);
  
 			         }

@@ -37,27 +37,27 @@ import room.Room;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class CheckoutId.
+ * The controller Class CheckoutId.
  */
 public class CheckoutId {
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h = new Hotel();
 	
-	/** The g. */
+	/** The Group instance g. */
 	Group g=new Group();
 	
 	/** The repeat ok. */
 	private boolean repeatOk=false;
 	
-	/** The trovato. */
+	/**The trovato variable is true when the group name passed as parameter is equal to that loaded into hotel instance. */
 	private boolean trovato=false;
 	
 	/**
 	 * Console.
 	 *
-	 * @param out the out
-	 * @param in the in
+	 * @param out the InputStream
+	 * @param in the PrintWriter
 	 * @return the j scroll pane
 	 */
 	public static JScrollPane console(final InputStream out, final PrintWriter in) {
@@ -75,21 +75,6 @@ public class CheckoutId {
 	        }
 	    }.execute();
 
-	    /* handle "System.in"
-	    area.addKeyListener(new KeyAdapter() {
-	        private StringBuffer line = new StringBuffer();
-	        @Override public void keyTyped(KeyEvent e) {
-	            char c = e.getKeyChar();
-	            if (c == KeyEvent.VK_ENTER) {
-	                in.println(line);
-	                line.setLength(0); 
-	            } else if (c == KeyEvent.VK_BACK_SPACE) { 
-	                line.setLength(line.length() - 1); 
-	            } else if (!Character.isISOControl(c)) {
-	                line.append(e.getKeyChar());
-	            }
-	        }
-	    });*/
 	    
 	    JScrollPane sp = new JScrollPane(area);
 
@@ -101,9 +86,9 @@ public class CheckoutId {
 	/**
 	 * Instantiates a new checkout id.
 	 *
-	 * @param hotel the hotel
-	 * @param group the group
-	 * @param id the id
+	 * @param hotel the Hotel instance
+	 * @param group the Group instance
+	 * @param id the Reservation id
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public CheckoutId(Hotel hotel,Group group,int id) throws IOException {
@@ -112,10 +97,7 @@ public class CheckoutId {
 			JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
 			repeatOk=true;
 			}
-			/*if(id==0){
-				JOptionPane.showMessageDialog(null,"l'id della prenotazione deve essere un numero intero positivo maggiore di zero");
-				repeatOk=true;
-				}*/
+			
 			if(group==null){
 				JOptionPane.showMessageDialog(null,"L'istanza del gruppo è nulla");
 				repeatOk=true;

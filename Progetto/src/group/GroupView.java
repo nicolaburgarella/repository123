@@ -10,17 +10,17 @@ import hotel.Hotel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class GroupView.
+ * The Class GroupView is the view of all the procedures concerning the manage of groups by I\O console application.
  */
 public class GroupView {
 
 /** The group id. */
 private int groupId;
 
-/** The trovato. */
+/** The trovato is aboolean that specifies if the groupname is found */
 private boolean trovato=false;
 
-/** The scelta. */
+/** The scelta is a integer variable that specifies which option do you have selected to the switch menu of the group managing. */
 private int scelta=0; 
 
 /**
@@ -33,7 +33,7 @@ public GroupView(){
 /**
  * Instantiates a new group view.
  *
- * @param h the h
+ * @param h the hotel instance loaded at the beginning of the application
  */
 public GroupView(Hotel h){
 	Hotel hotel = new Hotel();

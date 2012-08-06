@@ -3,9 +3,10 @@ package login;
 import javax.swing.JOptionPane;
 
 
+
 // TODO: Auto-generated Javadoc
 /**
- * The Class LoginDemo.
+ * The main Class LoginDemo used to start the application.
  */
 class LoginDemo
 {

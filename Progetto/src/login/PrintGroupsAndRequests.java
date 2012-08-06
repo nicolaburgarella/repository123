@@ -69,10 +69,10 @@ public class PrintGroupsAndRequests extends JDialog {
 	/** The j label1. */
 	private JLabel jLabel1;
 	
-	 /** The nomegruppo. */
+	 /** The group name. */
  	String nomegruppo;
 	 
- 	/** The h. */
+ 	/** The Hotel instance h. */
  	Hotel h=new Hotel();
 	
 	/** The repeat ok. */
@@ -82,7 +82,7 @@ public class PrintGroupsAndRequests extends JDialog {
 	 * Create the dialog.
 	 *
 	 * @param hotel the hotel
-	 * @param string the string
+	 * @param string the 'name' flag
 	 */
 	public PrintGroupsAndRequests(Hotel hotel, String string) {
 		if(hotel==null||string.equals(null)){

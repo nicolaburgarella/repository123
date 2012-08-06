@@ -16,17 +16,18 @@ import room.Room;
 
 import group.ExtractGroupByName;
 import group.Group;
+import group.JDOMExtractRoomAssigned;
 import group.JDOMRemoveChild;
 import hotel.Hotel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ReservationView.
+ * The view Class ReservationView.
  */
 public class ReservationView {
 
 
-/** The number. */
+/** The reservation ID. */
 private int number;
 
 /** The trovato. */
@@ -45,7 +46,7 @@ public ReservationView(){
 /**
  * Instantiates a new reservation view.
  *
- * @param h the h
+ * @param h the Hotel instance h
  */
 public ReservationView(Hotel h){
         Hotel hotel = new Hotel();
@@ -168,7 +169,6 @@ public ReservationView(Hotel h){
                                 			if(h.getReservationList().getReservReg().get(n).getGroupName().equalsIgnoreCase((groupName))){
                                 				System.out.println("Esiste già una prenotazione con quel nome gruppo,non posso procedere nel checkin");
                                 				sbagliato=true;
-                                				//come faccio ad uscire dal menu??sbagliato=true non va..
                                 			}
                                 		}
                                 		if(sbagliato==false){
@@ -239,10 +239,13 @@ public ReservationView(Hotel h){
                                                         if(h.getGroupList().getGroupReg().get(i).getNumber()==number){
                                                         	g=h.getGroupList().getGroupReg().get(i);
                                                         	String name=g.getName();
-                                                        	//inserire il valore della mappa interrogandola con la chiave groupname da cui estrapolare l'id
-                                                        	ArrayList<Room>roomAssigned =new ArrayList<Room>();
-                                                        	roomAssigned=h.getGroupList().getRoomAssignedFromMap(name);
-                                                        	g.setRoomAssigned(roomAssigned);
+                                                        	ArrayList<Room>r =new ArrayList<Room>();
+                                                        	//r=h.getGroupList().getRoomAssignedFromMap(name);
+                                                        	JDOMExtractRoomAssigned dj=new JDOMExtractRoomAssigned();
+                                                        	r=dj.JDOMExtractRoomAssigned(h,g.getNumber());
+                                                        	g.setRoomAssigned(r);
+                                                        	System.out.println("Stanze assegnate al gruppo ricaricate nella istanza:\n"+g.getRoomAssigned().toString());
+                                                        
                                                         	System.out.println("Stanze assegnate al gruppo ricaricate nella istanza:\n"+g.getRoomAssigned().toString());
 
                                                         	
@@ -329,12 +332,13 @@ public ReservationView(Hotel h){
                                                 for(int j=0;j<h.getGroupList().getGroupReg().size();j++){
                                                         if((h.getGroupList().getGroupReg().get(i).getName()).equalsIgnoreCase(groupName)){
                                                         	trovato=true;
-                                                        	//inserire il valore della mappa interrogandola con la chiave groupname
-                                                        	g=h.getGroupList().getGroupReg().get(i);
                                                         	ArrayList<Room>r =new ArrayList<Room>();
-                                                        	r=h.getGroupList().getRoomAssignedFromMap(groupName);
-                                                        	g.setRoomAssigned(r);	
-                                                        	
+                                                        	//r=h.getGroupList().getRoomAssignedFromMap(name);
+                                                        	JDOMExtractRoomAssigned dj=new JDOMExtractRoomAssigned();
+                                                        	r=dj.JDOMExtractRoomAssigned(h,g.getNumber());
+                                                        	g.setRoomAssigned(r);
+                                                        	System.out.println("Stanze assegnate al gruppo ricaricate nella istanza:\n"+g.getRoomAssigned().toString());
+                                                        
                                                         	
                                                         	System.out.println("Ecco il gruppo a cui la prenotazione si riferisce:\n"+g.toString());
                                                                 PayRooms p=new PayRooms();

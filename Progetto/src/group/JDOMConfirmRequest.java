@@ -10,7 +10,7 @@ import org.jdom.output.XMLOutputter;
 
 	// TODO: Auto-generated Javadoc
 /**
-	 * The Class JDOMConfirmRequest.
+	 * The Class JDOMConfirmRequest sets as eseguita the request field into xml data structure groups.xml.
 	 */
 	public class JDOMConfirmRequest { 
 

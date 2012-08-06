@@ -17,7 +17,7 @@ import room.RoomList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class LoadExtrasAndRoomsFromXML.
+ * The controller Class LoadExtrasAndRoomsFromXML.
  */
 public class LoadExtrasAndRoomsFromXML {
 
@@ -26,9 +26,6 @@ public class LoadExtrasAndRoomsFromXML {
 	 *
 	 * @return the hotel
 	 */
-	/*public LoadExtrasAndRoomsFromXML(){
-		
-	}*/
 	
 	public Hotel LoadExtrasAndRoomsFromXML() {
 		Hotel h=null;
@@ -48,14 +45,9 @@ public class LoadExtrasAndRoomsFromXML {
 			      
 			       //Per ogni figlio 
 			      while(iterator.hasNext()){ 
-			         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-			         //attributi "importanza", "perc_completamento", e "completata" 
-			         //sullo standard output 
+			       
 			         Element item = (Element)iterator.next();
-			         //Room r =new Room();
-			         
-			         //if(Integer.parseInt(item.getAttributeValue("number"))==number){
-			    
+			        
 			         List extra = item.getChildren("EXTRA"); 
 			         float costo=0;  
 			         for(int i=0;i<(extra.size());i++){

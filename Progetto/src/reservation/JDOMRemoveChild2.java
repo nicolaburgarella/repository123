@@ -15,20 +15,17 @@ import java.util.List;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMRemoveChild2.
+ * The controller Class JDOMRemoveChild2.
  */
 public class JDOMRemoveChild2 {
   
   /**
-   * Instantiates a new jDOM remove child2.
+   * Removes a reservation from the file reservation.xml by the reservation ID
    *
    * @param number the number
    */
   public JDOMRemoveChild2(int number) {
-/*String XmlFile = "<Company>" 
-  + "<Employee name=\"satya\" age=\"25\"/> "
-    + "<Employee  name=\"bharat\" age=\"24\"/>" 
-   + "</Company>";*/
+
 	  SAXBuilder builder = new SAXBuilder(); 
       Document document = null;
 	try {
@@ -50,9 +47,6 @@ public class JDOMRemoveChild2 {
         	if(Integer.parseInt(((Element)children.get(i)).getAttributeValue("number")) == number){
         		root.removeContent(((Element)children.get(i)));
         	}
-        	/*else{
-       			System.out.println("Gruppo da eliminare non trovato");
-       		}*/
         	
         }
            

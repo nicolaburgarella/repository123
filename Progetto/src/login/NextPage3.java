@@ -49,13 +49,13 @@ public class NextPage3 extends JFrame implements ActionListener
 	/** The j label1. */
 	private JLabel jLabel1;
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h;
 	
   /**
-   * Instantiates a new next page3.
+ * Instantiates the third panel from the maingui.
    *
-   * @param hotel the hotel
+   * @param hotel the Hotel instance hotel
    */
   public NextPage3(Hotel hotel)
  {

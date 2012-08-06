@@ -180,7 +180,6 @@ public class CheckoutName {
           
                                     	PrenotazioneTrovata=true;
                                     	String name=g.getName();
-                                    	//inserire il valore della mappa interrogandola con la chiave groupname da cui estrapolare l'id
                                     	ArrayList<Room>r =new ArrayList<Room>();
                                     	//r=h.getGroupList().getRoomAssignedFromMap(name);
                                     	JDOMExtractRoomAssigned dj=new JDOMExtractRoomAssigned();

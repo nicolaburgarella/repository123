@@ -66,6 +66,7 @@ import room.RoomView;
 
 // TODO: Auto-generated Javadoc
 /**
+ * The main class to be launched to start the gui application
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
 * use. If Jigloo is being used commercially (ie, by a corporation,
@@ -118,12 +119,6 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	/** The Constant allowExt. */
 	private static final String[] allowExt = { "xml" };
 	
-	/** The cangetsvg. */
-	private boolean cangetsvg = true;
-	
-	/** The cangetsql. */
-	private boolean cangetsql = true;
-	
 	/** The parseok. */
 	private boolean parseok = true;
 	
@@ -152,15 +147,9 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 	private File file = null;
 
 	/**
-	 * Instantiates a new MainGui.
+	 * Instantiates the MainGui instance.
 	 */
 	public MainGui() {			
-		/*if (isFileOk(new File("test.svg")))		{		
-			JSVGCanvas svgCanvas = new JSVGCanvas();	
-			svgCanvas.setURI(new File("test.svg").toURI().toString());	
-			jScrollSVGPane = new JScrollPane(svgCanvas);
-			jScrollSVGPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		}*/
 
 		GroupLayout layout = new GroupLayout((JComponent)getContentPane());
 		getContentPane().setLayout(layout);
@@ -396,9 +385,6 @@ public class MainGui extends JFrame implements ActionListener, DropTargetListene
 		reservation.addActionListener(this);
 		//jButton1Layout.setVerticalGroup(jButton1Layout.createSequentialGroup());
 		//jButton1Layout.setHorizontalGroup(jButton1Layout.createSequentialGroup());
-
-		//testMysqlLayout.setVerticalGroup(testMysqlLayout.createParallelGroup());
-		//testMysqlLayout.setHorizontalGroup(testMysqlLayout.createParallelGroup());
 
 		GroupLayout titoloLabelLayout = new GroupLayout((JComponent)titoloLabel);
 		titoloLabelLayout.setVerticalGroup(titoloLabelLayout.createParallelGroup());

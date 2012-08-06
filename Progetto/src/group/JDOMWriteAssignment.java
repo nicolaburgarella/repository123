@@ -17,14 +17,14 @@ import room.RoomList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMWriteAssignment.
+ * The Class JDOMWriteAssignment write a new tag into the group node and add as attribute the rooms assigned to the group.
  */
 public class JDOMWriteAssignment {
 
 	/**
 	 * Instantiates a new jDOM write assignment.
 	 *
-	 * @param group the group
+	 * @param group the group instance
 	 * @param name the name
 	 */
 	public JDOMWriteAssignment(Group group, String name) {

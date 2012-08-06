@@ -45,23 +45,15 @@ public class LoadReservationsFromXML {
 			      
 			       //Per ogni figlio 
 			      while(iterator.hasNext()){ 
-			         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-			         //attributi "importanza", "perc_completamento", e "completata" 
-			         //sullo standard output 
-			         Element item = (Element)iterator.next();
+			        Element item = (Element)iterator.next();
 			         
-			         //if(Integer.parseInt(item.getAttributeValue("number"))==number){
-			    
+			        
 			         System.out.println("Reservation details:");
 			         Reservation r =new Reservation(Integer.parseInt(item.getAttributeValue("number")), item.getAttributeValue("groupname"), item.getAttributeValue("checkin"), item.getAttributeValue("checkout"), Float.parseFloat(item.getAttributeValue("deposit")), Float.parseFloat(item.getAttributeValue("totcost")));
 			         System.out.println(r.toString());
 			         rl.addReservation(r);
 			         System.out.println(rl.toString());
 			       
-			        /* }
-			         else{
-			        	 System.out.println("non ho trovato nessuna prenotazione relativa numero "+ number);
-			         }*/
 			      }
 
 			    }  

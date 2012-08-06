@@ -91,13 +91,16 @@ public class InsertGroup1 extends JDialog {
 	/** The j label1. */
 	private JLabel jLabel1;
 	
-	/** The matrimoniali. */
+	/** The numbers of rooms by the composition single rooms,double rooms,wedding rooms. */
 	int singole,doppie,matrimoniali;
 	
-	/** The days. */
-	int id,days;
+	/** The group ID */
+	int id;
 	
-	/** The nome. */
+	/** The days of fee*/
+	int days;
+	
+	/** The group name. */
 	String nome;
 	
 	/** The deposit. */
@@ -106,7 +109,7 @@ public class InsertGroup1 extends JDialog {
 	/** The checkout. */
 	String checkin,checkout;
 	
-	/** The h. */
+	/** The Hotel instance h. */
 	Hotel h=new Hotel();
 	
 	/** The repeat ok. */
@@ -115,7 +118,7 @@ public class InsertGroup1 extends JDialog {
 	/**
 	 * Create the dialog.
 	 *
-	 * @param hotel the hotel
+	 * @param hotel the Hotel instance hotel loaded at the beginning of the application
 	 */
 	public InsertGroup1(Hotel hotel) {
 		

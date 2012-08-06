@@ -13,29 +13,26 @@ import room.Extra;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class AddGroupView.
+ * The Class AddGroupView adds a group from the console application.
  */
 public class AddGroupView {
 	
-	/** The kb. */
+
 	Scanner kb;
 	
-	/** The checkout. */
+	
 	static String name, checkin,checkout;
 	
-	/** The deposit. */
+	
 	static float deposit;
 	
-	/** The days. */
+
 	static int number,days;
 	
-	/** The h. */
+	
 	Hotel h = new Hotel();
 
 
-	/**
-	 * Instantiates a new adds the group view.
-	 */
 	public AddGroupView() {
 
 	}
@@ -43,8 +40,8 @@ public class AddGroupView {
 	/**
 	 * Adds the group view.
 	 *
-	 * @param hotel the hotel
-	 * @return the group
+	 * @param hotel the hotel instance loaded at the beginning of the program
+	 * @return the group, the Group entity if getting the data from console have done right
 	 */
 	public Group AddGroupView(Hotel hotel) {
 	//	g=new Group();

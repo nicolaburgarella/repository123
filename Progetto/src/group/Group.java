@@ -7,26 +7,26 @@ import room.Room;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Group.
+ * The model Class Group.
  */
 public class Group {
 	
-	/** The number. */
+	/** The ID. */
 	private int number;
 	
-	/** The name. */
+	/** The group name. */
 	private String name;
 	
-	/** The checkin. */
+	/** The date checkin. */
 	private String checkin;
 	
-	/** The checkout. */
+	/** The date checkout. */
 	private String checkout;
 	
 	/** The deposit. */
 	private float deposit;
 	
-	/** The rooms assigned. */
+	/** The list of the rooms assigned. */
 	private ArrayList <Room> roomsAssigned =new ArrayList<Room>();
 	
 	
@@ -34,7 +34,7 @@ public class Group {
 	/**
 	 * Gets the room assigned.
 	 *
-	 * @return the room assigned
+	 * @return the room assigned list
 	 */
 	public ArrayList<Room> getRoomAssigned() {
 		if(roomsAssigned==null){
@@ -48,7 +48,7 @@ public class Group {
 	/**
 	 * Sets the room assigned.
 	 *
-	 * @param roomAssigned the new room assigned
+	 * @param roomAssigned the new room assigned list
 	 */
 	public void setRoomAssigned(ArrayList<Room> roomAssigned) {	
 		this.roomsAssigned = roomAssigned;
@@ -64,9 +64,9 @@ public class Group {
 	}
 
 	/**
-	 * Adds the room assigned.
+	 * Adds a room to the room assigned list.
 	 *
-	 * @param room the room
+	 * @param room the room to be assigned to the list
 	 * @return true, if successful
 	 */
 	public boolean addRoomAssigned(Room room){
@@ -86,7 +86,7 @@ public class Group {
 	}
 	
 	/**
-	 * Instantiates a new group.
+	 * Instantiates a new group and clear the list roomsAssigned.
 	 */
 	public Group(){
 		this.roomsAssigned.clear();
@@ -95,10 +95,10 @@ public class Group {
 	/**
 	 * Instantiates a new group.
 	 *
-	 * @param number the number
-	 * @param name the name
-	 * @param checkin the checkin
-	 * @param checkout the checkout
+	 * @param number the group ID
+	 * @param name the group name
+	 * @param checkin the date checkin
+	 * @param checkout the date checkout
 	 * @param deposit the deposit
 	 */
 	public Group(int number, String name, String checkin, String checkout,
@@ -116,34 +116,34 @@ public class Group {
 	/**
 	 * Gets the number.
 	 *
-	 * @return the number
+	 * @return the group ID
 	 */
 	public int getNumber() {
 		return number;
 	}
 	
 	/**
-	 * Sets the number.
+	 * Sets the ID number.
 	 *
-	 * @param number the new number
+	 * @param number the new ID
 	 */
 	public void setNumber(int number) {
 		this.number = number;
 	}
 	
 	/**
-	 * Gets the name.
+	 * Gets the group name.
 	 *
-	 * @return the name
+	 * @return the group name
 	 */
 	public String getName() {
 		return name;
 	}
 	
 	/**
-	 * Sets the name.
+	 * Sets the group name.
 	 *
-	 * @param name the new name
+	 * @param name the new group name
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -161,7 +161,7 @@ public class Group {
 	/**
 	 * Sets the checkin.
 	 *
-	 * @param checkin the new checkin
+	 * @param checkin the new checkin date
 	 */
 	public void setCheckin(String checkin) {
 		this.checkin = checkin;

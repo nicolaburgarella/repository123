@@ -2,17 +2,17 @@ package room;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Extra.
+ * The model Class Extra.
  */
 public class Extra{
 	
-	/** The cost. */
+	/** The cost of the extra. */
 	private float cost;
 	
-	/** The date. */
+	/** The date of the extra. */
 	private String date;
 	
-	/** The type. */
+	/** The type of the extra. */
 	private String type;
 	
 	/**

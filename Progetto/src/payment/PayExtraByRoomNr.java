@@ -15,33 +15,32 @@ import group.Group;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class PayExtraByRoomNr.
+ * The controller Class PayExtraByRoomNr.
  */
 public class PayExtraByRoomNr {
 	
-	/** The g. */
+	/** The group instance g. */
 	Group g = new Group();
 	
 	/** The no room assigned. */
 	private boolean noRoomAssigned=false;
 	
-	/** The ee. */
 	JDOMExtractExtrasByRoom ee = new JDOMExtractExtrasByRoom();
 	
 	/** The extra trovati. */
 	private boolean extraTrovati=false;
 
 	/**
-	 * Instantiates a new pay extra by room nr.
+	 * Pay extra by room number method.
 	 */
 	public PayExtraByRoomNr() {
 
 	}
 
 	/**
-	 * Instantiates a new pay extra by room nr.
+	 * Pay extra by room number method.
 	 *
-	 * @param gruppo the gruppo
+	 * @param gruppo the group instance
 	 */
 	public PayExtraByRoomNr(Group gruppo) {
 		//Il gruppo esiste e non ha valore nullo

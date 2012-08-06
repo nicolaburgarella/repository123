@@ -18,7 +18,7 @@ import hotel.Hotel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Main.
+ * The Class Main to be launched to start the console mode application.
  */
 public class Main {
 
@@ -45,7 +45,6 @@ public class Main {
 		
 		do{
 			do{
-				//sbagliato=false;
 				
 				System.out.print("Data odierna:\t "+gc.get(Calendar.DATE)+" / "+(gc.get(Calendar.MONTH)+1)+" / "+gc.get(Calendar.YEAR)+" ");
 				System.out.println("Ora esatta:\t "+gc.get(Calendar.HOUR)+":"+gc.get(Calendar.MINUTE)+"\n\n");
@@ -105,7 +104,6 @@ public class Main {
 			{
 				System.out.println("GESTIONE PRENOTAZIONI: \n");
 				ReservationView rv=new ReservationView(h);
-				//Alcuni controlli:se non trova il gruppo relativo alla prenotazione,elimino la prenotazione
 				break;
 			}
 

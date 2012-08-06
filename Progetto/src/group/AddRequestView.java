@@ -7,25 +7,21 @@ import date.DataCheckout;
 import date.DateToString;
 
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class AddRequestView.
+ * The Class AddRequestView adds a group request from the console application if the group entry is right.
  */
 public class AddRequestView {
 	
-	/** The kb. */
+	
 	Scanner kb;
 	
-	/** The matrimoniali. */
+	
 	static int singole,doppie,matrimoniali;
 	
-	/** The flag. */
+	
 	static String flag;
 	
 
-	/**
-	 * Instantiates a new adds the request view.
-	 */
 	public AddRequestView() {
 
 	}
@@ -33,7 +29,7 @@ public class AddRequestView {
 	/**
 	 * Adds the request view.
 	 *
-	 * @return the request
+	 * @return the request, the Request entity if getting the data from console have done right
 	 */
 	public Request AddRequestView() {
 

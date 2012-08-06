@@ -73,7 +73,7 @@ public class PrintReservationByGroupName extends JDialog {
 	 /** The nomegruppo. */
  	String nomegruppo;
 	 
- 	/** The h. */
+ 	/** The Hotel instance h. */
  	Hotel h=new Hotel();
 	
 	/** The repeat ok. */
@@ -82,8 +82,8 @@ public class PrintReservationByGroupName extends JDialog {
 	/**
 	 * Create the dialog.
 	 *
-	 * @param hotel the hotel
-	 * @param string the string
+	 * @param hotel the hotel instance
+	 * @param string the 'name' flag
 	 */
 	public PrintReservationByGroupName(Hotel hotel, String string) {
 		

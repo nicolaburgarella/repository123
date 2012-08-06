@@ -14,12 +14,12 @@
 	
 // TODO: Auto-generated Javadoc
 /**
- * The Class SetRoomNotFree.
+ * The controller Class SetRoomNotFree.
  */
 public class SetRoomNotFree {
 
 		/**
-		 * Instantiates a new sets the room not free.
+		 * Sets the room not free to the file rooms.xml.
 		 *
 		 * @param number the number
 		 */
@@ -33,11 +33,7 @@ public class SetRoomNotFree {
 			Document doc = (Document) builder.build(xmlFile);
 			Element rootNode = doc.getRootElement();
 	 
-			// update staff id attribute
-			//Element room = rootNode.getChild("ROOM");
-			//room.getAttribute("free").setValue("no");
-	 
-			// add new age element
+			
 			
 			List room2=rootNode.getChildren("ROOM");
 			for(int i=0;i<(room2.size());i++){
@@ -46,15 +42,11 @@ public class SetRoomNotFree {
 			}
 			}
 	 
-			// update salary value
-			//room.getChild("altrotagsottoroom").setText("7000");
-	 
-			// remove firstname element
-			//room.removeChild("altrotagsottoroom");
+			
 	 
 			XMLOutputter xmlOutput = new XMLOutputter();
 	 
-			// display nice nice
+			
 			xmlOutput.setFormat(Format.getPrettyFormat());
 			xmlOutput.output(doc, new FileWriter("rooms.xml"));
 	 

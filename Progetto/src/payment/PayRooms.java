@@ -15,26 +15,26 @@ import room.Room;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class PayRooms.
+ * The controller Class PayRooms.
  */
 public class PayRooms {
 
-	/** The g. */
+	/** The group instance g. */
 	Group g = new Group();
 	
-	/** The tot cost rooms. */
+	/** The total cost of the rooms assigned to the group. */
 	private float totCostRooms=0;
 	
-	/** The diff cost. */
+	/** The diffefence of cost between the total cost and the group deposit. */
 	private float diffCost=0;
 	
-	/** The tot cost by room. */
+	/** The total cost by room. */
 	private float totCostByRoom;
 	
-	/** The mess. */
+	/** The message. */
 	private String mess="";
 	
-	/** The h. */
+	/** The hotel instance h. */
 	private Hotel h=new Hotel();
 	
 	/**
@@ -45,10 +45,10 @@ public class PayRooms {
 	}
 	
 	/**
-	 * Pay rooms.
+	 * Pay rooms method.
 	 *
-	 * @param gruppo the gruppo
-	 * @return the float
+	 * @param gruppo the group instance
+	 * @return the float the cost of the stay without considering extras
 	 */
 	public float PayRooms(Group gruppo){
 		g=gruppo;

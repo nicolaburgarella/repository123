@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class RoomList.
+ * The room Class RoomList.
  */
 public class RoomList {
 
-/** The room reg. */
+/** The room register arraylist. */
 private ArrayList<Room> roomReg=new ArrayList<Room>();
 
 		/* (non-Javadoc)
@@ -21,18 +21,18 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 		}
 		
 		/**
-		 * Gets the room reg.
+		 * Gets the room register.
 		 *
-		 * @return the room reg
+		 * @return the room register
 		 */
 		public ArrayList<Room> getRoomReg(){
 			return roomReg;
 		}
 
 		/**
-		 * Sets the room reg.
+		 * Sets the room register.
 		 *
-		 * @param roomReg the new room reg
+		 * @param roomReg the new room register
 		 */
 		public void setRoomReg(ArrayList<Room> roomReg) {
 			this.roomReg = roomReg;
@@ -40,10 +40,9 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 
 
 		/**
-		 * Instantiates a new room list.
+		 * Instantiates a new room list and removes all of the elements of the list.
 		 */
 		public RoomList(){
-				//Removes all of the elements from this list.
 				roomReg.clear();
 
 			}
@@ -71,17 +70,6 @@ private ArrayList<Room> roomReg=new ArrayList<Room>();
 				}
 				roomReg.add(room);
 				System.out.println("Stanza inserita nella lista delle stanze");
-			}
-
-	//Ritorna la camera in base all'indice della lista passato come parametro
-			/**
-	 * Gets the room by pos.
-	 *
-	 * @param posizione the posizione
-	 * @return the room by pos
-	 */
-	public Room getRoomByPos(int posizione){
-				return roomReg.get(posizione);
 			}
 			
 			/**

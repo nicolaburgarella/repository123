@@ -9,7 +9,7 @@ import hotel.Hotel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class RoomView.
+ * The view Class RoomView.
  */
 public class RoomView {
 
@@ -31,9 +31,9 @@ public RoomView(){
 }
 
 /**
- * Instantiates a new room view.
+ * Instantiates the management of the room view.
  *
- * @param h the h
+ * @param h the hotel instance
  */
 public RoomView(Hotel h){
 	Hotel hotel = new Hotel();
@@ -135,7 +135,6 @@ public RoomView(Hotel h){
 						}
 					}
 				}
-				//System.out.println("Hai inserito un numero di camera errato");
 				
 			}
 			
@@ -376,8 +375,8 @@ public RoomView(Hotel h){
 /**
  * Cancel extras.
  *
- * @param h the h
- * @param el the el
+ * @param h the hotel instance
+ * @param el the ExtraList instance
  */
 public void cancelExtras(Hotel h, ExtraList el){
 	for(int i=0;i<h.getExtraList().getExtraReg().size();i++){

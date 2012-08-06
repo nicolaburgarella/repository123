@@ -6,12 +6,12 @@ import java.io.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JDOMWriter.
+ * The controller Class JDOMWriter.
  */
 public class JDOMWriter { 
 
   /**
-   * Instantiates a new jDOM writer.
+   * Initialize the file reservation.xml with no entry
    */
   public JDOMWriter() { 
     try { 

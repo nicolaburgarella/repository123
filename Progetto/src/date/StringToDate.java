@@ -21,8 +21,8 @@ public class StringToDate {
     /**
      * String to date.
      *
-     * @param s the s
-     * @return the date
+     * @param s the string to be converted into date if correct
+     * @return the date converted string into date
      */
     public Date StringToDate(String s) {
     	//s="";
@@ -49,7 +49,7 @@ public class StringToDate {
     /**
      * String to date check.
      *
-     * @param s the s
+     * @param s the string to be converted into date
      * @return true, if successful
      */
     public boolean StringToDateCheck(String s) {

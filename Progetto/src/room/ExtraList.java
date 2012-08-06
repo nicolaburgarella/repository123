@@ -6,34 +6,34 @@ import java.io.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ExtraList.
+ * The model Class ExtraList.
  */
 public class ExtraList {
 		
-	/** The extra reg. */
+	/** The extra register. */
 	private ArrayList<Extra> extraReg=new ArrayList<Extra>();
 	
 
 		/**
-		 * Gets the extra reg.
+		 * Gets the extra register.
 		 *
-		 * @return the extra reg
+		 * @return the extra register
 		 */
 		public ArrayList<Extra> getExtraReg() {
 		return extraReg;
 	}
 
 	/**
-	 * Sets the extra reg.
+	 * Sets the extra register.
 	 *
-	 * @param extraReg the new extra reg
+	 * @param extraReg the new extra register
 	 */
 	public void setExtraReg(ArrayList<Extra> extraReg) {
 		this.extraReg = extraReg;
 	}
 
 		/**
-		 * Instantiates a new extra list.
+		 * Instantiates a new extra list cancelling all the entries from the arraylist.
 		 */
 		public ExtraList(){
 			extraReg.clear();
@@ -50,9 +50,9 @@ public class ExtraList {
 
 
 		/**
-		 * Adds the extra.
+		 * Adds the extra into the arraylist extraReg.
 		 *
-		 * @param extra the extra
+		 * @param extra the extra instance
 		 */
 		public void addExtra(Extra extra){
 			for(int i=0;i<extraReg.size();i++){
@@ -67,7 +67,7 @@ public class ExtraList {
 
 
 		/**
-		 * Checks if is extra list empty.
+		 * Checks if the arraylist extraReg is empty.
 		 *
 		 * @return true, if is extra list empty
 		 */
