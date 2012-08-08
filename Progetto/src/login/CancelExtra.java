@@ -202,6 +202,11 @@ public class CancelExtra extends JDialog {
 	 * @param el the el
 	 */
 	public void cancelExtras(Hotel h, ExtraList el){
+		boolean errore=false;
+		if(h==null||el==null){
+			errore=true;
+		}
+		if(errore==false){
 		for(int i=0;i<h.getExtraList().getExtraReg().size();i++){
 			for(int j=0;j<el.getExtraReg().size();j++){
 				if(h.getExtraList().getExtraReg().get(i).equals(el.getExtraReg().get(j))){
@@ -209,6 +214,7 @@ public class CancelExtra extends JDialog {
 				}
 			}
 		}
+	}
 	}
 
 }

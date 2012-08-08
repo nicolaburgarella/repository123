@@ -33,4 +33,5 @@ public class DaysBetweenDatesTest extends junit.framework.TestCase
 		String checkout=null;
 		assertEquals(problemMsg, 5000, obj.daysInHotel(checkin, checkout));
 	}
+	
 }

@@ -20,4 +20,5 @@ public class DateToStringTest extends junit.framework.TestCase
 		Date d=null;
 		assertEquals(problemMsg, null, obj.DateToString(d));
 	}
+	
 }

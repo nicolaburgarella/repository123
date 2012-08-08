@@ -72,7 +72,7 @@ public class CancelGroup1 extends JDialog {
 	String nome;
 	
 	/** The repeat ok. */
-	private boolean repeatOk=false;
+	private boolean goOk=true;
 
 	/**
 	 * Create the dialog.
@@ -87,7 +87,7 @@ public class CancelGroup1 extends JDialog {
 		
 		if(hotel==null|| string==null){
 			JOptionPane.showMessageDialog(null,"L'istanza hotel è nulla");
-			repeatOk=true;
+			goOk=false;
 		}
 		else{
 		
@@ -159,11 +159,10 @@ public class CancelGroup1 extends JDialog {
 			id=Integer.parseInt(jTextField1.getText());
 			if(id==0){
 				JOptionPane.showMessageDialog(null,"L'id del gruppo non deve valere 0,ma un numero intero positivo");
-				repeatOk=true;
 			}
 			}catch(NumberFormatException nfe){
 				JOptionPane.showMessageDialog(null,"l'id del gruppo deve essere un intero");
-				repeatOk=true;
+				goOk=false;
 			}
 
 			jTextField2.setText("nomegruppo");
@@ -172,7 +171,7 @@ public class CancelGroup1 extends JDialog {
 			}catch(NullPointerException npe){
 				JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
 				npe.printStackTrace();
-				repeatOk=true;
+				goOk=false;
 
 			}
 		
@@ -240,11 +239,11 @@ public class CancelGroup1 extends JDialog {
 										id=Integer.parseInt(jTextField1.getText());
 										if(id==0){
 											JOptionPane.showMessageDialog(null,"L'id del gruppo non deve valere 0,ma un numero intero positivo");
-											repeatOk=true;
+											goOk=false;
 										}
 										}catch(NumberFormatException nfe){
 											JOptionPane.showMessageDialog(null,"l'id del gruppo deve essere un intero");
-											repeatOk=true;
+											goOk=false;
 										}
 
 										try{
@@ -252,13 +251,14 @@ public class CancelGroup1 extends JDialog {
 										}catch(NullPointerException npe){
 											JOptionPane.showMessageDialog(null,"Il nome del gruppo non deve essere nullo");
 											npe.printStackTrace();
-											repeatOk=true;
+											goOk=false;
 
 										}
 									
 								 
 								 if(jCheckBox1.isSelected()){
 									 
+									 if(goOk==true){
 								 if(!(h.getGroupList().isGroupListEmpty())){
 									 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 											if(id==h.getGroupList().getGroupReg().get(i).getNumber()){
@@ -270,17 +270,23 @@ public class CancelGroup1 extends JDialog {
 										}
 									 if(fatto==false){
 										 JOptionPane.showMessageDialog(null,"E' stato inserito un identificativo del gruppo non memorizzato");
-										 repeatOk=true;
+										 goOk=false;
 								 }
 								 	 
 							 }
 								 else{
 									 JOptionPane.showMessageDialog(null,"Non è ancora stato inserito il gruppo con id selezionato");
-									 repeatOk=true;
+									 goOk=false;
 									}
+								 }
+									 
+									 if(goOk==false){
+										 JOptionPane.showMessageDialog(null,"Il gruppo selezionato non è stato cancellato");
+									 }
 								 
 								 } 
 								 if(jCheckBox2.isSelected()){
+									 if(goOk==true){
 									 
 									 if(!(h.getGroupList().isGroupListEmpty())){
 										 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
@@ -295,19 +301,24 @@ public class CancelGroup1 extends JDialog {
 													fatto=true;
 													}else{
 													JOptionPane.showMessageDialog(null,"Inserito un nome del gruppo con valore nullo");
-													repeatOk=true;
+													goOk=true;
 													}
 											}
 										}
 											if(fatto==false){
 												JOptionPane.showMessageDialog(null,"Non ho trovato quel nome gruppo necessario per rimuovere il gruppo");
-												repeatOk=true;
+												goOk=false;
 											}
 										}
 										else{
 											JOptionPane.showMessageDialog(null,"Non è ancora stato inserito alcun gruppo");
-											repeatOk=true;
+											goOk=false;
 										}
+								 }
+									 
+									 if(goOk==false){
+										 JOptionPane.showMessageDialog(null,"Il gruppo selezionato non è stato cancellato");
+									 }
 									 }	 
 									 
 							}

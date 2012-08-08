@@ -3,6 +3,8 @@ package group;
 import java.lang.String;
 import java.util.ArrayList;
 
+import date.DataCheckoutTest;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class RequestTest.
@@ -99,4 +101,5 @@ public class RequestTest extends junit.framework.TestCase
 		obj.setFlag("eseguita");
 		assertFalse(flag1.equals(flag));
 	}
+	
 }

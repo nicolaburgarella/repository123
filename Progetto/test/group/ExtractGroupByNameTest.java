@@ -2,6 +2,8 @@ package group;
 
 import java.lang.String;
 
+import date.DataCheckoutTest;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class ExtractGroupByNameTest.

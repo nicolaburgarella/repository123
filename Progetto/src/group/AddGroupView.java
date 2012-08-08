@@ -103,12 +103,12 @@ public class AddGroupView {
 		DataCheckout d=new DataCheckout();
 		Date []dates=new Date[2];
 		
-		if(d.DataCheckout(days)==null){
+		if(d.dataCheckout(days)==null){
 			System.out.println("Days deve assumere un valore positivo maggiore di zero");
 			return null;
 		}
 
-		dates=d.DataCheckout(days);
+		dates=d.dataCheckout(days);
 		
 		DateToString ds=new DateToString();
 		

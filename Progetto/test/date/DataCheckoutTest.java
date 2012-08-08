@@ -17,6 +17,7 @@ public class DataCheckoutTest extends junit.framework.TestCase
 		DataCheckout obj=new date.DataCheckout();
 		String problemMsg="Problem with: DataCheckout";
 		int days=0;
-		assertEquals(problemMsg, null, obj.DataCheckout(days));
+		assertEquals(problemMsg, null, obj.dataCheckout(days));
 	}
+	
 }

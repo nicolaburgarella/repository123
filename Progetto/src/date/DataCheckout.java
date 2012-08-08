@@ -25,7 +25,7 @@ public class DataCheckout {
 	 * @param days the days between checkin and checkout
 	 * @return the date of checkin and checkout as array date[]
 	 */
-	public Date[] DataCheckout(int days) {
+	public Date[] dataCheckout(int days) {
 		 Date today = new Date();
 	        Calendar calendar = Calendar.getInstance();
 	        calendar.add(Calendar.DATE, days);

@@ -7,6 +7,8 @@ import group.RequestList;
 import java.lang.String;
 import java.util.ArrayList;
 
+import date.DataCheckoutTest;
+
 import reservation.Reservation;
 import reservation.ReservationList;
 import room.ExtraList;
@@ -131,4 +133,9 @@ public class HotelTest extends junit.framework.TestCase
 		obj.setExtraList(extraList);
 		assertTrue(extraList==obj.getExtraList());
 	}
+	
+	/*public static void main(String[] args)
+	{
+		junit.textui.TestRunner.run(new junit.framework.TestSuite(group.AddRequestViewTest.class));
+	}*/
 }

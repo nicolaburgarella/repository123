@@ -162,7 +162,7 @@ public class NextPage2 extends JFrame implements ActionListener
   		 */
   		public void actionPerformed(ActionEvent e){
 			  JLabel label=new JLabel();
-		  label.setText(e.getActionCommand());
+		 // label.setText(e.getActionCommand());
 		//  JOptionPane.showMessageDialog(null,"This is the " + e.getActionCommand() + " radio button.");
 		  
 		  if(e.getActionCommand().equals("button1")){

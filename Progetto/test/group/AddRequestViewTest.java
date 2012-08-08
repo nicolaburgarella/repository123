@@ -1,5 +1,7 @@
 package group;
 
+import date.DataCheckoutTest;
+
 
 // TODO: Auto-generated Javadoc
 /**
@@ -17,4 +19,5 @@ public class AddRequestViewTest extends junit.framework.TestCase
 		String problemMsg="Problem with: AddRequestView";
 		assertEquals(problemMsg, null, obj.AddRequestView());
 	}
+	
 }

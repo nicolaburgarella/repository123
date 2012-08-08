@@ -220,7 +220,11 @@ public class InsertExtra1 extends JDialog {
 		{
 			jTextField2 = new JTextField();
 			jTextField2.setText("tipologia");
+			try{
 			type=jTextField2.getText();
+			}catch(NullPointerException npe){
+				JOptionPane.showMessageDialog(null,"La tipologia dell'extra non deve essere nullo");
+			}
 
 			
 		}
@@ -256,7 +260,7 @@ public class InsertExtra1 extends JDialog {
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 				okButton.addActionListener(new ActionListener() {
-					private boolean repeatOk;
+					private boolean goOk=true;
 					private boolean fatto=false;
 					private Group g;
 					private boolean gruppoTrovato=false;
@@ -272,24 +276,24 @@ public class InsertExtra1 extends JDialog {
 								StringToDate sd=new StringToDate();
 								if(!sd.StringToDateCheck(date)){
 									JOptionPane.showMessageDialog(null,"Hai inserito una data errata,va scritta dd/MM/yyyy");
-									repeatOk=true;
+									goOk=false;
 								}
 								try{
 								 type=jTextField2.getText();
 								}catch(NullPointerException npe){
 									JOptionPane.showMessageDialog(null,"il tipo di extra non può assumere valori nulli");
-									repeatOk=true;
+									goOk=false;
 								}
 								 
 								 try{
 									 cost=Float.parseFloat(jTextField3.getText());
 									 if(cost==0){
 										 JOptionPane.showMessageDialog(null,"Il costo dell'extra non può essere 0");
-										 repeatOk=true;
+										 goOk=false;
 									 }
 										}catch(NumberFormatException nfe){
 											JOptionPane.showMessageDialog(null,"Il valore del costo deve assumere un valore float");
-											repeatOk=true;
+											goOk=false;
 										}
 								 
 								 
@@ -297,29 +301,29 @@ public class InsertExtra1 extends JDialog {
 									 stanza=Integer.parseInt(jTextField4.getText());
 										if(stanza==0){
 											JOptionPane.showMessageDialog(null,"La stanza deve avere un valore positivo diverso da 0");
-											repeatOk=true;
 										}
 										}catch(NumberFormatException nfe){
 											JOptionPane.showMessageDialog(null,"La camera deve assumere un valore intero");
-											repeatOk=true;
+											goOk=false;
 										}
 										
 										try{
 								 nomegruppo=jTextField6.getText();
 										}catch(NullPointerException npe){
 											JOptionPane.showMessageDialog(null,"Il nome del gruppo non può assumere valore nullo");
-											repeatOk=true;
+											goOk=false;
 										}
 								 
 									if(cost==0||type==""||date==""){
 										JOptionPane.showMessageDialog(null,"Hai inserito dei valori nulli");
+										goOk=false;
 										
 									}
 								 
 								
 							 if(jCheckBox1.isSelected()){ //in base al nome del gruppo
 								 
-								// while(esci==false){
+								if(goOk==true){
 								 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 									 if(h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nomegruppo)){
 									 g=h.getGroupList().getGroupReg().get(i);
@@ -354,12 +358,17 @@ public class InsertExtra1 extends JDialog {
 											}
 											if(fatto==false){
 												JOptionPane.showMessageDialog(null,"E' stato inserito un numero di stanza non valido");
-												repeatOk=true;
+												goOk=false;
 											}
 											
 										}
 				 
 							 }
+							 }
+								if(goOk==false){
+									JOptionPane.showMessageDialog(null,"Inserimento extra non avvenuto");
+									
+								}
 								 if(gruppoTrovato==false){
 									 JOptionPane.showMessageDialog(null,"Non è stato trovato il gruppo con quel nome");
 								 }
@@ -371,6 +380,10 @@ public class InsertExtra1 extends JDialog {
 							 
 							 if (jCheckBox2.isSelected()){ //in base al numero di stanza
 								 
+								 if(goOk==true){
+									 if(stanza==0){
+										 goOk=false;
+									 }
 								 for(int i=0;i<h.getRoomList().getRoomReg().size();i++){
 										if(stanza==h.getRoomList().getRoomReg().get(i).getNumber()){
 											 Extra extra = new Extra(cost, date, type);
@@ -382,9 +395,13 @@ public class InsertExtra1 extends JDialog {
 							 }
 							 
 						 }
+								 }
+								 if(goOk==false){
+									 JOptionPane.showMessageDialog(null,"Inserimento non avvenuto!");
+								 }
 								 if(fatto==false){
 										JOptionPane.showMessageDialog(null,"E' stato inserito un numero di stanza non valido");
-										repeatOk=true;
+										goOk=false;
 									}
 						 
 					 }
