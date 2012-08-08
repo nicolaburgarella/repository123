@@ -43,7 +43,7 @@ public class Main {
 		int scelta = 0;
 		boolean continua=true;
 		
-		do{
+		/*do{*/while(continua){
 			do{
 				
 				System.out.print("Data odierna:\t "+gc.get(Calendar.DATE)+" / "+(gc.get(Calendar.MONTH)+1)+" / "+gc.get(Calendar.YEAR)+" ");
@@ -63,27 +63,25 @@ public class Main {
 
 					if(!(sceltaOpzione.equals("0")||(sceltaOpzione.equals("1"))||(sceltaOpzione.equals("2"))||(sceltaOpzione.equals("3")))){
 						System.out.println("E' stata scelta un'opzione non valida riprova");
-						continua=true;
-			
+						//continua=false;
+						sbagliato=true;
 					}
+					
+					try{
+						scelta=Integer.parseInt(sceltaOpzione);
+						}catch(NumberFormatException nfe){
+							System.out.print("La scelta deve essere un numero intero");
+							nfe.getMessage();
+							sbagliato=true;
+						}
+						
 				}
 				catch(IOException ioe){
 					ioe.printStackTrace();
 				}
 			}while(sbagliato);
-			try{
-			scelta=Integer.parseInt(sceltaOpzione);
-			}catch(NumberFormatException nfe){
-				System.out.print("La scelta deve essere un numero intero");
-				nfe.getMessage();
-			}
-			BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
-			try {
-				sceltaOpzione=promptLine.readLine();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+			
 			switch(scelta){
 			
 			case 1:
@@ -110,13 +108,12 @@ public class Main {
 			case 0:
 			{
 				
-					System.out.println("Premi ENTER per continuare");
-					continua=false;
-				
+					System.out.println("Torno al menu iniziale");
+					sbagliato=true;
 				break;
 			}
 		}
-	}while(!continua);
+	}/*while(!continua);*/
 
 	}
 

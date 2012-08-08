@@ -23,6 +23,8 @@ private boolean trovato=false;
 /** The scelta is a integer variable that specifies which option do you have selected to the switch menu of the group managing. */
 private int scelta=0; 
 
+String sceltaN="";
+
 /**
  * Instantiates a new group view.
  */
@@ -40,14 +42,13 @@ public GroupView(Hotel h){
 	hotel=h;
 	System.out.println(h);
 	String sceltaOpzione="";
-	boolean exit=true;
+	boolean continua=true;
 	boolean sbagliato=false;
 	
 	System.out.println("BENVENUTO NELLA SEZIONE DEI GRUPPI E DELLE RISPETTIVE RICHIESTE DI PERNOTTAMENTO, SCEGLI UNA OPZIONE TRA LE SEGUENTI,PREMI 0 PER USCIRE: ");
 	
-	do{
+	while(continua){
 		do{
-			sbagliato=false;
 			System.out.println("1 - INSERISCO UN GRUPPO");
 			System.out.println("2 - RIMUOVO UN GRUPPO IN BASE AL NUMERO ID");
 			System.out.println("3 - RIMUOVO UN GRUPPO IN BASE AL NOME DEL GRUPPO");
@@ -63,28 +64,23 @@ public GroupView(Hotel h){
 					sbagliato=true;
 					System.out.println("E' stata scelta un'opzione non valida riprova");
 				}
+				
+				try{
+					scelta=Integer.parseInt(sceltaOpzione);
+					}catch(NumberFormatException nfe){
+						System.out.print("La scelta deve essere un numero intero");
+						nfe.getMessage();
+						sbagliato=true;
+					}
+				
 			}
 			catch(IOException ioe){
 				ioe.printStackTrace();
 			}
 		}while(sbagliato);
 		
-			
-		BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
-		try {
-			sceltaOpzione=promptLine.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
-		try{
-			scelta=Integer.parseInt(sceltaOpzione);
-			}catch(NumberFormatException nfe){
-				System.out.print("La scelta deve essere un numero intero");
-				nfe.getMessage();
-				exit=true;
-			}
+		
 		
 		
 		switch(scelta){
@@ -129,13 +125,13 @@ public GroupView(Hotel h){
 				System.out.println("Inserisci il numero id del gruppo: ");
 				BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 				try {
-					sceltaOpzione=prLine.readLine();
+					sceltaN=prLine.readLine();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				try{
-				groupId=Integer.parseInt(sceltaOpzione);
+				groupId=Integer.parseInt(sceltaN);
 				if(groupId==0){
 					System.out.println("Il gruppo deve avere un id intero maggiore di zero");
 					sbagliato=true;
@@ -156,6 +152,7 @@ public GroupView(Hotel h){
 			}
 			else{
 				System.out.println("Non è ancora stato inserito un gruppo");
+				sbagliato=true;
 			}
 			
 			break;
@@ -168,12 +165,12 @@ public GroupView(Hotel h){
 				System.out.println("Inserisci il nome del gruppo: ");
 				BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 				try {
-					sceltaOpzione=prLine.readLine();
+					sceltaN=prLine.readLine();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				String groupName=sceltaOpzione;
+				String groupName=sceltaN;
 				for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 					if(groupName.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
 						h.getGroupList().getGroupReg().remove(i);
@@ -185,16 +182,19 @@ public GroupView(Hotel h){
 						trovato=true;
 					}else{
 						System.out.println("Inserito un valore nullo");
+						sbagliato=true;
 					}
 				}
 
 			}
 				if(trovato==false){
 					System.out.println("Non ho trovato quel nome gruppo necessario per rimuovere il gruppo");
+					sbagliato=true;
 				}
 			}
 			else{
 				System.out.println("Non è ancora stato inserito il gruppo con il nome selezionato");
+				sbagliato=true;
 			}
 			break;
 			
@@ -208,6 +208,7 @@ public GroupView(Hotel h){
 			}
 			else{
 				System.out.println("Non è ancora stato inserito alcun gruppo");
+				sbagliato=true;
 			}
 			break;
 		}
@@ -218,12 +219,12 @@ public GroupView(Hotel h){
 			System.out.println("Inserisci il nome del gruppo: ");
 			BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 			try {
-				sceltaOpzione=prLine.readLine();
+				sceltaN=prLine.readLine();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String groupName=sceltaOpzione;
+			String groupName=sceltaN;
 			for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
 				if(groupName.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
 					System.out.println("Ecco i dettagli del gruppo numero "+groupName);
@@ -255,14 +256,15 @@ public GroupView(Hotel h){
 		case 0:
 		{
 			
-				//System.out.println("Premi ENTER per continuare");
-				exit=true;
+				System.out.println("Torna al menu iniziale");
+			sbagliato=false;
+				continua=false;
 			
 			break;
 		}
 		
 	}
-}while(!exit);
+}
 		
 }
 

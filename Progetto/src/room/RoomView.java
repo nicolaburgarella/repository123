@@ -42,13 +42,13 @@ public RoomView(Hotel h){
 	boolean sbagliato=false;
 	boolean noExtra=false;
 	String sceltaOpzione="";
-	boolean exit=false;
+	String sceltaN="";
+	boolean continua=true;
 	
 	System.out.println("BENVENUTO NELLA SEZIONE DELLE CAMERE E DEI RISPETTIVI EXTRA, SCEGLI UNA OPZIONE TRA LE SEGUENTI,PREMI 0 PER USCIRE: ");
 	
-	do{
+	while(continua){
 		do{
-			sbagliato=false;
 			System.out.println("1 - INSERISCO GLI EXTRA IN BASE AL NUMERO DI CAMERA");
 			System.out.println("2 - INSERISCO GLI EXTRA IN BASE AL NOME DEL GRUPPO");
 			System.out.println("3 - STAMPO GLI EXTRA IN BASE AL NUMERO DI CAMERA");
@@ -65,27 +65,21 @@ public RoomView(Hotel h){
 					System.out.println("E' stata scelta un'opzione non valida riprova");
 					sbagliato=true;
 				}
+				
+				try{
+					scelta=Integer.parseInt(sceltaOpzione);
+					}catch(NumberFormatException nfe){
+						System.out.println("Hai inserito un valore errato,riprova");
+						nfe.getMessage();
+			         	sbagliato=true;	
+					}
+				
 			}
 			catch(IOException ioe){
 				ioe.printStackTrace();
 			}
+			
 		}while(sbagliato);
-
-		BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
-		try {
-			sceltaOpzione=promptLine.readLine();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		try{
-			scelta=Integer.parseInt(sceltaOpzione);
-			}catch(NumberFormatException nfe){
-				System.out.println("Hai inserito un valore errato,riprova");
-				nfe.getMessage();
-	         	exit=true;	
-			}
 		
 		
 		switch(scelta){
@@ -100,16 +94,17 @@ public RoomView(Hotel h){
 			}
 			else{
 				
-			BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
-			try {
-				sceltaOpzione=prLine.readLine();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
+				try {
+					sceltaN=prLine.readLine();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			
 			try{
-			roomNumber=Integer.parseInt(sceltaOpzione);
+			roomNumber=Integer.parseInt(sceltaN);
 			if(roomNumber==0){
 				System.out.println("La stanza deve avere un valore positivo diverso da 0");
 				sbagliato=true;
@@ -154,12 +149,12 @@ public RoomView(Hotel h){
 			
 			BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 			try {
-				sceltaOpzione=prLine.readLine();
+				sceltaN=prLine.readLine();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String groupName=sceltaOpzione;
+			String groupName=sceltaN;
 			if(h.getGroupList().getGroupReg().isEmpty()){
 				System.out.println("Non ci sono gruppi memorizzati");
 				sbagliato=true;
@@ -179,13 +174,13 @@ public RoomView(Hotel h){
 					}
 					BufferedReader pLine=new BufferedReader(new InputStreamReader(System.in));
 					try {
-						sceltaOpzione=pLine.readLine();
+						sceltaN=pLine.readLine();
 					} catch (IOException ee) {
 						// TODO Auto-generated catch block
 						ee.printStackTrace();
 					}
 					try{
-						roomNumber=Integer.parseInt(sceltaOpzione);
+						roomNumber=Integer.parseInt(sceltaN);
 						}catch(NumberFormatException nfe){
 							System.out.println("La camera deve assumere un valore intero");
 							nfe.getMessage();
@@ -220,13 +215,13 @@ public RoomView(Hotel h){
 				System.out.println("Inserisci il numero di camera: ");
 				BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 				try {
-					sceltaOpzione=prLine.readLine();
+					sceltaN=prLine.readLine();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				try{
-					roomNumber=Integer.parseInt(sceltaOpzione);
+					roomNumber=Integer.parseInt(sceltaN);
 					}catch(NumberFormatException nfe){
 						System.out.println("La camera edeve assumere un valore intero.\tVedi stanza d'esempio room 0:");
 						nfe.getMessage();
@@ -277,13 +272,13 @@ public RoomView(Hotel h){
 				ExtraList el=new ExtraList();
 				BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 				try {
-					sceltaOpzione=prLine.readLine();
+					sceltaN=prLine.readLine();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				try{
-					roomNumber=Integer.parseInt(sceltaOpzione);
+					roomNumber=Integer.parseInt(sceltaN);
 					}catch(NumberFormatException nfe){
 						System.out.println("La camera edeve assumere un valore intero");
 						nfe.getMessage();
@@ -316,13 +311,13 @@ public RoomView(Hotel h){
 			System.out.println("Inserisci il numero di camera: ");
 			BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
 			try {
-				sceltaOpzione=prLine.readLine();
+				sceltaN=prLine.readLine();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try{
-				roomNumber=Integer.parseInt(sceltaOpzione);
+				roomNumber=Integer.parseInt(sceltaN);
 				}catch(NumberFormatException nfe){
 					System.out.println("La camera edeve assumere un valore intero");
 					nfe.getMessage();
@@ -361,16 +356,18 @@ public RoomView(Hotel h){
 		case 0:
 		{
 			
-				//System.out.println("Premi ENTER per continuare");
-				exit=true;
-			
+				System.out.println("Vai al menu iniziale,prova con un altro 0 al max");
+				sbagliato=false;
+				continua=false;
 			break;
 		}
 		
 	}
-}while(!exit);
+}
+	
 		
 }
+
 
 /**
  * Cancel extras.

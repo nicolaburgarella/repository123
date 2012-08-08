@@ -37,6 +37,21 @@ public class PdfFee {
     	
     	String mess=msg;
     	name=group.getName();
+    	
+    	/*File dir = new File("pdfFolder");
+    	boolean exists = dir.exists();
+    	  if (!exists) {
+    	dir.mkdir();
+    	
+    	result=dir+name.toUpperCase()+"-Fee.pdf";
+    	
+    	File tagFile=new File(dir,name.toUpperCase()+"-Fee.pdf");
+    	if(!tagFile.exists()){
+    	tagFile.createNewFile();
+    	}
+
+    	  }*/
+
     	result="pdfHotel/"+name.toUpperCase()+"-Fee.pdf";
     	createPdf(result,mess);
     	

@@ -54,14 +54,14 @@ public ReservationView(Hotel h){
         System.out.println(h);
         boolean sbagliato=false;
         String sceltaOpzione="";
-        boolean exit=true;
+        boolean continua=true;
         Group g =new Group();
+        String sceltaN="";
        
         System.out.println("BENVENUTO NELLA SEZIONE DELLE PRENOTAZIONI, SCEGLI UNA OPZIONE TRA LE SEGUENTI,PREMI 0 PER USCIRE: ");
        
-        do{
+        while(continua){
                 do{
-                        sbagliato=false;
                         System.out.println("1 - STAMPO TUTTE LE PRENOTAZIONI E I DETTAGLI DEI GRUPPI RELATIVI");
                         System.out.println("2 - STAMPO LA PRENOTAZIONE RELATIVA AL GRUPPO CON NOME GRUPPO SELEZIONATO");
                         System.out.println("3 - CHECKIN:\tAGGIUNGO UN PRENOTAZIONE");
@@ -77,36 +77,28 @@ public ReservationView(Hotel h){
                                         sbagliato=true;
                                         System.out.println("E' stata scelta un'opzione non valida riprova");
                                 }
+                                
+                                try{
+                        			scelta=Integer.parseInt(sceltaOpzione);
+                        			}catch(NumberFormatException nfe){
+                        				System.out.print("La scelta deve essere un numero intero");
+                        				nfe.getMessage();
+                        				sbagliato=true;
+                        			}
+                                
                         }
                         catch(IOException ioe){
                                 ioe.printStackTrace();
                         }
                 }while(sbagliato);
                 
-        			
-                BufferedReader promptLine=new BufferedReader(new InputStreamReader(System.in));
-                try {
-                        sceltaOpzione=promptLine.readLine();
-                } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                }
-                
-               // try{
-        			scelta=Integer.parseInt(sceltaOpzione);
-        		/*/	}catch(NumberFormatException nfe){
-        				System.out.print("La scelta deve essere un numero intero");
-        				nfe.getMessage();
-        				exit=true;
-        			}*/
-                
+        			            
                 switch(scelta){
                
                 case 1:
                 {
                         System.out.println("STAMPO TUTTE LE PRENOTAZIONI E I DETTAGLI DEI GRUPPI RELATIVI:");
-                        reservation.JDOMReader jdrr=new reservation.JDOMReader();
-                       
+                        reservation.JDOMReader jdrr=new reservation.JDOMReader();    
                         break;
                 }
                
@@ -122,12 +114,13 @@ public ReservationView(Hotel h){
                                 System.out.println("Inserisci il nome del gruppo: ");
                                 BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
                                 try {
-                                        sceltaOpzione=prLine.readLine();
+                                        sceltaN=prLine.readLine();
                                 } catch (IOException e) {
                                         // TODO Auto-generated catch block
                                         e.printStackTrace();
+                                        sbagliato=true;
                                 }
-                                String groupName=sceltaOpzione;
+                                String groupName=sceltaN;
                                 for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
                                         if(groupName.equalsIgnoreCase(h.getGroupList().getGroupReg().get(i).getName())){
                                                 JDOMExtractReservation jder =new JDOMExtractReservation(groupName);
@@ -150,12 +143,12 @@ public ReservationView(Hotel h){
                                 System.out.println("Inserisci il nome del gruppo: ");
                                 BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
                                 try {
-                                        sceltaOpzione=prLine.readLine();
+                                        sceltaN=prLine.readLine();
                                 } catch (IOException e) {
                                         // TODO Auto-generated catch block
                                         e.printStackTrace();
                                 }
-                                String groupName=sceltaOpzione;
+                                String groupName=sceltaN;
                                 //assegno camere al gruppo e creo la prenotazione(lista di istanze e salvataggio in xml)
                                 if(groupName==null||groupName==""||h==null){
                                 	System.out.println("Non posso assegnare stanze per valori nulli di input");
@@ -182,6 +175,7 @@ public ReservationView(Hotel h){
                         }
                         else{
                                 System.out.println("Non è stato inserito alcun gruppo, non posso procedere nel checkin");
+                                sbagliato=true;
                         }
                         break;
                        
@@ -198,13 +192,13 @@ public ReservationView(Hotel h){
                                 System.out.println("Inserisci il numero di prenotazione da eliminare: ");
                                 BufferedReader prLine=new BufferedReader(new InputStreamReader(System.in));
                                 try {
-                                        sceltaOpzione=prLine.readLine();
+                                        sceltaN=prLine.readLine();
                                 } catch (IOException e) {
                                         // TODO Auto-generated catch block
                                         e.printStackTrace();
                                 }
                                 try{
-                                number=Integer.parseInt(sceltaOpzione);
+                                number=Integer.parseInt(sceltaN);
                                 if(number==0){
                                 	System.out.println("il numero di prenotazione non può essere nullo,ma intero positivo");
                                 	sbagliato=true;
@@ -240,7 +234,6 @@ public ReservationView(Hotel h){
                                                         	g=h.getGroupList().getGroupReg().get(i);
                                                         	String name=g.getName();
                                                         	ArrayList<Room>r =new ArrayList<Room>();
-                                                        	//r=h.getGroupList().getRoomAssignedFromMap(name);
                                                         	JDOMExtractRoomAssigned dj=new JDOMExtractRoomAssigned();
                                                         	r=dj.JDOMExtractRoomAssigned(h,g.getNumber());
                                                         	g.setRoomAssigned(r);
@@ -285,6 +278,7 @@ public ReservationView(Hotel h){
                                         }
                                         else{
                                                 System.out.println("Il numero di prenotazione inserito non è stato trovato tra le prenotazioni memorizzate");
+                                                sbagliato=true;
                                         }
                                 }
                                 if(trovato==false){
@@ -377,6 +371,7 @@ public ReservationView(Hotel h){
                                         }
                                         else{
                                             System.out.println("Il nome gruppo inserito non è associato ad alcuna prenotazione memorizzata");
+                                            sbagliato=true;
                                         }
                                 }
                                
@@ -384,6 +379,7 @@ public ReservationView(Hotel h){
                         }
                         else{
                                 System.out.println("Non è ancora stata inserita alcuna prenotazione");
+                                sbagliato=true;
                         }
                         break;
                 }
@@ -391,13 +387,14 @@ public ReservationView(Hotel h){
                 case 0:
         		{
         			
-        				//System.out.println("Premi ENTER per continuare");
-        				exit=true;
+        				System.out.println("Vado al menu iniziale");
+        				sbagliato=false;
+        				continua=false;
         			
         			break;
         		}
         	}
-        }while(!exit);
+        }
                
 }
 
