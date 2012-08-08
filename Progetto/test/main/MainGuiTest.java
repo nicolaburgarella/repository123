@@ -17,18 +17,6 @@ public class MainGuiTest extends junit.framework.TestCase
 {
 	
 	/**
-	 * Test action performed.
-	 */
-	public void testActionPerformed()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: actionPerformed";
-		ActionEvent e=null;
-		obj.actionPerformed(e);
-		//Examine the object and assert something appropriate here
-	}
-	
-	/**
 	 * Test is file allow ext.
 	 */
 	public void testIsFileAllowExt()
@@ -73,7 +61,6 @@ public class MainGuiTest extends junit.framework.TestCase
 		String problemMsg="Problem with: drop";
 		DropTargetDropEvent dtde=null;
 		obj.drop(dtde);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**
@@ -97,7 +84,6 @@ public class MainGuiTest extends junit.framework.TestCase
 		String problemMsg="Problem with: dragEnter";
 		DropTargetDragEvent arg0=null;
 		obj.dragEnter(arg0);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**
@@ -109,7 +95,6 @@ public class MainGuiTest extends junit.framework.TestCase
 		String problemMsg="Problem with: dragExit";
 		DropTargetEvent arg0=null;
 		obj.dragExit(arg0);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**
@@ -121,7 +106,6 @@ public class MainGuiTest extends junit.framework.TestCase
 		String problemMsg="Problem with: dragOver";
 		DropTargetDragEvent arg0=null;
 		obj.dragOver(arg0);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**
@@ -145,7 +129,6 @@ public class MainGuiTest extends junit.framework.TestCase
 		String problemMsg="Problem with: caretUpdate";
 		CaretEvent arg0=null;
 		obj.caretUpdate(arg0);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**
