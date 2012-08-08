@@ -76,6 +76,8 @@ public GroupView(Hotel h){
 			}
 			catch(IOException ioe){
 				ioe.printStackTrace();
+				sbagliato=false;
+				continua=false;
 			}
 		}while(sbagliato);
 		

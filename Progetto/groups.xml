@@ -2,7 +2,7 @@
 <GROUP_LIST>
   <GROUP number="1" name="gruppo1" checkin="08/08/2012" checkout="09/08/2012" deposit="11.0">
     <RICHIESTA singole="1" doppie="0" matrimoniali="0">non eseguita</RICHIESTA>
-    <ASSIGN rooms="7 ">assegnate</ASSIGN>
+    <ASSIGN rooms="3 ">assegnate</ASSIGN>
   </GROUP>
 </GROUP_LIST>
 
