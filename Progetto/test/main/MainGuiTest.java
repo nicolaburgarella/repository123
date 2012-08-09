@@ -16,64 +16,6 @@ import javax.swing.event.CaretEvent;
 public class MainGuiTest extends junit.framework.TestCase
 {
 	
-	/**
-	 * Test is file allow ext.
-	 */
-	public void testIsFileAllowExt()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: isFileAllowExt";
-		File file=null;
-		assertTrue(problemMsg, obj.isFileAllowExt(file));
-//		assertFalse(problemMsg, obj.isFileAllowExt(file));
-	}
-	
-	/**
-	 * Test is file ok.
-	 */
-	public void testIsFileOk()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: isFileOk";
-		File file=null;
-		assertTrue(problemMsg, obj.isFileOk(file));
-//		assertFalse(problemMsg, obj.isFileOk(file));
-	}
-	
-	/**
-	 * Test carica file.
-	 */
-	public void testCaricaFile()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: caricaFile";
-		File file=null;
-		assertTrue(problemMsg, obj.caricaFile(file));
-//		assertFalse(problemMsg, obj.caricaFile(file));
-	}
-	
-	/**
-	 * Test drop.
-	 */
-	public void testDrop()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: drop";
-		DropTargetDropEvent dtde=null;
-		obj.drop(dtde);
-	}
-	
-	/**
-	 * Test salva file.
-	 */
-	public void testSalvaFile()
-	{
-		MainGui obj=new main.MainGui();
-		String problemMsg="Problem with: salvaFile";
-		File path=null;
-		assertTrue(problemMsg, obj.salvaFile(path));
-//		assertFalse(problemMsg, obj.salvaFile(path));
-	}
 	
 	/**
 	 * Test drag enter.
