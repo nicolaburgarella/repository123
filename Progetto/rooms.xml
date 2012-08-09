@@ -6,11 +6,8 @@
   </ROOM>
   <ROOM number="1" fee="75" free="yes" description="no" composition="2" />
   <ROOM number="2" fee="75" free="yes" description="no" composition="1+1" />
-  <ROOM number="3" fee="75" free="no" description="no" composition="1">
-    <EXTRA cost="11.0" date="12/2/2012">internet</EXTRA>
-    <EXTRA cost="11.0" date="12/2/2012">internet</EXTRA>
-  </ROOM>
-  <ROOM number="4" fee="75" free="yes" description="no" composition="1" />
+  <ROOM number="3" fee="75" free="no" description="no" composition="1" />
+  <ROOM number="4" fee="75" free="no" description="no" composition="1" />
   <ROOM number="5" fee="75" free="yes" description="no" composition="1+1" />
   <ROOM number="6" fee="75" free="yes" description="no" composition="2" />
   <ROOM number="7" fee="75" free="yes" description="no" composition="1" />

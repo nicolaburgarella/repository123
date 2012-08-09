@@ -449,6 +449,20 @@ public class InsertGroup1 extends JDialog {
 														goOk=false;
 						                             }
 													
+													for(int i=0;i<h.getGroupList().getGroupReg().size();i++){
+														if(h.getGroupList().getGroupReg().get(i).getName().equalsIgnoreCase(nome)){
+															JOptionPane.showMessageDialog(null,"Il gruppo non viene inserito perchè già presente");
+															goOk=false;
+														}
+													}
+													
+													for(int i=0;i<h.getReservationList().getReservReg().size();i++){
+														if(h.getReservationList().getReservReg().get(i).getGroupName().equalsIgnoreCase(nome)){
+															JOptionPane.showMessageDialog(null,"Il gruppo non viene inserito perchè già presente una prenotazione assegnata a quel gruppo");
+															goOk=false;
+														}
+													}
+													
 							
                              if(goOk==true){
                              DataCheckout d=new DataCheckout();

@@ -254,6 +254,15 @@ public class CancelGroup1 extends JDialog {
 											goOk=false;
 
 										}
+										
+										
+										for(int i=0;i<h.getReservationList().getReservReg().size();i++){
+											if(h.getReservationList().getReservReg().get(i).getGroupName().equalsIgnoreCase(nome)||h.getReservationList().getReservReg().get(i).getNumber()==id){
+												JOptionPane.showMessageDialog(null,"Il gruppo non viene cancellato perchè già presente una prenotazione assegnata a quel gruppo,invece procedi nel checkout");
+												goOk=false;
+											}
+										}
+										
 									
 								 
 								 if(jCheckBox1.isSelected()){
