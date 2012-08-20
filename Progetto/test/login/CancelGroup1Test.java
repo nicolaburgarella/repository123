@@ -22,7 +22,6 @@ public class CancelGroup1Test extends junit.framework.TestCase
 		String problemMsg="Problem with: actionPerformed";
 		ActionEvent e=null;
 		//obj.actionPerformed(e);
-		//Examine the object and assert something appropriate here
 	}
 
 }

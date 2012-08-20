@@ -59,7 +59,6 @@ public class MainGuiTest extends junit.framework.TestCase
 		String problemMsg="Problem with: dropActionChanged";
 		DropTargetDragEvent arg0=null;
 		obj.dropActionChanged(arg0);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**

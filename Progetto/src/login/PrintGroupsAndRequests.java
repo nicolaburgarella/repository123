@@ -6,6 +6,7 @@ import hotel.Hotel;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -28,6 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import room.AddExtraView;
@@ -144,6 +146,15 @@ public class PrintGroupsAndRequests extends JDialog {
 			JButton cancelButton = new JButton("Cancel");
 			cancelButton.setActionCommand("Cancel");
 			buttonPane.add(cancelButton);
+			cancelButton.addActionListener(new ActionListener() {
+
+				public void actionPerformed(ActionEvent e){
+					System.out.println("called");
+					Window win = SwingUtilities.getWindowAncestor(jLabel1);
+		               win.setVisible(false);
+
+					}
+			});
 			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");

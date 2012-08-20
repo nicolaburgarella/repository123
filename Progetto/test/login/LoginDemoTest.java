@@ -19,7 +19,6 @@ public class LoginDemoTest extends junit.framework.TestCase
 		String problemMsg="Problem with: main";
 		String[] arg=null;
 		LoginDemo.main(arg);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**

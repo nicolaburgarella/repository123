@@ -22,7 +22,6 @@ public class CancelExtraTest extends junit.framework.TestCase
 		String problemMsg="Problem with: actionPerformed";
 		ActionEvent e = null;
 		//obj.actionPerformed(e);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**
@@ -35,6 +34,5 @@ public class CancelExtraTest extends junit.framework.TestCase
 		Hotel h=null;
 		ExtraList el=null;
 		obj.cancelExtras(h, el);
-		//Examine the object and assert something appropriate here
 	}
 }

@@ -7,6 +7,7 @@ import hotel.Hotel;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
@@ -20,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import date.DataCheckout;
@@ -355,12 +357,13 @@ public class InsertGroup1 extends JDialog {
 			buttonPane.add(cancelButton);
 			getRootPane().setDefaultButton(cancelButton);
 			cancelButton.addActionListener(new ActionListener() {
+
 				public void actionPerformed(ActionEvent e){
-					if(e.getActionCommand().equals("Cancel")){
-					 
-				}
-					
-				}
+					System.out.println("called");
+					Window win = SwingUtilities.getWindowAncestor(jLabel2);
+		               win.setVisible(false);
+
+					}
 			});
 			
 				JButton okButton = new JButton("OK");

@@ -17,7 +17,6 @@ public class LoginTestTest extends junit.framework.TestCase
 		LoginTest obj=new login.LoginTest();
 		String problemMsg="Problem with: testActionPerformed";
 		obj.testActionPerformed();
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**
@@ -28,7 +27,6 @@ public class LoginTestTest extends junit.framework.TestCase
 		String problemMsg="Problem with: main";
 		String[] args=null;
 		LoginTest.main(args);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**

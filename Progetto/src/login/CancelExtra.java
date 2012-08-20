@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
+import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
@@ -128,6 +129,15 @@ public class CancelExtra extends JDialog {
 			JButton cancelButton = new JButton("Cancel");
 			cancelButton.setActionCommand("Cancel");
 			buttonPane.add(cancelButton);
+			cancelButton.addActionListener(new ActionListener() {
+
+				public void actionPerformed(ActionEvent e){
+					System.out.println("called");
+					Window win = SwingUtilities.getWindowAncestor(jLabel2);
+		               win.setVisible(false);
+
+					}
+			});
 			
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
@@ -185,10 +195,10 @@ public class CancelExtra extends JDialog {
 
 							 }
 							 
-							 if(e.getActionCommand().equals("Cancel")){
+							 /*if(e.getActionCommand().equals("Cancel")){
 								//.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-								 dispose();
-							 }
+								 this.dispose();
+							 }*/
 							 }
 							 });
 			

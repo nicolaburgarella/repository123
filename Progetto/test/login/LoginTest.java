@@ -18,7 +18,6 @@ public class LoginTest extends junit.framework.TestCase
 		String problemMsg="Problem with: actionPerformed";
 		ActionEvent ae=null;
 		obj.actionPerformed(ae);
-		//Examine the object and assert something appropriate here
 	}
 	
 	/**
