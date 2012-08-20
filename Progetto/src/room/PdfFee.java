@@ -23,6 +23,10 @@ public class PdfFee {
 	
 	/** The name. */
 	private String name;
+
+	private String pathDir;
+
+	private String resultFile;
  
     /**
      * Creates a PDF file: hello.pdf
@@ -38,25 +42,24 @@ public class PdfFee {
     	String mess=msg;
     	name=group.getName();
     	
-    	/*File dir = new File("pdfFolder");
+    	File dir = new File("pdfHotel");
     	boolean exists = dir.exists();
-    	  if (!exists) {
-    	dir.mkdir();
     	
-    	result=dir+name.toUpperCase()+"-Fee.pdf";
+    	if (!exists) {
+    		dir.mkdir();
+    		pathDir = "pdfHotel";
+    		resultFile= name.toUpperCase()+"-Fee.pdf";
+    		createPdf2(pathDir, resultFile, mess);
+    		File myFile = new File(pathDir,resultFile);
+            Desktop.getDesktop().open(myFile);
+    	  }
     	
-    	File tagFile=new File(dir,name.toUpperCase()+"-Fee.pdf");
-    	if(!tagFile.exists()){
-    	tagFile.createNewFile();
-    	}
-
-    	  }*/
-
+    	else{
     	result="pdfHotel/"+name.toUpperCase()+"-Fee.pdf";
     	createPdf(result,mess);
-    	
     	File myFile = new File(result);
         Desktop.getDesktop().open(myFile);
+    	}
 
     	
     }
@@ -82,4 +85,23 @@ public class PdfFee {
         // step 5
         document.close();
     }
+    
+    
+    public void createPdf2(String dir,String filename, String mess)
+	throws DocumentException, IOException {
+        // step 1
+        Document document = new Document();
+        // step 2
+        PdfWriter.getInstance(document, new FileOutputStream(new File(dir,filename)));
+        // step 3
+        document.open();
+        // step 4
+        document.add(new Paragraph(mess));
+        // step 5
+        document.close();
+    }
+    
+    
+    
+    
 }

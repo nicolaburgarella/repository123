@@ -24,6 +24,10 @@ public class PdfExtra {
 	
 	/** The name. */
 	private String name;
+
+	private String pathDir;
+
+	private String resultFile;
  
     /**
      * Creates a PDF file: hello.pdf
@@ -38,12 +42,25 @@ public class PdfExtra {
     	throws DocumentException, IOException {
     	
     	String mess=msg;
+    	
+    	File dir = new File("pdfHotel");
+    	boolean exists = dir.exists();
+    	
+    	if (!exists) {
+    		dir.mkdir();
+    		pathDir = "pdfHotel";
+    		resultFile= name.toUpperCase()+"CAMERA "+roomId+"-Extra.pdf";
+    		createPdf2(pathDir, resultFile, mess);
+    		File myFile = new File(pathDir,resultFile);
+            Desktop.getDesktop().open(myFile);
+    	  }
+    	  
+    	else{
     	result="pdfHotel/"+name.toUpperCase()+"CAMERA "+roomId+"-Extra.pdf";
     	createPdf(result,mess);
-    	
     	File myFile = new File(result);
         Desktop.getDesktop().open(myFile);
-    	
+    	}
     	
     	
     	
@@ -70,4 +87,21 @@ public class PdfExtra {
         // step 5
         document.close();
     }
+    
+    public void createPdf2(String dir,String filename, String mess)
+	throws DocumentException, IOException {
+        // step 1
+        Document document = new Document();
+        // step 2
+        PdfWriter.getInstance(document, new FileOutputStream(new File(dir,filename)));
+        // step 3
+        document.open();
+        // step 4
+        document.add(new Paragraph(mess));
+        // step 5
+        document.close();
+    }
+    
+    
+    
 }
