@@ -2,7 +2,7 @@ package group;
 
 // TODO: Auto-generated Javadoc
 /**
- * The model Class Request.
+ * The model Class Request deals with the request needed by the group before being accepted and doing the checkin.
  */
 public class Request {
 	

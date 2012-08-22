@@ -44,7 +44,7 @@ public class AddGroupView {
 	 * @return the group, the Group entity if getting the data from console have done right
 	 */
 	public Group AddGroupView(Hotel hotel) {
-	//	g=new Group();
+		
 		if(hotel==null){
 			System.out.println("E' stata caricata un'istanza nulla della classe Hotel");
 			return null;

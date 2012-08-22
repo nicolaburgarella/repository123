@@ -10,7 +10,7 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class JDOMExtractReservation.
+ * The controller Class JDOMExtractReservation extracts a reservation from the xml file reservation.xml by selecting the group name attribute.
  */
 public class JDOMExtractReservation { 
 

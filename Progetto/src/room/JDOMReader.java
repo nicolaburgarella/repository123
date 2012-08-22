@@ -8,7 +8,8 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class JDOMReader.
+ * The controller Class JDOMReader parses the xml data structure and prints
+ *  all the rooms details and their extras if they exist.
  */
 public class JDOMReader { 
 	

@@ -6,7 +6,9 @@ import java.io.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class JDOMWriter.
+ * The controller Class JDOMWriter writes the xml data structure rooms.xml
+ *  inserting all the room available of the hotel.
+ *  This class is used if there isn't the rooms.xml file
  */
 public class JDOMWriter { 
 

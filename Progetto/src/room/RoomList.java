@@ -5,7 +5,8 @@ import java.util.Arrays;
 
 // TODO: Auto-generated Javadoc
 /**
- * The room Class RoomList.
+ * The model Class RoomList lists all the room instances inserted into application
+ *  by default from the xml data structure rooms.xml and do particular controls over them
  */
 public class RoomList {
 

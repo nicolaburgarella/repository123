@@ -15,7 +15,8 @@ import org.jdom.output.XMLOutputter;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class ExtractRoomByNumber.
+ * The controller Class ExtractRoomByNumber extracts all the room details
+ *  directly from the xml data structure rooms.xml.
  */
 public class ExtractRoomByNumber {
 	

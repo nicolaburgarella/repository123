@@ -13,7 +13,7 @@ import org.jdom.input.*;
 public class ExtractRequest { 
 	
 	/**
-	 * Instantiates a new extract request.
+	 * Instantiates a new ExtractRequest entity.
 	 */
 	public ExtractRequest(){
 		
@@ -46,9 +46,7 @@ public class ExtractRequest {
       
        //Per ogni figlio 
       while(iterator.hasNext()){ 
-         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-         //attributi "importanza", "perc_completamento", e "completata" 
-         //sullo standard output 
+       
          Element item = (Element)iterator.next();
          
          if(item.getAttributeValue("name").equalsIgnoreCase(groupname)){

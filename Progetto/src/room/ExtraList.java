@@ -6,7 +6,7 @@ import java.io.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The model Class ExtraList.
+ * The model Class ExtraList lists all the extra instances.
  */
 public class ExtraList {
 		

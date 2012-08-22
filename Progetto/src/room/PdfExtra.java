@@ -15,7 +15,8 @@ import com.itextpdf.text.pdf.PdfWriter;
  
 // TODO: Auto-generated Javadoc
 /**
- * First iText example: Hello World.
+ * PDFExtra prints all the extras of the rooms assigned to a certain group into a pdf file;
+ * it creates the folder pdfHotel if it doesn't exists and it is called within the checkout procedure
  */
 public class PdfExtra {
  

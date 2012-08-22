@@ -14,12 +14,12 @@ import java.util.List;
 
 	// TODO: Auto-generated Javadoc
 /**
-	 * The controller Class JDOMAddChild.
+	 * The controller Class JDOMAddChild adds a reservation instance into the xml data structure reservation.xml.
 	 */
 	public class JDOMAddChild {
 		
 		/**
-		 * Instantiates a new jDOM add child.
+		 * Instantiates a new jDOM add child entity.
 		 */
 		public JDOMAddChild(){
 			

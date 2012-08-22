@@ -2,7 +2,8 @@ package room;
 
 // TODO: Auto-generated Javadoc
 /**
- * The model Class Extra.
+ * The model Class Extra deals with the extra of a certain room,
+ * they are assigned to the people who use this room.
  */
 public class Extra{
 	

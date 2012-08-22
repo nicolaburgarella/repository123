@@ -5,7 +5,7 @@ import java.util.Date;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class DaysBetweenDates.
+ * The Class DaysBetweenDates allows to see how many days are between the checkin and the checkout.
  */
 public class DaysBetweenDates {
 

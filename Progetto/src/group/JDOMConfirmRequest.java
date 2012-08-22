@@ -33,19 +33,12 @@ import org.jdom.output.XMLOutputter;
 	      
 	       //Per ogni figlio 
 	      while(iterator.hasNext()){ 
-	         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-	         //attributi "importanza", "perc_completamento", e "completata" 
-	         //sullo standard output 
+	        
 	         Element item = (Element)iterator.next();
 	    
-	         /*List richiesta = item.getChildren("RICHIESTA"); 
-	         for(int i=0;i<(richiesta.size());i++){
-	         System.out.print("*" + ((Element) richiesta.get(i)).getText().toUpperCase()+ "\t");
-	         }*/
 	         if(Integer.parseInt(item.getAttributeValue("number"))==number){
 	        	 item.getChild("RICHIESTA").setText("eseguita");
 	         
-	        // stampata a video del gruppo facoltativa
 	         System.out.println("Group details:");
 	         System.out.println("\tNumero: " + item.getAttributeValue("number")); 
 	         System.out.println("\tNome: " + item.getAttributeValue("name"));
@@ -93,15 +86,10 @@ import org.jdom.output.XMLOutputter;
 		      
 		       //Per ogni figlio 
 		      while(iterator.hasNext()){ 
-		         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-		         //attributi "importanza", "perc_completamento", e "completata" 
-		         //sullo standard output 
+		       
 		         Element item = (Element)iterator.next();
 		    
-		         /*List richiesta = item.getChildren("RICHIESTA"); 
-		         for(int i=0;i<(richiesta.size());i++){
-		         System.out.print("*" + ((Element) richiesta.get(i)).getText().toUpperCase()+ "\t");
-		         }*/
+		   
 		         if(item.getAttributeValue("name").equalsIgnoreCase(groupname)){
 		        	 item.getChild("RICHIESTA").setText("eseguita");
 		         

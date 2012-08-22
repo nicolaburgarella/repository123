@@ -56,23 +56,9 @@ public class ExtractGroupByName {
 		                  float deposit=Float.parseFloat(((Element)children.get(i)).getAttributeValue("deposit"));
 		                  g=new Group(number, name, checkin, checkout, deposit);
 		          	}
-		          	/*else{
-		         			System.out.println("Gruppo da estrarre non trovato");
-		         		}*/
+		          	
 		          	
 		          }
-		             
-		  		/*
-		  		//Creazione dell'oggetto XMLOutputter 
-		  	      XMLOutputter outputter = new XMLOutputter(); 
-		  	      //Imposto il formato dell'outputter come "bel formato" 
-		  	      outputter.setFormat(Format.getPrettyFormat()); 
-		  	      //Produco l'output sul file xml.foo 
-		  	      outputter.output(document, new FileOutputStream("groups.xml")); 
-		  	      //System.out.println("File creato:"); 
-		  	      //Stampo l'output anche sullo standard output 
-		  	      //outputter.output(document, System.out); 
-		        */
 		     
 		      } catch (Exception e) {
 		        System.out.println(e);

@@ -30,9 +30,7 @@ public class JDOMReader {
       
        //Per ogni figlio 
       while(iterator.hasNext()){ 
-         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-         //attributi "importanza", "perc_completamento", e "completata" 
-         //sullo standard output 
+      
          Element item = (Element)iterator.next();
     
          List richiesta = item.getChildren("RICHIESTA"); 

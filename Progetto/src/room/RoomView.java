@@ -9,7 +9,7 @@ import hotel.Hotel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The view Class RoomView.
+The Class RoomView is the view of all the procedures concerning the manage of rooms by I\O console application.
  */
 public class RoomView {
 
@@ -17,10 +17,8 @@ public class RoomView {
 /** The room number. */
 private int roomNumber;
 
-/** The fatto. */
 private boolean fatto=false;
 
-/** The scelta. */
 private int scelta=0;
 
 /**

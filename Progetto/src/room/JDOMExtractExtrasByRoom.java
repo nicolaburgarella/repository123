@@ -8,7 +8,8 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class JDOMExtractExtrasByRoom.
+ * The controller Class JDOMExtractExtrasByRoom extracts the extras used
+ *  by the people who live in the room by selecting these room's numbers.
  */
 public class JDOMExtractExtrasByRoom {
 

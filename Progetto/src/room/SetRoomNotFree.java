@@ -14,7 +14,7 @@
 	
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class SetRoomNotFree.
+ * The controller Class SetRoomNotFree checks as not free the rooms already assigned to a group.
  */
 public class SetRoomNotFree {
 

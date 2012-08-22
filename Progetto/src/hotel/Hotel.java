@@ -14,23 +14,24 @@ import reservation.ReservationList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The model Class Hotel.
+ * The model Class Hotel keeps all the models of the application and their lists loaded
+ *  at the beginning of the application if the xml files of the data structures exist .
  */
 public class Hotel {
 	
-	/** The request list. */
+	/** The request list entity. */
 	RequestList requestList =new RequestList();
 	
-	/** The group list. */
+	/** The group list entity. */
 	GroupList groupList = new GroupList();
 	
-	/** The room list. */
+	/** The room list entity. */
 	RoomList roomList = new RoomList();
 	
-	/** The extra list. */
+	/** The extra list entity. */
 	ExtraList extraList=new ExtraList();
 	
-	/** The reservation list. */
+	/** The reservation list entity. */
 	ReservationList reservationList=new ReservationList();
 	
 	/* (non-Javadoc)

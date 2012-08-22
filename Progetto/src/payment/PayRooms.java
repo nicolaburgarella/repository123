@@ -15,7 +15,7 @@ import room.Room;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class PayRooms.
+ * The controller Class PayRooms desals with the payment of the fees.
  */
 public class PayRooms {
 

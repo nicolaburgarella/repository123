@@ -6,7 +6,7 @@ import date.StringToDate;
 
 	// TODO: Auto-generated Javadoc
 /**
-	 * The view Class AddExtraView.
+	  The view Class AddExtraView adds an extra from the console application.
 	 */
 	public class AddExtraView {
 	

@@ -15,19 +15,17 @@ import group.Group;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class PayExtraByRoomNr.
+ * The controller Class PayExtraByRoomNr deals with the payment of extras (if they exists).
  */
 public class PayExtraByRoomNr {
 	
 	/** The group instance g. */
 	Group g = new Group();
 	
-	/** The no room assigned. */
 	private boolean noRoomAssigned=false;
 	
 	JDOMExtractExtrasByRoom ee = new JDOMExtractExtrasByRoom();
 	
-	/** The extra trovati. */
 	private boolean extraTrovati=false;
 
 	/**

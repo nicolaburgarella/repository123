@@ -20,10 +20,7 @@ public class JDOMWriter {
       //Documento 
       Document document = new Document(root); 
 /*
-      //Creazione di tre elementi figli denominato ITEM 
-      //a ciascuno dei quali vengono settati tre attributi 
-      //e viene aggiunto un elemento figlio contenente 
-      //la descrizione della cosa da fare 
+ * Esempio di inserimento valori  
       Element item1 = new Element("GROUP"); 
       item1.setAttribute("number", "1"); 
       item1.setAttribute("name", "gruppo1"); 

@@ -21,11 +21,11 @@ import room.RoomList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class JDOMRemoveExtraByRoomNr.
+ * The controller Class JDOMRemoveExtraByRoomNr removes the extra from the xml data structure
+ *  by selecting the room number which the extra is referred to.
  */
 public class JDOMRemoveExtraByRoomNr {
 
-	/** The trovato. */
 	private boolean trovato=false;
 
 	/**

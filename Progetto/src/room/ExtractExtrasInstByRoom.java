@@ -8,7 +8,8 @@ import org.jdom.input.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class ExtractExtrasInstByRoom.
+ * The controller Class ExtractExtrasInstByRoom extracts the extra instances from the rooms.xml
+ *  data structure by selecting the room number.
  */
 public class ExtractExtrasInstByRoom {
 	

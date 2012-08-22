@@ -2,7 +2,7 @@ package room;
 
 // TODO: Auto-generated Javadoc
 /**
- * The model Class Room.
+ * The model Class Room deals with each room available in the hotel.
  */
 public class Room {
 	

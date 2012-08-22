@@ -7,12 +7,12 @@ import java.util.Date;
  
 // TODO: Auto-generated Javadoc
 /**
- * The Class StringToDate.
+ * The Class StringToDate allows to convert a string into a correct Date object dd/MM/yyyy.
  */
 public class StringToDate {
 	
 	/**
-	 * Instantiates a new string to date.
+	 * Instantiates a new StringToDate entity.
 	 */
 	public StringToDate(){
 		
@@ -25,8 +25,6 @@ public class StringToDate {
      * @return the date converted string into date
      */
     public Date StringToDate(String s) {
-    	//s="";
-    	//s="20/12/2005";
     	
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         Date date = null;
@@ -53,8 +51,6 @@ public class StringToDate {
      * @return true, if successful
      */
     public boolean StringToDateCheck(String s) {
-    	//s="";
-    	//s="20/12/2005";
     	
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         Date date = null;
@@ -67,7 +63,6 @@ public class StringToDate {
         try {
             date = df.parse(s);
             String d = df.format(date);
-            //System.out.println("Data = " + df.format(date));
         } catch (ParseException e) {
             System.out.println("La stringa inserita non è parsabile correttamente");
             return false;

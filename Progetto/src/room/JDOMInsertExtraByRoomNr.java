@@ -19,7 +19,8 @@ import room.RoomList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class JDOMInsertExtraByRoomNr.
+ * The controller Class JDOMInsertExtraByRoomNr inserts into the xml data structure the extra instances
+ *  by selecting the room number which the extras is refered to.
  */
 public class JDOMInsertExtraByRoomNr {
 

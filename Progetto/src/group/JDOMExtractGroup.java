@@ -26,10 +26,7 @@ public class JDOMExtractGroup {
    * @param name the name of the group to be extracted
    */
   public JDOMExtractGroup(String name) {
-/*String XmlFile = "<Company>" 
-  + "<Employee name=\"satya\" age=\"25\"/> "
-    + "<Employee  name=\"bharat\" age=\"24\"/>" 
-   + "</Company>";*/
+
 	  SAXBuilder builder = new SAXBuilder(); 
       Document document = null;
 	try {
@@ -56,9 +53,7 @@ public class JDOMExtractGroup {
                 System.out.println("\tData checkout: " + ((Element)children.get(i)).getAttributeValue("checkout"));
                 System.out.println("\tAcconto: " + ((Element)children.get(i)).getAttributeValue("deposit")+"\n");
         	}
-        	/*else{
-       			System.out.println("Gruppo da estrarre non trovato");
-       		}*/
+        	
         	
         }
            
@@ -69,9 +64,6 @@ public class JDOMExtractGroup {
 	      outputter.setFormat(Format.getPrettyFormat()); 
 	      //Produco l'output sul file xml.foo 
 	      outputter.output(document, new FileOutputStream("groups.xml")); 
-	      //System.out.println("File creato:"); 
-	      //Stampo l'output anche sullo standard output 
-	      //outputter.output(document, System.out); 
       
    
     } catch (Exception e) {

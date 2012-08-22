@@ -7,13 +7,13 @@ import java.util.Date;
  
 // TODO: Auto-generated Javadoc
 /**
- * The Class DateToString.
+ * The Class DateToString allows to convert a date into a String object.
  */
 public class DateToString
 {
 	
 	/**
-	 * Instantiates a new date to string.
+	 * Instantiates a new DateToString entity.
 	 */
 	public DateToString(){
 		

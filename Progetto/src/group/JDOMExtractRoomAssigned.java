@@ -76,10 +76,7 @@ public class JDOMExtractRoomAssigned {
 	      
 	      
 	       //Per ogni figlio 
-	      while(iterator.hasNext()){ 
-	         //Mostro il valore dell'elemento figlio "DESCR" e degli 
-	         //attributi "importanza", "perc_completamento", e "completata" 
-	         //sullo standard output 
+	      while(iterator.hasNext()){  
 	         Element item = (Element)iterator.next();
 	         
 	         if(Integer.parseInt(item.getAttributeValue("number"))==groupId){
@@ -117,9 +114,6 @@ public class JDOMExtractRoomAssigned {
 	    }
 	    newArray = new String[list.size()];
 	    list.toArray(newArray); 
-
-		//return newArray;
-		//
 	
 		
 	
@@ -137,9 +131,7 @@ public class JDOMExtractRoomAssigned {
 			}
 			}
 		}
-		
-		//System.out.println("stampo camere assegnate totali: "+roomAssigned.toString());
-		
+				
 		if(trovataCorr==false){
 			System.out.println("Non ho trovato la corrispondenza tra l'istanza della stanza e il numero estrapolato dall'xml");
 		}

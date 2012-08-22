@@ -7,12 +7,12 @@ import java.util.Locale;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class DataCheckout.
+ * The Class DataCheckout allows to get the date of the checkout.
  */
 public class DataCheckout {
 
 	/**
-	 * Instantiates a new data checkout.
+	 * Instantiates a new DataCheckout entity .
 	 *
 	 */
 	public DataCheckout(){
@@ -33,14 +33,8 @@ public class DataCheckout {
 	        Date checkout = calendar.getTime();
 	        Date[] dates = new Date[] {today, checkout};
 	 
-	        //
-	        // We want the message to be is Locale.US
-	        //
 	        Locale.setDefault(Locale.ITALIAN);
 	 
-	        //
-	        // Format a date, the time value is included
-	        //
 	        if(days==0){
 	        	System.out.println("Il cliente deve alloggiare almeno una notte");
 	        	return null;

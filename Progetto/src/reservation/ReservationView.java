@@ -22,7 +22,8 @@ import hotel.Hotel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The view Class ReservationView.
+ * The Class ReservationView is the view of all the procedures 
+ * concerning the manage of reservations by I\O console application.
  */
 public class ReservationView {
 

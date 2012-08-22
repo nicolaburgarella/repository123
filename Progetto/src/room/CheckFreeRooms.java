@@ -15,7 +15,7 @@ import java.util.List;
 
 // TODO: Auto-generated Javadoc
 /**
- * The controller Class CheckFreeRooms.
+ * The controller Class CheckFreeRooms prints all the free rooms if they exist.
  */
 public class CheckFreeRooms {
   
