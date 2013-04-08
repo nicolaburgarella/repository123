@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <Flights>
+   <AirCarrier>AA</AirCarrier>
+   <FlightNumber>700</FlightNumber>
+  
+
+      <City>DFW</City>
+      <Date>30Mar</Date>
+      <Scheduled>9.0am
+      </Scheduled>
+      <Status>ON TIME</Status>
+      <Gate>C16</Gate>
+      <OffGateTime>0644A</OffGateTime>
+      <OffGroundTime>0632A</OffGroundTime>
+</Flights>
