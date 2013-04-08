@@ -1,0 +1,27 @@
+//============================================================================
+// Name        : ese5.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+// custom countdown using while
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  int n;
+  cout << "Enter the starting number > ";
+  cin >> n;
+
+  while (n>0) {
+    cout << n << ", ";
+    --n;
+  }
+
+  cout << "FIRE!\n";
+  return 0;
+}

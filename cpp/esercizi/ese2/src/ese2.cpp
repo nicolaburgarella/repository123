@@ -1,0 +1,33 @@
+//============================================================================
+// Name        : ese2.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+// operating with variables
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  // declaring variables:
+  int a, b;
+  int result;
+
+  // process:
+  a = 5;
+  b = 2;
+  a = a + 1;
+  result = a - b;
+
+  // print out the result:
+  cout << result;
+
+  // terminate the program:
+  return 0;
+}
+
+
