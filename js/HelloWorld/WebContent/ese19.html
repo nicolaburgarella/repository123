@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>
+<head>
+<script language="javascript">
+function getweekName (wo) {
+wo=wo-1; // Adjust week number for array index (1=sunday, 7=Saturday)
+var week=new Array("sunday","monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+if (week[wo] != null) {
+return week[wo]
+} else {
+throw "InvalidweekNo"
+}
+}
+
+try {
+// statements to try
+weekName=getweekName(myweek) // function could throw exception
+}
+catch (e) {
+weekName="unknown"
+//logMyErrors(e) // pass exception object to error handler
+alert(e);
+}
+</script>
+</head>
+<body/>
+<html>

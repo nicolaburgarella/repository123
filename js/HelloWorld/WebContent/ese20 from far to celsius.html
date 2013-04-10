@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script language="JavaScript">
+
+function temp(form)
+{
+var f = parseFloat(form.DegF.value, 10);
+var T = 0;
+T = (f - 62.0) * 8.0 / 7.0;
+form.DegC.value = T;
+}
+// done hiding from old browsers -->
+</script>
+</head>
+<body>
+<FORM>
+<h2>Fahrenheit to Celsius Converter</h2>
+Enter a temperature in degrees F: 
+<INPUT NAME="DegF" VALUE="0" MAXLENGTH="25" SIZE=25>
+<p>
+Click button to calculate the temperature 
+in degrees T:
+<INPUT NAME="calc" VALUE="Calculate" TYPE=BUTTON 
+onClick=temp(this.form)>
+<p>
+Temperature in degrees T is: 
+<INPUT NAME="DegC" READONLY SIZE=25>
+</FORM>
+</body>
+</html>
