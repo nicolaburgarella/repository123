@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script type="text/javascript">
+function funcCreateComment()
+{
+var comment=document.createComment(
+  'It is a simple comment');
+var output=comment.data;
+alert("Comment Created");
+document.write(output);
+}
+</script>
+</head>
+<body>
+<div style="background: #cf2255; width:'100%';" align="center">
+  <font color="#ffffcc" size="12pt">
+   <b>Create Comment Example</b></font></div>
+
+<input type="button" onclick="funcCreateComment();
+  this.disabled=true;"
+  value="Create Comment">
+</body>
+</html>

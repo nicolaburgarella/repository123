@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="javascript">
+   function funAppendChild(){
+     var txt = 'Welcome to RoseIndia.net';
+     var newtext = document.createTextNode(txt);
+     document.body.appendChild(newtext);
+   } 
+</script>
+<body id="body">
+
+ <button
+   onclick="funAppendChild();
+   this.disabled=true;"> Append Text(child)
+ </button>
+  <br>
+ </body>
+</html>

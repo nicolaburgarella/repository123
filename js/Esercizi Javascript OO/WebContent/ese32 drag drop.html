@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+	function dragDropFunc() {
+		var isDragged = document.all.source.dragDrop();
+	} 
+</script>
+<div style onMouseUp="dragDropFunc();">
+<p align="center">&nbsp;</p>
+<div style="background: #cf2255; width:'100%';" align="center">
+  <font color="#ffffcc" size="12pt">
+   <b>Drag Drop Example</b></font></div>
+  <center>
+	<div style="background: #ffffcc; width:'100%';" 
+         align="center">
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" 
+   width="510" height="104">
+  <tr>
+    <td width="151" >
+      <textarea cols="20" id="source" rows="15">
+       Select any part of this text box to drag</textarea>
+    </td>
+    <td width="185" height="104" valign="middle"
+        align="center">Drag <==> Drop</td>
+    <td width="174" height="104">
+      <textarea cols="20" id="destination" rows="15"></textarea>
+    </td>
+  </tr>
+</table>
+&nbsp;
+<p>
+ </div>
+</center>
+</div>
+</body>
+</html>  

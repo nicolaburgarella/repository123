@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script language="JavaScript">
+ function setDateOfMonth()
+  {
+   var dt= new Date();
+   var dateOfMonth = document.getElementById(
+                'dateValue').value;
+   if(dateOfMonth >1 && dateOfMonth <31 ){
+      alert("Current date :" +dt);
+      dt.setDate(dateOfMonth);
+      alert("Date after set :"+dt);
+     }else{
+	alert("Invalid date");
+	return false;
+     }
+   }
+</script>
+</head>
+<body>
+<div style="background: #ff9900; width:'100%';"
+      align="center">
+  <font color="#0000ff" size="12pt">
+	<b>setDate() Example</b>
+  </font>
+ </div>
+<center>
+Insert any date between 1 to 31 to set
+<input type="text" id="dateValue" /><br>
+<input type="button" value="Set date"
+                  onClick="return setDateOfMonth();"/>
+</center>
+</body>
+</html>

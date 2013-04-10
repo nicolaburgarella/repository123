@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+ <script language="JavaScript">
+   function alignDiv() {
+      var div = document.createAttribute("align");
+      div.nodeValue = "center";
+      document.getElementById("mainDiv").setAttributeNode(div); 
+   } 
+ </script>
+</head>
+<body>
+<div style="background: #ff9900; width:'100%';"
+               align="center">
+  <font color="#0000ff" size="12pt">
+	<b>setAttributeNode Example</b>
+  </font>
+ </div>
+  <div id="mainDiv" style="background: #ccccff; border:outset">
+	<p>Welcome to RoseIndia</p>
+  </div>
+  <center>
+   <p>
+   <input type="button" value="Align div to center" 
+       onclick="alignDiv();this.disabled='true'">
+   </p>
+   </center>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<title>Sin method example </title>
+ <script>
+ function callSin(){
+    var val= document.getElementById("txt").value;
+    alert(Math.sin(val));
+ }
+ </script>
+</head>
+	 <body>
+ <div style="background: #cf2255; width:'100%';"
+    align="center">
+  <font color="#ffffcc" size="12pt">
+	<b>Sin Example</b>
+  </font>
+ </div>
+  <center>
+   <div style="background: #ffffcc; width:'100%';"
+                                   align="center">
+     Input any number to get sin() value :
+      <input type="text" id="txt" value=""/>
+    <button onclick="callSin();">
+       Show Value of Sin(value)</button>
+   </div>
+  </center>
+</body>
+</html>

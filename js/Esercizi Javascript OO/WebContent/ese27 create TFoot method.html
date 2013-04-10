@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+function createTableFooter() {
+	var footer = document.getElementById('table')
+        .createTFoot();
+	 footer.bgColor = '#565656';
+	}
+</script>
+
+<p align="center">&nbsp;</p>
+<div style="background: #cf2255; width:'100%';" align="center">
+  <font color="#ffffcc" size="12pt">
+   <b>Creating Table Footer</b></font></div>
+  <center>
+  <table id="table" border="1" width="400">
+	<thead>
+	  <th colspan="2"> Information table Header </th>
+	</thead>
+        <tr>
+			<td>Name</td>
+            <td>Deepak Kumar</td>
+        </tr>
+
+		 <tr>
+			<td>Designation</td>
+            <td>IT Manager</td>
+        </tr>
+	<tfoot>
+		<th colspan="2"> 
+			<font color="#ffffcc" size="5pt">
+				Information table Footer 
+			</font>
+		</th>
+	</tfoot>
+  </table>
+ </center>
+<p>
+  <center>
+  <input type="button" 
+         value="Create foot" 
+         onclick="createTableFooter(); this.disabled='true'">
+ </center>
+</p>
+</body>
+</html>

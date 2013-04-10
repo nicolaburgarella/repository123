@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+  function getID(){
+  var id = document.getElementById("divId").getAttribute("id");
+  alert(id);
+  }
+  function getAlignment(){
+  var align = document.getElementById("divId").getAttribute("align");
+  alert(align);
+  }
+</script>
+<div style="background: #cf2255; width:'100%';" align="center">
+  <font color="#05ff20" size="12pt">
+  <b>Get Attribute Example</b>
+  </font>
+</div>
+<center>
+ <div id="divId" align="center" style="background: #ffffcc; width:'100%';">
+  <p>Rose India Technologies Pvt. Ltd. is a global services company.</p>
+  <input type="button" value=" Get id " onclick="getID();">
+  <input type="button" value=" Get alignment " onclick="getAlignment();">
+  </div>
+</center>
+
+<p>Where "attributeName" is the name of the attribute whose attribute
+we have to retrieve and <b>flag </b>is the value which customizes the
+functionality of this <b>getAttribute()</b> method. The <b>flag </b>value may be
+<b>0, 1 </b>or<b> 2&nbsp;</b> and it is optional.</p>
+<table border="1" cellpadding="0" cellspacing="0" width="60%">
+  <tbody><tr>
+    <td align="center" bgcolor="#800080" valign="middle" width="26%"><font color="#FFFFFF">&nbsp;
+      <b>Flag Value</b></font></td>
+    <td bgcolor="#800080" width="74%"><font color="#FFFFFF">&nbsp;&nbsp; <b>Description</b></font></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" width="26%">0</td>
+    <td width="74%">&nbsp;It is the default value and performs the non case
+      sensitive search</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" width="26%">1</td>
+    <td width="74%">&nbsp;It performs the case sensitive property search</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" width="26%">2</td>
+    <td width="74%">&nbsp;It returns the property value as it is set in the
+      script or html code</td>
+  </tr>
+</tbody></table>
+
+</body>
+</html>

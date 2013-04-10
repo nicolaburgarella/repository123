@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<h2>Use of Namespaces</h2>
+<script>
+var Util = {
+add: function() {
+alert("This is addition method.");
+},
+sub: function() {
+alert("This is subtraction method.");
+}
+}
+var Coll = {
+mul: function() {
+alert("This is multiplication method.");
+},
+div: function() {
+alert("This is division method.");
+}
+}
+</script>
+<input type="button" onClick="Util.add();" value='Add'>
+<input type="button" onClick="Util.sub();" value='Subtract'>
+<input type="button" onClick="Coll.mul();" value='Multiply'>
+<input type="button" onClick="Coll.div();" value='Divide'>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+ <head>
+  <title>strike() method example</title>
+   <script language="JavaScript">
+     function strikeText()
+     {
+      var textToStrike = document.getElementById(
+                           'txt').value;
+      document.getElementById('divId').innerHTML
+                          = textToStrike.strike(); 
+      return true;
+    }
+   </script>
+ </head>
+<body>
+<div style="background: #ff9900; width:'100%';"
+      align="center">
+  <font color="#0000ff" size="12pt">
+    <b>strike() Example</b>
+  </font>
+</div>
+<center>Insert any text 
+ <input type="text" id="txt" /><br>
+ <div id="divId" style="backgroud :#ccccff">
+ </div>
+ <input type="button" value="Strike text" 
+  onClick="return strikeText();"/>
+</center>
+</body>
+</html>

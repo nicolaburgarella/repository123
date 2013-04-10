@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+ <title>Set UTC full year example</title>
+ <script>
+   function setUTCFullYearFunc(){
+     var UTCYear =  document.getElementById(
+                          'UTCyearValue').value;
+     var UTCMonth =  document.getElementById(
+                          'UTCmonthValue').value;
+     var UTCDay =  document.getElementById(
+                          'UTCdayValue').value;
+     var myDate = new Date(); 
+     alert("Before setting year is : "+myDate);
+     myDate.setUTCFullYear(UTCYear,UTCMonth,UTCDay);
+     alert("After setting year is : "+myDate);
+   }
+ </script>	
+</head>
+<body>
+<div style="background: #ff9900; width:'100%';" 
+    align="center">
+  <font color="#0000ff" size="12pt">
+	<b>Set UTC Full Year&nbsp;</b>
+  </font>
+ </div>
+ <p>&nbsp;</p>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" 
+    width="50%">
+    <tr>
+      <td width="50%" align="left">
+             Insert any year(4-digit) to set&nbsp;
+      </td>
+      <td width="50%" align="left">
+         <input type="text" id="UTCyearValue" />
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="left">
+          Insert any number between 0 to 11 to set
+        month&nbsp;
+     </td>
+      <td width="50%" align="left">
+         <input type="text" id="UTCmonthValue" />
+     </td>
+    </tr>
+    <tr>
+      <td width="50%" align="left">
+            Insert any year(4-digit) to set 
+      </td>
+      <td width="50%" align="left">
+         <input type="text" id="UTCdayValue" />
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="left"></td>
+      <td width="50%" align="left"></td>
+    </tr>
+    <tr>
+      <td width="100%" colspan="2" align="center">
+      <input type="button" onclick="setUTCFullYearFunc();" 
+         value="Set UTC date ">
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+</body>
+</html>

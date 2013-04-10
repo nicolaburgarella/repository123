@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+  <head>
+    <title>parentElement method</title>
+    <script language="JavaScript">
+	function callParentElement() {
+	  var range = document.selection.createRange();
+	  var parElement = range.parentElement();
+	  parElement.innerText = 'ParentElement'; 
+	} 
+    </script>
+  </head>
+  <body>
+    <div style="background: #99ffcc; width:'100%';" 
+          align="center">
+      <font color="#ff0000" size="12pt">
+	<b>parentElement method example</b>
+      </font>
+    </div>
+   <center>
+     <p>&nbsp;</p>
+	<input type="button" value="Call Parent"
+            onclick="callParentElement();">
+   </center>
+  </body>
+</html>

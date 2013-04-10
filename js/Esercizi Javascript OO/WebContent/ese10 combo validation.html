@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+  <HEAD>
+  <TITLE>ComboBox Validation</TITLE>
+
+  <script Language="JavaScript">
+  function validateR(){
+  var selectedCombobox=(comboForm.technology.value);
+  if (selectedCombobox=="-1") {
+  alert("Please Select Technology");
+  return false;
+  }
+  return true;
+  }
+  </script>
+
+  
+ </HEAD>
+
+ <BODY>
+  <form name="comboForm">
+  <select name="technology">
+  <option value="-1">Select</option>
+  <option value="JSP">Java Server Pages</option>
+  <option value="Servlet">Servlet</option>
+  <option value="PHP">PHP</option>
+  <option value="ASP">ASP</option>
+  </select>
+
+  <input type="submit" value="submit" onclick="return validateR();">
+  </form>
+  
+ </BODY>
+</HTML>

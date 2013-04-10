@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+function first() {
+var event = document.createEventObject();
+parent.document.getElementById("button").fireEvent("onclick", event);
+event.cancelBubble = true; 
+} 
+function second() {
+alert('Welcome to RoseIndia !');
+}
+</script>
+
+<div style="background: #cf2255; width:'100%';" align="center">
+<font color="#ffffcc" size="12pt"><b>Create Event Object Example</b></font></div>
+<p> &nbsp; </p>
+<center>
+<button onclick="first();">Generate Event Object</button>
+<button id="button" onclick="second();">Direct Event</button>
+</center>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+if (document.images)
+ {
+var pum1 = new Image();
+pum1.src = "assistenza-clienti-a-domicilio.jpg";
+var pum2 = new Image();
+pum2.src = "a-fera-bio.jpg";
+}
+
+function show_rock()
+ {
+if (document.images)
+ {
+document["pum"].src = pum2.src;
+}
+}
+function hide_rock() 
+{
+if (document.images)
+ {
+document["pum"].src = pum1.src;
+}
+} 
+//-->
+</SCRIPT>
+</head>
+<body>
+<a href="http://www.spedireweb.it/corriere-espresso.html"
+onClick="alert('Move the mouse over the rock to see a magnified view.'); 
+return false" 
+onMouseOver="show_rock(); window.status='description of explosiveness scale'; 
+return true" 
+onMouseOut="hide_rock()">
+<IMG SRC="assistenza-clienti-a-domicilio.jpg" align=right ALT="picture of pumice" 
+WIDTH="220" HEIGHT="170" hspace=12 vspace=12 name="pum" border=0></a>
+</body>
+</html>

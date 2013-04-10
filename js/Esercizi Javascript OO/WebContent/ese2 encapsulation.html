@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<Script language="JavaScript">
+function MyClass()
+{
+var m_data = 15;
+var m_text = "italiano";
+this.SetData = SetData;
+this.SetText = SetText;
+this.ShowData = DisplayData;
+this.ShowText = DisplayText; 
+
+function DisplayData()
+{
+alert( m_data );
+}
+
+function DisplayText()
+{
+alert( m_text );
+return;
+}
+
+function SetData( myVal ) 
+{
+m_data = myVal;
+}
+
+function SetText( myText ) 
+{
+m_text = myText;
+}
+}
+
+var Obj1 = new MyClass();
+var Obj2 = new MyClass();
+Obj1.SetData( 30 );
+Obj1.SetText( "Obj1: my country" );
+Obj2.SetData( 60 );
+Obj2.SetText( "Obj2: my first javaScript progarm" );
+Obj1.ShowData(); 
+Obj1.ShowText(); 
+Obj2.ShowData(); 
+Obj2.ShowText(); 
+</script>
+</head>
+<body/>
+</html>

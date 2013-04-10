@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+function deleteTableHeader() {
+document.getElementById('table').deleteTHead();
+}
+</script>
+
+<p align="center">&nbsp;</p>
+<div style="background: #cf2255; width:'100%';" align="center">
+  <font color="#ffffcc" size="12pt">
+    <b>Deleting Table Header</b>
+  </font>
+</div>
+  <center>
+  <table id="table" border="1" width="400">
+	<thead>
+	  <th colspan="2">Information table Header </th>
+	</thead>
+        <tr>
+	    <td>Name</td>
+            <td>Deepak Kumar</td>
+        </tr>
+	<tr>
+	    <td>Designation</td>
+            <td>IT Manager</td>
+        </tr>
+  </table>
+ </center>
+	<p>
+	 <center>
+		 <input type="button" value="Delete header" 
+           onclick="deleteTableHeader(); this.disabled='true';">
+	</center>
+	</p>
+</body>
+</html>

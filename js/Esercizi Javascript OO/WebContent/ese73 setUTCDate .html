@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <title>Set UTC date example</title>
+  <script>
+    function setUTCDateFunc(){
+     var myDate = new Date(); 
+     var UTCdateOfMonth =  document.getElementById(
+         'UTCdateValue').value;
+     if(UTCdateOfMonth >1 && UTCdateOfMonth < 31){
+	alert("Before setting date is : "
+                 +myDate.getUTCDate());
+	myDate.setUTCDate(UTCdateOfMonth);
+	alert("After setting date is : "
+                 +myDate.getUTCDate());
+     }else{
+	alert("invalid date");
+	return false;
+     }
+    }
+  </script>	
+</head>
+<body>
+<div style="background: #ccccff; width:'100%';" 
+      align="center">
+  <font color="#000012" size="12pt">
+      <b>Set UTC date example</b>
+  </font>
+ </div>
+  <center>
+   <p>Insert any date between 1 to 31 to set
+    <input type="text" id="UTCdateValue" /><br>
+   </p>
+    <input type="button" onclick="return setUTCDateFunc();"
+     value="Set UTC date">
+  </center>
+</body>
+</html>

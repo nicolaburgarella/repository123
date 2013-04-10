@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script type="text/javascript">
+function Search(){
+var textRange = document.body.createTextRange();
+textRange.findText("glitters");
+textRange.select(document.getElementById('d'));
+}
+</script>
+<p id="p">All glitters are not gold</p>
+<input type="button" value="Search" onclick="Search()"/>
+</body>
+</html>

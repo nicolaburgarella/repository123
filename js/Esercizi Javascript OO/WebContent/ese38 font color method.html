@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script>
+
+function callFontColor(){
+var colour;
+if(document.getElementById("color").options[1].selected){
+colour = "red";
+}else if(document.getElementById("color").options[2].selected){
+colour = "blue";
+}else if(document.getElementById("color").options[3].selected){
+colour = "green";
+}else {
+colour = "None";
+}
+document.getElementById('put').innerHTML = ("RoseIndia").fontcolor(colour);
+}
+
+</script>
+<div style="background: #cf2255; width:'100%';" align="center">
+<font color="#ffffcc" size="12pt">
+<b>Font Color Example</b>
+</font>
+</div>
+<center>
+<div style="background: #ffffcc; width:'100%';" align="center">
+Select color : 
+<select id="color" onchange="callFontColor();">
+<option value="-1">Select</option>
+<option value="red">red</option>
+<option value="red">blue</option>
+<option value="red">green</option>
+</select>
+<p>&nbsp;</p>
+</div>
+<font size="12pt"><div id='put'></div></font>
+</center>
+</body>
+</html>

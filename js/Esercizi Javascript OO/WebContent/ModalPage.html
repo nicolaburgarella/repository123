@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+ <head>
+  <title>Modal Page</title>
+  <script type="text/javascript" >
+  function showDialogArgs(){
+  if(window.dialogArguments==""){
+	   alert("No image to display"); 
+	   return false;
+   }else{
+  	document.getElementById('mydiv').innerHTML =
+        "<img src='"+window.dialogArguments+"'/>";
+   }
+  }
+  </script>
+ </head>
+ <body onload="return showDialogArgs();">
+ <center>
+  <div style="background: #ff9900; width:'100%';" 
+       align="center">
+   <font color="#0000ff" size="12pt">
+	<b>Modal page</b>
+   </font>
+  </div>
+  <div id="mydiv"></div>
+ </center>
+ </body>
+</html>

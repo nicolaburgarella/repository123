@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<script>
+function deleteRow()
+{
+document.getElementById('table').deleteRow(1);
+}
+</script>
+<body>
+<h3>Employee Information</h3>
+<table id="table" border="1">
+<tr>
+<th>Name</b></th>
+<th><b>Address</b></th>
+<th><b>ContactNo</b></th>
+</tr>
+<tr>
+<td>Angelina</td>
+<td>New Delhi</td>
+<td>1111111111</td>
+</tr>
+<tr>
+<td>Martina</td>
+<td>Mumbai</td>
+<td>2222222222</td>
+</tr>
+</table>
+<br />
+<input type="button" onclick="deleteRow()" value="Delete Row">
+</body>
+</html>

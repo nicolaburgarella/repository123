@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+ function resizeWindow(){
+   var wdth =document.getElementById("txtWidth").value;
+   var hgt =document.getElementById("txtHeight").value;
+   window.resizeBy(wdth,hgt);
+ } 
+</script>
+<div style="background: #ff9900; width:'100%';"
+          align="center">
+  <font color="#0000ff" size="12pt">
+	<b>ResizeBy Example</b>
+  </font>
+ </div>
+  <center>
+   <div style="background: #0099ff; width:'100%';" 
+        align="center">
+    <form id="userForm" >
+     <p>Width <input type="text" id="txtWidth" /></p>
+     <p>Height<input type="text" id="txtHeight" /></p>
+     <p> <input type="button" value="Resize Window" 
+           onClick="resizeWindow()"/></p>
+    </form>
+   </div>
+ </center>
+</body>
+</html>

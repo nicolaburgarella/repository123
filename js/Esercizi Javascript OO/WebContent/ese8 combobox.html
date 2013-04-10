@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html> 
+<head>
+<body>
+<form name="frmdesilt">
+<head> 
+<title>Insert Table col using DOM</title> 
+<script language="javascript"> 
+function addcol() 
+{ 
+var tbody = document.getElementById("table1").getElementsByTagName("tbody")[0]; 
+var col = document.createElement("TR"); 
+var cell1 = document.createElement("TD"); 
+var inp1 = document.createElement("INPUT"); 
+var combo1=document.createElement("select");
+var combo11=document.createElement("option");
+var combo12=document.createElement("option");
+var combo2=document.createElement("select");
+var combo21=document.createElement("option");
+var combo22=document.createElement("option");
+var inp2=document.createElement("INPUT"); 
+var inp3=document.createElement("INPUT"); 
+inp2.setAttribute("type","text");
+inp2.setAttribute("value","no");
+inp2.setAttribute("size","4");
+inp3.setAttribute("type","text");
+inp3.setAttribute("value","amount");
+inp3.setAttribute("size","10");
+combo1.setAttribute("name","cmbgroup");
+combo1.setAttribute("onChange","redirect(this.option.selectedIndex)");
+combo11.setAttribute("value","Japan1");
+combo11.innerHTML="italia--";
+
+combo12.setAttribute("value","Lombardia");
+combo12.innerHTML ="Lombardia--";
+combo2.setAttribute("name","cmbitem");
+combo21.setAttribute("value","Brescia");
+combo21.innerHTML="Brescia--";
+combo22.setAttribute("value","Bergamo");
+combo22.innerHTML="Bergamo--";
+combo1.appendChild(combo11);
+combo1.appendChild(combo12);
+combo2.appendChild(combo21);
+combo2.appendChild(combo22);
+var cell2 = document.createElement("TD"); 
+cell2.appendChild(combo1);
+var cell3 = document.createElement("TD"); 
+cell3.appendChild(combo2);
+var cell4 = document.createElement("TD"); 
+cell4.appendChild(inp2);
+var cell5 = document.createElement("TD"); 
+cell5.appendChild(inp3);
+
+
+col.appendChild(cell2);
+col.appendChild(cell3);
+col.appendChild(cell4);
+col.appendChild(cell5);
+
+tbody.appendChild(col); 
+}
+</script> 
+</head> 
+<body> 
+<input type="button" value="Add col" size="-6" onClick="addcol();"> 
+<table id="table1"> 
+<tbody> 
+<tr>
+<th>country-name</th>
+<th>Item-Name</th>
+<th>Number</th>
+<th>Total Amount</th>
+</tr>
+<tr> 
+<td><select name="group">
+<option>italia--</option>
+</select>
+</td> 
+<td><select name="item">
+<option>milano--</option>
+</select>
+</td> 
+<td>
+<input type="text" size="4">
+</td>
+<td>
+<input type="text" size="10">
+</td>
+</tr> 
+</tbody> 
+</table> 
+</form>
+</body> 
+</html> 

@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<script>
+function changeFont(){
+var text = document.getElementById("small").innerText;
+document.getElementById("small").innerHTML = text.big();
+}
+</script>
+<h2>Use of method big()</h2>
+<div id="small">Hello</div>
+<button onclick="changeFont()">Change Font</button>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+ <head>
+  <title>PopUp example</title>
+    <script language="JavaScript">
+	function write(){
+		document.write("Button clicked");
+	}
+		var popup = window.createPopup();
+		popup.document.body.innerHTML = 'Popup button';
+		popup.document.body.style.backgroundColor =
+               '#ffffcc';
+    </script>
+  </head>
+    <body>
+      <br>
+        <input type="button" onClick="write();"
+          onmouseover="popup.show(0, 0, 200, 50, document.body);" 
+          onmouseout="popup.hide();" 
+          value="Simple Button">
+    </body>
+</html>

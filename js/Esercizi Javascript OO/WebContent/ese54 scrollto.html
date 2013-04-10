@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script language="JavaScript">
+function scrollToWindow()
+  {
+  var xpos= document.getElementById('txtXpos').value;
+   var ypos= document.getElementById('txtYpos').value;
+   alert("Scroll to X-"+xpos+" and Y-"+ypos);
+  window.scrollTo(xpos,ypos);
+  }
+</script>
+</head>
+<body>
+<div style="background: #ff9900; width:'100%';"
+    align="center">
+  <font color="#0000ff" size="12pt">
+	<b>scrollTo Example</b>
+  </font>
+ </div>
+<br>Rose<br>India<br>Technologies<br>Pvt.<br>Ltd.<br>
+   <br><hr>
+    <p>X-axis <input type="text" id="txtXpos" /></p>
+	<p>Y-axis <input type="text" id="txtYpos" />
+     </p>
+<input type="button" onclick="scrollToWindow()" 
+    value="Scroll to given position" />
+<hr><br><br>
+</body>
+</html>
+

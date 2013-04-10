@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="javascript">
+var intValue = 0
+function myMethod(){
+alert('timeout');
+}
+</script>
+
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div style="background: #cf2255; width:'100%';" align="center">
+<font color="#ffffcc" size="12pt"><b>Clear Timeout Example</b></font></div>
+<center>
+<button onclick="intValue=window.setTimeout('myMethod()', 1000);">Start timeout</button>
+<button onclick="intValue=window.clearTimeout(intValue);">Stop timeout</button>
+</center>
+</body>
+</html>

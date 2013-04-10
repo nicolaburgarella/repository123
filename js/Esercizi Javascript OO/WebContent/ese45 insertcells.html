@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+function funcAddCell() {
+var row = document.all.tableId.insertRow();
+var cell = row.insertCell();
+cell.innerText = "New added cell"; 
+} 
+</script>
+<div align="center">
+<center>
+<table border="0" width="42%" height="55" bgcolor="#800080">
+<tr>
+<td width="100%" height="51">
+<h1 align="center"><font color="#FFFFFF">insertCell method</font></h1>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<div align="center">
+<center>
+<table id="tableId" border="1" cellspacing="0" cellpadding="3" bgcolor="#C0C0C0">
+<tr>
+<td width="100%">
+<p align="center">Cell with one row </p>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<p align="center">
+<input type="button" onclick="funcAddCell();" value="Add new cell" />
+</body>
+</html>

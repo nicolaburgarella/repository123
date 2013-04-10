@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+  <head>
+    <script type="text/javascript">
+	function addNew(name,val){
+	  var opt = new Option(name, val);
+	  document.getElementById("myselect").add(opt,undefined);
+	}
+     </script>
+  </head>
+  <body>
+     <select id="myselect">
+	<option value="1">Nicola</option>
+	<option value="2">Marco</option>
+	<option value="3">Luca</option>
+	<option value="4">Luigi</option>
+     </select>
+     <button onClick="addNew('Pino','5');this.disabled=true;">
+       Add
+     </button>
+  </body>
+</html>

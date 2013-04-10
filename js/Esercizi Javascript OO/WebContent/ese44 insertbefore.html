@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+  function funcInsertBefore() {
+   var elmnt = document.createElement('<div id="id1" style="width:300; 
+  height:50;background-color:#c9c9ad;"></div>');
+   document.getElementById('div1').insertBefore(elmnt);
+   document.all.namedItem("id1").innerText = "Inner text of div is 
+     changed using namedItem() method";
+   } 
+</script>
+<center>
+<div id="div1" style="width: 432; height: 154">
+ <table border="0" width="100%" bgcolor="#800080">
+ <tr>
+ <td width="100%">
+ <h1 align="center">
+   <font color="#FFFFFF">
+  &nbsp;insertBefore method
+   </font>
+ </h1>
+ </td>
+ </tr>
+ </table>
+</div>
+<p align="center">Rose India Technologies Pvt. Ltd.
+  <p align="center">
+   <input type="button" onclick="funcInsertBefore(); this.disabled='true';"
+   value="Insert Before" />
+</p>
+</center>
+</body>
+</html>

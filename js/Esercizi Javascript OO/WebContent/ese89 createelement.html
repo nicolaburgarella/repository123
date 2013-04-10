@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<script>
+function addValue(a) {
+var element1 = document.createElement('tr');
+var element2 = document.createElement('td');
+var text = document.createTextNode(a);
+var table = document.getElementById('t');
+element2.appendChild(text);
+element1.appendChild(element2); 
+table.tBodies(0).appendChild(element1);
+}
+</script>
+Name: <input type="text" name="a">
+<input type="button" value="Add" onClick='javascript:addValue(a.value)'>
+<table id="t" border="1">
+<tr><th>Employee Name</th></tr>
+</table>
+</html>

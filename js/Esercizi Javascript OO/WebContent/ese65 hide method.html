@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>
+<head>
+  <title> Hide method </title>
+  <script language="JavaScript">
+	var popup;
+	function ShowPopup() {
+	 popup = window.createPopup();
+	 popup.document.body.style.backgroundColor = '#778899';
+	 popup.document.body.innerHTML
+                   ="<div>HELLO ! Welcome to RoseIndia </div>";
+	 popup.show(200,100,200,200,document.body); 
+		} 
+	</script>
+</head>
+<body>
+<div style="background: #335556; width:'100%';" 
+       align="center">
+  <font color="#ffddff" size="12pt">
+	<b>hide method example</b>
+  </font>
+ </div>
+ <center>
+	<input type="button" value="Show popup" 
+               onclick="ShowPopup();">
+	<input type="button" value="Hide popup"
+               onclick="popup.hide();">
+</center>
+</body>
+</html>

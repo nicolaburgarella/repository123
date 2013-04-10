@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+ <head>
+   <title> Open method Example </title>
+     <script  type="text/javascript">
+	function windowOpen(){
+	  window.open("http://www.roseindia.net");
+	}
+     </script>
+ </head>
+ <body>
+  <div style="background: #335556; width:'100%';"
+    align="center">
+   <font color="#ffddff" size="12pt">
+	<b>open method example</b>
+   </font>
+  </div>
+ <center>
+
+ <input type="button" value="Open a new window" 
+      onClick="windowOpen();">
+
+<u>Syntax</u>:</b></p>
+<table bgcolor="#FFFFCC" border="1" cellpadding="0" cellspacing="0" width="34%">
+  <tbody><tr>
+    <td width="100%"><b>&nbsp;window.open(URL, name, specs, replace);</b></td>
+  </tr>
+</tbody></table>
+<p>Different arguments and their meanings are as described below <b>:</b></p>
+<table bgcolor="#FFFFCC" border="1" cellpadding="0" cellspacing="0" width="62%">
+  <tbody><tr>
+    <td align="center" valign="middle" width="23%"><b>Arguments </b></td>
+    <td align="center" valign="middle" width="77%"><b>&nbsp;Description</b></td>
+  </tr>
+  <tr>
+    <td width="23%"><b>URL </b></td>
+    <td width="77%">It specifies the URL of the opening page</td>
+  </tr>
+  <tr>
+    <td width="23%"><b>name</b></td>
+    <td width="77%">It specifies the target attribute. It may have
+      following values:
+      <ul>
+        <li><b>_blank :</b> URL loaded into new window</li>
+        <li><b>_parent :</b> URL loaded into parent window</li>
+        <li>_<b>self : </b>URL replaces current window</li>
+        <li><b>_top : </b>URL replaces any framesets that may be loaded</li>
+        <li><b>name : </b>name of the window</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="23%"><b>specs</b></td>
+    <td width="77%">Comma separated list of items which defines the different
+      attributes for the new opening windows.</td>
+  </tr>
+  <tr>
+    <td width="23%"><b>replace</b></td>
+    <td width="77%">It is a boolean value and specifies that whether to open new
+      window by replacing the URL history link or to create new entry in history
+      list.</td>
+  </tr>
+</tbody></table>
+<p>All above four <b>arguments</b> or <b>parameters</b> are optional.</p>
+
+ </body>
+</html>

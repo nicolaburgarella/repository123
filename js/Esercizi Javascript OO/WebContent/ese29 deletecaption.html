@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script type="text/javascript">
+function deleteCaption()
+{
+document.getElementById('table').deleteCaption();
+}
+</script>
+</head>
+<body>
+
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div style="background: #cf2255; width:'100%';" align="center">
+<font color="#ffffcc" size="12pt"><b>Delete Caption Example</b></font></div>
+<center>
+
+<table id="table" border="1" cellspacing="0" cellpadding="3" >
+<caption style="color:red">Information Example</caption>
+<tr>
+<td align="center" bgcolor="#808080">
+<p align="center">Name</p>
+</td>
+<td align="center">
+<p align="center">Sandeep</p>
+</td>
+</tr>
+<tr>
+<td align="center" bgcolor="#808080">
+<p align="center">Qualification</p>
+</td>
+<td align="center">
+<p align="center">MCA</p>
+</td>
+</tr>
+</table>
+</center>
+<p align="center">
+<br />
+<input type="button" onclick="deleteCaption(); this.disabled=true;"
+value="Delete caption">
+
+</body>
+</html>

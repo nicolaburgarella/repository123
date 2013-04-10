@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script type="text/javascript">
+function findMinimum(){
+var val1 = document.getElementById('txt1').value;
+var val2 = document.getElementById('txt2').value;
+alert("Minimum of "+val1+" and " +val2+" is :"+Math.min(val1,val2));
+}
+</script>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="0" 
+  width="60%" bgcolor="#800080">
+<tr>
+<td width="100%">
+<p align="center"><font color="#FFFFFF" size="7" face="Comic Sans MS">
+min method</font></td>
+</tr>
+</table>
+</center>
+</div>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="60%">
+<tr>
+<td width="50%" align="right">Insert first value</td>
+<td width="50%">
+<input type="text" id="txt1" value=""/>
+</td>
+</tr>
+<tr>
+<td width="50%" align="right">Insert second value</td>
+<td width="50%"><input type="text" id="txt2" value=""/>
+</td>
+</tr>
+<tr>
+<td width="50%"></td>
+<td width="50%"><input type="button" onclick="findMinimum();" value="Find Minimum of both" />
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+</html>

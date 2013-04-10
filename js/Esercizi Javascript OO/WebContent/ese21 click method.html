@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+  function selectFirst() {
+   checkbox1.focus(); 
+   checkbox1.click();
+  }
+  function selectSecond() {
+   checkbox2.focus(); 
+   checkbox2.click();
+  }
+  function selectThird() {
+   checkbox3.focus(); 
+   checkbox3.click();
+  }
+</script>
+   <p>&nbsp;</p>
+   <p align="center">&nbsp;</p>
+   <div style="background: #cf2255; width:'100%';" align="center">
+   <font color="#ffffcc" size="12pt"><b>Click Example</b></font></div>
+   <center>
+   <p align="left">
+   <input type="checkbox" id="checkbox1" value="Checkbox1">
+   <button onclick="selectFirst();">Click first checkbox</button>
+  </p>
+  <p align="left">
+  <input type="checkbox" id="checkbox2" value="Checkbox1">
+  <button onclick="selectSecond();">Click second checkbox</button>
+  </p>
+
+  <p align="left">
+  <input type="checkbox" id="checkbox3" value="Checkbox3">
+  <button onclick="selectThird();">Click third checkbox</button>
+  </p>
+  </body>
+</html>

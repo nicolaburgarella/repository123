@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+ <script language="JavaScript">
+   function removeButton1(){
+    document.getElementById('btn1').removeNode(true); 
+    alert("Button 1 removed");
+   } 
+   function removeButton2(){
+    document.getElementById('btn2').removeNode(true); 
+    alert("Button 2 removed");
+   } 
+   function removeButton3(){
+    document.getElementById('btn3').removeNode(true); 
+    alert("Button 3 removed");
+   } 
+   function removeButton4(){
+    document.getElementById('btn4').removeNode(true); 
+    alert("Button 4 removed");
+   } 
+ </script>
+</head>
+<body>
+<div style="background: #ff9900; width:'100%';" 
+           align="center">
+  <font color="#0000ff" size="12pt">
+	<b>Remove Node Example</b>
+  </font>
+ </div>
+  <center>
+    <div style="background: #0099ff; width:'100%';" align="center">
+	<p>Button 1 <input id="btn1" type="button" value="Button1" 
+               onClick="removeButton1()" /></p>                     
+	<p>Button 2 <input id="btn2" type="button" value="Button2" 
+               onClick="removeButton2()" /></p>
+	<p>Button 3 <input id="btn3" type="button" value="Button3" 
+               onClick="removeButton3()" /></p>
+	<p>Button 4 <input id="btn4" type="button" value="Button4" 
+               onClick="removeButton4()" /></p>
+	</div>
+ </center>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+ function resetForm(){
+   document.getElementById("userForm").reset();
+ } 
+</script>
+<div style="background: #ff9900; width:'100%';"
+            align="center">
+  <font color="#0000ff" size="12pt">
+	<b>Reset Example</b>
+  </font>
+ </div>
+  <center>
+    <div style="background: #0099ff; width:'100%';"
+       align="center">
+	<form id="userForm" >
+	<p>Name <input type="text" id="txtname" /></p>
+	<p>Age&nbsp;&nbsp;&nbsp;<input type="text"
+                 id="txtage" /></p>
+	<p> <input type="button" value="Reset all fields"
+          onClick="resetForm()"/></p>
+	</form>
+    </div>
+ </center>
+</body>
+</html>
+

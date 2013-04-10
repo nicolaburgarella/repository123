@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+ <head>
+  <script type="text/javascript">
+    function showRoseIndia(paraId)
+    {
+      var element = document.getElementById(paraId);
+      element.scrollIntoView(true);
+    }
+  </script>
+ </head>
+<body>
+<div style="background: #ff9900; width:'100%';"
+    align="center">
+  <font color="#0000ff" size="12pt">
+    <b>scrollIntoView Example</b>
+  </font>
+ </div>
+<div style="height: 100px; overflow: scroll;">
+ <p>Rose India Technologies Pvt. Ltd.  is a global 
+                 services company that ensures<br>
+     maximum returns by providing quality software 
+     solutions and services. The Indian<br>
+     based company provides services to several 
+     reputed institutional clients, in the<br>
+     domain of IT and IT enabled Technologies.</p>
+     <p id="roseindiaPara"><i><b>RoseIndia Technologies
+     </b></i></p>
+     <p> We help in understanding the client requirements
+     and offer customized solutions<br>
+     in various specialized areas like Web based Technologies,
+     Database Systems, Client <br>
+     Server Architecture, E-commerce Solutions and Consultancy
+     Services. Other services <br> offered include Online Technical
+     Tutorials, Content Development and Generation, Web <br>
+     solutions for B2B, B2C, C2C and Travel portals, Web 
+     Development, Promotion and Hosting, <br>
+     and Applications Service Provider Solutions. With expertise 
+     and skilled human resource, we<br>
+     also provide assistance for offshore development of projects.
+ </p>
+</div> 
+ <br>
+ <input type="button" value="Show RoseIndia" 
+    onclick='showRoseIndia("roseindiaPara");
+    this.disabled="true"'>
+</body>
+</html>

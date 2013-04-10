@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+<script language="JavaScript">
+function getElement() {
+   var firstPoint = document.getElementById("txt1").value;
+   var secondPoint= document.getElementById("txt2").value;
+   if(firstPoint==""){ 
+  alert("Please enter valid point as 100");
+  return false;
+   } else if(secondPoint==""){
+   alert("Please enter valid point as 100");
+   return false;
+   }
+  var tagObject = document.elementFromPoint(firstPoint, secondPoint);
+  var element = tagObject.tagName;
+  alert("The element located at point ("+firstPoint+","+secondPoint+") is "+element); 
+  }
+</script>
+<p align="center">&nbsp;</p>
+<div style="background: #cf2255; width:'100%';" align="center">
+<font color="#ffffcc" size="12pt"><b>Element From Point Example</b></font></div>
+<center>
+<div style="background: #ffffcc; width:'100%';" align="center">
+<p align="left">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" width="32%">
+<tr>
+<td width="40%">First point</td>
+<td width="60%"> <input type="text" id="txt1" value=""/></td>
+</tr>
+<tr>
+<td width="40%">Second point&nbsp;</td>
+<td width="60%"><input type="text" id="txt2" value=""/></td>
+</tr>
+<tr>
+<td width="30%" colspan="2" valign="middle" align="center">
+<button onclick="return getElement();">Get Element</button>
+</td>
+</tr>
+</table>
+</div>
+</center>
+</body>
+</html>
