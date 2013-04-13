@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script>
+
+var myWindow;
+
+function openWin()
+{
+myWindow=window.open("","","width=400,height=200");
+}
+
+function closeWin()
+{
+if (myWindow)
+  {
+  myWindow.close();
+  }
+}
+
+function checkWin()
+{
+if (!myWindow)
+  {
+  document.getElementById("msg").innerHTML="'myWindow' has never been opened!";
+  }
+else
+  {
+  if (myWindow.closed)
+    { 
+    document.getElementById("msg").innerHTML="'myWindow' has been closed!";
+    }
+  else
+    {
+    document.getElementById("msg").innerHTML="'myWindow' has not been closed!";
+    }
+  }	
+}
+</script>
+</head>
+<body>
+
+<input type="button" value="Open 'myWindow'" onclick="openWin()" />
+<input type="button" value="Close 'myWindow'" onclick="closeWin()" />
+<br><br>
+<input type="button" value="Has 'myWindow' been closed?" onclick="checkWin()" />
+<br><br>
+<div id="msg"></div>
+</body>
+</html>
+

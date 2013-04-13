@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+
+<p>Click the first button alert "Hello" after waiting 3 seconds.</p>
+<p>Click the second button to prevent the first function to execute. (You must click it before the 3 seconds are up.)</p>
+<button onclick="myFunction()">Try it</button>
+<button onclick="myStopFunction()">Stop the alert</button>
+
+<script>
+var myVar;
+
+function myFunction()
+{
+myVar=setTimeout(function(){alert("Hello")},3000);
+}
+
+function myStopFunction()
+{
+clearTimeout(myVar);
+}
+</script>
+
+</body>
+</html>
+

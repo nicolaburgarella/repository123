@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script>
+function newDoc()
+  {
+	document.write('the entire URL (of the current page) '+location.href);
+	document.write('the path name of the current URL '+location.pathname);
+  window.location.assign("http://www.w3schools.com")
+  
+  }
+  
+//The location.assign() method loads a new document.
+  
+</script>
+</head>
+<body>
+
+<!-- The window.location object can be written without the window prefix.
+
+Some examples:
+
+    location.hostname returns the domain name of the web host
+    location.pathname returns the path and filename of the current page
+    location.port returns the port of the web host (80 or 443)
+    location.protocol returns the web protocol used (http:// or https://)
+ -->
+
+<input type="button" value="Load new document" onclick="newDoc()">
+
+
+</body>
+</html>
+
