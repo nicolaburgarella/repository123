@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script>
+function cell()
+{
+var x=document.getElementById('myTable').rows[0].cells;
+alert(x[0].innerHTML);
+}
+</script>
+</head>
+<body>
+
+<table id="myTable" border="1">
+<tr>
+<td>cell 1</td>
+<td>cell 2</td>
+</tr>
+<tr>
+<td>cell 3</td>
+<td>cell 4</td>
+</tr>
+</table>
+<br>
+<input type="button" onclick="cell()" value="Alert first cell">
+
+</body>
+</html>

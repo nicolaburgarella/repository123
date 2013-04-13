@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script>
+function deleteRow(r)
+{
+var i=r.parentNode.parentNode.rowIndex;
+document.getElementById('myTable').deleteRow(i);
+}
+</script>
+</head>
+<body>
+
+<table id="myTable" border="1">
+<tr>
+  <td>Row 1</td>
+  <td><input type="button" value="Delete" onclick="deleteRow(this)"></td>
+</tr>
+<tr>
+  <td>Row 2</td>
+  <td><input type="button" value="Delete" onclick="deleteRow(this)"></td>
+</tr>
+<tr>
+  <td>Row 3</td>
+  <td><input type="button" value="Delete" onclick="deleteRow(this)"></td>
+</tr>
+</table>
+
+</body>
+</html>
+

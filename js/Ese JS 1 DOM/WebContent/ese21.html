@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var parent=document.getElementById("div1");
+var child=document.getElementById("p1");
+parent.removeChild(child);
+</script>
+
+<!-- Here is a common workaround: Find the child you want to remove, and use its parentNode property to find the parent:
+var child=document.getElementById("p1");
+child.parentNode.removeChild(child);
+ -->
+
+</body>
+</html>

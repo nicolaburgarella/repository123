@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script>
+function getElements()
+{
+var x=document.getElementsByName("x");
+alert(x.length);
+}
+</script>
+</head>
+<body>
+
+Cats:
+<input name="x" type="radio" value="Cats">
+Dogs:
+<input name="x" type="radio" value="Dogs">
+
+<input type="button" onclick="getElements()" value="How many elements named 'x'?">
+
+</body>
+</html>
+

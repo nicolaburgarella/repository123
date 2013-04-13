@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script>
+function disable()
+{
+document.getElementById("mySelect").disabled=true;
+}
+function enable()
+{
+document.getElementById("mySelect").disabled=false;
+}
+</script>
+</head>
+<body>
+
+<form>
+<select id="mySelect">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+<br><br>
+<input type="button" onclick="disable()" value="Disable list">
+<input type="button" onclick="enable()" value="Enable list">
+</form>
+
+</body>
+</html>
+

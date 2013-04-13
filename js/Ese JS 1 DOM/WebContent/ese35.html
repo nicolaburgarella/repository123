@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<script>
+function createDoc()
+  {
+  var doc=document.open("text/html","replace");
+  var txt="<!DOCTYPE html><html><body>Learning about the HTML DOM is fun!</body></html>";
+  doc.write(txt);
+  doc.close();
+  }
+</script>
+</head>
+
+<body>
+<input type="button" value="New document" onclick="createDoc()">
+</body>
+</html> 
+
