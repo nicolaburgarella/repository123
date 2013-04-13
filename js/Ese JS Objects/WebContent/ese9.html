@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+
+<p id="p1">Click the button to locate where "locate" first occurs.</p>
+<p id="p2">0</p>
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction()
+{
+var str=document.getElementById("p1").innerHTML;
+var n=str.indexOf("locate");
+document.getElementById("p2").innerHTML=n+1;
+}
+</script>
+
+</body>
+</html>
+
+

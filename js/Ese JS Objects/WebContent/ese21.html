@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+
+<p id="demo">Click the button to create an array, call the new ucase() method, and display the result.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+Array.prototype.myUcase=function()
+{
+for (i=0;i<this.length;i++)
+  {
+  this[i]=this[i].toUpperCase();
+  }
+}
+
+function myFunction()
+{
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.myUcase();
+var x=document.getElementById("demo");
+x.innerHTML=fruits;
+}
+</script>
+<!-- Prototype is a global constructor in JavaScript. It can construct new properties and methods for any JavaScript Objects.
+The example above makes a new array method that transforms array values into upper case.
+ -->
+
+</body>

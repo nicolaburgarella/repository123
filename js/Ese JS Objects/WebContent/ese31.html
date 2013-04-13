@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+
+<p id="demo">Click the button to sort the array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction()
+{
+var points = [40,100,1,5,25,10];
+points.sort(function(a,b){return a-b});
+var x=document.getElementById("demo");
+x.innerHTML=points;
+}
+</script>
+
+</body>
+</html>
+

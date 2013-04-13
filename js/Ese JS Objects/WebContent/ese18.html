@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+
+<p id="demo">Click the button to display the UTC date and time as a string.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction()
+{
+var d = new Date();
+var x = document.getElementById("demo");
+x.innerHTML=d.toUTCString();
+}
+</script>
+
+</body>
+</html>
