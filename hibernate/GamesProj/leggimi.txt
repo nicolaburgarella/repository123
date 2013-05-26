@@ -1,0 +1,20 @@
+Games
+
+Normal games
+
+rpg games
+
+arcade games
+
+
+players
+
+basketball
+
+football player
+
+name age height 3pointer goals type
+
+players name age height type(discriminator column)
+
+basketball class extends players (discriminator value to type)

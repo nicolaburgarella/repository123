@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="Games" table="GAMES" discriminator-value="normal">
+<id name="id" column="id" type="integer">
+<generator class="assigned"></generator>
+</id>
+<discriminator column="type" type="string"></discriminator>
+<property name="space" column="space" type="long"></property>
+<property name="name" column="NAME" type="string"></property>
+
+<subclass name="Rpg" extends="Games" discriminator-value="RPG"></subclass>
+<subclass name="Arcade" extends="Games" discriminator-value="ARCADE"></subclass>
+</class>
+
+
+</hibernate-mapping>    
