@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="Student" table="STUDENT">
+<id name="id" column="ID" type="integer">
+<!-- i valori possono essere increment oppure sequence-->
+<generator class="increment"></generator>
+<!--
+<generator class="sequence">
+<param name="sequence">seq_student</param>
+</generator>
+con oracle: create sequence seq_student e cancellare i dati vecchi
+-->
+
+</id>
+<property name="name" column="name" type="string"></property>
+</class>
+
+
+</hibernate-mapping>  
