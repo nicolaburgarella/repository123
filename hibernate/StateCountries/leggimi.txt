@@ -1,0 +1,15 @@
+relazione uno a molti tra states e cities
+
+states
+id number(3)
+name varchar(20) primary key
+
+
+cities
+id number primary key
+name varchar
+state foreign key reference is table states
+idx number (index for the list)
+
+ESEMPIO:
+texas ha houston, dallas, san antonio

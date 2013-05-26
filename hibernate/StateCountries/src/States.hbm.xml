@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- mapping states class and the relationship with cities class, here i don't mapping my list-->
+<class name="States" table="STATES">
+<id name="name" column="NAME" type="string">
+<generator class="assigned"></generator>
+</id>
+<property name="id" column="ID" type="integer"></property>
+<list name="city" table="CITIES" cascade="none" lazy="true">
+   <key column="STATE"></key>
+   <list-index base="0" column="IDX"></list-index>
+   <one-to-many class="Cities"/>
+</list>
+</class>
+
+<class name="Cities" table="CITIES">
+<id name="id" column="ID" type="integer">
+<generator class="assigned"></generator>
+</id>
+<property name="name" column="NAME" type="string"></property>
+</class>
+
+</hibernate-mapping>    
