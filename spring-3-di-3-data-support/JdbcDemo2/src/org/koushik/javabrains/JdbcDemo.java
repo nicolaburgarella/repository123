@@ -1,0 +1,23 @@
+package org.koushik.javabrains;
+
+import org.koushik.javabrains.dao.JdbcDaoImpl;
+import org.koushik.javabrains.model.Circle;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class JdbcDemo {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		ApplicationContext cxt = new ClassPathXmlApplicationContext("spring.xml");
+		JdbcDaoImpl dao = cxt.getBean("jdbcDaoImpl", JdbcDaoImpl.class);
+		Circle circle = dao.getCircle(1);
+		//Circle circle = new JdbcDaoImpl().getCircle(1);
+		System.out.println(circle.getName());
+
+	}
+
+}
